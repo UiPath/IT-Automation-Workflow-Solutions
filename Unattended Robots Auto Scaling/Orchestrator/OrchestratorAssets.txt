@@ -1,0 +1,28 @@
+TenantsDbConnectionString (Text)
+AdminTenantEventsQueueName (Text)
+EnvironmentLevelCounters (Bool)
+RobotsType (Text) // NonProduction, Attended, Unattended, Studio, Development, StudioX, Headless, StudioPro, TestAutomation
+
+Azure_VmImages_RG (Text)
+Azure_VMs_RG (Text)
+AzureAuth_ClientID (Credential)
+AzureAuth_ClientSecret (Credential)
+AzureAuth_SubscriptionID (Text)
+AzureAuth_TenantID (Credential)
+
+AmazonAWS_AccessKeyID (Credential)
+AmazonAWS_Region (Text)
+AmazonAWS_SecretAccessKey (Credential)
+
+VMware_Datastore (Text)
+VMware_Host (Text)
+VMware_VMs_Location (Text)
+VMware_VmTemplateAuth (Credential)
+VMware_VmTemplateLocation (Text)
+VMwareAuth_Credentials (Credential)
+VMwareAuth_Server (Text)
+
+CitrixAuth_Host (Text)
+CitrixAuth_HostPort (Integer)
+CitrixAuth_Credentials (Credential)
+Citrix_VMs_Folder (Text)
