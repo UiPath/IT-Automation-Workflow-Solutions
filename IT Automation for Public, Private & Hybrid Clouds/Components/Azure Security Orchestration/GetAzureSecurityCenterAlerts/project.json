@@ -1,0 +1,26 @@
+{
+  "name": "GetAzureSecurityCenterAlerts",
+  "description": "Retrieves the Azure Security Center Alerts for the supported brute force attacks and adds them to an Orchestrator queue for processing.",
+  "main": "Main.xaml",
+  "dependencies": {
+    "UiPath.Azure.Activities": "1.1.0",
+    "UiPath.System.Activities": "[20.2.0]"
+  },
+  "schemaVersion": "3.2",
+  "studioVersion": "19.4.4.0",
+  "projectVersion": "1.0.0",
+  "runtimeOptions": {
+    "autoDispose": false,
+    "isPausable": true,
+    "excludedLoggedData": [
+      "Private:*",
+      "*password*"
+    ]
+  },
+  "projectType": "Workflow",
+  "libraryOptions": {
+    "includeOriginalXaml": false,
+    "privateWorkflows": []
+  },
+  "webServices": []
+}
