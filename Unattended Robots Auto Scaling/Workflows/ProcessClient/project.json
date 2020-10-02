@@ -1,11 +1,11 @@
 {
-  "name": "ProcessQueueItems",
-  "description": "Process queue items added via client tenants webhooks requests.",
+  "name": "ProcessClient",
+  "description": "Process Client via Pooling or Events(queue items added via client tenants webhooks requests).",
   "main": "Main.xaml",
   "dependencies": {
     "UiPath.AmazonWebServices.Activities": "[1.2.3]",
     "UiPath.Azure.Activities": "[1.1.3]",
-    "UiPath.Citrix.Activities": "[1.0.4]",
+    "UiPath.Citrix.Activities": "[1.0.5]",
     "UiPath.Database.Activities": "[1.3.7369.25200]",
     "UiPath.System.Activities": "[20.4.0]",
     "UiPath.VMware.Activities": "[1.1.3]",
@@ -15,7 +15,7 @@
   "entitiesStores": [],
   "schemaVersion": "4.0",
   "studioVersion": "19.10.1.0",
-  "projectVersion": "1.4.4",
+  "projectVersion": "1.5.0",
   "runtimeOptions": {
     "autoDispose": false,
     "isPausable": true,
@@ -25,7 +25,9 @@
       "Private:*",
       "*password*"
     ],
-    "executionType": "Workflow"
+    "executionType": "Workflow",
+    "readyForPiP": false,
+    "startsInPiP": false
   },
   "designOptions": {
     "projectProfile": "Developement",
@@ -34,18 +36,23 @@
       "includeOriginalXaml": false,
       "privateWorkflows": []
     },
-    "fileInfoCollection": []
+    "processOptions": {
+      "ignoredFiles": []
+    },
+    "fileInfoCollection": [],
+    "modernBehavior": false
   },
   "arguments": {
     "input": [
       {
-        "name": "AdminTenantFolder",
-        "type": "System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089",
+        "name": "SpecifiedClientId",
+        "type": "System.Int32, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089",
         "required": false,
-        "hasDefault": false
+        "hasDefault": true
       }
     ],
     "output": []
   },
-  "expressionLanguage": "VisualBasic"
+  "expressionLanguage": "VisualBasic",
+  "isTemplate": false
 }

@@ -21,11 +21,13 @@
     <x:Property Name="clientEventEnvironmentName" Type="OutArgument(x:String)" />
     <x:Property Name="EventReleaseProcessKey" Type="InArgument(x:String)" />
     <x:Property Name="EventReleaseId" Type="InArgument(x:String)" />
+    <x:Property Name="SpecifiedClientId" Type="InArgument(x:Int32)" />
+    <x:Property Name="clientTenantId" Type="OutArgument(x:String)" />
   </x:Members>
   <mva:VisualBasic.Settings>
     <x:Null />
   </mva:VisualBasic.Settings>
-  <sap:VirtualizedContainerService.HintSize>1239,2504</sap:VirtualizedContainerService.HintSize>
+  <sap:VirtualizedContainerService.HintSize>1337.6,2709.6</sap:VirtualizedContainerService.HintSize>
   <sap2010:WorkflowViewState.IdRef>GetClientTenantInfo_1</sap2010:WorkflowViewState.IdRef>
   <TextExpression.NamespacesForImplementation>
     <scg:List x:TypeArguments="x:String" Capacity="24">
@@ -83,7 +85,7 @@
       <AssemblyReference>UiPath.System.Activities.Design</AssemblyReference>
     </scg:List>
   </TextExpression.ReferencesForImplementation>
-  <Sequence DisplayName="GetClientTenantInfo" sap:VirtualizedContainerService.HintSize="1219,2444" sap2010:WorkflowViewState.IdRef="Sequence_4">
+  <Sequence DisplayName="GetClientTenantInfo" sap:VirtualizedContainerService.HintSize="1214.4,2644.8" sap2010:WorkflowViewState.IdRef="Sequence_4">
     <Sequence.Variables>
       <Variable x:TypeArguments="sd:DataTable" Name="dt" />
       <Variable x:TypeArguments="x:String" Name="Token" />
@@ -94,7 +96,7 @@
         <x:Boolean x:Key="IsExpanded">True</x:Boolean>
       </scg:Dictionary>
     </sap:WorkflowViewStateService.ViewState>
-    <Sequence DisplayName="From Database - Sequence" sap:VirtualizedContainerService.HintSize="1177,2352" sap2010:WorkflowViewState.IdRef="Sequence_3">
+    <Sequence DisplayName="From Database - Sequence" sap:VirtualizedContainerService.HintSize="1172.8,2552" sap2010:WorkflowViewState.IdRef="Sequence_3">
       <Sequence.Variables>
         <Variable x:TypeArguments="ui:DatabaseConnection" Name="dbSession" />
         <Variable x:TypeArguments="x:String" Name="selectString" />
@@ -104,33 +106,44 @@
           <x:Boolean x:Key="IsExpanded">True</x:Boolean>
         </scg:Dictionary>
       </sap:WorkflowViewStateService.ViewState>
-      <ui:DatabaseConnect DatabaseConnection="[dbSession]" DisplayName="Connect" sap:VirtualizedContainerService.HintSize="1135,59" sap2010:WorkflowViewState.IdRef="DatabaseConnect_1" ProviderName="System.Data.SqlClient" ConnectionString="[TenantsDbConnectionString]" />
-      <ui:ExecuteQuery ContinueOnError="{x:Null}" TimeoutMS="{x:Null}" CommandType="Text" DataTable="[dt]" DisplayName="Execute Query" ExistingDbConnection="[dbSession]" sap:VirtualizedContainerService.HintSize="1135,88" sap2010:WorkflowViewState.IdRef="ExecuteQuery_1" Sql="[&quot;Select * From Tenants Where TenantId = &quot;+TenantID+&quot; AND OrchestratorFolderId = &quot; + FolderID_FromEvent]">
-        <ui:ExecuteQuery.Parameters>
-          <scg:Dictionary x:TypeArguments="x:String, Argument" />
-        </ui:ExecuteQuery.Parameters>
-      </ui:ExecuteQuery>
-      <ui:ForEachRow CurrentIndex="{x:Null}" DataTable="[dt]" DisplayName="For Each Row" sap:VirtualizedContainerService.HintSize="1135,1971" sap2010:WorkflowViewState.IdRef="ForEachRow_1">
+      <ui:DatabaseConnect DatabaseConnection="[dbSession]" DisplayName="Connect" sap:VirtualizedContainerService.HintSize="1131.2,60" sap2010:WorkflowViewState.IdRef="DatabaseConnect_1" ProviderName="System.Data.SqlClient" ConnectionString="[TenantsDbConnectionString]" />
+      <If Condition="[SpecifiedClientId &lt; 0]" sap:VirtualizedContainerService.HintSize="1131.2,239.2" sap2010:WorkflowViewState.IdRef="If_5">
+        <If.Then>
+          <ui:ExecuteQuery ContinueOnError="{x:Null}" TimeoutMS="{x:Null}" CommandType="Text" DataTable="[dt]" DisplayName="Execute Query" ExistingDbConnection="[dbSession]" sap:VirtualizedContainerService.HintSize="333.6,89.6" sap2010:WorkflowViewState.IdRef="ExecuteQuery_1" Sql="[&quot;Select * From Tenants Where TenantId = &quot;+TenantID+&quot; AND OrchestratorFolderId = &quot; + FolderID_FromEvent]">
+            <ui:ExecuteQuery.Parameters>
+              <scg:Dictionary x:TypeArguments="x:String, Argument" />
+            </ui:ExecuteQuery.Parameters>
+          </ui:ExecuteQuery>
+        </If.Then>
+        <If.Else>
+          <ui:ExecuteQuery ContinueOnError="{x:Null}" TimeoutMS="{x:Null}" CommandType="Text" DataTable="[dt]" DisplayName="Execute Query" ExistingDbConnection="[dbSession]" sap:VirtualizedContainerService.HintSize="333.6,89.6" sap2010:WorkflowViewState.IdRef="ExecuteQuery_2" Sql="[&quot;Select * From Tenants Where Id = &quot; + SpecifiedClientId.ToString]">
+            <ui:ExecuteQuery.Parameters>
+              <scg:Dictionary x:TypeArguments="x:String, Argument" />
+            </ui:ExecuteQuery.Parameters>
+          </ui:ExecuteQuery>
+        </If.Else>
+      </If>
+      <ui:ForEachRow CurrentIndex="{x:Null}" DataTable="[dt]" DisplayName="For Each Row" sap:VirtualizedContainerService.HintSize="1131.2,2017.6" sap2010:WorkflowViewState.IdRef="ForEachRow_1">
         <ui:ForEachRow.Body>
           <ActivityAction x:TypeArguments="sd:DataRow">
             <ActivityAction.Argument>
               <DelegateInArgument x:TypeArguments="sd:DataRow" Name="row" />
             </ActivityAction.Argument>
-            <Sequence DisplayName="Body" sap:VirtualizedContainerService.HintSize="1085,1823" sap2010:WorkflowViewState.IdRef="Sequence_2">
+            <Sequence DisplayName="Body" sap:VirtualizedContainerService.HintSize="1081.6,1868.8" sap2010:WorkflowViewState.IdRef="Sequence_2">
               <sap:WorkflowViewStateService.ViewState>
                 <scg:Dictionary x:TypeArguments="x:String, x:Object">
                   <x:Boolean x:Key="IsExpanded">True</x:Boolean>
                 </scg:Dictionary>
               </sap:WorkflowViewStateService.ViewState>
-              <If Condition="[row(&quot;TenantId&quot;).ToString().Equals(TenantID) And row(&quot;OrchestratorFolderId&quot;).ToString().Equals(FolderID_FromEvent)]" DisplayName="If Tenant Found" sap:VirtualizedContainerService.HintSize="1043,1731" sap2010:WorkflowViewState.IdRef="If_1">
+              <If Condition="[(row(&quot;TenantId&quot;).ToString().Equals(TenantID) And row(&quot;OrchestratorFolderId&quot;).ToString().Equals(FolderID_FromEvent)) Or SpecifiedClientId.ToString.Equals(row(&quot;Id&quot;).ToString)]" DisplayName="If Tenant Found" sap:VirtualizedContainerService.HintSize="1040,1776" sap2010:WorkflowViewState.IdRef="If_1">
                 <If.Then>
-                  <Sequence sap:VirtualizedContainerService.HintSize="898,1583" sap2010:WorkflowViewState.IdRef="Sequence_1">
+                  <Sequence sap:VirtualizedContainerService.HintSize="896,1626.4" sap2010:WorkflowViewState.IdRef="Sequence_1">
                     <sap:WorkflowViewStateService.ViewState>
                       <scg:Dictionary x:TypeArguments="x:String, x:Object">
                         <x:Boolean x:Key="IsExpanded">True</x:Boolean>
                       </scg:Dictionary>
                     </sap:WorkflowViewStateService.ViewState>
-                    <ui:MultipleAssign DisplayName="Multiple Assign" sap:VirtualizedContainerService.HintSize="856,501" sap2010:WorkflowViewState.IdRef="MultipleAssign_1">
+                    <ui:MultipleAssign DisplayName="Multiple Assign" sap:VirtualizedContainerService.HintSize="854.4,536" sap2010:WorkflowViewState.IdRef="MultipleAssign_1">
                       <ui:MultipleAssign.AssignOperations>
                         <scg:List x:TypeArguments="ui:AssignOperation" Capacity="16">
                           <ui:AssignOperation sap2010:WorkflowViewState.IdRef="AssignOperation_1">
@@ -245,10 +258,18 @@
                               <InArgument x:TypeArguments="x:String">[row("OrchestratorFolderId").ToString()]</InArgument>
                             </ui:AssignOperation.Value>
                           </ui:AssignOperation>
+                          <ui:AssignOperation sap2010:WorkflowViewState.IdRef="AssignOperation_17">
+                            <ui:AssignOperation.To>
+                              <OutArgument x:TypeArguments="x:String">[clientTenantId]</OutArgument>
+                            </ui:AssignOperation.To>
+                            <ui:AssignOperation.Value>
+                              <InArgument x:TypeArguments="x:String">[row("TenantId").ToString()]</InArgument>
+                            </ui:AssignOperation.Value>
+                          </ui:AssignOperation>
                         </scg:List>
                       </ui:MultipleAssign.AssignOperations>
                     </ui:MultipleAssign>
-                    <If Condition="[clientEnvironmentLevelCounters]" DisplayName="If EnvironmentLevelCounters" sap:VirtualizedContainerService.HintSize="856,950" sap2010:WorkflowViewState.IdRef="If_2">
+                    <If Condition="[clientEnvironmentLevelCounters And SpecifiedClientId &lt; 0]" DisplayName="If EnvironmentLevelCounters" sap:VirtualizedContainerService.HintSize="854.4,957.6" sap2010:WorkflowViewState.IdRef="If_2">
                       <sap:WorkflowViewStateService.ViewState>
                         <scg:Dictionary x:TypeArguments="x:String, x:Object">
                           <x:Boolean x:Key="IsExpanded">True</x:Boolean>
@@ -256,15 +277,15 @@
                         </scg:Dictionary>
                       </sap:WorkflowViewStateService.ViewState>
                       <If.Then>
-                        <Sequence sap:VirtualizedContainerService.HintSize="611,802" sap2010:WorkflowViewState.IdRef="Sequence_5">
+                        <Sequence sap:VirtualizedContainerService.HintSize="610.4,808" sap2010:WorkflowViewState.IdRef="Sequence_5">
                           <sap:WorkflowViewStateService.ViewState>
                             <scg:Dictionary x:TypeArguments="x:String, x:Object">
                               <x:Boolean x:Key="IsExpanded">True</x:Boolean>
                             </scg:Dictionary>
                           </sap:WorkflowViewStateService.ViewState>
-                          <If Condition="[string.IsNullOrWhiteSpace(Service)]" DisplayName="If client orchestrator is onprem" sap:VirtualizedContainerService.HintSize="569,208" sap2010:WorkflowViewState.IdRef="If_4">
+                          <If Condition="[string.IsNullOrWhiteSpace(Service)]" DisplayName="If client orchestrator is onprem" sap:VirtualizedContainerService.HintSize="568.8,209.6" sap2010:WorkflowViewState.IdRef="If_4">
                             <If.Then>
-                              <Assign sap:VirtualizedContainerService.HintSize="262,60" sap2010:WorkflowViewState.IdRef="Assign_2">
+                              <Assign sap:VirtualizedContainerService.HintSize="262.4,60" sap2010:WorkflowViewState.IdRef="Assign_2">
                                 <Assign.To>
                                   <OutArgument x:TypeArguments="x:Boolean">[clientOrchestratorIsOnPrem]</OutArgument>
                                 </Assign.To>
@@ -274,7 +295,7 @@
                               </Assign>
                             </If.Then>
                             <If.Else>
-                              <Assign sap:VirtualizedContainerService.HintSize="262,60" sap2010:WorkflowViewState.IdRef="Assign_3">
+                              <Assign sap:VirtualizedContainerService.HintSize="262.4,60" sap2010:WorkflowViewState.IdRef="Assign_3">
                                 <Assign.To>
                                   <OutArgument x:TypeArguments="x:Boolean">[clientOrchestratorIsOnPrem]</OutArgument>
                                 </Assign.To>
@@ -284,7 +305,7 @@
                               </Assign>
                             </If.Else>
                           </If>
-                          <ui:InvokeWorkflowFile ContinueOnError="{x:Null}" DisplayName="GetAuthToken - Invoke Workflow File" sap:VirtualizedContainerService.HintSize="569,87" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_2" UnSafe="False" WorkflowFileName="OrchestratorTenant_GetAuthToken.xaml">
+                          <ui:InvokeWorkflowFile ContinueOnError="{x:Null}" DisplayName="GetAuthToken - Invoke Workflow File" sap:VirtualizedContainerService.HintSize="568.8,88" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_2" UnSafe="False" WorkflowFileName="OrchestratorTenant_GetAuthToken.xaml">
                             <ui:InvokeWorkflowFile.Arguments>
                               <InArgument x:TypeArguments="x:String" x:Key="ClientId">[ClientId]</InArgument>
                               <InArgument x:TypeArguments="x:String" x:Key="ClientSecret">[ClientSecret]</InArgument>
@@ -295,7 +316,7 @@
                               <InArgument x:TypeArguments="x:Boolean" x:Key="clientOrchestratorIsOnPrem">[clientOrchestratorIsOnPrem]</InArgument>
                             </ui:InvokeWorkflowFile.Arguments>
                           </ui:InvokeWorkflowFile>
-                          <ui:InvokeWorkflowFile ContinueOnError="{x:Null}" DisplayName="Invoke OrchestratorTenant_GetEnvironmentForRelease workflow" sap:VirtualizedContainerService.HintSize="569,87" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_1" UnSafe="False" WorkflowFileName="OrchestratorTenant_GetEnvironmentForRelease.xaml">
+                          <ui:InvokeWorkflowFile ContinueOnError="{x:Null}" DisplayName="Invoke OrchestratorTenant_GetEnvironmentForRelease workflow" sap:VirtualizedContainerService.HintSize="568.8,88" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_1" UnSafe="False" WorkflowFileName="OrchestratorTenant_GetEnvironmentForRelease.xaml">
                             <ui:InvokeWorkflowFile.Arguments>
                               <InArgument x:TypeArguments="x:String" x:Key="Token">[Token]</InArgument>
                               <InArgument x:TypeArguments="x:String" x:Key="TenantLogicalName">[TenantLogicalName]</InArgument>
@@ -309,12 +330,12 @@
                               <InArgument x:TypeArguments="x:String" x:Key="ReleaseId">[EventReleaseId]</InArgument>
                             </ui:InvokeWorkflowFile.Arguments>
                           </ui:InvokeWorkflowFile>
-                          <If Condition="[OrchestratorEnv.Equals(clientEventEnvironmentName)]" sap:VirtualizedContainerService.HintSize="569,208" sap2010:WorkflowViewState.IdRef="If_3">
+                          <If Condition="[OrchestratorEnv.Equals(clientEventEnvironmentName)]" sap:VirtualizedContainerService.HintSize="568.8,209.6" sap2010:WorkflowViewState.IdRef="If_3">
                             <If.Then>
-                              <ui:Break sap:VirtualizedContainerService.HintSize="200,22" sap2010:WorkflowViewState.IdRef="Break_2" />
+                              <ui:Break sap:VirtualizedContainerService.HintSize="200,22.4" sap2010:WorkflowViewState.IdRef="Break_2" />
                             </If.Then>
                             <If.Else>
-                              <Assign sap:VirtualizedContainerService.HintSize="262,60" sap2010:WorkflowViewState.IdRef="Assign_1">
+                              <Assign sap:VirtualizedContainerService.HintSize="262.4,60" sap2010:WorkflowViewState.IdRef="Assign_1">
                                 <Assign.To>
                                   <OutArgument x:TypeArguments="x:String">[ClientId]</OutArgument>
                                 </Assign.To>
@@ -327,7 +348,7 @@
                         </Sequence>
                       </If.Then>
                       <If.Else>
-                        <ui:Break sap:VirtualizedContainerService.HintSize="200,22" sap2010:WorkflowViewState.IdRef="Break_1" />
+                        <ui:Break sap:VirtualizedContainerService.HintSize="200,22.4" sap2010:WorkflowViewState.IdRef="Break_1" />
                       </If.Else>
                     </If>
                   </Sequence>
@@ -343,7 +364,7 @@
           </scg:Dictionary>
         </sap:WorkflowViewStateService.ViewState>
       </ui:ForEachRow>
-      <ui:DatabaseDisconnect DatabaseConnection="[dbSession]" DisplayName="Disconnect" sap:VirtualizedContainerService.HintSize="1073,22" sap2010:WorkflowViewState.IdRef="DatabaseDisconnect_1" />
+      <ui:DatabaseDisconnect DatabaseConnection="[dbSession]" DisplayName="Disconnect" sap:VirtualizedContainerService.HintSize="1131.2,22.4" sap2010:WorkflowViewState.IdRef="DatabaseDisconnect_1" />
     </Sequence>
   </Sequence>
 </Activity>

@@ -2,6 +2,9 @@ TenantsDbConnectionString (Text)
 AdminTenantEventsQueueName (Text)
 EnvironmentLevelCounters (Bool)
 RobotsType (Text) // NonProduction, Attended, Unattended, Studio, Development, StudioX, Headless, StudioPro, TestAutomation
+VmRobotCredentials (Credential)
+RobotMachinesNameFilter (Text)
+RobotMachinesToKeepAlive (Text)
 
 Azure_VmImages_RG (Text)
 Azure_VMs_RG (Text)
@@ -13,6 +16,7 @@ AzureAuth_TenantID (Credential)
 AmazonAWS_AccessKeyID (Credential)
 AmazonAWS_Region (Text)
 AmazonAWS_SecretAccessKey (Credential)
+AmazonAWS_InstanceKeyPairName (Text)
 
 VMware_Datastore (Text)
 VMware_Host (Text)
