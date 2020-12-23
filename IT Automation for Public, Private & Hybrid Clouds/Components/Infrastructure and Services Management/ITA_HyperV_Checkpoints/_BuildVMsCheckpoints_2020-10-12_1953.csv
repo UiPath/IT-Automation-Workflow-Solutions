@@ -1,0 +1,8 @@
+﻿VM Name,VM Description,Checkpoint Name,Checkpoint Description,Checkpoint CreationDate
+build-uipath-machine1,"This is my server machine for running MyWebApp 24/7.
+
+Details:
+- it contains XYZ application suite 
+
+Settings:
+[AlwaysOn]=True#CLUSTER-INVARIANT#:{23739643-c2bb-4d68-a980-5b5bb96a0c8e}",build-uipath-machine1-Checkpoint_2020-10-12_1953,Temporary checkpoint taken before applying updates XYZ,10/12/2020 19:54:04

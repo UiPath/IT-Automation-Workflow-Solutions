@@ -17,11 +17,14 @@
     <x:Property Name="CountRobotMachinesCold" Type="InArgument(x:Int32)" />
     <x:Property Name="CountRobotMachinesVirtual" Type="InArgument(x:Int32)" />
     <x:Property Name="clientOrchestratorIsOnprem" Type="InArgument(x:Boolean)" />
+    <x:Property Name="clientRobotStatusToggle" Type="InArgument(x:Boolean)" />
+    <x:Property Name="clientTempEnvName" Type="InArgument(x:String)" />
+    <x:Property Name="clientEnvironment" Type="InArgument(x:String)" />
   </x:Members>
   <mva:VisualBasic.Settings>
     <x:Null />
   </mva:VisualBasic.Settings>
-  <sap:VirtualizedContainerService.HintSize>2083.2,3890.4</sap:VirtualizedContainerService.HintSize>
+  <sap:VirtualizedContainerService.HintSize>1279.2,3538.4</sap:VirtualizedContainerService.HintSize>
   <sap2010:WorkflowViewState.IdRef>Azure_SelectRobotVM_1</sap2010:WorkflowViewState.IdRef>
   <TextExpression.NamespacesForImplementation>
     <scg:List x:TypeArguments="x:String" Capacity="52">
@@ -85,7 +88,7 @@
       <AssemblyReference>UiPath.Web.Activities</AssemblyReference>
     </scg:List>
   </TextExpression.ReferencesForImplementation>
-  <Sequence DisplayName="SelectRobotVM" sap:VirtualizedContainerService.HintSize="2093.6,3685.6" sap2010:WorkflowViewState.IdRef="Sequence_1">
+  <Sequence DisplayName="SelectRobotVM" sap:VirtualizedContainerService.HintSize="1289.6,3333.6" sap2010:WorkflowViewState.IdRef="Sequence_1">
     <Sequence.Variables>
       <Variable x:TypeArguments="x:String" Name="Response" />
       <Variable x:TypeArguments="x:Int32" Name="RestponseStatus" />
@@ -104,7 +107,7 @@
         <x:Boolean x:Key="IsExpanded">True</x:Boolean>
       </scg:Dictionary>
     </sap:WorkflowViewStateService.ViewState>
-    <If Condition="[clientOrchestratorIsOnprem]" DisplayName="If orchestrator is onprem" sap:VirtualizedContainerService.HintSize="2052,52.8" sap2010:WorkflowViewState.IdRef="If_4">
+    <If Condition="[clientOrchestratorIsOnprem]" DisplayName="If orchestrator is onprem" sap:VirtualizedContainerService.HintSize="1248,52.8" sap2010:WorkflowViewState.IdRef="If_4">
       <sap:WorkflowViewStateService.ViewState>
         <scg:Dictionary x:TypeArguments="x:String, x:Object">
           <x:Boolean x:Key="IsExpanded">False</x:Boolean>
@@ -132,7 +135,7 @@
         </Assign>
       </If.Else>
     </If>
-    <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="2052,52.8" sap2010:WorkflowViewState.IdRef="LogMessage_2" Level="Info" Message="[&quot;PendingJobs (&quot;+CountPendingJobs.ToString+&quot;)  &quot; + &#xA;&quot;EventsStart (&quot;+CountQEventsStart.ToString+&quot;)  &quot; + &#xA;&quot;EventsStop (&quot;+CountQEventsStop.ToString+&quot;)  &quot; + &#xA;&quot;RobotsHot (&quot;+CountRobotMachinesHot.ToString+&quot;)  &quot; + &#xA;&quot;RobotsCold (&quot;+CountRobotMachinesCold.ToString+&quot;)  &quot;]">
+    <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="1248,52.8" sap2010:WorkflowViewState.IdRef="LogMessage_2" Level="Info" Message="[&quot;PendingJobs (&quot;+CountPendingJobs.ToString+&quot;)  &quot; + &#xA;&quot;EventsStart (&quot;+CountQEventsStart.ToString+&quot;)  &quot; + &#xA;&quot;EventsStop (&quot;+CountQEventsStop.ToString+&quot;)  &quot; + &#xA;&quot;RobotsHot (&quot;+CountRobotMachinesHot.ToString+&quot;)  &quot; + &#xA;&quot;RobotsCold (&quot;+CountRobotMachinesCold.ToString+&quot;)  &quot;]">
       <sap:WorkflowViewStateService.ViewState>
         <scg:Dictionary x:TypeArguments="x:String, x:Object">
           <x:Boolean x:Key="IsPinned">False</x:Boolean>
@@ -140,7 +143,7 @@
         </scg:Dictionary>
       </sap:WorkflowViewStateService.ViewState>
     </ui:LogMessage>
-    <Sequence DisplayName="Init Sequence" sap:VirtualizedContainerService.HintSize="2052,68.8" sap2010:WorkflowViewState.IdRef="Sequence_17">
+    <Sequence DisplayName="Init Sequence" sap:VirtualizedContainerService.HintSize="1248,68.8" sap2010:WorkflowViewState.IdRef="Sequence_17">
       <sap:WorkflowViewStateService.ViewState>
         <scg:Dictionary x:TypeArguments="x:String, x:Object">
           <x:Boolean x:Key="IsExpanded">False</x:Boolean>
@@ -180,16 +183,16 @@
         </If.Then>
       </If>
     </Sequence>
-    <If Condition="[State = &quot;Available&quot;]" DisplayName="If for Selecting Robot VMs by State" sap:VirtualizedContainerService.HintSize="2052,3165.6" sap2010:WorkflowViewState.IdRef="If_1">
+    <If Condition="[State = &quot;Available&quot;]" DisplayName="If for Selecting Robot VMs by State" sap:VirtualizedContainerService.HintSize="1248,2813.6" sap2010:WorkflowViewState.IdRef="If_1">
       <If.Then>
-        <Sequence DisplayName="Select Connected Robots to Stop" sap:VirtualizedContainerService.HintSize="1004,3016" sap2010:WorkflowViewState.IdRef="Sequence_6">
+        <Sequence DisplayName="Select Connected Robots to Stop" sap:VirtualizedContainerService.HintSize="200,68.8" sap2010:WorkflowViewState.IdRef="Sequence_6">
           <sap:WorkflowViewStateService.ViewState>
             <scg:Dictionary x:TypeArguments="x:String, x:Object">
-              <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+              <x:Boolean x:Key="IsExpanded">False</x:Boolean>
               <x:Boolean x:Key="IsPinned">False</x:Boolean>
             </scg:Dictionary>
           </sap:WorkflowViewStateService.ViewState>
-          <ui:HttpClient Body="{x:Null}" ConsumerKey="{x:Null}" ConsumerSecret="{x:Null}" ContinueOnError="{x:Null}" OAuth1Token="{x:Null}" OAuth1TokenSecret="{x:Null}" OAuth2Token="{x:Null}" Password="{x:Null}" ResourcePath="{x:Null}" ResponseHeaders="{x:Null}" Username="{x:Null}" AcceptFormat="ANY" BodyFormat="application/json" ClientCertificate="[Nothing]" ClientCertificatePassword="[Nothing]" DisplayName="Get Available Sessions HTTP Request" EndPoint="[apiUrl + &quot;/odata/Sessions?$filter=(State eq '&quot;+State+&quot;' and IsUnresponsive eq false)&quot;]" sap:VirtualizedContainerService.HintSize="962.4,22.4" sap2010:WorkflowViewState.IdRef="HttpClient_1" Method="GET" Result="[Response]" StatusCode="[RestponseStatus]" TimeoutMS="60000">
+          <ui:HttpClient Body="{x:Null}" ConsumerKey="{x:Null}" ConsumerSecret="{x:Null}" ContinueOnError="{x:Null}" OAuth1Token="{x:Null}" OAuth1TokenSecret="{x:Null}" OAuth2Token="{x:Null}" Password="{x:Null}" ResourcePath="{x:Null}" ResponseHeaders="{x:Null}" Username="{x:Null}" AcceptFormat="ANY" BodyFormat="application/json" ClientCertificate="[Nothing]" ClientCertificatePassword="[Nothing]" DisplayName="Get Available Sessions HTTP Request" EndPoint="[apiUrl + &quot;/odata/Sessions?$filter=(State eq '&quot;+State+&quot;' and IsUnresponsive eq false)&quot;]" sap:VirtualizedContainerService.HintSize="564.8,22.4" sap2010:WorkflowViewState.IdRef="HttpClient_1" Method="GET" Result="[Response]" StatusCode="[RestponseStatus]" TimeoutMS="60000">
             <ui:HttpClient.Attachments>
               <scg:Dictionary x:TypeArguments="x:String, InArgument(x:String)" />
             </ui:HttpClient.Attachments>
@@ -208,7 +211,7 @@
               <scg:Dictionary x:TypeArguments="x:String, InArgument(x:String)" />
             </ui:HttpClient.UrlSegments>
           </ui:HttpClient>
-          <ui:MultipleAssign DisplayName="Multiple Assign" sap:VirtualizedContainerService.HintSize="962.4,130.4" sap2010:WorkflowViewState.IdRef="MultipleAssign_1">
+          <ui:MultipleAssign DisplayName="Multiple Assign" sap:VirtualizedContainerService.HintSize="564.8,130.4" sap2010:WorkflowViewState.IdRef="MultipleAssign_1">
             <ui:MultipleAssign.AssignOperations>
               <scg:List x:TypeArguments="ui:AssignOperation" Capacity="4">
                 <ui:AssignOperation sap2010:WorkflowViewState.IdRef="AssignOperation_1">
@@ -216,7 +219,7 @@
                     <OutArgument x:TypeArguments="scg:List(x:String)">[RobotsAvailable]</OutArgument>
                   </ui:AssignOperation.To>
                   <ui:AssignOperation.Value>
-                    <InArgument x:TypeArguments="scg:List(x:String)">[JObject.Parse(Response)("value").Where(Function (r) UnattendedRobotsMachines.Contains(r("HostMachineName").ToString)).Select(Function(r) r("HostMachineName").ToString).ToList()]</InArgument>
+                    <InArgument x:TypeArguments="scg:List(x:String)">[JObject.Parse(Response)("value").Where(Function (r) UnattendedRobotsMachines.Contains(r("MachineName").ToString)).Select(Function(r) r("MachineName").ToString).ToList()]</InArgument>
                   </ui:AssignOperation.Value>
                 </ui:AssignOperation>
                 <ui:AssignOperation sap2010:WorkflowViewState.IdRef="AssignOperation_2">
@@ -230,15 +233,15 @@
               </scg:List>
             </ui:MultipleAssign.AssignOperations>
           </ui:MultipleAssign>
-          <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="962.4,92.8" sap2010:WorkflowViewState.IdRef="LogMessage_3" Level="Info" Message="[RobotsAvailable.Count.ToString+&quot; Robots available in &quot;+ UnattendedRobotsMachines.Count.ToString + &quot; Machines&quot;]">
+          <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="564.8,92.8" sap2010:WorkflowViewState.IdRef="LogMessage_3" Level="Info" Message="[RobotsAvailable.Count.ToString+&quot; Robots available in &quot;+ UnattendedRobotsMachines.Count.ToString + &quot; Machines&quot;]">
             <sap:WorkflowViewStateService.ViewState>
               <scg:Dictionary x:TypeArguments="x:String, x:Object">
                 <x:Boolean x:Key="IsPinned">False</x:Boolean>
               </scg:Dictionary>
             </sap:WorkflowViewStateService.ViewState>
           </ui:LogMessage>
-          <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="962.4,92.8" sap2010:WorkflowViewState.IdRef="LogMessage_6" Level="Info" Message="[&quot;Machines available (all): &quot; + JsonConvert.SerializeObject(MachinesAvailable).ToString]" />
-          <Sequence DisplayName="KeepAlive Machines - Sequence" sap:VirtualizedContainerService.HintSize="962.4,793.6" sap2010:WorkflowViewState.IdRef="Sequence_20">
+          <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="564.8,92.8" sap2010:WorkflowViewState.IdRef="LogMessage_6" Level="Info" Message="[&quot;Machines available (all): &quot; + JsonConvert.SerializeObject(MachinesAvailable).ToString]" />
+          <Sequence DisplayName="KeepAlive Machines - Sequence" sap:VirtualizedContainerService.HintSize="564.8,793.6" sap2010:WorkflowViewState.IdRef="Sequence_20">
             <Sequence.Variables>
               <Variable x:TypeArguments="x:String" Name="assetRobotMachinesToKeepAlive" />
               <Variable x:TypeArguments="scg:List(x:String)" Name="MachinesKeepAlive" />
@@ -301,7 +304,7 @@
               </If.Then>
             </If>
           </Sequence>
-          <ui:ForEach x:TypeArguments="x:String" CurrentIndex="{x:Null}" sap2010:Annotation.AnnotationText="list of&lt;machine, robotCount&gt;" DisplayName="For Each" sap:VirtualizedContainerService.HintSize="962.4,84" sap2010:WorkflowViewState.IdRef="ForEach`1_1" Values="[MachinesAvailable]">
+          <ui:ForEach x:TypeArguments="x:String" CurrentIndex="{x:Null}" sap2010:Annotation.AnnotationText="list of&lt;machine, robotCount&gt;" DisplayName="For Each" sap:VirtualizedContainerService.HintSize="564.8,84" sap2010:WorkflowViewState.IdRef="ForEach`1_1" Values="[MachinesAvailable]">
             <ui:ForEach.Body>
               <ActivityAction x:TypeArguments="x:String">
                 <ActivityAction.Argument>
@@ -330,10 +333,11 @@
               </scg:Dictionary>
             </sap:WorkflowViewStateService.ViewState>
           </ui:ForEach>
-          <Sequence DisplayName="BusyRobots Sequence" sap:VirtualizedContainerService.HintSize="962.4,636" sap2010:WorkflowViewState.IdRef="Sequence_18">
+          <Sequence DisplayName="BusyRobots Sequence" sap:VirtualizedContainerService.HintSize="564.8,636" sap2010:WorkflowViewState.IdRef="Sequence_18">
             <sap:WorkflowViewStateService.ViewState>
               <scg:Dictionary x:TypeArguments="x:String, x:Object">
                 <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                <x:Boolean x:Key="IsPinned">False</x:Boolean>
               </scg:Dictionary>
             </sap:WorkflowViewStateService.ViewState>
             <ui:HttpClient Body="{x:Null}" ConsumerKey="{x:Null}" ConsumerSecret="{x:Null}" ContinueOnError="{x:Null}" OAuth1Token="{x:Null}" OAuth1TokenSecret="{x:Null}" OAuth2Token="{x:Null}" Password="{x:Null}" ResourcePath="{x:Null}" ResponseHeaders="{x:Null}" Username="{x:Null}" AcceptFormat="ANY" BodyFormat="application/json" ClientCertificate="[Nothing]" ClientCertificatePassword="[Nothing]" DisplayName="Get Busy Sessions HTTP Request" EndPoint="[apiUrl + &quot;/odata/Sessions?$filter=(State eq 'Busy')&quot;]" sap:VirtualizedContainerService.HintSize="337.6,22.4" sap2010:WorkflowViewState.IdRef="HttpClient_5" Method="GET" Result="[ResponseForBusy]" StatusCode="[RestponseStatusForBusy]" TimeoutMS="60000">
@@ -363,7 +367,7 @@
                       <OutArgument x:TypeArguments="scg:List(x:String)">[RobotsBusy]</OutArgument>
                     </ui:AssignOperation.To>
                     <ui:AssignOperation.Value>
-                      <InArgument x:TypeArguments="scg:List(x:String)">[JObject.Parse(ResponseForBusy)("value").Select(Function(x) x("HostMachineName").ToString).Where(Function (x) UnattendedRobotsMachines.Contains(x)).ToList()]</InArgument>
+                      <InArgument x:TypeArguments="scg:List(x:String)">[JObject.Parse(ResponseForBusy)("value").Select(Function(x) x("MachineName").ToString).Where(Function (x) UnattendedRobotsMachines.Contains(x)).ToList()]</InArgument>
                     </ui:AssignOperation.Value>
                   </ui:AssignOperation>
                 </scg:List>
@@ -387,10 +391,10 @@
               <InArgument x:TypeArguments="scg:List(x:String)">[RobotsBusy]</InArgument>
             </InvokeMethod>
           </Sequence>
-          <TryCatch DisplayName="Try Catch select Robot Machines to Stop" sap:VirtualizedContainerService.HintSize="962.4,791.2" sap2010:WorkflowViewState.IdRef="TryCatch_2">
+          <TryCatch DisplayName="Try Catch select Robot Machines to Stop" sap:VirtualizedContainerService.HintSize="564.8,52.8" sap2010:WorkflowViewState.IdRef="TryCatch_2">
             <sap:WorkflowViewStateService.ViewState>
               <scg:Dictionary x:TypeArguments="x:String, x:Object">
-                <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                <x:Boolean x:Key="IsExpanded">False</x:Boolean>
                 <x:Boolean x:Key="IsPinned">False</x:Boolean>
               </scg:Dictionary>
             </sap:WorkflowViewStateService.ViewState>
@@ -521,6 +525,25 @@
               </Catch>
             </TryCatch.Catches>
           </TryCatch>
+          <If Condition="[SelectedVMsList IsNot Nothing]" DisplayName="If for performing Quarantine for selected robots" sap:VirtualizedContainerService.HintSize="564.8,237.6" sap2010:WorkflowViewState.IdRef="If_8">
+            <If.Then>
+              <ui:InvokeWorkflowFile ContinueOnError="{x:Null}" DisplayName="Invoke OrchestratorTenant_RobotQuarantineToggle workflow" sap:VirtualizedContainerService.HintSize="378.4,88" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_6" UnSafe="False" WorkflowFileName="RobotQuarantine\OrchestratorTenant_RobotQuarantineToggle.xaml">
+                <ui:InvokeWorkflowFile.Arguments>
+                  <InArgument x:TypeArguments="x:String" x:Key="Token">[Token]</InArgument>
+                  <InArgument x:TypeArguments="x:String" x:Key="TenantLogicalName">[TenantLogicalName]</InArgument>
+                  <InArgument x:TypeArguments="x:String" x:Key="TenantService">[TenantService]</InArgument>
+                  <InArgument x:TypeArguments="x:String" x:Key="Url">[Url]</InArgument>
+                  <InArgument x:TypeArguments="x:String" x:Key="TenantFolderId">[FolderId]</InArgument>
+                  <InArgument x:TypeArguments="x:Boolean" x:Key="clientOrchestratorIsOnprem">[clientOrchestratorIsOnprem]</InArgument>
+                  <InArgument x:TypeArguments="x:Boolean" x:Key="Quarantine">True</InArgument>
+                  <InArgument x:TypeArguments="scg:List(x:String)" x:Key="SelectedMachines">[SelectedVMsList]</InArgument>
+                  <InArgument x:TypeArguments="x:String" x:Key="clientEnvironment">[clientEnvironment]</InArgument>
+                  <InArgument x:TypeArguments="x:String" x:Key="TempEnvName">[clientTempEnvName]</InArgument>
+                  <InArgument x:TypeArguments="x:Boolean" x:Key="RobotStatusToggle">[clientRobotStatusToggle]</InArgument>
+                </ui:InvokeWorkflowFile.Arguments>
+              </ui:InvokeWorkflowFile>
+            </If.Then>
+          </If>
         </Sequence>
       </If.Then>
       <If.Else>
@@ -562,7 +585,7 @@
                     <OutArgument x:TypeArguments="scg:List(x:String)">[RobotsDisconnected]</OutArgument>
                   </ui:AssignOperation.To>
                   <ui:AssignOperation.Value>
-                    <InArgument x:TypeArguments="scg:List(x:String)">[JObject.Parse(Response)("value").Where(Function (r) UnattendedRobotsMachines.Contains(r("HostMachineName").ToString)).Select(Function(x) x("HostMachineName").ToString).ToList()]</InArgument>
+                    <InArgument x:TypeArguments="scg:List(x:String)">[JObject.Parse(Response)("value").Where(Function (r) UnattendedRobotsMachines.Contains(r("MachineName").ToString)).Select(Function(x) x("MachineName").ToString).ToList()]</InArgument>
                   </ui:AssignOperation.Value>
                 </ui:AssignOperation>
                 <ui:AssignOperation sap2010:WorkflowViewState.IdRef="AssignOperation_4">
@@ -703,7 +726,7 @@
                           <OutArgument x:TypeArguments="scg:List(x:String)">[SpecifiedRobotsBusyOrAvailable]</OutArgument>
                         </Assign.To>
                         <Assign.Value>
-                          <InArgument x:TypeArguments="scg:List(x:String)">[JObject.Parse(ResponseForBusyAvailable)("value").Select(Function(x) x("HostMachineName").ToString).Where(Function (x) SpecificRobotsForJobs.Contains(x) And UnattendedRobotsMachines.Contains(x)).ToList()]</InArgument>
+                          <InArgument x:TypeArguments="scg:List(x:String)">[JObject.Parse(ResponseForBusyAvailable)("value").Select(Function(x) x("MachineName").ToString).Where(Function (x) SpecificRobotsForJobs.Contains(x) And UnattendedRobotsMachines.Contains(x)).ToList()]</InArgument>
                         </Assign.Value>
                         <sap:WorkflowViewStateService.ViewState>
                           <scg:Dictionary x:TypeArguments="x:String, x:Object">
@@ -811,6 +834,6 @@
         </Sequence>
       </If.Else>
     </If>
-    <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="2052,92.8" sap2010:WorkflowViewState.IdRef="LogMessage_1" Level="Info" Message="[&quot;Selected RobotVMs (&quot;+State+&quot;) count: &quot; + SelectedVMsList.Count.ToString]" />
+    <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="1248,92.8" sap2010:WorkflowViewState.IdRef="LogMessage_1" Level="Info" Message="[&quot;Selected RobotVMs (&quot;+State+&quot;) count: &quot; + SelectedVMsList.Count.ToString]" />
   </Sequence>
 </Activity>

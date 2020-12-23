@@ -16,7 +16,7 @@
   <mva:VisualBasic.Settings>
     <x:Null />
   </mva:VisualBasic.Settings>
-  <sap:VirtualizedContainerService.HintSize>1696,2320</sap:VirtualizedContainerService.HintSize>
+  <sap:VirtualizedContainerService.HintSize>1211.2,2513.6</sap:VirtualizedContainerService.HintSize>
   <sap2010:WorkflowViewState.IdRef>ActivityBuilder_1</sap2010:WorkflowViewState.IdRef>
   <TextExpression.NamespacesForImplementation>
     <scg:List x:TypeArguments="x:String" Capacity="25">
@@ -75,7 +75,7 @@
       <AssemblyReference>UiPath.Azure.Activities</AssemblyReference>
     </scg:List>
   </TextExpression.ReferencesForImplementation>
-  <Sequence DisplayName="Main Sequence" sap:VirtualizedContainerService.HintSize="1706.4,2115.2" sap2010:WorkflowViewState.IdRef="Sequence_3">
+  <Sequence DisplayName="Main Sequence" sap:VirtualizedContainerService.HintSize="1032.8,2308.8" sap2010:WorkflowViewState.IdRef="Sequence_3">
     <Sequence.Variables>
       <Variable x:TypeArguments="x:String" Name="Azure_TenantId" />
       <Variable x:TypeArguments="x:String" Name="Azure_ClientId" />
@@ -90,7 +90,7 @@
         <x:Boolean x:Key="IsExpanded">True</x:Boolean>
       </scg:Dictionary>
     </sap:WorkflowViewStateService.ViewState>
-    <Sequence DisplayName="Get Azure Credentials from Assets Sequence" sap:VirtualizedContainerService.HintSize="1664.8,566.4" sap2010:WorkflowViewState.IdRef="Sequence_1">
+    <Sequence DisplayName="Get Azure Credentials from Assets Sequence" sap:VirtualizedContainerService.HintSize="991.2,68.8" sap2010:WorkflowViewState.IdRef="Sequence_1">
       <Sequence.Variables>
         <Variable x:TypeArguments="ss:SecureString" Name="azure_clientsecret_secure" />
         <Variable x:TypeArguments="ss:SecureString" Name="azure_clientid_secure" />
@@ -98,7 +98,7 @@
       </Sequence.Variables>
       <sap:WorkflowViewStateService.ViewState>
         <scg:Dictionary x:TypeArguments="x:String, x:Object">
-          <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+          <x:Boolean x:Key="IsExpanded">False</x:Boolean>
           <x:Boolean x:Key="IsPinned">False</x:Boolean>
         </scg:Dictionary>
       </sap:WorkflowViewStateService.ViewState>
@@ -152,22 +152,22 @@
         </sap:WorkflowViewStateService.ViewState>
       </ui:MultipleAssign>
     </Sequence>
-    <uaa:AzureScope ClientId="[Azure_ClientId]" ClientSecret="[new System.Net.NetworkCredential(&quot;&quot;,Azure_ClientSecret).SecurePassword]" DisplayName="Azure Scope" EnvironmentType="Global" sap:VirtualizedContainerService.HintSize="1664.8,1416" sap2010:WorkflowViewState.IdRef="AzureScope_2" SubscriptionId="[Azure_SubscriptionID]" TenantId="[Azure_TenantId]">
+    <uaa:AzureScope ClientId="[Azure_ClientId]" ClientSecret="[new System.Net.NetworkCredential(&quot;&quot;,Azure_ClientSecret).SecurePassword]" DisplayName="Azure Scope" EnvironmentType="Global" sap:VirtualizedContainerService.HintSize="991.2,2107.2" sap2010:WorkflowViewState.IdRef="AzureScope_2" SubscriptionId="[Azure_SubscriptionID]" TenantId="[Azure_TenantId]">
       <uaa:AzureScope.Body>
         <ActivityAction x:TypeArguments="uac:AzureCmd">
           <ActivityAction.Argument>
             <DelegateInArgument x:TypeArguments="uac:AzureCmd" Name="AzureScopePropertyTag" />
           </ActivityAction.Argument>
-          <Sequence DisplayName="Azure Scope Do - Sequence" sap:VirtualizedContainerService.HintSize="1631.2,1329.6" sap2010:WorkflowViewState.IdRef="Sequence_19">
+          <Sequence DisplayName="Azure Scope Do - Sequence" sap:VirtualizedContainerService.HintSize="957.6,2020.8" sap2010:WorkflowViewState.IdRef="Sequence_19">
             <sap:WorkflowViewStateService.ViewState>
               <scg:Dictionary x:TypeArguments="x:String, x:Object">
                 <x:Boolean x:Key="IsExpanded">True</x:Boolean>
               </scg:Dictionary>
             </sap:WorkflowViewStateService.ViewState>
-            <Sequence DisplayName="Get VM Sequence" sap:VirtualizedContainerService.HintSize="1589.6,68.8" sap2010:WorkflowViewState.IdRef="Sequence_5">
+            <Sequence DisplayName="Get VM Sequence" sap:VirtualizedContainerService.HintSize="916,1353.6" sap2010:WorkflowViewState.IdRef="Sequence_5">
               <sap:WorkflowViewStateService.ViewState>
                 <scg:Dictionary x:TypeArguments="x:String, x:Object">
-                  <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+                  <x:Boolean x:Key="IsExpanded">True</x:Boolean>
                   <x:Boolean x:Key="IsPinned">False</x:Boolean>
                 </scg:Dictionary>
               </sap:WorkflowViewStateService.ViewState>
@@ -203,7 +203,7 @@
                             <uaa:AzureGetVirtualMachineList Timeout="{x:Null}" DisplayName="Get VM List" sap:VirtualizedContainerService.HintSize="663.2,22.4" sap2010:WorkflowViewState.IdRef="AzureGetVirtualMachineList_1" IncludeNetworkingDetails="False" PowerState="All" ResourceGroupName="[rg]" VirtualMachineList="[RgVMs]" />
                             <If Condition="[Not (RgVMs Is Nothing)]" sap:VirtualizedContainerService.HintSize="663.2,647.2" sap2010:WorkflowViewState.IdRef="If_6">
                               <If.Then>
-                                <If Condition="[RgVMs.Any(Function(v) v.Name.Equals(VM_Name))]" sap:VirtualizedContainerService.HintSize="519.2,497.6" sap2010:WorkflowViewState.IdRef="If_5">
+                                <If Condition="[RgVMs.Any(Function(v) v.Name.ToUpper.Equals(VM_Name.ToUpper))]" sap:VirtualizedContainerService.HintSize="519.2,497.6" sap2010:WorkflowViewState.IdRef="If_5">
                                   <If.Then>
                                     <Sequence sap:VirtualizedContainerService.HintSize="375.2,348" sap2010:WorkflowViewState.IdRef="Sequence_14">
                                       <sap:WorkflowViewStateService.ViewState>
@@ -217,7 +217,7 @@
                                           <OutArgument x:TypeArguments="uam:VirtualMachine">[VM_Object]</OutArgument>
                                         </Assign.To>
                                         <Assign.Value>
-                                          <InArgument x:TypeArguments="uam:VirtualMachine">[RgVMs.First(Function (v) v.Name.Equals(VM_Name))]</InArgument>
+                                          <InArgument x:TypeArguments="uam:VirtualMachine">[RgVMs.First(Function (v) v.Name.ToUpper.Equals(VM_Name.ToUpper))]</InArgument>
                                         </Assign.Value>
                                       </Assign>
                                       <ui:Break sap:VirtualizedContainerService.HintSize="333.6,22.4" sap2010:WorkflowViewState.IdRef="Break_1" />
@@ -257,7 +257,7 @@
                 </TryCatch.Catches>
               </TryCatch>
             </Sequence>
-            <If Condition="[VM_Object IsNot Nothing]" DisplayName="If VM found" sap:VirtualizedContainerService.HintSize="1589.6,1128" sap2010:WorkflowViewState.IdRef="If_4">
+            <If Condition="[VM_Object IsNot Nothing]" DisplayName="If VM found" sap:VirtualizedContainerService.HintSize="916,534.4" sap2010:WorkflowViewState.IdRef="If_4">
               <sap:WorkflowViewStateService.ViewState>
                 <scg:Dictionary x:TypeArguments="x:String, x:Object">
                   <x:Boolean x:Key="IsExpanded">True</x:Boolean>
@@ -265,13 +265,13 @@
                 </scg:Dictionary>
               </sap:WorkflowViewStateService.ViewState>
               <If.Then>
-                <Sequence sap:VirtualizedContainerService.HintSize="1212,978.4" sap2010:WorkflowViewState.IdRef="Sequence_16">
+                <Sequence sap:VirtualizedContainerService.HintSize="538.4,384.8" sap2010:WorkflowViewState.IdRef="Sequence_16">
                   <sap:WorkflowViewStateService.ViewState>
                     <scg:Dictionary x:TypeArguments="x:String, x:Object">
                       <x:Boolean x:Key="IsExpanded">True</x:Boolean>
                     </scg:Dictionary>
                   </sap:WorkflowViewStateService.ViewState>
-                  <ui:InvokeWorkflowFile ContinueOnError="{x:Null}" DisplayName="Invoke OrchestratorTenant_GetPendingJobs workflow" sap:VirtualizedContainerService.HintSize="1170.4,88" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_2" UnSafe="False" WorkflowFileName="OrchestratorTenant_GetPendingJobs.xaml">
+                  <ui:InvokeWorkflowFile ContinueOnError="{x:Null}" DisplayName="Invoke OrchestratorTenant_GetPendingJobs workflow" sap:VirtualizedContainerService.HintSize="496.8,88" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_2" UnSafe="False" WorkflowFileName="OrchestratorTenant_GetPendingJobs.xaml">
                     <ui:InvokeWorkflowFile.Arguments>
                       <InArgument x:TypeArguments="x:String" x:Key="Token">[Token]</InArgument>
                       <InArgument x:TypeArguments="x:String" x:Key="TenantLogicalName">[TenantLogicalName]</InArgument>
@@ -286,7 +286,7 @@
                       <InArgument x:TypeArguments="scg:List(x:String)" x:Key="unattendedRobotsMachines">[unattendedRobotsMachines]</InArgument>
                     </ui:InvokeWorkflowFile.Arguments>
                   </ui:InvokeWorkflowFile>
-                  <Switch x:TypeArguments="x:String" DisplayName="VM Action - Switch" Expression="[Action_StartStopDeallocateDelete]" sap:VirtualizedContainerService.HintSize="1170.4,757.6" sap2010:WorkflowViewState.IdRef="Switch`1_1">
+                  <Switch x:TypeArguments="x:String" DisplayName="VM Action - Switch" Expression="[Action_StartStopDeallocateDelete]" sap:VirtualizedContainerService.HintSize="496.8,164" sap2010:WorkflowViewState.IdRef="Switch`1_1">
                     <Switch.Default>
                       <WriteLine DisplayName="Write Line" sap:VirtualizedContainerService.HintSize="210.4,62.4" sap2010:WorkflowViewState.IdRef="WriteLine_12" Text="[&quot;Action &lt;&quot; + Action_StartStopDeallocateDelete + &quot;&gt; not available.&quot;]" />
                     </Switch.Default>

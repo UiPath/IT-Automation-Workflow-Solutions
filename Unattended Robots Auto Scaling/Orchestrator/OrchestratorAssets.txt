@@ -1,5 +1,7 @@
 TenantsDbConnectionString (Text)
 AdminTenantEventsQueueName (Text)
+Common_RobotStatusToggle (Bool)
+Common_TemporaryEnvironmentName (Text)
 EnvironmentLevelCounters (Bool)
 RobotsType (Text) // NonProduction, Attended, Unattended, Studio, Development, StudioX, Headless, StudioPro, TestAutomation
 VmRobotCredentials (Credential)

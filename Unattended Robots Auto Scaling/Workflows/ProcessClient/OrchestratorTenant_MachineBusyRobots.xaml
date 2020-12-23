@@ -13,7 +13,7 @@
   <mva:VisualBasic.Settings>
     <x:Null />
   </mva:VisualBasic.Settings>
-  <sap:VirtualizedContainerService.HintSize>1306.4,864</sap:VirtualizedContainerService.HintSize>
+  <sap:VirtualizedContainerService.HintSize>1211.2,864</sap:VirtualizedContainerService.HintSize>
   <sap2010:WorkflowViewState.IdRef>OrchestratorTenant_GetFolderId_1</sap2010:WorkflowViewState.IdRef>
   <TextExpression.NamespacesForImplementation>
     <scg:List x:TypeArguments="x:String" Capacity="42">
@@ -141,7 +141,7 @@
                 <OutArgument x:TypeArguments="scg:List(x:String)">[RobotsBusy]</OutArgument>
               </ui:AssignOperation.To>
               <ui:AssignOperation.Value>
-                <InArgument x:TypeArguments="scg:List(x:String)">[JObject.Parse(ResponseForBusy)("value").Select(Function(x) x("HostMachineName").ToString).Where(Function (x) x.Equals(MachineName)).ToList()]</InArgument>
+                <InArgument x:TypeArguments="scg:List(x:String)">[JObject.Parse(ResponseForBusy)("value").Select(Function(x) x("HostMachineName").ToString.ToUpper).Where(Function (x) x.Equals(MachineName.ToUpper)).ToList()]</InArgument>
               </ui:AssignOperation.Value>
             </ui:AssignOperation>
             <ui:AssignOperation sap2010:WorkflowViewState.IdRef="AssignOperation_2">

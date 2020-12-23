@@ -5,10 +5,10 @@
   <mva:VisualBasic.Settings>
     <x:Null />
   </mva:VisualBasic.Settings>
-  <sap:VirtualizedContainerService.HintSize>1409.6,3427.2</sap:VirtualizedContainerService.HintSize>
+  <sap:VirtualizedContainerService.HintSize>1544.8,2822.4</sap:VirtualizedContainerService.HintSize>
   <sap2010:WorkflowViewState.IdRef>ActivityBuilder_1</sap2010:WorkflowViewState.IdRef>
   <TextExpression.NamespacesForImplementation>
-    <scg:List x:TypeArguments="x:String" Capacity="24">
+    <scg:List x:TypeArguments="x:String" Capacity="48">
       <x:String>System.Activities</x:String>
       <x:String>System.Activities.Statements</x:String>
       <x:String>System.Activities.Expressions</x:String>
@@ -68,7 +68,7 @@
       <x:Boolean x:Key="ShouldExpandAll">True</x:Boolean>
     </scg:Dictionary>
   </sap:WorkflowViewStateService.ViewState>
-  <Sequence DisplayName="Root" sap:VirtualizedContainerService.HintSize="1188,3222.4" sap2010:WorkflowViewState.IdRef="Sequence_5">
+  <Sequence DisplayName="Root" sap:VirtualizedContainerService.HintSize="1555.2,2657.6" sap2010:WorkflowViewState.IdRef="Sequence_5">
     <Sequence.Variables>
       <Variable x:TypeArguments="ui:QueueItem" Name="QueueItem" />
       <Variable x:TypeArguments="x:String" Name="QueueName" />
@@ -115,13 +115,15 @@
       <Variable x:TypeArguments="scg:List(x:String)" Name="clientEnvironmentReleasesIDsList" />
       <Variable x:TypeArguments="x:String" sap2010:Annotation.AnnotationText="should be used when debugging across folders" Name="AdminTenantFolder" />
       <Variable x:TypeArguments="scg:List(x:String)" Name="clientEnvironmentReleases" />
+      <Variable x:TypeArguments="x:String" Name="clientTempEnvName" />
+      <Variable x:TypeArguments="x:Boolean" Name="clientRobotStatusToggle" />
     </Sequence.Variables>
     <sap:WorkflowViewStateService.ViewState>
       <scg:Dictionary x:TypeArguments="x:String, x:Object">
         <x:Boolean x:Key="IsExpanded">True</x:Boolean>
       </scg:Dictionary>
     </sap:WorkflowViewStateService.ViewState>
-    <Sequence DisplayName="Initialization Sequence" sap:VirtualizedContainerService.HintSize="1146.4,68.8" sap2010:WorkflowViewState.IdRef="Sequence_7">
+    <Sequence DisplayName="Initialization Sequence" sap:VirtualizedContainerService.HintSize="1513.6,68.8" sap2010:WorkflowViewState.IdRef="Sequence_7">
       <sap:WorkflowViewStateService.ViewState>
         <scg:Dictionary x:TypeArguments="x:String, x:Object">
           <x:Boolean x:Key="IsExpanded">False</x:Boolean>
@@ -148,31 +150,47 @@
           <OutArgument x:TypeArguments="x:String">[clientRobotsType]</OutArgument>
         </ui:GetRobotAsset.Value>
       </ui:GetRobotAsset>
+      <ui:GetRobotAsset TimeoutMS="{x:Null}" AssetName="Common_RobotStatusToggle" DisplayName="Common_RobotStatusToggle - Get Asset" sap:VirtualizedContainerService.HintSize="200,22.4" sap2010:WorkflowViewState.IdRef="GetRobotAsset_6">
+        <ui:GetRobotAsset.Value>
+          <OutArgument x:TypeArguments="x:Boolean">[clientRobotStatusToggle]</OutArgument>
+        </ui:GetRobotAsset.Value>
+      </ui:GetRobotAsset>
+      <ui:GetRobotAsset TimeoutMS="{x:Null}" AssetName="Common_TemporaryEnvironmentName" DisplayName="Common_TemporaryEnvironmentName - Get Asset" sap:VirtualizedContainerService.HintSize="200,22.4" sap2010:WorkflowViewState.IdRef="GetRobotAsset_7">
+        <ui:GetRobotAsset.Value>
+          <OutArgument x:TypeArguments="x:String">[clientTempEnvName]</OutArgument>
+        </ui:GetRobotAsset.Value>
+      </ui:GetRobotAsset>
     </Sequence>
-    <If Condition="[SpecifiedClientId &lt; 0]" DisplayName="If Mode = Events (not Pooling)" sap:VirtualizedContainerService.HintSize="1146.4,774.4" sap2010:WorkflowViewState.IdRef="If_12">
+    <If Condition="[SpecifiedClientId &lt; 0]" DisplayName="If Mode = Events (not Pooling)" sap:VirtualizedContainerService.HintSize="1513.6,52.8" sap2010:WorkflowViewState.IdRef="If_12">
+      <sap:WorkflowViewStateService.ViewState>
+        <scg:Dictionary x:TypeArguments="x:String, x:Object">
+          <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+          <x:Boolean x:Key="IsPinned">True</x:Boolean>
+        </scg:Dictionary>
+      </sap:WorkflowViewStateService.ViewState>
       <If.Then>
-        <Sequence sap:VirtualizedContainerService.HintSize="524.8,624.8" sap2010:WorkflowViewState.IdRef="Sequence_33">
+        <Sequence sap:VirtualizedContainerService.HintSize="752.8,1231.2" sap2010:WorkflowViewState.IdRef="Sequence_33">
           <sap:WorkflowViewStateService.ViewState>
             <scg:Dictionary x:TypeArguments="x:String, x:Object">
               <x:Boolean x:Key="IsExpanded">True</x:Boolean>
             </scg:Dictionary>
           </sap:WorkflowViewStateService.ViewState>
-          <Sequence DisplayName="Get Events for a Tenant" sap:VirtualizedContainerService.HintSize="483.2,254.4" sap2010:WorkflowViewState.IdRef="Sequence_3">
+          <Sequence DisplayName="Get Events for a Tenant" sap:VirtualizedContainerService.HintSize="711.2,856" sap2010:WorkflowViewState.IdRef="Sequence_3">
             <sap:WorkflowViewStateService.ViewState>
               <scg:Dictionary x:TypeArguments="x:String, x:Object">
                 <x:Boolean x:Key="IsExpanded">True</x:Boolean>
                 <x:Boolean x:Key="IsPinned">False</x:Boolean>
               </scg:Dictionary>
             </sap:WorkflowViewStateService.ViewState>
-            <Sequence DisplayName="Get All New Queue Items" sap:VirtualizedContainerService.HintSize="200,68.8" sap2010:WorkflowViewState.IdRef="Sequence_15">
+            <Sequence DisplayName="Get All New Queue Items" sap:VirtualizedContainerService.HintSize="524.8,670.4" sap2010:WorkflowViewState.IdRef="Sequence_15">
               <Sequence.Variables>
                 <Variable x:TypeArguments="x:Int32" Name="skipQueueItems" />
                 <Variable x:TypeArguments="scg:IEnumerable(ui:QueueItem)" Default="[{}]" Name="tempQueueItems" />
               </Sequence.Variables>
               <sap:WorkflowViewStateService.ViewState>
                 <scg:Dictionary x:TypeArguments="x:String, x:Object">
-                  <x:Boolean x:Key="IsExpanded">False</x:Boolean>
-                  <x:Boolean x:Key="IsPinned">True</x:Boolean>
+                  <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                  <x:Boolean x:Key="IsPinned">False</x:Boolean>
                 </scg:Dictionary>
               </sap:WorkflowViewStateService.ViewState>
               <Assign sap:VirtualizedContainerService.HintSize="483.2,60" sap2010:WorkflowViewState.IdRef="Assign_2">
@@ -218,7 +236,7 @@
                 </Sequence>
               </DoWhile>
             </Sequence>
-            <If Condition="[QueueItems.Count &gt; 0]" DisplayName="If New Queue Items" sap:VirtualizedContainerService.HintSize="200,52.8" sap2010:WorkflowViewState.IdRef="If_4">
+            <If Condition="[QueueItems.Count &gt; 0]" DisplayName="If New Queue Items" sap:VirtualizedContainerService.HintSize="524.8,52.8" sap2010:WorkflowViewState.IdRef="If_4">
               <sap:WorkflowViewStateService.ViewState>
                 <scg:Dictionary x:TypeArguments="x:String, x:Object">
                   <x:Boolean x:Key="IsExpanded">False</x:Boolean>
@@ -426,7 +444,7 @@
               </If.Else>
             </If>
           </Sequence>
-          <If Condition="[Not (clientTenantId Is Nothing)]" DisplayName="If Client Found" sap:VirtualizedContainerService.HintSize="483.2,237.6" sap2010:WorkflowViewState.IdRef="If_13">
+          <If Condition="[clientTenantId IsNot Nothing]" DisplayName="If Client Found" sap:VirtualizedContainerService.HintSize="711.2,242.4" sap2010:WorkflowViewState.IdRef="If_13">
             <If.Then>
               <ui:InvokeWorkflowFile ContinueOnError="{x:Null}" DisplayName="GetAuthInfo - Invoke Workflow File" sap:VirtualizedContainerService.HintSize="333.6,88" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_12" UnSafe="False" WorkflowFileName="OrchestratorTenant_GetDbInfo.xaml">
                 <ui:InvokeWorkflowFile.Arguments>
@@ -456,6 +474,16 @@
                 </ui:InvokeWorkflowFile.Arguments>
               </ui:InvokeWorkflowFile>
             </If.Then>
+            <If.Else>
+              <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="333.6,92.8" sap2010:WorkflowViewState.IdRef="LogMessage_10" Level="Info" Message="[&quot;Event's Tenant + Folder not found in managed DB list.&quot;]">
+                <sap:WorkflowViewStateService.ViewState>
+                  <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                    <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                    <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                  </scg:Dictionary>
+                </sap:WorkflowViewStateService.ViewState>
+              </ui:LogMessage>
+            </If.Else>
           </If>
         </Sequence>
       </If.Then>
@@ -489,7 +517,7 @@
         </ui:InvokeWorkflowFile>
       </If.Else>
     </If>
-    <If Condition="[Not (clientTenantId Is Nothing)]" DisplayName="If Tenant Found" sap:VirtualizedContainerService.HintSize="1146.4,2206.4" sap2010:WorkflowViewState.IdRef="If_5">
+    <If Condition="[clientTenantId IsNot Nothing]" DisplayName="If Tenant Found" sap:VirtualizedContainerService.HintSize="1513.6,2363.2" sap2010:WorkflowViewState.IdRef="If_5">
       <sap:WorkflowViewStateService.ViewState>
         <scg:Dictionary x:TypeArguments="x:String, x:Object">
           <x:Boolean x:Key="IsExpanded">True</x:Boolean>
@@ -497,18 +525,18 @@
         </scg:Dictionary>
       </sap:WorkflowViewStateService.ViewState>
       <If.Then>
-        <Sequence DisplayName="Check Client Tenant Info - Sequence" sap:VirtualizedContainerService.HintSize="1002.4,2056.8" sap2010:WorkflowViewState.IdRef="Sequence_8">
+        <Sequence DisplayName="Check Client Tenant Info - Sequence" sap:VirtualizedContainerService.HintSize="1136,2213.6" sap2010:WorkflowViewState.IdRef="Sequence_8">
           <sap:WorkflowViewStateService.ViewState>
             <scg:Dictionary x:TypeArguments="x:String, x:Object">
               <x:Boolean x:Key="IsExpanded">True</x:Boolean>
               <x:Boolean x:Key="IsPinned">False</x:Boolean>
             </scg:Dictionary>
           </sap:WorkflowViewStateService.ViewState>
-          <If Condition="[string.IsNullOrWhiteSpace(clientService)]" DisplayName="If client orchestrator is onprem" sap:VirtualizedContainerService.HintSize="960.8,52.8" sap2010:WorkflowViewState.IdRef="If_8">
+          <If Condition="[string.IsNullOrWhiteSpace(clientService)]" DisplayName="If client orchestrator is onprem" sap:VirtualizedContainerService.HintSize="1094.4,209.6" sap2010:WorkflowViewState.IdRef="If_8">
             <sap:WorkflowViewStateService.ViewState>
               <scg:Dictionary x:TypeArguments="x:String, x:Object">
-                <x:Boolean x:Key="IsExpanded">False</x:Boolean>
-                <x:Boolean x:Key="IsPinned">True</x:Boolean>
+                <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                <x:Boolean x:Key="IsPinned">False</x:Boolean>
               </scg:Dictionary>
             </sap:WorkflowViewStateService.ViewState>
             <If.Then>
@@ -532,7 +560,7 @@
               </Assign>
             </If.Else>
           </If>
-          <If Condition="[Not( clientId Is Nothing)]" DisplayName="If Tenant + Folder in DB" sap:VirtualizedContainerService.HintSize="960.8,1738.4" sap2010:WorkflowViewState.IdRef="If_7">
+          <If Condition="[clientId IsNot Nothing]" DisplayName="If Tenant + Folder in DB" sap:VirtualizedContainerService.HintSize="1094.4,1738.4" sap2010:WorkflowViewState.IdRef="If_7">
             <sap:WorkflowViewStateService.ViewState>
               <scg:Dictionary x:TypeArguments="x:String, x:Object">
                 <x:Boolean x:Key="IsExpanded">True</x:Boolean>
@@ -755,7 +783,7 @@
                       </scg:Dictionary>
                     </sap:WorkflowViewStateService.ViewState>
                     <Flowchart.StartNode>
-                      <x:Reference>__ReferenceID4</x:Reference>
+                      <x:Reference>__ReferenceID5</x:Reference>
                     </Flowchart.StartNode>
                     <FlowStep x:Name="__ReferenceID0">
                       <sap:WorkflowViewStateService.ViewState>
@@ -806,116 +834,50 @@
                                 </ui:InvokeWorkflowFile>
                                 <ui:InvokeWorkflowFile ContinueOnError="{x:Null}" x:Key="vmware" DisplayName="Invoke VMware_VM_StartStop workflow" sap:VirtualizedContainerService.HintSize="351.2,88" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_13" UnSafe="False" WorkflowFileName="Infrastructure\VMware\VMware_VM_StartStop.xaml">
                                   <ui:InvokeWorkflowFile.Arguments>
-                                    <InArgument x:TypeArguments="x:String" x:Key="VM_Name">
-                                      <mva:VisualBasicValue x:TypeArguments="x:String" ExpressionText="vmName" />
-                                    </InArgument>
-                                    <InArgument x:TypeArguments="x:String" x:Key="Action_StartStopDelete">
-                                      <Literal x:TypeArguments="x:String">start</Literal>
-                                    </InArgument>
-                                    <InArgument x:TypeArguments="x:String" x:Key="Token">
-                                      <mva:VisualBasicValue x:TypeArguments="x:String" ExpressionText="clientToken" />
-                                    </InArgument>
-                                    <InArgument x:TypeArguments="x:String" x:Key="TenantLogicalName">
-                                      <mva:VisualBasicValue x:TypeArguments="x:String" ExpressionText="clientLogicalName" />
-                                    </InArgument>
-                                    <InArgument x:TypeArguments="x:String" x:Key="TenantService">
-                                      <mva:VisualBasicValue x:TypeArguments="x:String" ExpressionText="clientService" />
-                                    </InArgument>
-                                    <InArgument x:TypeArguments="x:String" x:Key="Url">
-                                      <mva:VisualBasicValue x:TypeArguments="x:String" ExpressionText="clientUrl" />
-                                    </InArgument>
-                                    <InArgument x:TypeArguments="x:Boolean" x:Key="clientOrchestratorIsOnprem">
-                                      <mva:VisualBasicValue x:TypeArguments="x:Boolean" ExpressionText="clientOrchestratorIsOnPrem" />
-                                    </InArgument>
-                                    <InArgument x:TypeArguments="x:String" x:Key="FolderId">
-                                      <mva:VisualBasicValue x:TypeArguments="x:String" ExpressionText="clientFolderId" />
-                                    </InArgument>
-                                    <InArgument x:TypeArguments="x:Boolean" x:Key="clientEnvironmentLevelCounters">
-                                      <mva:VisualBasicValue x:TypeArguments="x:Boolean" ExpressionText="clientEnvironmentLevelCounters" />
-                                    </InArgument>
-                                    <InArgument x:TypeArguments="scg:List(x:String)" x:Key="clientEnvironmentReleases">
-                                      <mva:VisualBasicValue x:TypeArguments="scg:List(x:String)" ExpressionText="clientEnvironmentReleases" />
-                                    </InArgument>
+                                    <InArgument x:TypeArguments="x:String" x:Key="VM_Name">[vmName]</InArgument>
+                                    <InArgument x:TypeArguments="x:String" x:Key="Action_StartStopDelete">start</InArgument>
+                                    <InArgument x:TypeArguments="x:String" x:Key="Token">[clientToken]</InArgument>
+                                    <InArgument x:TypeArguments="x:String" x:Key="TenantLogicalName">[clientLogicalName]</InArgument>
+                                    <InArgument x:TypeArguments="x:String" x:Key="TenantService">[clientService]</InArgument>
+                                    <InArgument x:TypeArguments="x:String" x:Key="Url">[clientUrl]</InArgument>
+                                    <InArgument x:TypeArguments="x:Boolean" x:Key="clientOrchestratorIsOnprem">[clientOrchestratorIsOnPrem]</InArgument>
+                                    <InArgument x:TypeArguments="x:String" x:Key="FolderId">[clientFolderId]</InArgument>
+                                    <InArgument x:TypeArguments="x:Boolean" x:Key="clientEnvironmentLevelCounters">[clientEnvironmentLevelCounters]</InArgument>
+                                    <InArgument x:TypeArguments="scg:List(x:String)" x:Key="clientEnvironmentReleases">[clientEnvironmentReleases]</InArgument>
                                     <OutArgument x:TypeArguments="scg:List(x:String)" x:Key="specificRobotsMachines" />
-                                    <InArgument x:TypeArguments="scg:List(x:String)" x:Key="unattendedRobotsMachines">
-                                      <mva:VisualBasicValue x:TypeArguments="scg:List(x:String)" ExpressionText="clientUnattendedRobotsMachines" />
-                                    </InArgument>
+                                    <InArgument x:TypeArguments="scg:List(x:String)" x:Key="unattendedRobotsMachines">[clientUnattendedRobotsMachines]</InArgument>
                                   </ui:InvokeWorkflowFile.Arguments>
                                 </ui:InvokeWorkflowFile>
                                 <ui:InvokeWorkflowFile ContinueOnError="{x:Null}" x:Key="aws" DisplayName="Invoke AWS_VM_StartStop workflow" sap:VirtualizedContainerService.HintSize="361.6,88" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_15" UnSafe="False" WorkflowFileName="Infrastructure\Amazon AWS\AWS_VM_StartStop.xaml">
                                   <ui:InvokeWorkflowFile.Arguments>
-                                    <InArgument x:TypeArguments="x:String" x:Key="VM_Name">
-                                      <mva:VisualBasicValue x:TypeArguments="x:String" ExpressionText="vmName" />
-                                    </InArgument>
-                                    <InArgument x:TypeArguments="x:String" x:Key="Action_StartStopDeallocateDelete">
-                                      <Literal x:TypeArguments="x:String">start</Literal>
-                                    </InArgument>
-                                    <InArgument x:TypeArguments="x:String" x:Key="Token">
-                                      <mva:VisualBasicValue x:TypeArguments="x:String" ExpressionText="clientToken" />
-                                    </InArgument>
-                                    <InArgument x:TypeArguments="x:String" x:Key="TenantLogicalName">
-                                      <mva:VisualBasicValue x:TypeArguments="x:String" ExpressionText="clientLogicalName" />
-                                    </InArgument>
-                                    <InArgument x:TypeArguments="x:String" x:Key="TenantService">
-                                      <mva:VisualBasicValue x:TypeArguments="x:String" ExpressionText="clientService" />
-                                    </InArgument>
-                                    <InArgument x:TypeArguments="x:String" x:Key="Url">
-                                      <mva:VisualBasicValue x:TypeArguments="x:String" ExpressionText="clientUrl" />
-                                    </InArgument>
-                                    <InArgument x:TypeArguments="x:Boolean" x:Key="clientOrchestratorIsOnprem">
-                                      <mva:VisualBasicValue x:TypeArguments="x:Boolean" ExpressionText="clientOrchestratorIsOnPrem" />
-                                    </InArgument>
-                                    <InArgument x:TypeArguments="x:String" x:Key="FolderId">
-                                      <mva:VisualBasicValue x:TypeArguments="x:String" ExpressionText="clientFolderId" />
-                                    </InArgument>
-                                    <InArgument x:TypeArguments="x:Boolean" x:Key="clientEnvironmentLevelCounters">
-                                      <mva:VisualBasicValue x:TypeArguments="x:Boolean" ExpressionText="clientEnvironmentLevelCounters" />
-                                    </InArgument>
-                                    <InArgument x:TypeArguments="scg:List(x:String)" x:Key="clientEnvironmentReleases">
-                                      <mva:VisualBasicValue x:TypeArguments="scg:List(x:String)" ExpressionText="clientEnvironmentReleases" />
-                                    </InArgument>
+                                    <InArgument x:TypeArguments="x:String" x:Key="VM_Name">[vmName]</InArgument>
+                                    <InArgument x:TypeArguments="x:String" x:Key="Action_StartStopDeallocateDelete">start</InArgument>
+                                    <InArgument x:TypeArguments="x:String" x:Key="Token">[clientToken]</InArgument>
+                                    <InArgument x:TypeArguments="x:String" x:Key="TenantLogicalName">[clientLogicalName]</InArgument>
+                                    <InArgument x:TypeArguments="x:String" x:Key="TenantService">[clientService]</InArgument>
+                                    <InArgument x:TypeArguments="x:String" x:Key="Url">[clientUrl]</InArgument>
+                                    <InArgument x:TypeArguments="x:Boolean" x:Key="clientOrchestratorIsOnprem">[clientOrchestratorIsOnPrem]</InArgument>
+                                    <InArgument x:TypeArguments="x:String" x:Key="FolderId">[clientFolderId]</InArgument>
+                                    <InArgument x:TypeArguments="x:Boolean" x:Key="clientEnvironmentLevelCounters">[clientEnvironmentLevelCounters]</InArgument>
+                                    <InArgument x:TypeArguments="scg:List(x:String)" x:Key="clientEnvironmentReleases">[clientEnvironmentReleases]</InArgument>
                                     <OutArgument x:TypeArguments="scg:List(x:String)" x:Key="specificRobotsMachines" />
-                                    <InArgument x:TypeArguments="scg:List(x:String)" x:Key="unattendedRobotsMachines">
-                                      <mva:VisualBasicValue x:TypeArguments="scg:List(x:String)" ExpressionText="clientUnattendedRobotsMachines" />
-                                    </InArgument>
+                                    <InArgument x:TypeArguments="scg:List(x:String)" x:Key="unattendedRobotsMachines">[clientUnattendedRobotsMachines]</InArgument>
                                   </ui:InvokeWorkflowFile.Arguments>
                                 </ui:InvokeWorkflowFile>
                                 <ui:InvokeWorkflowFile ContinueOnError="{x:Null}" x:Key="citrix" DisplayName="Invoke Citrix_VM_StartStop workflow" sap:VirtualizedContainerService.HintSize="333.6,88" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_19" UnSafe="False" WorkflowFileName="Infrastructure\Citrix\Citrix_VM_StartStop.xaml">
                                   <ui:InvokeWorkflowFile.Arguments>
-                                    <InArgument x:TypeArguments="x:String" x:Key="VM_Name">
-                                      <mva:VisualBasicValue x:TypeArguments="x:String" ExpressionText="vmName" />
-                                    </InArgument>
-                                    <InArgument x:TypeArguments="x:String" x:Key="Action_StartStop">
-                                      <Literal x:TypeArguments="x:String">start</Literal>
-                                    </InArgument>
-                                    <InArgument x:TypeArguments="x:String" x:Key="Token">
-                                      <mva:VisualBasicValue x:TypeArguments="x:String" ExpressionText="clientToken" />
-                                    </InArgument>
-                                    <InArgument x:TypeArguments="x:String" x:Key="TenantLogicalName">
-                                      <mva:VisualBasicValue x:TypeArguments="x:String" ExpressionText="clientLogicalName" />
-                                    </InArgument>
-                                    <InArgument x:TypeArguments="x:String" x:Key="TenantService">
-                                      <mva:VisualBasicValue x:TypeArguments="x:String" ExpressionText="clientService" />
-                                    </InArgument>
-                                    <InArgument x:TypeArguments="x:String" x:Key="Url">
-                                      <mva:VisualBasicValue x:TypeArguments="x:String" ExpressionText="clientUrl" />
-                                    </InArgument>
-                                    <InArgument x:TypeArguments="x:Boolean" x:Key="clientOrchestratorIsOnprem">
-                                      <mva:VisualBasicValue x:TypeArguments="x:Boolean" ExpressionText="clientOrchestratorIsOnPrem" />
-                                    </InArgument>
-                                    <InArgument x:TypeArguments="x:String" x:Key="FolderId">
-                                      <mva:VisualBasicValue x:TypeArguments="x:String" ExpressionText="clientFolderId" />
-                                    </InArgument>
-                                    <InArgument x:TypeArguments="x:Boolean" x:Key="clientEnvironmentLevelCounters">
-                                      <mva:VisualBasicValue x:TypeArguments="x:Boolean" ExpressionText="clientEnvironmentLevelCounters" />
-                                    </InArgument>
-                                    <InArgument x:TypeArguments="scg:List(x:String)" x:Key="clientEnvironmentReleases">
-                                      <mva:VisualBasicValue x:TypeArguments="scg:List(x:String)" ExpressionText="clientEnvironmentReleases" />
-                                    </InArgument>
+                                    <InArgument x:TypeArguments="x:String" x:Key="VM_Name">[vmName]</InArgument>
+                                    <InArgument x:TypeArguments="x:String" x:Key="Action_StartStop">start</InArgument>
+                                    <InArgument x:TypeArguments="x:String" x:Key="Token">[clientToken]</InArgument>
+                                    <InArgument x:TypeArguments="x:String" x:Key="TenantLogicalName">[clientLogicalName]</InArgument>
+                                    <InArgument x:TypeArguments="x:String" x:Key="TenantService">[clientService]</InArgument>
+                                    <InArgument x:TypeArguments="x:String" x:Key="Url">[clientUrl]</InArgument>
+                                    <InArgument x:TypeArguments="x:Boolean" x:Key="clientOrchestratorIsOnprem">[clientOrchestratorIsOnPrem]</InArgument>
+                                    <InArgument x:TypeArguments="x:String" x:Key="FolderId">[clientFolderId]</InArgument>
+                                    <InArgument x:TypeArguments="x:Boolean" x:Key="clientEnvironmentLevelCounters">[clientEnvironmentLevelCounters]</InArgument>
+                                    <InArgument x:TypeArguments="scg:List(x:String)" x:Key="clientEnvironmentReleases">[clientEnvironmentReleases]</InArgument>
                                     <OutArgument x:TypeArguments="scg:List(x:String)" x:Key="specificRobotsMachines" />
-                                    <InArgument x:TypeArguments="scg:List(x:String)" x:Key="unattendedRobotsMachines">
-                                      <mva:VisualBasicValue x:TypeArguments="scg:List(x:String)" ExpressionText="clientUnattendedRobotsMachines" />
-                                    </InArgument>
+                                    <InArgument x:TypeArguments="scg:List(x:String)" x:Key="unattendedRobotsMachines">[clientUnattendedRobotsMachines]</InArgument>
                                   </ui:InvokeWorkflowFile.Arguments>
                                 </ui:InvokeWorkflowFile>
                               </Switch>
@@ -929,9 +891,10 @@
                         <scg:Dictionary x:TypeArguments="x:String, x:Object">
                           <av:Point x:Key="ShapeLocation">370,393.6</av:Point>
                           <av:Size x:Key="ShapeSize">200,52.8</av:Size>
+                          <av:PointCollection x:Key="ConnectorLocation">470,446.4 470,503.6</av:PointCollection>
                         </scg:Dictionary>
                       </sap:WorkflowViewStateService.ViewState>
-                      <ui:ForEach x:TypeArguments="x:String" CurrentIndex="{x:Null}" DisplayName="Deallocate selected VMs - For Each" sap:VirtualizedContainerService.HintSize="573.6,1079.2" sap2010:WorkflowViewState.IdRef="ForEach`1_2" Values="[clientSelectedVMs]">
+                      <ui:ForEach x:TypeArguments="x:String" CurrentIndex="{x:Null}" DisplayName="Deallocate selected VMs - For Each" sap:VirtualizedContainerService.HintSize="200,52.8" sap2010:WorkflowViewState.IdRef="ForEach`1_2" Values="[clientSelectedVMs]">
                         <ui:ForEach.Body>
                           <ActivityAction x:TypeArguments="x:String">
                             <ActivityAction.Argument>
@@ -973,116 +936,50 @@
                                 </ui:InvokeWorkflowFile>
                                 <ui:InvokeWorkflowFile ContinueOnError="{x:Null}" x:Key="vmware" DisplayName="Invoke VMware_VM_StartStop workflow" sap:VirtualizedContainerService.HintSize="351.2,88" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_14" UnSafe="False" WorkflowFileName="Infrastructure\VMware\VMware_VM_StartStop.xaml">
                                   <ui:InvokeWorkflowFile.Arguments>
-                                    <InArgument x:TypeArguments="x:String" x:Key="VM_Name">
-                                      <mva:VisualBasicValue x:TypeArguments="x:String" ExpressionText="vmName" />
-                                    </InArgument>
-                                    <InArgument x:TypeArguments="x:String" x:Key="Action_StartStopDelete">
-                                      <Literal x:TypeArguments="x:String">stop</Literal>
-                                    </InArgument>
-                                    <InArgument x:TypeArguments="x:String" x:Key="Token">
-                                      <mva:VisualBasicValue x:TypeArguments="x:String" ExpressionText="clientToken" />
-                                    </InArgument>
-                                    <InArgument x:TypeArguments="x:String" x:Key="TenantLogicalName">
-                                      <mva:VisualBasicValue x:TypeArguments="x:String" ExpressionText="clientLogicalName" />
-                                    </InArgument>
-                                    <InArgument x:TypeArguments="x:String" x:Key="TenantService">
-                                      <mva:VisualBasicValue x:TypeArguments="x:String" ExpressionText="clientService" />
-                                    </InArgument>
-                                    <InArgument x:TypeArguments="x:String" x:Key="Url">
-                                      <mva:VisualBasicValue x:TypeArguments="x:String" ExpressionText="clientUrl" />
-                                    </InArgument>
-                                    <InArgument x:TypeArguments="x:Boolean" x:Key="clientOrchestratorIsOnprem">
-                                      <mva:VisualBasicValue x:TypeArguments="x:Boolean" ExpressionText="clientOrchestratorIsOnPrem" />
-                                    </InArgument>
-                                    <InArgument x:TypeArguments="x:String" x:Key="FolderId">
-                                      <mva:VisualBasicValue x:TypeArguments="x:String" ExpressionText="clientFolderId" />
-                                    </InArgument>
-                                    <InArgument x:TypeArguments="x:Boolean" x:Key="clientEnvironmentLevelCounters">
-                                      <mva:VisualBasicValue x:TypeArguments="x:Boolean" ExpressionText="clientEnvironmentLevelCounters" />
-                                    </InArgument>
-                                    <InArgument x:TypeArguments="scg:List(x:String)" x:Key="clientEnvironmentReleases">
-                                      <mva:VisualBasicValue x:TypeArguments="scg:List(x:String)" ExpressionText="clientEnvironmentReleases" />
-                                    </InArgument>
+                                    <InArgument x:TypeArguments="x:String" x:Key="VM_Name">[vmName]</InArgument>
+                                    <InArgument x:TypeArguments="x:String" x:Key="Action_StartStopDelete">stop</InArgument>
+                                    <InArgument x:TypeArguments="x:String" x:Key="Token">[clientToken]</InArgument>
+                                    <InArgument x:TypeArguments="x:String" x:Key="TenantLogicalName">[clientLogicalName]</InArgument>
+                                    <InArgument x:TypeArguments="x:String" x:Key="TenantService">[clientService]</InArgument>
+                                    <InArgument x:TypeArguments="x:String" x:Key="Url">[clientUrl]</InArgument>
+                                    <InArgument x:TypeArguments="x:Boolean" x:Key="clientOrchestratorIsOnprem">[clientOrchestratorIsOnPrem]</InArgument>
+                                    <InArgument x:TypeArguments="x:String" x:Key="FolderId">[clientFolderId]</InArgument>
+                                    <InArgument x:TypeArguments="x:Boolean" x:Key="clientEnvironmentLevelCounters">[clientEnvironmentLevelCounters]</InArgument>
+                                    <InArgument x:TypeArguments="scg:List(x:String)" x:Key="clientEnvironmentReleases">[clientEnvironmentReleases]</InArgument>
                                     <OutArgument x:TypeArguments="scg:List(x:String)" x:Key="specificRobotsMachines" />
-                                    <InArgument x:TypeArguments="scg:List(x:String)" x:Key="unattendedRobotsMachines">
-                                      <mva:VisualBasicValue x:TypeArguments="scg:List(x:String)" ExpressionText="clientUnattendedRobotsMachines" />
-                                    </InArgument>
+                                    <InArgument x:TypeArguments="scg:List(x:String)" x:Key="unattendedRobotsMachines">[clientUnattendedRobotsMachines]</InArgument>
                                   </ui:InvokeWorkflowFile.Arguments>
                                 </ui:InvokeWorkflowFile>
                                 <ui:InvokeWorkflowFile ContinueOnError="{x:Null}" x:Key="aws" DisplayName="Invoke AWS_VM_StartStop workflow" sap:VirtualizedContainerService.HintSize="361.6,88" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_16" UnSafe="False" WorkflowFileName="Infrastructure\Amazon AWS\AWS_VM_StartStop.xaml">
                                   <ui:InvokeWorkflowFile.Arguments>
-                                    <InArgument x:TypeArguments="x:String" x:Key="VM_Name">
-                                      <mva:VisualBasicValue x:TypeArguments="x:String" ExpressionText="vmName" />
-                                    </InArgument>
-                                    <InArgument x:TypeArguments="x:String" x:Key="Action_StartStopDeallocateDelete">
-                                      <Literal x:TypeArguments="x:String">stop</Literal>
-                                    </InArgument>
-                                    <InArgument x:TypeArguments="x:String" x:Key="Token">
-                                      <mva:VisualBasicValue x:TypeArguments="x:String" ExpressionText="clientToken" />
-                                    </InArgument>
-                                    <InArgument x:TypeArguments="x:String" x:Key="TenantLogicalName">
-                                      <mva:VisualBasicValue x:TypeArguments="x:String" ExpressionText="clientLogicalName" />
-                                    </InArgument>
-                                    <InArgument x:TypeArguments="x:String" x:Key="TenantService">
-                                      <mva:VisualBasicValue x:TypeArguments="x:String" ExpressionText="clientService" />
-                                    </InArgument>
-                                    <InArgument x:TypeArguments="x:String" x:Key="Url">
-                                      <mva:VisualBasicValue x:TypeArguments="x:String" ExpressionText="clientUrl" />
-                                    </InArgument>
-                                    <InArgument x:TypeArguments="x:Boolean" x:Key="clientOrchestratorIsOnprem">
-                                      <mva:VisualBasicValue x:TypeArguments="x:Boolean" ExpressionText="clientOrchestratorIsOnPrem" />
-                                    </InArgument>
-                                    <InArgument x:TypeArguments="x:String" x:Key="FolderId">
-                                      <mva:VisualBasicValue x:TypeArguments="x:String" ExpressionText="clientFolderId" />
-                                    </InArgument>
-                                    <InArgument x:TypeArguments="x:Boolean" x:Key="clientEnvironmentLevelCounters">
-                                      <mva:VisualBasicValue x:TypeArguments="x:Boolean" ExpressionText="clientEnvironmentLevelCounters" />
-                                    </InArgument>
-                                    <InArgument x:TypeArguments="scg:List(x:String)" x:Key="clientEnvironmentReleases">
-                                      <mva:VisualBasicValue x:TypeArguments="scg:List(x:String)" ExpressionText="clientEnvironmentReleases" />
-                                    </InArgument>
+                                    <InArgument x:TypeArguments="x:String" x:Key="VM_Name">[vmName]</InArgument>
+                                    <InArgument x:TypeArguments="x:String" x:Key="Action_StartStopDeallocateDelete">stop</InArgument>
+                                    <InArgument x:TypeArguments="x:String" x:Key="Token">[clientToken]</InArgument>
+                                    <InArgument x:TypeArguments="x:String" x:Key="TenantLogicalName">[clientLogicalName]</InArgument>
+                                    <InArgument x:TypeArguments="x:String" x:Key="TenantService">[clientService]</InArgument>
+                                    <InArgument x:TypeArguments="x:String" x:Key="Url">[clientUrl]</InArgument>
+                                    <InArgument x:TypeArguments="x:Boolean" x:Key="clientOrchestratorIsOnprem">[clientOrchestratorIsOnPrem]</InArgument>
+                                    <InArgument x:TypeArguments="x:String" x:Key="FolderId">[clientFolderId]</InArgument>
+                                    <InArgument x:TypeArguments="x:Boolean" x:Key="clientEnvironmentLevelCounters">[clientEnvironmentLevelCounters]</InArgument>
+                                    <InArgument x:TypeArguments="scg:List(x:String)" x:Key="clientEnvironmentReleases">[clientEnvironmentReleases]</InArgument>
                                     <OutArgument x:TypeArguments="scg:List(x:String)" x:Key="specificRobotsMachines" />
-                                    <InArgument x:TypeArguments="scg:List(x:String)" x:Key="unattendedRobotsMachines">
-                                      <mva:VisualBasicValue x:TypeArguments="scg:List(x:String)" ExpressionText="clientUnattendedRobotsMachines" />
-                                    </InArgument>
+                                    <InArgument x:TypeArguments="scg:List(x:String)" x:Key="unattendedRobotsMachines">[clientUnattendedRobotsMachines]</InArgument>
                                   </ui:InvokeWorkflowFile.Arguments>
                                 </ui:InvokeWorkflowFile>
                                 <ui:InvokeWorkflowFile ContinueOnError="{x:Null}" x:Key="citrix" DisplayName="Invoke Citrix_VM_StartStop workflow" sap:VirtualizedContainerService.HintSize="333.6,88" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_20" UnSafe="False" WorkflowFileName="Infrastructure\Citrix\Citrix_VM_StartStop.xaml">
                                   <ui:InvokeWorkflowFile.Arguments>
-                                    <InArgument x:TypeArguments="x:String" x:Key="VM_Name">
-                                      <mva:VisualBasicValue x:TypeArguments="x:String" ExpressionText="vmName" />
-                                    </InArgument>
-                                    <InArgument x:TypeArguments="x:String" x:Key="Action_StartStop">
-                                      <Literal x:TypeArguments="x:String">stop</Literal>
-                                    </InArgument>
-                                    <InArgument x:TypeArguments="x:String" x:Key="Token">
-                                      <mva:VisualBasicValue x:TypeArguments="x:String" ExpressionText="clientToken" />
-                                    </InArgument>
-                                    <InArgument x:TypeArguments="x:String" x:Key="TenantLogicalName">
-                                      <mva:VisualBasicValue x:TypeArguments="x:String" ExpressionText="clientLogicalName" />
-                                    </InArgument>
-                                    <InArgument x:TypeArguments="x:String" x:Key="TenantService">
-                                      <mva:VisualBasicValue x:TypeArguments="x:String" ExpressionText="clientService" />
-                                    </InArgument>
-                                    <InArgument x:TypeArguments="x:String" x:Key="Url">
-                                      <mva:VisualBasicValue x:TypeArguments="x:String" ExpressionText="clientUrl" />
-                                    </InArgument>
-                                    <InArgument x:TypeArguments="x:Boolean" x:Key="clientOrchestratorIsOnprem">
-                                      <mva:VisualBasicValue x:TypeArguments="x:Boolean" ExpressionText="clientOrchestratorIsOnPrem" />
-                                    </InArgument>
-                                    <InArgument x:TypeArguments="x:String" x:Key="FolderId">
-                                      <mva:VisualBasicValue x:TypeArguments="x:String" ExpressionText="clientFolderId" />
-                                    </InArgument>
-                                    <InArgument x:TypeArguments="x:Boolean" x:Key="clientEnvironmentLevelCounters">
-                                      <mva:VisualBasicValue x:TypeArguments="x:Boolean" ExpressionText="clientEnvironmentLevelCounters" />
-                                    </InArgument>
-                                    <InArgument x:TypeArguments="scg:List(x:String)" x:Key="clientEnvironmentReleases">
-                                      <mva:VisualBasicValue x:TypeArguments="scg:List(x:String)" ExpressionText="clientEnvironmentReleases" />
-                                    </InArgument>
+                                    <InArgument x:TypeArguments="x:String" x:Key="VM_Name">[vmName]</InArgument>
+                                    <InArgument x:TypeArguments="x:String" x:Key="Action_StartStop">stop</InArgument>
+                                    <InArgument x:TypeArguments="x:String" x:Key="Token">[clientToken]</InArgument>
+                                    <InArgument x:TypeArguments="x:String" x:Key="TenantLogicalName">[clientLogicalName]</InArgument>
+                                    <InArgument x:TypeArguments="x:String" x:Key="TenantService">[clientService]</InArgument>
+                                    <InArgument x:TypeArguments="x:String" x:Key="Url">[clientUrl]</InArgument>
+                                    <InArgument x:TypeArguments="x:Boolean" x:Key="clientOrchestratorIsOnprem">[clientOrchestratorIsOnPrem]</InArgument>
+                                    <InArgument x:TypeArguments="x:String" x:Key="FolderId">[clientFolderId]</InArgument>
+                                    <InArgument x:TypeArguments="x:Boolean" x:Key="clientEnvironmentLevelCounters">[clientEnvironmentLevelCounters]</InArgument>
+                                    <InArgument x:TypeArguments="scg:List(x:String)" x:Key="clientEnvironmentReleases">[clientEnvironmentReleases]</InArgument>
                                     <OutArgument x:TypeArguments="scg:List(x:String)" x:Key="specificRobotsMachines" />
-                                    <InArgument x:TypeArguments="scg:List(x:String)" x:Key="unattendedRobotsMachines">
-                                      <mva:VisualBasicValue x:TypeArguments="scg:List(x:String)" ExpressionText="clientUnattendedRobotsMachines" />
-                                    </InArgument>
+                                    <InArgument x:TypeArguments="scg:List(x:String)" x:Key="unattendedRobotsMachines">[clientUnattendedRobotsMachines]</InArgument>
                                   </ui:InvokeWorkflowFile.Arguments>
                                 </ui:InvokeWorkflowFile>
                               </Switch>
@@ -1090,8 +987,33 @@
                           </ActivityAction>
                         </ui:ForEach.Body>
                       </ui:ForEach>
+                      <FlowStep.Next>
+                        <FlowStep x:Name="__ReferenceID4">
+                          <sap:WorkflowViewStateService.ViewState>
+                            <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                              <av:Point x:Key="ShapeLocation">370,503.6</av:Point>
+                              <av:Size x:Key="ShapeSize">200,52.8</av:Size>
+                            </scg:Dictionary>
+                          </sap:WorkflowViewStateService.ViewState>
+                          <ui:InvokeWorkflowFile ContinueOnError="{x:Null}" DisplayName="Invoke OrchestratorTenant_RobotQuarantineToggle workflow" sap:VirtualizedContainerService.HintSize="200,52.8" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_24" UnSafe="False" WorkflowFileName="RobotQuarantine\OrchestratorTenant_RobotQuarantineToggle.xaml">
+                            <ui:InvokeWorkflowFile.Arguments>
+                              <InArgument x:TypeArguments="x:String" x:Key="Token">[clientToken]</InArgument>
+                              <InArgument x:TypeArguments="x:String" x:Key="TenantLogicalName">[clientLogicalName]</InArgument>
+                              <InArgument x:TypeArguments="x:String" x:Key="TenantService">[clientService]</InArgument>
+                              <InArgument x:TypeArguments="x:String" x:Key="Url">[clientUrl]</InArgument>
+                              <InArgument x:TypeArguments="x:String" x:Key="TenantFolderId">[clientFolderId]</InArgument>
+                              <InArgument x:TypeArguments="x:Boolean" x:Key="clientOrchestratorIsOnprem">[clientOrchestratorIsOnprem]</InArgument>
+                              <InArgument x:TypeArguments="x:Boolean" x:Key="Quarantine">False</InArgument>
+                              <InArgument x:TypeArguments="scg:List(x:String)" x:Key="SelectedMachines">[clientSelectedVMs]</InArgument>
+                              <InArgument x:TypeArguments="x:String" x:Key="clientEnvironment">[clientEnvironment]</InArgument>
+                              <InArgument x:TypeArguments="x:String" x:Key="TempEnvName">[clientTempEnvName]</InArgument>
+                              <InArgument x:TypeArguments="x:Boolean" x:Key="RobotStatusToggle">[clientRobotStatusToggle]</InArgument>
+                            </ui:InvokeWorkflowFile.Arguments>
+                          </ui:InvokeWorkflowFile>
+                        </FlowStep>
+                      </FlowStep.Next>
                     </FlowStep>
-                    <FlowDecision x:Name="__ReferenceID4" Condition="[clientJobsPending &gt; 0]" DisplayName="JobsPending &gt; 0" sap:VirtualizedContainerService.HintSize="92,87.2" sap2010:WorkflowViewState.IdRef="FlowDecision_3">
+                    <FlowDecision x:Name="__ReferenceID5" Condition="[clientJobsPending &gt; 0]" DisplayName="JobsPending &gt; 0" sap:VirtualizedContainerService.HintSize="92,87.2" sap2010:WorkflowViewState.IdRef="FlowDecision_3">
                       <sap:WorkflowViewStateService.ViewState>
                         <scg:Dictionary x:TypeArguments="x:String, x:Object">
                           <x:Boolean x:Key="IsExpanded">True</x:Boolean>
@@ -1118,7 +1040,7 @@
                                 <x:Boolean x:Key="IsPinned">False</x:Boolean>
                               </scg:Dictionary>
                             </sap:WorkflowViewStateService.ViewState>
-                            <ui:InvokeWorkflowFile ContinueOnError="{x:Null}" DisplayName="Select Disconnected VMs - Invoke Workflow" sap:VirtualizedContainerService.HintSize="334,87" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_17" UnSafe="False" WorkflowFileName="OrchestratorTenant_SelectRobotVM.xaml">
+                            <ui:InvokeWorkflowFile ContinueOnError="{x:Null}" DisplayName="Select Disconnected VMs - Invoke Workflow" sap:VirtualizedContainerService.HintSize="333.6,88" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_17" UnSafe="False" WorkflowFileName="OrchestratorTenant_SelectRobotVM.xaml">
                               <ui:InvokeWorkflowFile.Arguments>
                                 <InArgument x:TypeArguments="x:String" x:Key="State">Disconnected</InArgument>
                                 <InArgument x:TypeArguments="x:String" x:Key="Token">[clientToken]</InArgument>
@@ -1137,6 +1059,9 @@
                                 <InArgument x:TypeArguments="x:Int32" x:Key="CountRobotMachinesCold">[clientRobotsCold]</InArgument>
                                 <InArgument x:TypeArguments="x:Int32" x:Key="CountRobotMachinesVirtual">[clientRobotsVirtual]</InArgument>
                                 <InArgument x:TypeArguments="x:Boolean" x:Key="clientOrchestratorIsOnprem">[clientOrchestratorIsOnPrem]</InArgument>
+                                <InArgument x:TypeArguments="x:Boolean" x:Key="clientRobotStatusToggle">[clientRobotStatusToggle]</InArgument>
+                                <InArgument x:TypeArguments="x:String" x:Key="clientTempEnvName">[clientTempEnvName]</InArgument>
+                                <InArgument x:TypeArguments="x:String" x:Key="clientEnvironment">[clientEnvironment]</InArgument>
                               </ui:InvokeWorkflowFile.Arguments>
                               <sap:WorkflowViewStateService.ViewState>
                                 <scg:Dictionary x:TypeArguments="x:String, x:Object">
@@ -1144,7 +1069,7 @@
                                 </scg:Dictionary>
                               </sap:WorkflowViewStateService.ViewState>
                             </ui:InvokeWorkflowFile>
-                            <Assign sap:VirtualizedContainerService.HintSize="334,60" sap2010:WorkflowViewState.IdRef="Assign_11">
+                            <Assign sap:VirtualizedContainerService.HintSize="333.6,60" sap2010:WorkflowViewState.IdRef="Assign_11">
                               <Assign.To>
                                 <OutArgument x:TypeArguments="scg:List(x:String)">[processedVMs]</OutArgument>
                               </Assign.To>
@@ -1193,6 +1118,9 @@
                                 <InArgument x:TypeArguments="x:Int32" x:Key="CountRobotMachinesCold">[clientRobotsCold]</InArgument>
                                 <InArgument x:TypeArguments="x:Int32" x:Key="CountRobotMachinesVirtual">[clientRobotsVirtual]</InArgument>
                                 <InArgument x:TypeArguments="x:Boolean" x:Key="clientOrchestratorIsOnprem">[clientOrchestratorIsOnPrem]</InArgument>
+                                <InArgument x:TypeArguments="x:Boolean" x:Key="clientRobotStatusToggle">[clientRobotStatusToggle]</InArgument>
+                                <InArgument x:TypeArguments="x:String" x:Key="clientTempEnvName">[clientTempEnvName]</InArgument>
+                                <InArgument x:TypeArguments="x:String" x:Key="clientEnvironment">[clientEnvironment]</InArgument>
                               </ui:InvokeWorkflowFile.Arguments>
                               <sap:WorkflowViewStateService.ViewState>
                                 <scg:Dictionary x:TypeArguments="x:String, x:Object">
@@ -1209,22 +1137,23 @@
                     </FlowDecision>
                     <x:Reference>__ReferenceID2</x:Reference>
                     <x:Reference>__ReferenceID3</x:Reference>
+                    <x:Reference>__ReferenceID4</x:Reference>
                   </Flowchart>
                 </Sequence>
               </Sequence>
             </If.Then>
             <If.Else>
-              <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="200,52.8" sap2010:WorkflowViewState.IdRef="LogMessage_9" Level="Info" Message="[&quot;Tenant + Folder not found in managed DB list.&quot;]">
+              <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="333.6,92.8" sap2010:WorkflowViewState.IdRef="LogMessage_9" Level="Info" Message="[&quot;Specified Tenant + Folder not found in managed DB list.&quot;]">
                 <sap:WorkflowViewStateService.ViewState>
                   <scg:Dictionary x:TypeArguments="x:String, x:Object">
-                    <x:Boolean x:Key="IsPinned">True</x:Boolean>
-                    <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+                    <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                    <x:Boolean x:Key="IsExpanded">True</x:Boolean>
                   </scg:Dictionary>
                 </sap:WorkflowViewStateService.ViewState>
               </ui:LogMessage>
             </If.Else>
           </If>
-          <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="960.8,92.8" sap2010:WorkflowViewState.IdRef="LogMessage_3" Level="Info" Message="[&quot;Done processing tenant &quot; + clientTenantId + &quot; folder &quot; + clientFolderId]">
+          <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="1094.4,92.8" sap2010:WorkflowViewState.IdRef="LogMessage_3" Level="Info" Message="[&quot;Done processing tenant &quot; + clientTenantId + &quot; folder &quot; + clientFolderId]">
             <sap:WorkflowViewStateService.ViewState>
               <scg:Dictionary x:TypeArguments="x:String, x:Object">
                 <x:Boolean x:Key="IsPinned">False</x:Boolean>
@@ -1233,6 +1162,16 @@
           </ui:LogMessage>
         </Sequence>
       </If.Then>
+      <If.Else>
+        <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="333.6,92.8" sap2010:WorkflowViewState.IdRef="LogMessage_11" Level="Info" Message="[&quot;Tenant not found in managed DB list.&quot;]">
+          <sap:WorkflowViewStateService.ViewState>
+            <scg:Dictionary x:TypeArguments="x:String, x:Object">
+              <x:Boolean x:Key="IsPinned">False</x:Boolean>
+              <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+            </scg:Dictionary>
+          </sap:WorkflowViewStateService.ViewState>
+        </ui:LogMessage>
+      </If.Else>
     </If>
   </Sequence>
 </Activity>

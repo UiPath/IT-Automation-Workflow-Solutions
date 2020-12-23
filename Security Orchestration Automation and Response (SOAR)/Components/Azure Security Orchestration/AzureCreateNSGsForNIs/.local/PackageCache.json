@@ -2,8 +2,65 @@
   "Packages": [
     {
       "Package": {
+        "Id": "UiPath.System.Activities",
+        "Version": "20.10.1"
+      },
+      "Assemblies": [
+        "C:\\Users\\Andrei\\.nuget\\packages\\csvhelper/2.13.5\\lib/net40-client/CsvHelper.dll",
+        "C:\\Users\\Andrei\\.nuget\\packages\\microsoft.aspnet.signalr.client/2.4.0\\lib/net45/Microsoft.AspNet.SignalR.Client.dll",
+        "C:\\Users\\Andrei\\.nuget\\packages\\microsoft.aspnetcore.connections.abstractions/3.1.6\\lib/netstandard2.0/Microsoft.AspNetCore.Connections.Abstractions.dll",
+        "C:\\Users\\Andrei\\.nuget\\packages\\microsoft.aspnetcore.http.connections.client/3.1.6\\lib/netstandard2.0/Microsoft.AspNetCore.Http.Connections.Client.dll",
+        "C:\\Users\\Andrei\\.nuget\\packages\\microsoft.aspnetcore.http.connections.common/3.1.6\\lib/netstandard2.0/Microsoft.AspNetCore.Http.Connections.Common.dll",
+        "C:\\Users\\Andrei\\.nuget\\packages\\microsoft.aspnetcore.http.features/3.1.6\\lib/netstandard2.0/Microsoft.AspNetCore.Http.Features.dll",
+        "C:\\Users\\Andrei\\.nuget\\packages\\microsoft.aspnetcore.signalr.client/3.1.6\\lib/netstandard2.0/Microsoft.AspNetCore.SignalR.Client.dll",
+        "C:\\Users\\Andrei\\.nuget\\packages\\microsoft.aspnetcore.signalr.client.core/3.1.6\\lib/netstandard2.0/Microsoft.AspNetCore.SignalR.Client.Core.dll",
+        "C:\\Users\\Andrei\\.nuget\\packages\\microsoft.aspnetcore.signalr.common/3.1.6\\lib/netstandard2.0/Microsoft.AspNetCore.SignalR.Common.dll",
+        "C:\\Users\\Andrei\\.nuget\\packages\\microsoft.aspnetcore.signalr.protocols.json/3.1.6\\lib/netstandard2.0/Microsoft.AspNetCore.SignalR.Protocols.Json.dll",
+        "C:\\Users\\Andrei\\.nuget\\packages\\microsoft.bcl.asyncinterfaces/1.1.1\\lib/net461/Microsoft.Bcl.AsyncInterfaces.dll",
+        "C:\\Users\\Andrei\\.nuget\\packages\\microsoft.extensions.configuration/3.1.6\\lib/netstandard2.0/Microsoft.Extensions.Configuration.dll",
+        "C:\\Users\\Andrei\\.nuget\\packages\\microsoft.extensions.configuration.abstractions/3.1.6\\lib/netstandard2.0/Microsoft.Extensions.Configuration.Abstractions.dll",
+        "C:\\Users\\Andrei\\.nuget\\packages\\microsoft.extensions.configuration.binder/3.1.6\\lib/netstandard2.0/Microsoft.Extensions.Configuration.Binder.dll",
+        "C:\\Users\\Andrei\\.nuget\\packages\\microsoft.extensions.dependencyinjection/3.1.6\\lib/net461/Microsoft.Extensions.DependencyInjection.dll",
+        "C:\\Users\\Andrei\\.nuget\\packages\\microsoft.extensions.dependencyinjection.abstractions/3.1.6\\lib/netstandard2.0/Microsoft.Extensions.DependencyInjection.Abstractions.dll",
+        "C:\\Users\\Andrei\\.nuget\\packages\\microsoft.extensions.logging/3.1.6\\lib/netstandard2.0/Microsoft.Extensions.Logging.dll",
+        "C:\\Users\\Andrei\\.nuget\\packages\\microsoft.extensions.logging.abstractions/3.1.6\\lib/netstandard2.0/Microsoft.Extensions.Logging.Abstractions.dll",
+        "C:\\Users\\Andrei\\.nuget\\packages\\microsoft.extensions.options/3.1.6\\lib/netstandard2.0/Microsoft.Extensions.Options.dll",
+        "C:\\Users\\Andrei\\.nuget\\packages\\microsoft.extensions.primitives/3.1.6\\lib/netstandard2.0/Microsoft.Extensions.Primitives.dll",
+        "C:\\Users\\Andrei\\.nuget\\packages\\microsoft.rest.clientruntime/2.3.21\\lib/net461/Microsoft.Rest.ClientRuntime.dll",
+        "C:\\Users\\Andrei\\.nuget\\packages\\newtonsoft.json/11.0.2\\lib/net45/Newtonsoft.Json.dll",
+        "C:\\Users\\Andrei\\.nuget\\packages\\sharpziplib/1.2.0\\lib/net45/ICSharpCode.SharpZipLib.dll",
+        "C:\\Users\\Andrei\\.nuget\\packages\\system.buffers/4.5.1\\lib/net461/System.Buffers.dll",
+        "C:\\Users\\Andrei\\.nuget\\packages\\system.componentmodel.annotations/4.7.0\\lib/net461/System.ComponentModel.Annotations.dll",
+        "C:\\Users\\Andrei\\.nuget\\packages\\system.io.abstractions/3.0.10\\lib/net40/System.IO.Abstractions.dll",
+        "C:\\Users\\Andrei\\.nuget\\packages\\system.io.pipelines/4.7.1\\lib/netstandard2.0/System.IO.Pipelines.dll",
+        "C:\\Users\\Andrei\\.nuget\\packages\\system.memory/4.5.4\\lib/net461/System.Memory.dll",
+        "C:\\Users\\Andrei\\.nuget\\packages\\system.numerics.vectors/4.5.0\\lib/net46/System.Numerics.Vectors.dll",
+        "C:\\Users\\Andrei\\.nuget\\packages\\system.runtime.compilerservices.unsafe/4.7.1\\lib/net461/System.Runtime.CompilerServices.Unsafe.dll",
+        "C:\\Users\\Andrei\\.nuget\\packages\\system.text.encodings.web/4.7.1\\lib/net461/System.Text.Encodings.Web.dll",
+        "C:\\Users\\Andrei\\.nuget\\packages\\system.text.json/4.7.2\\lib/net461/System.Text.Json.dll",
+        "C:\\Users\\Andrei\\.nuget\\packages\\system.threading.channels/4.7.1\\lib/net461/System.Threading.Channels.dll",
+        "C:\\Users\\Andrei\\.nuget\\packages\\system.threading.tasks.extensions/4.5.4\\lib/net461/System.Threading.Tasks.Extensions.dll",
+        "C:\\Users\\Andrei\\.nuget\\packages\\system.valuetuple/4.5.0\\lib/net461/System.ValueTuple.dll",
+        "C:\\Users\\Andrei\\.nuget\\packages\\uipath.platform/20.10.4\\lib/net461/UiPath.Platform.dll",
+        "C:\\Users\\Andrei\\.nuget\\packages\\uipath.system.activities/20.10.1\\lib/net461/ActiproSoftware.Docking.Wpf.dll",
+        "C:\\Users\\Andrei\\.nuget\\packages\\uipath.system.activities/20.10.1\\lib/net461/ActiproSoftware.Ribbon.Wpf.dll",
+        "C:\\Users\\Andrei\\.nuget\\packages\\uipath.system.activities/20.10.1\\lib/net461/ActiproSoftware.Shared.Wpf.dll",
+        "C:\\Users\\Andrei\\.nuget\\packages\\uipath.system.activities/20.10.1\\lib/net461/ActiproSoftware.SyntaxEditor.Addons.DotNet.Wpf.dll",
+        "C:\\Users\\Andrei\\.nuget\\packages\\uipath.system.activities/20.10.1\\lib/net461/ActiproSoftware.SyntaxEditor.Wpf.dll",
+        "C:\\Users\\Andrei\\.nuget\\packages\\uipath.system.activities/20.10.1\\lib/net461/ActiproSoftware.Text.Addons.DotNet.Wpf.dll",
+        "C:\\Users\\Andrei\\.nuget\\packages\\uipath.system.activities/20.10.1\\lib/net461/ActiproSoftware.Text.LLParser.Wpf.dll",
+        "C:\\Users\\Andrei\\.nuget\\packages\\uipath.system.activities/20.10.1\\lib/net461/ActiproSoftware.Text.Wpf.dll",
+        "C:\\Users\\Andrei\\.nuget\\packages\\uipath.system.activities/20.10.1\\lib/net461/ActiproSoftware.Wizard.Wpf.dll",
+        "C:\\Users\\Andrei\\.nuget\\packages\\uipath.system.activities/20.10.1\\lib/net461/UiPath.OrchestratorClient.dll",
+        "C:\\Users\\Andrei\\.nuget\\packages\\uipath.system.activities/20.10.1\\lib/net461/UiPath.System.Activities.Design.dll",
+        "C:\\Users\\Andrei\\.nuget\\packages\\uipath.system.activities/20.10.1\\lib/net461/UiPath.System.Activities.dll"
+      ],
+      "Path": "C:\\Users\\Andrei\\.nuget\\packages\\uipath.system.activities\\20.10.1"
+    },
+    {
+      "Package": {
         "Id": "UiPath.Azure.Activities",
-        "Version": "1.1.0"
+        "Version": "1.1.5"
       },
       "Assemblies": [
         "C:\\Users\\Andrei\\.nuget\\packages\\microsoft.azure.cosmos.table/1.0.1\\lib/netstandard2.0/Microsoft.Azure.Cosmos.Table.dll",
@@ -48,7 +105,7 @@
         "C:\\Users\\Andrei\\.nuget\\packages\\microsoft.identitymodel.tokens/5.1.2\\lib/net451/Microsoft.IdentityModel.Tokens.dll",
         "C:\\Users\\Andrei\\.nuget\\packages\\microsoft.odata.core/7.5.0\\lib/portable-net45+win8+wpa81/Microsoft.OData.Core.dll",
         "C:\\Users\\Andrei\\.nuget\\packages\\microsoft.odata.edm/7.5.0\\lib/portable-net45+win8+wpa81/Microsoft.OData.Edm.dll",
-        "C:\\Users\\Andrei\\.nuget\\packages\\microsoft.rest.clientruntime/2.3.20\\lib/net461/Microsoft.Rest.ClientRuntime.dll",
+        "C:\\Users\\Andrei\\.nuget\\packages\\microsoft.rest.clientruntime/2.3.21\\lib/net461/Microsoft.Rest.ClientRuntime.dll",
         "C:\\Users\\Andrei\\.nuget\\packages\\microsoft.rest.clientruntime.azure/3.3.19\\lib/net461/Microsoft.Rest.ClientRuntime.Azure.dll",
         "C:\\Users\\Andrei\\.nuget\\packages\\microsoft.rest.clientruntime.azure.authentication/2.4.0\\lib/net461/Microsoft.Rest.ClientRuntime.Azure.Authentication.dll",
         "C:\\Users\\Andrei\\.nuget\\packages\\microsoft.spatial/7.5.0\\lib/portable-net45+win8+wpa81/Microsoft.Spatial.dll",
@@ -61,6 +118,7 @@
         "C:\\Users\\Andrei\\.nuget\\packages\\system.diagnostics.diagnosticsource/4.0.0\\lib/net46/System.Diagnostics.DiagnosticSource.dll",
         "C:\\Users\\Andrei\\.nuget\\packages\\system.diagnostics.tracesource/4.0.0\\lib/net46/System.Diagnostics.TraceSource.dll",
         "C:\\Users\\Andrei\\.nuget\\packages\\system.globalization.calendars/4.0.1\\lib/net46/System.Globalization.Calendars.dll",
+        "C:\\Users\\Andrei\\.nuget\\packages\\system.io.abstractions/3.0.10\\lib/net40/System.IO.Abstractions.dll",
         "C:\\Users\\Andrei\\.nuget\\packages\\system.io.compression/4.1.0\\lib/net46/System.IO.Compression.dll",
         "C:\\Users\\Andrei\\.nuget\\packages\\system.io.compression.zipfile/4.0.1\\lib/net46/System.IO.Compression.ZipFile.dll",
         "C:\\Users\\Andrei\\.nuget\\packages\\system.io.filesystem/4.0.1\\lib/net46/System.IO.FileSystem.dll",
@@ -78,35 +136,15 @@
         "C:\\Users\\Andrei\\.nuget\\packages\\system.security.cryptography.x509certificates/4.3.0\\lib/net461/System.Security.Cryptography.X509Certificates.dll",
         "C:\\Users\\Andrei\\.nuget\\packages\\system.security.securestring/4.0.0\\lib/net46/System.Security.SecureString.dll",
         "C:\\Users\\Andrei\\.nuget\\packages\\system.spatial/5.8.4\\lib/net40/System.Spatial.dll",
-        "C:\\Users\\Andrei\\.nuget\\packages\\uipath.azure.activities/1.1.0\\lib/net461/UiPath.Azure.Activities.Design.dll",
-        "C:\\Users\\Andrei\\.nuget\\packages\\uipath.azure.activities/1.1.0\\lib/net461/UiPath.Azure.Activities.dll",
-        "C:\\Users\\Andrei\\.nuget\\packages\\uipath.azure.activities/1.1.0\\lib/net461/UiPath.Azure.dll",
+        "C:\\Users\\Andrei\\.nuget\\packages\\system.threading.tasks.dataflow/4.10.0\\lib/netstandard2.0/System.Threading.Tasks.Dataflow.dll",
+        "C:\\Users\\Andrei\\.nuget\\packages\\system.valuetuple/4.5.0\\lib/net461/System.ValueTuple.dll",
+        "C:\\Users\\Andrei\\.nuget\\packages\\uipath.azure.activities/1.1.5\\lib/net461/UiPath.Azure.Activities.Design.dll",
+        "C:\\Users\\Andrei\\.nuget\\packages\\uipath.azure.activities/1.1.5\\lib/net461/UiPath.Azure.Activities.dll",
+        "C:\\Users\\Andrei\\.nuget\\packages\\uipath.azure.activities/1.1.5\\lib/net461/UiPath.Azure.dll",
+        "C:\\Users\\Andrei\\.nuget\\packages\\uipath.telemetry.client/1.2.20\\lib/net461/TelemetryClient.dll",
         "C:\\Users\\Andrei\\.nuget\\packages\\windowsazure.storage/8.1.4\\lib/net45/Microsoft.WindowsAzure.Storage.dll"
-      ]
-    },
-    {
-      "Package": {
-        "Id": "UiPath.System.Activities",
-        "Version": "20.2.0"
-      },
-      "Assemblies": [
-        "C:\\Users\\Andrei\\.nuget\\packages\\csvhelper/2.13.5\\lib/net40-client/CsvHelper.dll",
-        "C:\\Users\\Andrei\\.nuget\\packages\\microsoft.aspnet.signalr.client/2.4.0\\lib/net45/Microsoft.AspNet.SignalR.Client.dll",
-        "C:\\Users\\Andrei\\.nuget\\packages\\microsoft.rest.clientruntime/2.3.20\\lib/net461/Microsoft.Rest.ClientRuntime.dll",
-        "C:\\Users\\Andrei\\.nuget\\packages\\newtonsoft.json/11.0.2\\lib/net45/Newtonsoft.Json.dll",
-        "C:\\Users\\Andrei\\.nuget\\packages\\uipath.system.activities/20.2.0\\lib/net461/ActiproSoftware.Docking.Wpf.dll",
-        "C:\\Users\\Andrei\\.nuget\\packages\\uipath.system.activities/20.2.0\\lib/net461/ActiproSoftware.Ribbon.Wpf.dll",
-        "C:\\Users\\Andrei\\.nuget\\packages\\uipath.system.activities/20.2.0\\lib/net461/ActiproSoftware.Shared.Wpf.dll",
-        "C:\\Users\\Andrei\\.nuget\\packages\\uipath.system.activities/20.2.0\\lib/net461/ActiproSoftware.SyntaxEditor.Addons.DotNet.Wpf.dll",
-        "C:\\Users\\Andrei\\.nuget\\packages\\uipath.system.activities/20.2.0\\lib/net461/ActiproSoftware.SyntaxEditor.Wpf.dll",
-        "C:\\Users\\Andrei\\.nuget\\packages\\uipath.system.activities/20.2.0\\lib/net461/ActiproSoftware.Text.Addons.DotNet.Wpf.dll",
-        "C:\\Users\\Andrei\\.nuget\\packages\\uipath.system.activities/20.2.0\\lib/net461/ActiproSoftware.Text.LLParser.Wpf.dll",
-        "C:\\Users\\Andrei\\.nuget\\packages\\uipath.system.activities/20.2.0\\lib/net461/ActiproSoftware.Text.Wpf.dll",
-        "C:\\Users\\Andrei\\.nuget\\packages\\uipath.system.activities/20.2.0\\lib/net461/ActiproSoftware.Wizard.Wpf.dll",
-        "C:\\Users\\Andrei\\.nuget\\packages\\uipath.system.activities/20.2.0\\lib/net461/UiPath.OrchestratorClient.dll",
-        "C:\\Users\\Andrei\\.nuget\\packages\\uipath.system.activities/20.2.0\\lib/net461/UiPath.System.Activities.Design.dll",
-        "C:\\Users\\Andrei\\.nuget\\packages\\uipath.system.activities/20.2.0\\lib/net461/UiPath.System.Activities.dll"
-      ]
+      ],
+      "Path": "C:\\Users\\Andrei\\.nuget\\packages\\uipath.azure.activities\\1.1.5"
     }
   ],
   "Conflicts": [],
@@ -123,6 +161,142 @@
         {
           "Item1": "Newtonsoft.Json",
           "Item2": "[6.0.4, )"
+        }
+      ]
+    },
+    "Microsoft.AspNetCore.Connections.Abstractions": {
+      "Id": "Microsoft.AspNetCore.Connections.Abstractions",
+      "Version": "3.1.6",
+      "Dependencies": [
+        {
+          "Item1": "Microsoft.AspNetCore.Http.Features",
+          "Item2": "[3.1.6, )"
+        },
+        {
+          "Item1": "Microsoft.Bcl.AsyncInterfaces",
+          "Item2": "[1.1.1, )"
+        },
+        {
+          "Item1": "System.IO.Pipelines",
+          "Item2": "[4.7.1, )"
+        }
+      ]
+    },
+    "Microsoft.AspNetCore.Http.Connections.Client": {
+      "Id": "Microsoft.AspNetCore.Http.Connections.Client",
+      "Version": "3.1.6",
+      "Dependencies": [
+        {
+          "Item1": "Microsoft.AspNetCore.Http.Connections.Common",
+          "Item2": "[3.1.6, )"
+        },
+        {
+          "Item1": "Microsoft.Extensions.Logging.Abstractions",
+          "Item2": "[3.1.6, )"
+        },
+        {
+          "Item1": "Microsoft.Extensions.Options",
+          "Item2": "[3.1.6, )"
+        }
+      ]
+    },
+    "Microsoft.AspNetCore.Http.Connections.Common": {
+      "Id": "Microsoft.AspNetCore.Http.Connections.Common",
+      "Version": "3.1.6",
+      "Dependencies": [
+        {
+          "Item1": "Microsoft.AspNetCore.Connections.Abstractions",
+          "Item2": "[3.1.6, )"
+        },
+        {
+          "Item1": "System.Text.Json",
+          "Item2": "[4.7.2, )"
+        }
+      ]
+    },
+    "Microsoft.AspNetCore.Http.Features": {
+      "Id": "Microsoft.AspNetCore.Http.Features",
+      "Version": "3.1.6",
+      "Dependencies": [
+        {
+          "Item1": "Microsoft.Extensions.Primitives",
+          "Item2": "[3.1.6, )"
+        },
+        {
+          "Item1": "System.IO.Pipelines",
+          "Item2": "[4.7.1, )"
+        }
+      ]
+    },
+    "Microsoft.AspNetCore.SignalR.Client": {
+      "Id": "Microsoft.AspNetCore.SignalR.Client",
+      "Version": "3.1.6",
+      "Dependencies": [
+        {
+          "Item1": "Microsoft.AspNetCore.SignalR.Client.Core",
+          "Item2": "[3.1.6, )"
+        },
+        {
+          "Item1": "Microsoft.AspNetCore.Http.Connections.Client",
+          "Item2": "[3.1.6, )"
+        }
+      ]
+    },
+    "Microsoft.AspNetCore.SignalR.Client.Core": {
+      "Id": "Microsoft.AspNetCore.SignalR.Client.Core",
+      "Version": "3.1.6",
+      "Dependencies": [
+        {
+          "Item1": "Microsoft.AspNetCore.SignalR.Protocols.Json",
+          "Item2": "[3.1.6, )"
+        },
+        {
+          "Item1": "Microsoft.AspNetCore.SignalR.Common",
+          "Item2": "[3.1.6, )"
+        },
+        {
+          "Item1": "Microsoft.Bcl.AsyncInterfaces",
+          "Item2": "[1.1.1, )"
+        },
+        {
+          "Item1": "Microsoft.Extensions.DependencyInjection",
+          "Item2": "[3.1.6, )"
+        },
+        {
+          "Item1": "Microsoft.Extensions.Logging",
+          "Item2": "[3.1.6, )"
+        },
+        {
+          "Item1": "System.Threading.Channels",
+          "Item2": "[4.7.1, )"
+        }
+      ]
+    },
+    "Microsoft.AspNetCore.SignalR.Common": {
+      "Id": "Microsoft.AspNetCore.SignalR.Common",
+      "Version": "3.1.6",
+      "Dependencies": [
+        {
+          "Item1": "Microsoft.AspNetCore.Connections.Abstractions",
+          "Item2": "[3.1.6, )"
+        },
+        {
+          "Item1": "Microsoft.Extensions.Options",
+          "Item2": "[3.1.6, )"
+        },
+        {
+          "Item1": "System.Text.Json",
+          "Item2": "[4.7.2, )"
+        }
+      ]
+    },
+    "Microsoft.AspNetCore.SignalR.Protocols.Json": {
+      "Id": "Microsoft.AspNetCore.SignalR.Protocols.Json",
+      "Version": "3.1.6",
+      "Dependencies": [
+        {
+          "Item1": "Microsoft.AspNetCore.SignalR.Common",
+          "Item2": "[3.1.6, )"
         }
       ]
     },
@@ -929,6 +1103,16 @@
         }
       ]
     },
+    "Microsoft.Bcl.AsyncInterfaces": {
+      "Id": "Microsoft.Bcl.AsyncInterfaces",
+      "Version": "1.1.1",
+      "Dependencies": [
+        {
+          "Item1": "System.Threading.Tasks.Extensions",
+          "Item2": "[4.5.4, )"
+        }
+      ]
+    },
     "Microsoft.Data.Edm": {
       "Id": "Microsoft.Data.Edm",
       "Version": "5.8.4",
@@ -955,6 +1139,114 @@
         {
           "Item1": "Microsoft.Data.OData",
           "Item2": "[5.8.4, 5.8.4]"
+        }
+      ]
+    },
+    "Microsoft.Extensions.Configuration": {
+      "Id": "Microsoft.Extensions.Configuration",
+      "Version": "3.1.6",
+      "Dependencies": [
+        {
+          "Item1": "Microsoft.Extensions.Configuration.Abstractions",
+          "Item2": "[3.1.6, )"
+        }
+      ]
+    },
+    "Microsoft.Extensions.Configuration.Abstractions": {
+      "Id": "Microsoft.Extensions.Configuration.Abstractions",
+      "Version": "3.1.6",
+      "Dependencies": [
+        {
+          "Item1": "Microsoft.Extensions.Primitives",
+          "Item2": "[3.1.6, )"
+        }
+      ]
+    },
+    "Microsoft.Extensions.Configuration.Binder": {
+      "Id": "Microsoft.Extensions.Configuration.Binder",
+      "Version": "3.1.6",
+      "Dependencies": [
+        {
+          "Item1": "Microsoft.Extensions.Configuration",
+          "Item2": "[3.1.6, )"
+        }
+      ]
+    },
+    "Microsoft.Extensions.DependencyInjection": {
+      "Id": "Microsoft.Extensions.DependencyInjection",
+      "Version": "3.1.6",
+      "Dependencies": [
+        {
+          "Item1": "Microsoft.Extensions.DependencyInjection.Abstractions",
+          "Item2": "[3.1.6, )"
+        },
+        {
+          "Item1": "Microsoft.Bcl.AsyncInterfaces",
+          "Item2": "[1.1.1, )"
+        }
+      ]
+    },
+    "Microsoft.Extensions.DependencyInjection.Abstractions": {
+      "Id": "Microsoft.Extensions.DependencyInjection.Abstractions",
+      "Version": "3.1.6",
+      "Dependencies": []
+    },
+    "Microsoft.Extensions.Logging": {
+      "Id": "Microsoft.Extensions.Logging",
+      "Version": "3.1.6",
+      "Dependencies": [
+        {
+          "Item1": "Microsoft.Extensions.Configuration.Binder",
+          "Item2": "[3.1.6, )"
+        },
+        {
+          "Item1": "Microsoft.Extensions.DependencyInjection",
+          "Item2": "[3.1.6, )"
+        },
+        {
+          "Item1": "Microsoft.Extensions.Logging.Abstractions",
+          "Item2": "[3.1.6, )"
+        },
+        {
+          "Item1": "Microsoft.Extensions.Options",
+          "Item2": "[3.1.6, )"
+        }
+      ]
+    },
+    "Microsoft.Extensions.Logging.Abstractions": {
+      "Id": "Microsoft.Extensions.Logging.Abstractions",
+      "Version": "3.1.6",
+      "Dependencies": []
+    },
+    "Microsoft.Extensions.Options": {
+      "Id": "Microsoft.Extensions.Options",
+      "Version": "3.1.6",
+      "Dependencies": [
+        {
+          "Item1": "Microsoft.Extensions.DependencyInjection.Abstractions",
+          "Item2": "[3.1.6, )"
+        },
+        {
+          "Item1": "Microsoft.Extensions.Primitives",
+          "Item2": "[3.1.6, )"
+        },
+        {
+          "Item1": "System.ComponentModel.Annotations",
+          "Item2": "[4.7.0, )"
+        }
+      ]
+    },
+    "Microsoft.Extensions.Primitives": {
+      "Id": "Microsoft.Extensions.Primitives",
+      "Version": "3.1.6",
+      "Dependencies": [
+        {
+          "Item1": "System.Memory",
+          "Item2": "[4.5.2, )"
+        },
+        {
+          "Item1": "System.Runtime.CompilerServices.Unsafe",
+          "Item2": "[4.7.1, )"
         }
       ]
     },
@@ -1008,7 +1300,7 @@
     },
     "Microsoft.Rest.ClientRuntime": {
       "Id": "Microsoft.Rest.ClientRuntime",
-      "Version": "2.3.20",
+      "Version": "2.3.21",
       "Dependencies": [
         {
           "Item1": "Newtonsoft.Json",
@@ -1249,9 +1541,19 @@
       "Version": "11.0.2",
       "Dependencies": []
     },
+    "SharpZipLib": {
+      "Id": "SharpZipLib",
+      "Version": "1.2.0",
+      "Dependencies": []
+    },
     "System.AppContext": {
       "Id": "System.AppContext",
       "Version": "4.1.0",
+      "Dependencies": []
+    },
+    "System.Buffers": {
+      "Id": "System.Buffers",
+      "Version": "4.5.1",
       "Dependencies": []
     },
     "System.Collections": {
@@ -1272,6 +1574,11 @@
     "System.Collections.Specialized": {
       "Id": "System.Collections.Specialized",
       "Version": "4.0.1",
+      "Dependencies": []
+    },
+    "System.ComponentModel.Annotations": {
+      "Id": "System.ComponentModel.Annotations",
+      "Version": "4.7.0",
       "Dependencies": []
     },
     "System.Console": {
@@ -1324,6 +1631,11 @@
       "Version": "4.1.0",
       "Dependencies": []
     },
+    "System.IO.Abstractions": {
+      "Id": "System.IO.Abstractions",
+      "Version": "3.0.10",
+      "Dependencies": []
+    },
     "System.IO.Compression": {
       "Id": "System.IO.Compression",
       "Version": "4.1.0",
@@ -1349,6 +1661,24 @@
       "Version": "4.0.1",
       "Dependencies": []
     },
+    "System.IO.Pipelines": {
+      "Id": "System.IO.Pipelines",
+      "Version": "4.7.1",
+      "Dependencies": [
+        {
+          "Item1": "System.Buffers",
+          "Item2": "[4.5.0, )"
+        },
+        {
+          "Item1": "System.Memory",
+          "Item2": "[4.5.3, )"
+        },
+        {
+          "Item1": "System.Threading.Tasks.Extensions",
+          "Item2": "[4.5.2, )"
+        }
+      ]
+    },
     "System.Linq": {
       "Id": "System.Linq",
       "Version": "4.1.0",
@@ -1363,6 +1693,24 @@
       "Id": "System.Linq.Queryable",
       "Version": "4.0.1",
       "Dependencies": []
+    },
+    "System.Memory": {
+      "Id": "System.Memory",
+      "Version": "4.5.4",
+      "Dependencies": [
+        {
+          "Item1": "System.Buffers",
+          "Item2": "[4.5.1, )"
+        },
+        {
+          "Item1": "System.Numerics.Vectors",
+          "Item2": "[4.5.0, )"
+        },
+        {
+          "Item1": "System.Runtime.CompilerServices.Unsafe",
+          "Item2": "[4.5.3, )"
+        }
+      ]
     },
     "System.Net.Http": {
       "Id": "System.Net.Http",
@@ -1422,6 +1770,11 @@
       "Version": "4.0.1",
       "Dependencies": []
     },
+    "System.Numerics.Vectors": {
+      "Id": "System.Numerics.Vectors",
+      "Version": "4.5.0",
+      "Dependencies": []
+    },
     "System.ObjectModel": {
       "Id": "System.ObjectModel",
       "Version": "4.0.12",
@@ -1450,6 +1803,11 @@
     "System.Runtime": {
       "Id": "System.Runtime",
       "Version": "4.1.0",
+      "Dependencies": []
+    },
+    "System.Runtime.CompilerServices.Unsafe": {
+      "Id": "System.Runtime.CompilerServices.Unsafe",
+      "Version": "4.7.1",
       "Dependencies": []
     },
     "System.Runtime.Extensions": {
@@ -1536,6 +1894,54 @@
       "Version": "4.0.11",
       "Dependencies": []
     },
+    "System.Text.Encodings.Web": {
+      "Id": "System.Text.Encodings.Web",
+      "Version": "4.7.1",
+      "Dependencies": [
+        {
+          "Item1": "System.Memory",
+          "Item2": "[4.5.4, )"
+        }
+      ]
+    },
+    "System.Text.Json": {
+      "Id": "System.Text.Json",
+      "Version": "4.7.2",
+      "Dependencies": [
+        {
+          "Item1": "Microsoft.Bcl.AsyncInterfaces",
+          "Item2": "[1.1.0, )"
+        },
+        {
+          "Item1": "System.Buffers",
+          "Item2": "[4.5.1, )"
+        },
+        {
+          "Item1": "System.Memory",
+          "Item2": "[4.5.4, )"
+        },
+        {
+          "Item1": "System.Numerics.Vectors",
+          "Item2": "[4.5.0, )"
+        },
+        {
+          "Item1": "System.Runtime.CompilerServices.Unsafe",
+          "Item2": "[4.7.1, )"
+        },
+        {
+          "Item1": "System.Text.Encodings.Web",
+          "Item2": "[4.7.1, )"
+        },
+        {
+          "Item1": "System.Threading.Tasks.Extensions",
+          "Item2": "[4.5.4, )"
+        },
+        {
+          "Item1": "System.ValueTuple",
+          "Item2": "[4.5.0, )"
+        }
+      ]
+    },
     "System.Text.RegularExpressions": {
       "Id": "System.Text.RegularExpressions",
       "Version": "4.1.0",
@@ -1546,14 +1952,44 @@
       "Version": "4.0.11",
       "Dependencies": []
     },
+    "System.Threading.Channels": {
+      "Id": "System.Threading.Channels",
+      "Version": "4.7.1",
+      "Dependencies": [
+        {
+          "Item1": "System.Threading.Tasks.Extensions",
+          "Item2": "[4.5.4, )"
+        }
+      ]
+    },
     "System.Threading.Tasks": {
       "Id": "System.Threading.Tasks",
       "Version": "4.0.11",
       "Dependencies": []
     },
+    "System.Threading.Tasks.Dataflow": {
+      "Id": "System.Threading.Tasks.Dataflow",
+      "Version": "4.10.0",
+      "Dependencies": []
+    },
+    "System.Threading.Tasks.Extensions": {
+      "Id": "System.Threading.Tasks.Extensions",
+      "Version": "4.5.4",
+      "Dependencies": [
+        {
+          "Item1": "System.Runtime.CompilerServices.Unsafe",
+          "Item2": "[4.5.3, )"
+        }
+      ]
+    },
     "System.Threading.Timer": {
       "Id": "System.Threading.Timer",
       "Version": "4.0.1",
+      "Dependencies": []
+    },
+    "System.ValueTuple": {
+      "Id": "System.ValueTuple",
+      "Version": "4.5.0",
       "Dependencies": []
     },
     "System.Xml.ReaderWriter": {
@@ -1568,7 +2004,7 @@
     },
     "UiPath.Azure.Activities": {
       "Id": "UiPath.Azure.Activities",
-      "Version": "1.1.0",
+      "Version": "1.1.5",
       "Dependencies": [
         {
           "Item1": "Microsoft.Azure.Cosmos.Table",
@@ -1608,7 +2044,11 @@
         },
         {
           "Item1": "Newtonsoft.Json",
-          "Item2": "[10.0.3, )"
+          "Item2": "[11.0.2, )"
+        },
+        {
+          "Item1": "System.IO.Abstractions",
+          "Item2": "[3.0.10, )"
         },
         {
           "Item1": "System.Security.Cryptography.Algorithms",
@@ -1631,15 +2071,45 @@
           "Item2": "[5.8.4, )"
         },
         {
+          "Item1": "System.ValueTuple",
+          "Item2": "[4.5.0, )"
+        },
+        {
+          "Item1": "UiPath.Telemetry.Client",
+          "Item2": "[1.2.20, )"
+        },
+        {
           "Item1": "Microsoft.Azure.Management.Fluent",
           "Item2": "[1.25.0, )"
         }
       ]
     },
+    "UiPath.Platform": {
+      "Id": "UiPath.Platform",
+      "Version": "20.10.4",
+      "Dependencies": [
+        {
+          "Item1": "Newtonsoft.Json",
+          "Item2": "[11.0.2, )"
+        },
+        {
+          "Item1": "System.IO.Abstractions",
+          "Item2": "[3.0.10, )"
+        },
+        {
+          "Item1": "System.ValueTuple",
+          "Item2": "[4.5.0, )"
+        }
+      ]
+    },
     "UiPath.System.Activities": {
       "Id": "UiPath.System.Activities",
-      "Version": "20.2.0",
+      "Version": "20.10.1",
       "Dependencies": [
+        {
+          "Item1": "UiPath.Platform",
+          "Item2": "[20.10.4, )"
+        },
         {
           "Item1": "CsvHelper",
           "Item2": "[2.13.5, )"
@@ -1649,12 +2119,58 @@
           "Item2": "[2.4.0, )"
         },
         {
+          "Item1": "Microsoft.AspNetCore.SignalR.Client",
+          "Item2": "[3.1.6, )"
+        },
+        {
+          "Item1": "Microsoft.Bcl.AsyncInterfaces",
+          "Item2": "[1.1.1, )"
+        },
+        {
           "Item1": "Microsoft.Rest.ClientRuntime",
-          "Item2": "[2.3.20, )"
+          "Item2": "[2.3.21, )"
         },
         {
           "Item1": "Newtonsoft.Json",
           "Item2": "[11.0.2, )"
+        },
+        {
+          "Item1": "SharpZipLib",
+          "Item2": "[1.2.0, )"
+        },
+        {
+          "Item1": "System.Buffers",
+          "Item2": "[4.5.1, )"
+        },
+        {
+          "Item1": "System.Memory",
+          "Item2": "[4.5.4, )"
+        },
+        {
+          "Item1": "System.Numerics.Vectors",
+          "Item2": "[4.5.0, )"
+        },
+        {
+          "Item1": "System.Runtime.CompilerServices.Unsafe",
+          "Item2": "[4.7.1, )"
+        },
+        {
+          "Item1": "System.Threading.Tasks.Extensions",
+          "Item2": "[4.5.4, )"
+        }
+      ]
+    },
+    "UiPath.Telemetry.Client": {
+      "Id": "UiPath.Telemetry.Client",
+      "Version": "1.2.20",
+      "Dependencies": [
+        {
+          "Item1": "Newtonsoft.Json",
+          "Item2": "[11.0.1, )"
+        },
+        {
+          "Item1": "System.Threading.Tasks.Dataflow",
+          "Item2": "[4.10.0, )"
         }
       ]
     },
@@ -1680,5 +2196,1469 @@
         }
       ]
     }
-  }
+  },
+  "AllPackages": [
+    {
+      "Package": {
+        "Id": "CsvHelper",
+        "Version": "2.13.5"
+      },
+      "Assemblies": [
+        "C:\\Users\\Andrei\\.nuget\\packages\\csvhelper\\2.13.5\\lib\\net40-client\\CsvHelper.dll"
+      ],
+      "Path": "C:\\Users\\Andrei\\.nuget\\packages\\csvhelper\\2.13.5"
+    },
+    {
+      "Package": {
+        "Id": "Microsoft.AspNet.SignalR.Client",
+        "Version": "2.4.0"
+      },
+      "Assemblies": [
+        "C:\\Users\\Andrei\\.nuget\\packages\\microsoft.aspnet.signalr.client\\2.4.0\\lib\\net45\\Microsoft.AspNet.SignalR.Client.dll"
+      ],
+      "Path": "C:\\Users\\Andrei\\.nuget\\packages\\microsoft.aspnet.signalr.client\\2.4.0"
+    },
+    {
+      "Package": {
+        "Id": "Microsoft.AspNetCore.Connections.Abstractions",
+        "Version": "3.1.6"
+      },
+      "Assemblies": [
+        "C:\\Users\\Andrei\\.nuget\\packages\\microsoft.aspnetcore.connections.abstractions\\3.1.6\\lib\\netstandard2.0\\Microsoft.AspNetCore.Connections.Abstractions.dll"
+      ],
+      "Path": "C:\\Users\\Andrei\\.nuget\\packages\\microsoft.aspnetcore.connections.abstractions\\3.1.6"
+    },
+    {
+      "Package": {
+        "Id": "Microsoft.AspNetCore.Http.Connections.Client",
+        "Version": "3.1.6"
+      },
+      "Assemblies": [
+        "C:\\Users\\Andrei\\.nuget\\packages\\microsoft.aspnetcore.http.connections.client\\3.1.6\\lib\\netstandard2.0\\Microsoft.AspNetCore.Http.Connections.Client.dll"
+      ],
+      "Path": "C:\\Users\\Andrei\\.nuget\\packages\\microsoft.aspnetcore.http.connections.client\\3.1.6"
+    },
+    {
+      "Package": {
+        "Id": "Microsoft.AspNetCore.Http.Connections.Common",
+        "Version": "3.1.6"
+      },
+      "Assemblies": [
+        "C:\\Users\\Andrei\\.nuget\\packages\\microsoft.aspnetcore.http.connections.common\\3.1.6\\lib\\netstandard2.0\\Microsoft.AspNetCore.Http.Connections.Common.dll"
+      ],
+      "Path": "C:\\Users\\Andrei\\.nuget\\packages\\microsoft.aspnetcore.http.connections.common\\3.1.6"
+    },
+    {
+      "Package": {
+        "Id": "Microsoft.AspNetCore.Http.Features",
+        "Version": "3.1.6"
+      },
+      "Assemblies": [
+        "C:\\Users\\Andrei\\.nuget\\packages\\microsoft.aspnetcore.http.features\\3.1.6\\lib\\netstandard2.0\\Microsoft.AspNetCore.Http.Features.dll"
+      ],
+      "Path": "C:\\Users\\Andrei\\.nuget\\packages\\microsoft.aspnetcore.http.features\\3.1.6"
+    },
+    {
+      "Package": {
+        "Id": "Microsoft.AspNetCore.SignalR.Client",
+        "Version": "3.1.6"
+      },
+      "Assemblies": [
+        "C:\\Users\\Andrei\\.nuget\\packages\\microsoft.aspnetcore.signalr.client\\3.1.6\\lib\\netstandard2.0\\Microsoft.AspNetCore.SignalR.Client.dll"
+      ],
+      "Path": "C:\\Users\\Andrei\\.nuget\\packages\\microsoft.aspnetcore.signalr.client\\3.1.6"
+    },
+    {
+      "Package": {
+        "Id": "Microsoft.AspNetCore.SignalR.Client.Core",
+        "Version": "3.1.6"
+      },
+      "Assemblies": [
+        "C:\\Users\\Andrei\\.nuget\\packages\\microsoft.aspnetcore.signalr.client.core\\3.1.6\\lib\\netstandard2.0\\Microsoft.AspNetCore.SignalR.Client.Core.dll"
+      ],
+      "Path": "C:\\Users\\Andrei\\.nuget\\packages\\microsoft.aspnetcore.signalr.client.core\\3.1.6"
+    },
+    {
+      "Package": {
+        "Id": "Microsoft.AspNetCore.SignalR.Common",
+        "Version": "3.1.6"
+      },
+      "Assemblies": [
+        "C:\\Users\\Andrei\\.nuget\\packages\\microsoft.aspnetcore.signalr.common\\3.1.6\\lib\\netstandard2.0\\Microsoft.AspNetCore.SignalR.Common.dll"
+      ],
+      "Path": "C:\\Users\\Andrei\\.nuget\\packages\\microsoft.aspnetcore.signalr.common\\3.1.6"
+    },
+    {
+      "Package": {
+        "Id": "Microsoft.AspNetCore.SignalR.Protocols.Json",
+        "Version": "3.1.6"
+      },
+      "Assemblies": [
+        "C:\\Users\\Andrei\\.nuget\\packages\\microsoft.aspnetcore.signalr.protocols.json\\3.1.6\\lib\\netstandard2.0\\Microsoft.AspNetCore.SignalR.Protocols.Json.dll"
+      ],
+      "Path": "C:\\Users\\Andrei\\.nuget\\packages\\microsoft.aspnetcore.signalr.protocols.json\\3.1.6"
+    },
+    {
+      "Package": {
+        "Id": "Microsoft.Azure.Cosmos.Table",
+        "Version": "1.0.1"
+      },
+      "Assemblies": [
+        "C:\\Users\\Andrei\\.nuget\\packages\\microsoft.azure.cosmos.table\\1.0.1\\lib\\netstandard2.0\\Microsoft.Azure.Cosmos.Table.dll"
+      ],
+      "Path": "C:\\Users\\Andrei\\.nuget\\packages\\microsoft.azure.cosmos.table\\1.0.1"
+    },
+    {
+      "Package": {
+        "Id": "Microsoft.Azure.DocumentDB.Core",
+        "Version": "2.1.3"
+      },
+      "Assemblies": [
+        "C:\\Users\\Andrei\\.nuget\\packages\\microsoft.azure.documentdb.core\\2.1.3\\lib\\netstandard1.6\\Microsoft.Azure.DocumentDB.Core.dll"
+      ],
+      "Path": "C:\\Users\\Andrei\\.nuget\\packages\\microsoft.azure.documentdb.core\\2.1.3"
+    },
+    {
+      "Package": {
+        "Id": "Microsoft.Azure.KeyVault",
+        "Version": "3.0.1"
+      },
+      "Assemblies": [
+        "C:\\Users\\Andrei\\.nuget\\packages\\microsoft.azure.keyvault\\3.0.1\\lib\\net452\\Microsoft.Azure.KeyVault.dll"
+      ],
+      "Path": "C:\\Users\\Andrei\\.nuget\\packages\\microsoft.azure.keyvault\\3.0.1"
+    },
+    {
+      "Package": {
+        "Id": "Microsoft.Azure.KeyVault.Core",
+        "Version": "1.0.0"
+      },
+      "Assemblies": [
+        "C:\\Users\\Andrei\\.nuget\\packages\\microsoft.azure.keyvault.core\\1.0.0\\lib\\net40\\Microsoft.Azure.KeyVault.Core.dll"
+      ],
+      "Path": "C:\\Users\\Andrei\\.nuget\\packages\\microsoft.azure.keyvault.core\\1.0.0"
+    },
+    {
+      "Package": {
+        "Id": "Microsoft.Azure.KeyVault.WebKey",
+        "Version": "3.0.1"
+      },
+      "Assemblies": [
+        "C:\\Users\\Andrei\\.nuget\\packages\\microsoft.azure.keyvault.webkey\\3.0.1\\lib\\net452\\Microsoft.Azure.KeyVault.WebKey.dll"
+      ],
+      "Path": "C:\\Users\\Andrei\\.nuget\\packages\\microsoft.azure.keyvault.webkey\\3.0.1"
+    },
+    {
+      "Package": {
+        "Id": "Microsoft.Azure.Management.AppService.Fluent",
+        "Version": "1.25.0"
+      },
+      "Assemblies": [
+        "C:\\Users\\Andrei\\.nuget\\packages\\microsoft.azure.management.appservice.fluent\\1.25.0\\lib\\net452\\Microsoft.Azure.Management.AppService.Fluent.dll"
+      ],
+      "Path": "C:\\Users\\Andrei\\.nuget\\packages\\microsoft.azure.management.appservice.fluent\\1.25.0"
+    },
+    {
+      "Package": {
+        "Id": "Microsoft.Azure.Management.Batch.Fluent",
+        "Version": "1.25.0"
+      },
+      "Assemblies": [
+        "C:\\Users\\Andrei\\.nuget\\packages\\microsoft.azure.management.batch.fluent\\1.25.0\\lib\\net452\\Microsoft.Azure.Management.Batch.Fluent.dll"
+      ],
+      "Path": "C:\\Users\\Andrei\\.nuget\\packages\\microsoft.azure.management.batch.fluent\\1.25.0"
+    },
+    {
+      "Package": {
+        "Id": "Microsoft.Azure.Management.BatchAI.Fluent",
+        "Version": "1.25.0"
+      },
+      "Assemblies": [
+        "C:\\Users\\Andrei\\.nuget\\packages\\microsoft.azure.management.batchai.fluent\\1.25.0\\lib\\net452\\Microsoft.Azure.Management.BatchAI.Fluent.dll"
+      ],
+      "Path": "C:\\Users\\Andrei\\.nuget\\packages\\microsoft.azure.management.batchai.fluent\\1.25.0"
+    },
+    {
+      "Package": {
+        "Id": "Microsoft.Azure.Management.Cdn.Fluent",
+        "Version": "1.25.0"
+      },
+      "Assemblies": [
+        "C:\\Users\\Andrei\\.nuget\\packages\\microsoft.azure.management.cdn.fluent\\1.25.0\\lib\\net452\\Microsoft.Azure.Management.Cdn.Fluent.dll"
+      ],
+      "Path": "C:\\Users\\Andrei\\.nuget\\packages\\microsoft.azure.management.cdn.fluent\\1.25.0"
+    },
+    {
+      "Package": {
+        "Id": "Microsoft.Azure.Management.Compute.Fluent",
+        "Version": "1.25.0"
+      },
+      "Assemblies": [
+        "C:\\Users\\Andrei\\.nuget\\packages\\microsoft.azure.management.compute.fluent\\1.25.0\\lib\\net452\\Microsoft.Azure.Management.Compute.Fluent.dll"
+      ],
+      "Path": "C:\\Users\\Andrei\\.nuget\\packages\\microsoft.azure.management.compute.fluent\\1.25.0"
+    },
+    {
+      "Package": {
+        "Id": "Microsoft.Azure.Management.ContainerInstance.Fluent",
+        "Version": "1.25.0"
+      },
+      "Assemblies": [
+        "C:\\Users\\Andrei\\.nuget\\packages\\microsoft.azure.management.containerinstance.fluent\\1.25.0\\lib\\net452\\Microsoft.Azure.Management.ContainerInstance.Fluent.dll"
+      ],
+      "Path": "C:\\Users\\Andrei\\.nuget\\packages\\microsoft.azure.management.containerinstance.fluent\\1.25.0"
+    },
+    {
+      "Package": {
+        "Id": "Microsoft.Azure.Management.ContainerRegistry.Fluent",
+        "Version": "1.25.0"
+      },
+      "Assemblies": [
+        "C:\\Users\\Andrei\\.nuget\\packages\\microsoft.azure.management.containerregistry.fluent\\1.25.0\\lib\\net452\\Microsoft.Azure.Management.ContainerRegistry.Fluent.dll"
+      ],
+      "Path": "C:\\Users\\Andrei\\.nuget\\packages\\microsoft.azure.management.containerregistry.fluent\\1.25.0"
+    },
+    {
+      "Package": {
+        "Id": "Microsoft.Azure.Management.ContainerService.Fluent",
+        "Version": "1.25.0"
+      },
+      "Assemblies": [
+        "C:\\Users\\Andrei\\.nuget\\packages\\microsoft.azure.management.containerservice.fluent\\1.25.0\\lib\\net452\\Microsoft.Azure.Management.ContainerService.Fluent.dll"
+      ],
+      "Path": "C:\\Users\\Andrei\\.nuget\\packages\\microsoft.azure.management.containerservice.fluent\\1.25.0"
+    },
+    {
+      "Package": {
+        "Id": "Microsoft.Azure.Management.CosmosDB.Fluent",
+        "Version": "1.25.0"
+      },
+      "Assemblies": [
+        "C:\\Users\\Andrei\\.nuget\\packages\\microsoft.azure.management.cosmosdb.fluent\\1.25.0\\lib\\net452\\Microsoft.Azure.Management.CosmosDB.Fluent.dll"
+      ],
+      "Path": "C:\\Users\\Andrei\\.nuget\\packages\\microsoft.azure.management.cosmosdb.fluent\\1.25.0"
+    },
+    {
+      "Package": {
+        "Id": "Microsoft.Azure.Management.Dns.Fluent",
+        "Version": "1.25.0"
+      },
+      "Assemblies": [
+        "C:\\Users\\Andrei\\.nuget\\packages\\microsoft.azure.management.dns.fluent\\1.25.0\\lib\\net452\\Microsoft.Azure.Management.Dns.Fluent.dll"
+      ],
+      "Path": "C:\\Users\\Andrei\\.nuget\\packages\\microsoft.azure.management.dns.fluent\\1.25.0"
+    },
+    {
+      "Package": {
+        "Id": "Microsoft.Azure.Management.EventHub.Fluent",
+        "Version": "1.25.0"
+      },
+      "Assemblies": [
+        "C:\\Users\\Andrei\\.nuget\\packages\\microsoft.azure.management.eventhub.fluent\\1.25.0\\lib\\net452\\Microsoft.Azure.Management.EventHub.Fluent.dll"
+      ],
+      "Path": "C:\\Users\\Andrei\\.nuget\\packages\\microsoft.azure.management.eventhub.fluent\\1.25.0"
+    },
+    {
+      "Package": {
+        "Id": "Microsoft.Azure.Management.Fluent",
+        "Version": "1.25.0"
+      },
+      "Assemblies": [
+        "C:\\Users\\Andrei\\.nuget\\packages\\microsoft.azure.management.fluent\\1.25.0\\lib\\net452\\Microsoft.Azure.Management.Fluent.dll"
+      ],
+      "Path": "C:\\Users\\Andrei\\.nuget\\packages\\microsoft.azure.management.fluent\\1.25.0"
+    },
+    {
+      "Package": {
+        "Id": "Microsoft.Azure.Management.Graph.RBAC.Fluent",
+        "Version": "1.25.0"
+      },
+      "Assemblies": [
+        "C:\\Users\\Andrei\\.nuget\\packages\\microsoft.azure.management.graph.rbac.fluent\\1.25.0\\lib\\net452\\Microsoft.Azure.Management.Graph.RBAC.Fluent.dll"
+      ],
+      "Path": "C:\\Users\\Andrei\\.nuget\\packages\\microsoft.azure.management.graph.rbac.fluent\\1.25.0"
+    },
+    {
+      "Package": {
+        "Id": "Microsoft.Azure.Management.KeyVault.Fluent",
+        "Version": "1.25.0"
+      },
+      "Assemblies": [
+        "C:\\Users\\Andrei\\.nuget\\packages\\microsoft.azure.management.keyvault.fluent\\1.25.0\\lib\\net452\\Microsoft.Azure.Management.KeyVault.Fluent.dll"
+      ],
+      "Path": "C:\\Users\\Andrei\\.nuget\\packages\\microsoft.azure.management.keyvault.fluent\\1.25.0"
+    },
+    {
+      "Package": {
+        "Id": "Microsoft.Azure.Management.Locks.Fluent",
+        "Version": "1.25.0"
+      },
+      "Assemblies": [
+        "C:\\Users\\Andrei\\.nuget\\packages\\microsoft.azure.management.locks.fluent\\1.25.0\\lib\\net452\\Microsoft.Azure.Management.Locks.Fluent.dll"
+      ],
+      "Path": "C:\\Users\\Andrei\\.nuget\\packages\\microsoft.azure.management.locks.fluent\\1.25.0"
+    },
+    {
+      "Package": {
+        "Id": "Microsoft.Azure.Management.Monitor.Fluent",
+        "Version": "1.25.0"
+      },
+      "Assemblies": [
+        "C:\\Users\\Andrei\\.nuget\\packages\\microsoft.azure.management.monitor.fluent\\1.25.0\\lib\\net452\\Microsoft.Azure.Management.Monitor.Fluent.dll"
+      ],
+      "Path": "C:\\Users\\Andrei\\.nuget\\packages\\microsoft.azure.management.monitor.fluent\\1.25.0"
+    },
+    {
+      "Package": {
+        "Id": "Microsoft.Azure.Management.Msi.Fluent",
+        "Version": "1.25.0"
+      },
+      "Assemblies": [
+        "C:\\Users\\Andrei\\.nuget\\packages\\microsoft.azure.management.msi.fluent\\1.25.0\\lib\\net452\\Microsoft.Azure.Management.Msi.Fluent.dll"
+      ],
+      "Path": "C:\\Users\\Andrei\\.nuget\\packages\\microsoft.azure.management.msi.fluent\\1.25.0"
+    },
+    {
+      "Package": {
+        "Id": "Microsoft.Azure.Management.Network",
+        "Version": "5.0.0"
+      },
+      "Assemblies": [
+        "C:\\Users\\Andrei\\.nuget\\packages\\microsoft.azure.management.network\\5.0.0\\lib\\net45\\Microsoft.Azure.Management.Network.dll"
+      ],
+      "Path": "C:\\Users\\Andrei\\.nuget\\packages\\microsoft.azure.management.network\\5.0.0"
+    },
+    {
+      "Package": {
+        "Id": "Microsoft.Azure.Management.Network.Fluent",
+        "Version": "1.25.0"
+      },
+      "Assemblies": [
+        "C:\\Users\\Andrei\\.nuget\\packages\\microsoft.azure.management.network.fluent\\1.25.0\\lib\\net452\\Microsoft.Azure.Management.Network.Fluent.dll"
+      ],
+      "Path": "C:\\Users\\Andrei\\.nuget\\packages\\microsoft.azure.management.network.fluent\\1.25.0"
+    },
+    {
+      "Package": {
+        "Id": "Microsoft.Azure.Management.Redis.Fluent",
+        "Version": "1.25.0"
+      },
+      "Assemblies": [
+        "C:\\Users\\Andrei\\.nuget\\packages\\microsoft.azure.management.redis.fluent\\1.25.0\\lib\\net452\\Microsoft.Azure.Management.Redis.Fluent.dll"
+      ],
+      "Path": "C:\\Users\\Andrei\\.nuget\\packages\\microsoft.azure.management.redis.fluent\\1.25.0"
+    },
+    {
+      "Package": {
+        "Id": "Microsoft.Azure.Management.ResourceManager.Fluent",
+        "Version": "1.25.0"
+      },
+      "Assemblies": [
+        "C:\\Users\\Andrei\\.nuget\\packages\\microsoft.azure.management.resourcemanager.fluent\\1.25.0\\lib\\net461\\Microsoft.Azure.Management.ResourceManager.Fluent.dll"
+      ],
+      "Path": "C:\\Users\\Andrei\\.nuget\\packages\\microsoft.azure.management.resourcemanager.fluent\\1.25.0"
+    },
+    {
+      "Package": {
+        "Id": "Microsoft.Azure.Management.Search.Fluent",
+        "Version": "1.25.0"
+      },
+      "Assemblies": [
+        "C:\\Users\\Andrei\\.nuget\\packages\\microsoft.azure.management.search.fluent\\1.25.0\\lib\\net452\\Microsoft.Azure.Management.Search.Fluent.dll"
+      ],
+      "Path": "C:\\Users\\Andrei\\.nuget\\packages\\microsoft.azure.management.search.fluent\\1.25.0"
+    },
+    {
+      "Package": {
+        "Id": "Microsoft.Azure.Management.SecurityCenter",
+        "Version": "1.1.0"
+      },
+      "Assemblies": [
+        "C:\\Users\\Andrei\\.nuget\\packages\\microsoft.azure.management.securitycenter\\1.1.0\\lib\\net461\\Microsoft.Azure.Management.SecurityCenter.dll"
+      ],
+      "Path": "C:\\Users\\Andrei\\.nuget\\packages\\microsoft.azure.management.securitycenter\\1.1.0"
+    },
+    {
+      "Package": {
+        "Id": "Microsoft.Azure.Management.ServiceBus.Fluent",
+        "Version": "1.25.0"
+      },
+      "Assemblies": [
+        "C:\\Users\\Andrei\\.nuget\\packages\\microsoft.azure.management.servicebus.fluent\\1.25.0\\lib\\net452\\Microsoft.Azure.Management.ServiceBus.Fluent.dll"
+      ],
+      "Path": "C:\\Users\\Andrei\\.nuget\\packages\\microsoft.azure.management.servicebus.fluent\\1.25.0"
+    },
+    {
+      "Package": {
+        "Id": "Microsoft.Azure.Management.Sql.Fluent",
+        "Version": "1.25.0"
+      },
+      "Assemblies": [
+        "C:\\Users\\Andrei\\.nuget\\packages\\microsoft.azure.management.sql.fluent\\1.25.0\\lib\\net452\\Microsoft.Azure.Management.Sql.Fluent.dll"
+      ],
+      "Path": "C:\\Users\\Andrei\\.nuget\\packages\\microsoft.azure.management.sql.fluent\\1.25.0"
+    },
+    {
+      "Package": {
+        "Id": "Microsoft.Azure.Management.Storage.Fluent",
+        "Version": "1.25.0"
+      },
+      "Assemblies": [
+        "C:\\Users\\Andrei\\.nuget\\packages\\microsoft.azure.management.storage.fluent\\1.25.0\\lib\\net452\\Microsoft.Azure.Management.Storage.Fluent.dll"
+      ],
+      "Path": "C:\\Users\\Andrei\\.nuget\\packages\\microsoft.azure.management.storage.fluent\\1.25.0"
+    },
+    {
+      "Package": {
+        "Id": "Microsoft.Azure.Management.TrafficManager.Fluent",
+        "Version": "1.25.0"
+      },
+      "Assemblies": [
+        "C:\\Users\\Andrei\\.nuget\\packages\\microsoft.azure.management.trafficmanager.fluent\\1.25.0\\lib\\net452\\Microsoft.Azure.Management.TrafficManager.Fluent.dll"
+      ],
+      "Path": "C:\\Users\\Andrei\\.nuget\\packages\\microsoft.azure.management.trafficmanager.fluent\\1.25.0"
+    },
+    {
+      "Package": {
+        "Id": "Microsoft.Azure.Storage.Blob",
+        "Version": "11.0.0"
+      },
+      "Assemblies": [
+        "C:\\Users\\Andrei\\.nuget\\packages\\microsoft.azure.storage.blob\\11.0.0\\lib\\net452\\Microsoft.Azure.Storage.Blob.dll"
+      ],
+      "Path": "C:\\Users\\Andrei\\.nuget\\packages\\microsoft.azure.storage.blob\\11.0.0"
+    },
+    {
+      "Package": {
+        "Id": "Microsoft.Azure.Storage.Common",
+        "Version": "11.0.0"
+      },
+      "Assemblies": [
+        "C:\\Users\\Andrei\\.nuget\\packages\\microsoft.azure.storage.common\\11.0.0\\lib\\net452\\Microsoft.Azure.Storage.Common.dll"
+      ],
+      "Path": "C:\\Users\\Andrei\\.nuget\\packages\\microsoft.azure.storage.common\\11.0.0"
+    },
+    {
+      "Package": {
+        "Id": "Microsoft.Bcl.AsyncInterfaces",
+        "Version": "1.1.1"
+      },
+      "Assemblies": [
+        "C:\\Users\\Andrei\\.nuget\\packages\\microsoft.bcl.asyncinterfaces\\1.1.1\\lib\\net461\\Microsoft.Bcl.AsyncInterfaces.dll"
+      ],
+      "Path": "C:\\Users\\Andrei\\.nuget\\packages\\microsoft.bcl.asyncinterfaces\\1.1.1"
+    },
+    {
+      "Package": {
+        "Id": "Microsoft.Data.Edm",
+        "Version": "5.8.4"
+      },
+      "Assemblies": [
+        "C:\\Users\\Andrei\\.nuget\\packages\\microsoft.data.edm\\5.8.4\\lib\\net40\\Microsoft.Data.Edm.dll"
+      ],
+      "Path": "C:\\Users\\Andrei\\.nuget\\packages\\microsoft.data.edm\\5.8.4"
+    },
+    {
+      "Package": {
+        "Id": "Microsoft.Data.OData",
+        "Version": "5.8.4"
+      },
+      "Assemblies": [
+        "C:\\Users\\Andrei\\.nuget\\packages\\microsoft.data.odata\\5.8.4\\lib\\net40\\Microsoft.Data.OData.dll"
+      ],
+      "Path": "C:\\Users\\Andrei\\.nuget\\packages\\microsoft.data.odata\\5.8.4"
+    },
+    {
+      "Package": {
+        "Id": "Microsoft.Data.Services.Client",
+        "Version": "5.8.4"
+      },
+      "Assemblies": [
+        "C:\\Users\\Andrei\\.nuget\\packages\\microsoft.data.services.client\\5.8.4\\lib\\net40\\Microsoft.Data.Services.Client.dll"
+      ],
+      "Path": "C:\\Users\\Andrei\\.nuget\\packages\\microsoft.data.services.client\\5.8.4"
+    },
+    {
+      "Package": {
+        "Id": "Microsoft.Extensions.Configuration",
+        "Version": "3.1.6"
+      },
+      "Assemblies": [
+        "C:\\Users\\Andrei\\.nuget\\packages\\microsoft.extensions.configuration\\3.1.6\\lib\\netstandard2.0\\Microsoft.Extensions.Configuration.dll"
+      ],
+      "Path": "C:\\Users\\Andrei\\.nuget\\packages\\microsoft.extensions.configuration\\3.1.6"
+    },
+    {
+      "Package": {
+        "Id": "Microsoft.Extensions.Configuration.Abstractions",
+        "Version": "3.1.6"
+      },
+      "Assemblies": [
+        "C:\\Users\\Andrei\\.nuget\\packages\\microsoft.extensions.configuration.abstractions\\3.1.6\\lib\\netstandard2.0\\Microsoft.Extensions.Configuration.Abstractions.dll"
+      ],
+      "Path": "C:\\Users\\Andrei\\.nuget\\packages\\microsoft.extensions.configuration.abstractions\\3.1.6"
+    },
+    {
+      "Package": {
+        "Id": "Microsoft.Extensions.Configuration.Binder",
+        "Version": "3.1.6"
+      },
+      "Assemblies": [
+        "C:\\Users\\Andrei\\.nuget\\packages\\microsoft.extensions.configuration.binder\\3.1.6\\lib\\netstandard2.0\\Microsoft.Extensions.Configuration.Binder.dll"
+      ],
+      "Path": "C:\\Users\\Andrei\\.nuget\\packages\\microsoft.extensions.configuration.binder\\3.1.6"
+    },
+    {
+      "Package": {
+        "Id": "Microsoft.Extensions.DependencyInjection",
+        "Version": "3.1.6"
+      },
+      "Assemblies": [
+        "C:\\Users\\Andrei\\.nuget\\packages\\microsoft.extensions.dependencyinjection\\3.1.6\\lib\\net461\\Microsoft.Extensions.DependencyInjection.dll"
+      ],
+      "Path": "C:\\Users\\Andrei\\.nuget\\packages\\microsoft.extensions.dependencyinjection\\3.1.6"
+    },
+    {
+      "Package": {
+        "Id": "Microsoft.Extensions.DependencyInjection.Abstractions",
+        "Version": "3.1.6"
+      },
+      "Assemblies": [
+        "C:\\Users\\Andrei\\.nuget\\packages\\microsoft.extensions.dependencyinjection.abstractions\\3.1.6\\lib\\netstandard2.0\\Microsoft.Extensions.DependencyInjection.Abstractions.dll"
+      ],
+      "Path": "C:\\Users\\Andrei\\.nuget\\packages\\microsoft.extensions.dependencyinjection.abstractions\\3.1.6"
+    },
+    {
+      "Package": {
+        "Id": "Microsoft.Extensions.Logging",
+        "Version": "3.1.6"
+      },
+      "Assemblies": [
+        "C:\\Users\\Andrei\\.nuget\\packages\\microsoft.extensions.logging\\3.1.6\\lib\\netstandard2.0\\Microsoft.Extensions.Logging.dll"
+      ],
+      "Path": "C:\\Users\\Andrei\\.nuget\\packages\\microsoft.extensions.logging\\3.1.6"
+    },
+    {
+      "Package": {
+        "Id": "Microsoft.Extensions.Logging.Abstractions",
+        "Version": "3.1.6"
+      },
+      "Assemblies": [
+        "C:\\Users\\Andrei\\.nuget\\packages\\microsoft.extensions.logging.abstractions\\3.1.6\\lib\\netstandard2.0\\Microsoft.Extensions.Logging.Abstractions.dll"
+      ],
+      "Path": "C:\\Users\\Andrei\\.nuget\\packages\\microsoft.extensions.logging.abstractions\\3.1.6"
+    },
+    {
+      "Package": {
+        "Id": "Microsoft.Extensions.Options",
+        "Version": "3.1.6"
+      },
+      "Assemblies": [
+        "C:\\Users\\Andrei\\.nuget\\packages\\microsoft.extensions.options\\3.1.6\\lib\\netstandard2.0\\Microsoft.Extensions.Options.dll"
+      ],
+      "Path": "C:\\Users\\Andrei\\.nuget\\packages\\microsoft.extensions.options\\3.1.6"
+    },
+    {
+      "Package": {
+        "Id": "Microsoft.Extensions.Primitives",
+        "Version": "3.1.6"
+      },
+      "Assemblies": [
+        "C:\\Users\\Andrei\\.nuget\\packages\\microsoft.extensions.primitives\\3.1.6\\lib\\netstandard2.0\\Microsoft.Extensions.Primitives.dll"
+      ],
+      "Path": "C:\\Users\\Andrei\\.nuget\\packages\\microsoft.extensions.primitives\\3.1.6"
+    },
+    {
+      "Package": {
+        "Id": "Microsoft.IdentityModel.Clients.ActiveDirectory",
+        "Version": "4.3.0"
+      },
+      "Assemblies": [
+        "C:\\Users\\Andrei\\.nuget\\packages\\microsoft.identitymodel.clients.activedirectory\\4.3.0\\lib\\net45\\Microsoft.IdentityModel.Clients.ActiveDirectory.dll"
+      ],
+      "Path": "C:\\Users\\Andrei\\.nuget\\packages\\microsoft.identitymodel.clients.activedirectory\\4.3.0"
+    },
+    {
+      "Package": {
+        "Id": "Microsoft.IdentityModel.Logging",
+        "Version": "1.1.2"
+      },
+      "Assemblies": [
+        "C:\\Users\\Andrei\\.nuget\\packages\\microsoft.identitymodel.logging\\1.1.2\\lib\\net451\\Microsoft.IdentityModel.Logging.dll"
+      ],
+      "Path": "C:\\Users\\Andrei\\.nuget\\packages\\microsoft.identitymodel.logging\\1.1.2"
+    },
+    {
+      "Package": {
+        "Id": "Microsoft.IdentityModel.Tokens",
+        "Version": "5.1.2"
+      },
+      "Assemblies": [
+        "C:\\Users\\Andrei\\.nuget\\packages\\microsoft.identitymodel.tokens\\5.1.2\\lib\\net451\\Microsoft.IdentityModel.Tokens.dll"
+      ],
+      "Path": "C:\\Users\\Andrei\\.nuget\\packages\\microsoft.identitymodel.tokens\\5.1.2"
+    },
+    {
+      "Package": {
+        "Id": "Microsoft.NETCore.Platforms",
+        "Version": "1.0.1"
+      },
+      "Assemblies": [
+        "C:\\Users\\Andrei\\.nuget\\packages\\microsoft.netcore.platforms\\1.0.1\\lib\\netstandard1.0\\_._"
+      ],
+      "Path": "C:\\Users\\Andrei\\.nuget\\packages\\microsoft.netcore.platforms\\1.0.1"
+    },
+    {
+      "Package": {
+        "Id": "Microsoft.OData.Core",
+        "Version": "7.5.0"
+      },
+      "Assemblies": [
+        "C:\\Users\\Andrei\\.nuget\\packages\\microsoft.odata.core\\7.5.0\\lib\\portable-net45+win8+wpa81\\Microsoft.OData.Core.dll"
+      ],
+      "Path": "C:\\Users\\Andrei\\.nuget\\packages\\microsoft.odata.core\\7.5.0"
+    },
+    {
+      "Package": {
+        "Id": "Microsoft.OData.Edm",
+        "Version": "7.5.0"
+      },
+      "Assemblies": [
+        "C:\\Users\\Andrei\\.nuget\\packages\\microsoft.odata.edm\\7.5.0\\lib\\portable-net45+win8+wpa81\\Microsoft.OData.Edm.dll"
+      ],
+      "Path": "C:\\Users\\Andrei\\.nuget\\packages\\microsoft.odata.edm\\7.5.0"
+    },
+    {
+      "Package": {
+        "Id": "Microsoft.Rest.ClientRuntime",
+        "Version": "2.3.21"
+      },
+      "Assemblies": [
+        "C:\\Users\\Andrei\\.nuget\\packages\\microsoft.rest.clientruntime\\2.3.21\\lib\\net461\\Microsoft.Rest.ClientRuntime.dll"
+      ],
+      "Path": "C:\\Users\\Andrei\\.nuget\\packages\\microsoft.rest.clientruntime\\2.3.21"
+    },
+    {
+      "Package": {
+        "Id": "Microsoft.Rest.ClientRuntime.Azure",
+        "Version": "3.3.19"
+      },
+      "Assemblies": [
+        "C:\\Users\\Andrei\\.nuget\\packages\\microsoft.rest.clientruntime.azure\\3.3.19\\lib\\net461\\Microsoft.Rest.ClientRuntime.Azure.dll"
+      ],
+      "Path": "C:\\Users\\Andrei\\.nuget\\packages\\microsoft.rest.clientruntime.azure\\3.3.19"
+    },
+    {
+      "Package": {
+        "Id": "Microsoft.Rest.ClientRuntime.Azure.Authentication",
+        "Version": "2.4.0"
+      },
+      "Assemblies": [
+        "C:\\Users\\Andrei\\.nuget\\packages\\microsoft.rest.clientruntime.azure.authentication\\2.4.0\\lib\\net461\\Microsoft.Rest.ClientRuntime.Azure.Authentication.dll"
+      ],
+      "Path": "C:\\Users\\Andrei\\.nuget\\packages\\microsoft.rest.clientruntime.azure.authentication\\2.4.0"
+    },
+    {
+      "Package": {
+        "Id": "Microsoft.Spatial",
+        "Version": "7.5.0"
+      },
+      "Assemblies": [
+        "C:\\Users\\Andrei\\.nuget\\packages\\microsoft.spatial\\7.5.0\\lib\\portable-net45+win8+wpa81\\Microsoft.Spatial.dll"
+      ],
+      "Path": "C:\\Users\\Andrei\\.nuget\\packages\\microsoft.spatial\\7.5.0"
+    },
+    {
+      "Package": {
+        "Id": "Microsoft.Win32.Primitives",
+        "Version": "4.0.1"
+      },
+      "Assemblies": [
+        "C:\\Users\\Andrei\\.nuget\\packages\\microsoft.win32.primitives\\4.0.1\\lib\\net46\\Microsoft.Win32.Primitives.dll"
+      ],
+      "Path": "C:\\Users\\Andrei\\.nuget\\packages\\microsoft.win32.primitives\\4.0.1"
+    },
+    {
+      "Package": {
+        "Id": "NETStandard.Library",
+        "Version": "1.6.0"
+      },
+      "Assemblies": [],
+      "Path": "C:\\Users\\Andrei\\.nuget\\packages\\netstandard.library\\1.6.0"
+    },
+    {
+      "Package": {
+        "Id": "Newtonsoft.Json",
+        "Version": "11.0.2"
+      },
+      "Assemblies": [
+        "C:\\Users\\Andrei\\.nuget\\packages\\newtonsoft.json\\11.0.2\\lib\\net45\\Newtonsoft.Json.dll"
+      ],
+      "Path": "C:\\Users\\Andrei\\.nuget\\packages\\newtonsoft.json\\11.0.2"
+    },
+    {
+      "Package": {
+        "Id": "SharpZipLib",
+        "Version": "1.2.0"
+      },
+      "Assemblies": [
+        "C:\\Users\\Andrei\\.nuget\\packages\\sharpziplib\\1.2.0\\lib\\net45\\ICSharpCode.SharpZipLib.dll"
+      ],
+      "Path": "C:\\Users\\Andrei\\.nuget\\packages\\sharpziplib\\1.2.0"
+    },
+    {
+      "Package": {
+        "Id": "System.AppContext",
+        "Version": "4.1.0"
+      },
+      "Assemblies": [
+        "C:\\Users\\Andrei\\.nuget\\packages\\system.appcontext\\4.1.0\\lib\\net46\\System.AppContext.dll"
+      ],
+      "Path": "C:\\Users\\Andrei\\.nuget\\packages\\system.appcontext\\4.1.0"
+    },
+    {
+      "Package": {
+        "Id": "System.Buffers",
+        "Version": "4.5.1"
+      },
+      "Assemblies": [
+        "C:\\Users\\Andrei\\.nuget\\packages\\system.buffers\\4.5.1\\lib\\net461\\System.Buffers.dll"
+      ],
+      "Path": "C:\\Users\\Andrei\\.nuget\\packages\\system.buffers\\4.5.1"
+    },
+    {
+      "Package": {
+        "Id": "System.Collections",
+        "Version": "4.0.11"
+      },
+      "Assemblies": [
+        "C:\\Users\\Andrei\\.nuget\\packages\\system.collections\\4.0.11\\lib\\net45\\_._"
+      ],
+      "Path": "C:\\Users\\Andrei\\.nuget\\packages\\system.collections\\4.0.11"
+    },
+    {
+      "Package": {
+        "Id": "System.Collections.Concurrent",
+        "Version": "4.0.12"
+      },
+      "Assemblies": [
+        "C:\\Users\\Andrei\\.nuget\\packages\\system.collections.concurrent\\4.0.12\\lib\\net45\\_._"
+      ],
+      "Path": "C:\\Users\\Andrei\\.nuget\\packages\\system.collections.concurrent\\4.0.12"
+    },
+    {
+      "Package": {
+        "Id": "System.Collections.NonGeneric",
+        "Version": "4.0.1"
+      },
+      "Assemblies": [
+        "C:\\Users\\Andrei\\.nuget\\packages\\system.collections.nongeneric\\4.0.1\\lib\\net46\\System.Collections.NonGeneric.dll"
+      ],
+      "Path": "C:\\Users\\Andrei\\.nuget\\packages\\system.collections.nongeneric\\4.0.1"
+    },
+    {
+      "Package": {
+        "Id": "System.Collections.Specialized",
+        "Version": "4.0.1"
+      },
+      "Assemblies": [
+        "C:\\Users\\Andrei\\.nuget\\packages\\system.collections.specialized\\4.0.1\\lib\\net46\\System.Collections.Specialized.dll"
+      ],
+      "Path": "C:\\Users\\Andrei\\.nuget\\packages\\system.collections.specialized\\4.0.1"
+    },
+    {
+      "Package": {
+        "Id": "System.ComponentModel.Annotations",
+        "Version": "4.7.0"
+      },
+      "Assemblies": [
+        "C:\\Users\\Andrei\\.nuget\\packages\\system.componentmodel.annotations\\4.7.0\\lib\\net461\\System.ComponentModel.Annotations.dll"
+      ],
+      "Path": "C:\\Users\\Andrei\\.nuget\\packages\\system.componentmodel.annotations\\4.7.0"
+    },
+    {
+      "Package": {
+        "Id": "System.Console",
+        "Version": "4.0.0"
+      },
+      "Assemblies": [
+        "C:\\Users\\Andrei\\.nuget\\packages\\system.console\\4.0.0\\lib\\net46\\System.Console.dll"
+      ],
+      "Path": "C:\\Users\\Andrei\\.nuget\\packages\\system.console\\4.0.0"
+    },
+    {
+      "Package": {
+        "Id": "System.Diagnostics.Debug",
+        "Version": "4.0.11"
+      },
+      "Assemblies": [
+        "C:\\Users\\Andrei\\.nuget\\packages\\system.diagnostics.debug\\4.0.11\\lib\\net45\\_._"
+      ],
+      "Path": "C:\\Users\\Andrei\\.nuget\\packages\\system.diagnostics.debug\\4.0.11"
+    },
+    {
+      "Package": {
+        "Id": "System.Diagnostics.DiagnosticSource",
+        "Version": "4.0.0"
+      },
+      "Assemblies": [
+        "C:\\Users\\Andrei\\.nuget\\packages\\system.diagnostics.diagnosticsource\\4.0.0\\lib\\net46\\System.Diagnostics.DiagnosticSource.dll"
+      ],
+      "Path": "C:\\Users\\Andrei\\.nuget\\packages\\system.diagnostics.diagnosticsource\\4.0.0"
+    },
+    {
+      "Package": {
+        "Id": "System.Diagnostics.Tools",
+        "Version": "4.0.1"
+      },
+      "Assemblies": [
+        "C:\\Users\\Andrei\\.nuget\\packages\\system.diagnostics.tools\\4.0.1\\lib\\net45\\_._"
+      ],
+      "Path": "C:\\Users\\Andrei\\.nuget\\packages\\system.diagnostics.tools\\4.0.1"
+    },
+    {
+      "Package": {
+        "Id": "System.Diagnostics.TraceSource",
+        "Version": "4.0.0"
+      },
+      "Assemblies": [
+        "C:\\Users\\Andrei\\.nuget\\packages\\system.diagnostics.tracesource\\4.0.0\\lib\\net46\\System.Diagnostics.TraceSource.dll"
+      ],
+      "Path": "C:\\Users\\Andrei\\.nuget\\packages\\system.diagnostics.tracesource\\4.0.0"
+    },
+    {
+      "Package": {
+        "Id": "System.Diagnostics.Tracing",
+        "Version": "4.1.0"
+      },
+      "Assemblies": [
+        "C:\\Users\\Andrei\\.nuget\\packages\\system.diagnostics.tracing\\4.1.0\\lib\\net45\\_._"
+      ],
+      "Path": "C:\\Users\\Andrei\\.nuget\\packages\\system.diagnostics.tracing\\4.1.0"
+    },
+    {
+      "Package": {
+        "Id": "System.Dynamic.Runtime",
+        "Version": "4.0.11"
+      },
+      "Assemblies": [
+        "C:\\Users\\Andrei\\.nuget\\packages\\system.dynamic.runtime\\4.0.11\\lib\\net45\\_._"
+      ],
+      "Path": "C:\\Users\\Andrei\\.nuget\\packages\\system.dynamic.runtime\\4.0.11"
+    },
+    {
+      "Package": {
+        "Id": "System.Globalization",
+        "Version": "4.0.11"
+      },
+      "Assemblies": [
+        "C:\\Users\\Andrei\\.nuget\\packages\\system.globalization\\4.0.11\\lib\\net45\\_._"
+      ],
+      "Path": "C:\\Users\\Andrei\\.nuget\\packages\\system.globalization\\4.0.11"
+    },
+    {
+      "Package": {
+        "Id": "System.Globalization.Calendars",
+        "Version": "4.0.1"
+      },
+      "Assemblies": [
+        "C:\\Users\\Andrei\\.nuget\\packages\\system.globalization.calendars\\4.0.1\\lib\\net46\\System.Globalization.Calendars.dll"
+      ],
+      "Path": "C:\\Users\\Andrei\\.nuget\\packages\\system.globalization.calendars\\4.0.1"
+    },
+    {
+      "Package": {
+        "Id": "System.IO",
+        "Version": "4.1.0"
+      },
+      "Assemblies": [
+        "C:\\Users\\Andrei\\.nuget\\packages\\system.io\\4.1.0\\lib\\net45\\_._"
+      ],
+      "Path": "C:\\Users\\Andrei\\.nuget\\packages\\system.io\\4.1.0"
+    },
+    {
+      "Package": {
+        "Id": "System.IO.Abstractions",
+        "Version": "3.0.10"
+      },
+      "Assemblies": [
+        "C:\\Users\\Andrei\\.nuget\\packages\\system.io.abstractions\\3.0.10\\lib\\net40\\System.IO.Abstractions.dll"
+      ],
+      "Path": "C:\\Users\\Andrei\\.nuget\\packages\\system.io.abstractions\\3.0.10"
+    },
+    {
+      "Package": {
+        "Id": "System.IO.Compression",
+        "Version": "4.1.0"
+      },
+      "Assemblies": [
+        "C:\\Users\\Andrei\\.nuget\\packages\\system.io.compression\\4.1.0\\lib\\net46\\System.IO.Compression.dll"
+      ],
+      "Path": "C:\\Users\\Andrei\\.nuget\\packages\\system.io.compression\\4.1.0"
+    },
+    {
+      "Package": {
+        "Id": "System.IO.Compression.ZipFile",
+        "Version": "4.0.1"
+      },
+      "Assemblies": [
+        "C:\\Users\\Andrei\\.nuget\\packages\\system.io.compression.zipfile\\4.0.1\\lib\\net46\\System.IO.Compression.ZipFile.dll"
+      ],
+      "Path": "C:\\Users\\Andrei\\.nuget\\packages\\system.io.compression.zipfile\\4.0.1"
+    },
+    {
+      "Package": {
+        "Id": "System.IO.FileSystem",
+        "Version": "4.0.1"
+      },
+      "Assemblies": [
+        "C:\\Users\\Andrei\\.nuget\\packages\\system.io.filesystem\\4.0.1\\lib\\net46\\System.IO.FileSystem.dll"
+      ],
+      "Path": "C:\\Users\\Andrei\\.nuget\\packages\\system.io.filesystem\\4.0.1"
+    },
+    {
+      "Package": {
+        "Id": "System.IO.FileSystem.Primitives",
+        "Version": "4.0.1"
+      },
+      "Assemblies": [
+        "C:\\Users\\Andrei\\.nuget\\packages\\system.io.filesystem.primitives\\4.0.1\\lib\\net46\\System.IO.FileSystem.Primitives.dll"
+      ],
+      "Path": "C:\\Users\\Andrei\\.nuget\\packages\\system.io.filesystem.primitives\\4.0.1"
+    },
+    {
+      "Package": {
+        "Id": "System.IO.Pipelines",
+        "Version": "4.7.1"
+      },
+      "Assemblies": [
+        "C:\\Users\\Andrei\\.nuget\\packages\\system.io.pipelines\\4.7.1\\lib\\netstandard2.0\\System.IO.Pipelines.dll"
+      ],
+      "Path": "C:\\Users\\Andrei\\.nuget\\packages\\system.io.pipelines\\4.7.1"
+    },
+    {
+      "Package": {
+        "Id": "System.Linq",
+        "Version": "4.1.0"
+      },
+      "Assemblies": [
+        "C:\\Users\\Andrei\\.nuget\\packages\\system.linq\\4.1.0\\lib\\net45\\_._"
+      ],
+      "Path": "C:\\Users\\Andrei\\.nuget\\packages\\system.linq\\4.1.0"
+    },
+    {
+      "Package": {
+        "Id": "System.Linq.Expressions",
+        "Version": "4.1.0"
+      },
+      "Assemblies": [
+        "C:\\Users\\Andrei\\.nuget\\packages\\system.linq.expressions\\4.1.0\\lib\\net45\\_._"
+      ],
+      "Path": "C:\\Users\\Andrei\\.nuget\\packages\\system.linq.expressions\\4.1.0"
+    },
+    {
+      "Package": {
+        "Id": "System.Linq.Queryable",
+        "Version": "4.0.1"
+      },
+      "Assemblies": [
+        "C:\\Users\\Andrei\\.nuget\\packages\\system.linq.queryable\\4.0.1\\lib\\net45\\_._"
+      ],
+      "Path": "C:\\Users\\Andrei\\.nuget\\packages\\system.linq.queryable\\4.0.1"
+    },
+    {
+      "Package": {
+        "Id": "System.Memory",
+        "Version": "4.5.4"
+      },
+      "Assemblies": [
+        "C:\\Users\\Andrei\\.nuget\\packages\\system.memory\\4.5.4\\lib\\net461\\System.Memory.dll"
+      ],
+      "Path": "C:\\Users\\Andrei\\.nuget\\packages\\system.memory\\4.5.4"
+    },
+    {
+      "Package": {
+        "Id": "System.Net.Http",
+        "Version": "4.1.0"
+      },
+      "Assemblies": [
+        "C:\\Users\\Andrei\\.nuget\\packages\\system.net.http\\4.1.0\\lib\\net46\\System.Net.Http.dll"
+      ],
+      "Path": "C:\\Users\\Andrei\\.nuget\\packages\\system.net.http\\4.1.0"
+    },
+    {
+      "Package": {
+        "Id": "System.Net.NameResolution",
+        "Version": "4.0.0"
+      },
+      "Assemblies": [
+        "C:\\Users\\Andrei\\.nuget\\packages\\system.net.nameresolution\\4.0.0\\lib\\net46\\System.Net.NameResolution.dll"
+      ],
+      "Path": "C:\\Users\\Andrei\\.nuget\\packages\\system.net.nameresolution\\4.0.0"
+    },
+    {
+      "Package": {
+        "Id": "System.Net.NetworkInformation",
+        "Version": "4.1.0"
+      },
+      "Assemblies": [
+        "C:\\Users\\Andrei\\.nuget\\packages\\system.net.networkinformation\\4.1.0\\lib\\net46\\System.Net.NetworkInformation.dll"
+      ],
+      "Path": "C:\\Users\\Andrei\\.nuget\\packages\\system.net.networkinformation\\4.1.0"
+    },
+    {
+      "Package": {
+        "Id": "System.Net.Primitives",
+        "Version": "4.0.11"
+      },
+      "Assemblies": [
+        "C:\\Users\\Andrei\\.nuget\\packages\\system.net.primitives\\4.0.11\\lib\\net45\\_._"
+      ],
+      "Path": "C:\\Users\\Andrei\\.nuget\\packages\\system.net.primitives\\4.0.11"
+    },
+    {
+      "Package": {
+        "Id": "System.Net.Requests",
+        "Version": "4.0.11"
+      },
+      "Assemblies": [
+        "C:\\Users\\Andrei\\.nuget\\packages\\system.net.requests\\4.0.11\\lib\\net45\\_._"
+      ],
+      "Path": "C:\\Users\\Andrei\\.nuget\\packages\\system.net.requests\\4.0.11"
+    },
+    {
+      "Package": {
+        "Id": "System.Net.Security",
+        "Version": "4.3.2"
+      },
+      "Assemblies": [
+        "C:\\Users\\Andrei\\.nuget\\packages\\system.net.security\\4.3.2\\lib\\net46\\System.Net.Security.dll"
+      ],
+      "Path": "C:\\Users\\Andrei\\.nuget\\packages\\system.net.security\\4.3.2"
+    },
+    {
+      "Package": {
+        "Id": "System.Net.Sockets",
+        "Version": "4.1.0"
+      },
+      "Assemblies": [
+        "C:\\Users\\Andrei\\.nuget\\packages\\system.net.sockets\\4.1.0\\lib\\net46\\System.Net.Sockets.dll"
+      ],
+      "Path": "C:\\Users\\Andrei\\.nuget\\packages\\system.net.sockets\\4.1.0"
+    },
+    {
+      "Package": {
+        "Id": "System.Net.WebHeaderCollection",
+        "Version": "4.0.1"
+      },
+      "Assemblies": [
+        "C:\\Users\\Andrei\\.nuget\\packages\\system.net.webheadercollection\\4.0.1\\lib\\net46\\_._"
+      ],
+      "Path": "C:\\Users\\Andrei\\.nuget\\packages\\system.net.webheadercollection\\4.0.1"
+    },
+    {
+      "Package": {
+        "Id": "System.Numerics.Vectors",
+        "Version": "4.5.0"
+      },
+      "Assemblies": [
+        "C:\\Users\\Andrei\\.nuget\\packages\\system.numerics.vectors\\4.5.0\\lib\\net46\\System.Numerics.Vectors.dll"
+      ],
+      "Path": "C:\\Users\\Andrei\\.nuget\\packages\\system.numerics.vectors\\4.5.0"
+    },
+    {
+      "Package": {
+        "Id": "System.ObjectModel",
+        "Version": "4.0.12"
+      },
+      "Assemblies": [
+        "C:\\Users\\Andrei\\.nuget\\packages\\system.objectmodel\\4.0.12\\lib\\net45\\_._"
+      ],
+      "Path": "C:\\Users\\Andrei\\.nuget\\packages\\system.objectmodel\\4.0.12"
+    },
+    {
+      "Package": {
+        "Id": "System.Reflection",
+        "Version": "4.1.0"
+      },
+      "Assemblies": [
+        "C:\\Users\\Andrei\\.nuget\\packages\\system.reflection\\4.1.0\\lib\\net45\\_._"
+      ],
+      "Path": "C:\\Users\\Andrei\\.nuget\\packages\\system.reflection\\4.1.0"
+    },
+    {
+      "Package": {
+        "Id": "System.Reflection.Extensions",
+        "Version": "4.0.1"
+      },
+      "Assemblies": [
+        "C:\\Users\\Andrei\\.nuget\\packages\\system.reflection.extensions\\4.0.1\\lib\\net45\\_._"
+      ],
+      "Path": "C:\\Users\\Andrei\\.nuget\\packages\\system.reflection.extensions\\4.0.1"
+    },
+    {
+      "Package": {
+        "Id": "System.Reflection.Primitives",
+        "Version": "4.0.1"
+      },
+      "Assemblies": [
+        "C:\\Users\\Andrei\\.nuget\\packages\\system.reflection.primitives\\4.0.1\\lib\\net45\\_._"
+      ],
+      "Path": "C:\\Users\\Andrei\\.nuget\\packages\\system.reflection.primitives\\4.0.1"
+    },
+    {
+      "Package": {
+        "Id": "System.Resources.ResourceManager",
+        "Version": "4.0.1"
+      },
+      "Assemblies": [
+        "C:\\Users\\Andrei\\.nuget\\packages\\system.resources.resourcemanager\\4.0.1\\lib\\net45\\_._"
+      ],
+      "Path": "C:\\Users\\Andrei\\.nuget\\packages\\system.resources.resourcemanager\\4.0.1"
+    },
+    {
+      "Package": {
+        "Id": "System.Runtime",
+        "Version": "4.1.0"
+      },
+      "Assemblies": [
+        "C:\\Users\\Andrei\\.nuget\\packages\\system.runtime\\4.1.0\\lib\\net45\\_._"
+      ],
+      "Path": "C:\\Users\\Andrei\\.nuget\\packages\\system.runtime\\4.1.0"
+    },
+    {
+      "Package": {
+        "Id": "System.Runtime.CompilerServices.Unsafe",
+        "Version": "4.7.1"
+      },
+      "Assemblies": [
+        "C:\\Users\\Andrei\\.nuget\\packages\\system.runtime.compilerservices.unsafe\\4.7.1\\lib\\net461\\System.Runtime.CompilerServices.Unsafe.dll"
+      ],
+      "Path": "C:\\Users\\Andrei\\.nuget\\packages\\system.runtime.compilerservices.unsafe\\4.7.1"
+    },
+    {
+      "Package": {
+        "Id": "System.Runtime.Extensions",
+        "Version": "4.1.0"
+      },
+      "Assemblies": [
+        "C:\\Users\\Andrei\\.nuget\\packages\\system.runtime.extensions\\4.1.0\\lib\\net45\\_._"
+      ],
+      "Path": "C:\\Users\\Andrei\\.nuget\\packages\\system.runtime.extensions\\4.1.0"
+    },
+    {
+      "Package": {
+        "Id": "System.Runtime.Handles",
+        "Version": "4.0.1"
+      },
+      "Assemblies": [
+        "C:\\Users\\Andrei\\.nuget\\packages\\system.runtime.handles\\4.0.1\\lib\\net46\\_._"
+      ],
+      "Path": "C:\\Users\\Andrei\\.nuget\\packages\\system.runtime.handles\\4.0.1"
+    },
+    {
+      "Package": {
+        "Id": "System.Runtime.InteropServices",
+        "Version": "4.1.0"
+      },
+      "Assemblies": [
+        "C:\\Users\\Andrei\\.nuget\\packages\\system.runtime.interopservices\\4.1.0\\lib\\net45\\_._"
+      ],
+      "Path": "C:\\Users\\Andrei\\.nuget\\packages\\system.runtime.interopservices\\4.1.0"
+    },
+    {
+      "Package": {
+        "Id": "System.Runtime.InteropServices.RuntimeInformation",
+        "Version": "4.0.0"
+      },
+      "Assemblies": [
+        "C:\\Users\\Andrei\\.nuget\\packages\\system.runtime.interopservices.runtimeinformation\\4.0.0\\lib\\net45\\System.Runtime.InteropServices.RuntimeInformation.dll"
+      ],
+      "Path": "C:\\Users\\Andrei\\.nuget\\packages\\system.runtime.interopservices.runtimeinformation\\4.0.0"
+    },
+    {
+      "Package": {
+        "Id": "System.Runtime.Numerics",
+        "Version": "4.0.1"
+      },
+      "Assemblies": [
+        "C:\\Users\\Andrei\\.nuget\\packages\\system.runtime.numerics\\4.0.1\\lib\\net45\\_._"
+      ],
+      "Path": "C:\\Users\\Andrei\\.nuget\\packages\\system.runtime.numerics\\4.0.1"
+    },
+    {
+      "Package": {
+        "Id": "System.Runtime.Serialization.Primitives",
+        "Version": "4.1.1"
+      },
+      "Assemblies": [
+        "C:\\Users\\Andrei\\.nuget\\packages\\system.runtime.serialization.primitives\\4.1.1\\lib\\net46\\System.Runtime.Serialization.Primitives.dll"
+      ],
+      "Path": "C:\\Users\\Andrei\\.nuget\\packages\\system.runtime.serialization.primitives\\4.1.1"
+    },
+    {
+      "Package": {
+        "Id": "System.Security.Cryptography.Algorithms",
+        "Version": "4.3.0"
+      },
+      "Assemblies": [
+        "C:\\Users\\Andrei\\.nuget\\packages\\system.security.cryptography.algorithms\\4.3.0\\lib\\net461\\System.Security.Cryptography.Algorithms.dll"
+      ],
+      "Path": "C:\\Users\\Andrei\\.nuget\\packages\\system.security.cryptography.algorithms\\4.3.0"
+    },
+    {
+      "Package": {
+        "Id": "System.Security.Cryptography.Encoding",
+        "Version": "4.3.0"
+      },
+      "Assemblies": [
+        "C:\\Users\\Andrei\\.nuget\\packages\\system.security.cryptography.encoding\\4.3.0\\lib\\net46\\System.Security.Cryptography.Encoding.dll"
+      ],
+      "Path": "C:\\Users\\Andrei\\.nuget\\packages\\system.security.cryptography.encoding\\4.3.0"
+    },
+    {
+      "Package": {
+        "Id": "System.Security.Cryptography.Primitives",
+        "Version": "4.3.0"
+      },
+      "Assemblies": [
+        "C:\\Users\\Andrei\\.nuget\\packages\\system.security.cryptography.primitives\\4.3.0\\lib\\net46\\System.Security.Cryptography.Primitives.dll"
+      ],
+      "Path": "C:\\Users\\Andrei\\.nuget\\packages\\system.security.cryptography.primitives\\4.3.0"
+    },
+    {
+      "Package": {
+        "Id": "System.Security.Cryptography.X509Certificates",
+        "Version": "4.3.0"
+      },
+      "Assemblies": [
+        "C:\\Users\\Andrei\\.nuget\\packages\\system.security.cryptography.x509certificates\\4.3.0\\lib\\net461\\System.Security.Cryptography.X509Certificates.dll"
+      ],
+      "Path": "C:\\Users\\Andrei\\.nuget\\packages\\system.security.cryptography.x509certificates\\4.3.0"
+    },
+    {
+      "Package": {
+        "Id": "System.Security.SecureString",
+        "Version": "4.0.0"
+      },
+      "Assemblies": [
+        "C:\\Users\\Andrei\\.nuget\\packages\\system.security.securestring\\4.0.0\\lib\\net46\\System.Security.SecureString.dll"
+      ],
+      "Path": "C:\\Users\\Andrei\\.nuget\\packages\\system.security.securestring\\4.0.0"
+    },
+    {
+      "Package": {
+        "Id": "System.Spatial",
+        "Version": "5.8.4"
+      },
+      "Assemblies": [
+        "C:\\Users\\Andrei\\.nuget\\packages\\system.spatial\\5.8.4\\lib\\net40\\System.Spatial.dll"
+      ],
+      "Path": "C:\\Users\\Andrei\\.nuget\\packages\\system.spatial\\5.8.4"
+    },
+    {
+      "Package": {
+        "Id": "System.Text.Encoding",
+        "Version": "4.0.11"
+      },
+      "Assemblies": [
+        "C:\\Users\\Andrei\\.nuget\\packages\\system.text.encoding\\4.0.11\\lib\\net45\\_._"
+      ],
+      "Path": "C:\\Users\\Andrei\\.nuget\\packages\\system.text.encoding\\4.0.11"
+    },
+    {
+      "Package": {
+        "Id": "System.Text.Encoding.Extensions",
+        "Version": "4.0.11"
+      },
+      "Assemblies": [
+        "C:\\Users\\Andrei\\.nuget\\packages\\system.text.encoding.extensions\\4.0.11\\lib\\net45\\_._"
+      ],
+      "Path": "C:\\Users\\Andrei\\.nuget\\packages\\system.text.encoding.extensions\\4.0.11"
+    },
+    {
+      "Package": {
+        "Id": "System.Text.Encodings.Web",
+        "Version": "4.7.1"
+      },
+      "Assemblies": [
+        "C:\\Users\\Andrei\\.nuget\\packages\\system.text.encodings.web\\4.7.1\\lib\\net461\\System.Text.Encodings.Web.dll"
+      ],
+      "Path": "C:\\Users\\Andrei\\.nuget\\packages\\system.text.encodings.web\\4.7.1"
+    },
+    {
+      "Package": {
+        "Id": "System.Text.Json",
+        "Version": "4.7.2"
+      },
+      "Assemblies": [
+        "C:\\Users\\Andrei\\.nuget\\packages\\system.text.json\\4.7.2\\lib\\net461\\System.Text.Json.dll"
+      ],
+      "Path": "C:\\Users\\Andrei\\.nuget\\packages\\system.text.json\\4.7.2"
+    },
+    {
+      "Package": {
+        "Id": "System.Text.RegularExpressions",
+        "Version": "4.1.0"
+      },
+      "Assemblies": [
+        "C:\\Users\\Andrei\\.nuget\\packages\\system.text.regularexpressions\\4.1.0\\lib\\net45\\_._"
+      ],
+      "Path": "C:\\Users\\Andrei\\.nuget\\packages\\system.text.regularexpressions\\4.1.0"
+    },
+    {
+      "Package": {
+        "Id": "System.Threading",
+        "Version": "4.0.11"
+      },
+      "Assemblies": [
+        "C:\\Users\\Andrei\\.nuget\\packages\\system.threading\\4.0.11\\lib\\net45\\_._"
+      ],
+      "Path": "C:\\Users\\Andrei\\.nuget\\packages\\system.threading\\4.0.11"
+    },
+    {
+      "Package": {
+        "Id": "System.Threading.Channels",
+        "Version": "4.7.1"
+      },
+      "Assemblies": [
+        "C:\\Users\\Andrei\\.nuget\\packages\\system.threading.channels\\4.7.1\\lib\\net461\\System.Threading.Channels.dll"
+      ],
+      "Path": "C:\\Users\\Andrei\\.nuget\\packages\\system.threading.channels\\4.7.1"
+    },
+    {
+      "Package": {
+        "Id": "System.Threading.Tasks",
+        "Version": "4.0.11"
+      },
+      "Assemblies": [
+        "C:\\Users\\Andrei\\.nuget\\packages\\system.threading.tasks\\4.0.11\\lib\\net45\\_._"
+      ],
+      "Path": "C:\\Users\\Andrei\\.nuget\\packages\\system.threading.tasks\\4.0.11"
+    },
+    {
+      "Package": {
+        "Id": "System.Threading.Tasks.Dataflow",
+        "Version": "4.10.0"
+      },
+      "Assemblies": [
+        "C:\\Users\\Andrei\\.nuget\\packages\\system.threading.tasks.dataflow\\4.10.0\\lib\\netstandard2.0\\System.Threading.Tasks.Dataflow.dll"
+      ],
+      "Path": "C:\\Users\\Andrei\\.nuget\\packages\\system.threading.tasks.dataflow\\4.10.0"
+    },
+    {
+      "Package": {
+        "Id": "System.Threading.Tasks.Extensions",
+        "Version": "4.5.4"
+      },
+      "Assemblies": [
+        "C:\\Users\\Andrei\\.nuget\\packages\\system.threading.tasks.extensions\\4.5.4\\lib\\net461\\System.Threading.Tasks.Extensions.dll"
+      ],
+      "Path": "C:\\Users\\Andrei\\.nuget\\packages\\system.threading.tasks.extensions\\4.5.4"
+    },
+    {
+      "Package": {
+        "Id": "System.Threading.Timer",
+        "Version": "4.0.1"
+      },
+      "Assemblies": [
+        "C:\\Users\\Andrei\\.nuget\\packages\\system.threading.timer\\4.0.1\\lib\\net451\\_._"
+      ],
+      "Path": "C:\\Users\\Andrei\\.nuget\\packages\\system.threading.timer\\4.0.1"
+    },
+    {
+      "Package": {
+        "Id": "System.ValueTuple",
+        "Version": "4.5.0"
+      },
+      "Assemblies": [
+        "C:\\Users\\Andrei\\.nuget\\packages\\system.valuetuple\\4.5.0\\lib\\net461\\System.ValueTuple.dll"
+      ],
+      "Path": "C:\\Users\\Andrei\\.nuget\\packages\\system.valuetuple\\4.5.0"
+    },
+    {
+      "Package": {
+        "Id": "System.Xml.ReaderWriter",
+        "Version": "4.0.11"
+      },
+      "Assemblies": [
+        "C:\\Users\\Andrei\\.nuget\\packages\\system.xml.readerwriter\\4.0.11\\lib\\net45\\_._"
+      ],
+      "Path": "C:\\Users\\Andrei\\.nuget\\packages\\system.xml.readerwriter\\4.0.11"
+    },
+    {
+      "Package": {
+        "Id": "System.Xml.XDocument",
+        "Version": "4.0.11"
+      },
+      "Assemblies": [
+        "C:\\Users\\Andrei\\.nuget\\packages\\system.xml.xdocument\\4.0.11\\lib\\net45\\_._"
+      ],
+      "Path": "C:\\Users\\Andrei\\.nuget\\packages\\system.xml.xdocument\\4.0.11"
+    },
+    {
+      "Package": {
+        "Id": "UiPath.Azure.Activities",
+        "Version": "1.1.5"
+      },
+      "Assemblies": [
+        "C:\\Users\\Andrei\\.nuget\\packages\\uipath.azure.activities\\1.1.5\\lib\\net461\\UiPath.Azure.Activities.Design.dll",
+        "C:\\Users\\Andrei\\.nuget\\packages\\uipath.azure.activities\\1.1.5\\lib\\net461\\UiPath.Azure.Activities.dll",
+        "C:\\Users\\Andrei\\.nuget\\packages\\uipath.azure.activities\\1.1.5\\lib\\net461\\UiPath.Azure.dll"
+      ],
+      "Path": "C:\\Users\\Andrei\\.nuget\\packages\\uipath.azure.activities\\1.1.5"
+    },
+    {
+      "Package": {
+        "Id": "UiPath.Platform",
+        "Version": "20.10.4"
+      },
+      "Assemblies": [
+        "C:\\Users\\Andrei\\.nuget\\packages\\uipath.platform\\20.10.4\\lib\\net461\\UiPath.Platform.dll"
+      ],
+      "Path": "C:\\Users\\Andrei\\.nuget\\packages\\uipath.platform\\20.10.4"
+    },
+    {
+      "Package": {
+        "Id": "UiPath.System.Activities",
+        "Version": "20.10.1"
+      },
+      "Assemblies": [
+        "C:\\Users\\Andrei\\.nuget\\packages\\uipath.system.activities\\20.10.1\\lib\\net461\\ActiproSoftware.Docking.Wpf.dll",
+        "C:\\Users\\Andrei\\.nuget\\packages\\uipath.system.activities\\20.10.1\\lib\\net461\\ActiproSoftware.Ribbon.Wpf.dll",
+        "C:\\Users\\Andrei\\.nuget\\packages\\uipath.system.activities\\20.10.1\\lib\\net461\\ActiproSoftware.Shared.Wpf.dll",
+        "C:\\Users\\Andrei\\.nuget\\packages\\uipath.system.activities\\20.10.1\\lib\\net461\\ActiproSoftware.SyntaxEditor.Addons.DotNet.Wpf.dll",
+        "C:\\Users\\Andrei\\.nuget\\packages\\uipath.system.activities\\20.10.1\\lib\\net461\\ActiproSoftware.SyntaxEditor.Wpf.dll",
+        "C:\\Users\\Andrei\\.nuget\\packages\\uipath.system.activities\\20.10.1\\lib\\net461\\ActiproSoftware.Text.Addons.DotNet.Wpf.dll",
+        "C:\\Users\\Andrei\\.nuget\\packages\\uipath.system.activities\\20.10.1\\lib\\net461\\ActiproSoftware.Text.LLParser.Wpf.dll",
+        "C:\\Users\\Andrei\\.nuget\\packages\\uipath.system.activities\\20.10.1\\lib\\net461\\ActiproSoftware.Text.Wpf.dll",
+        "C:\\Users\\Andrei\\.nuget\\packages\\uipath.system.activities\\20.10.1\\lib\\net461\\ActiproSoftware.Wizard.Wpf.dll",
+        "C:\\Users\\Andrei\\.nuget\\packages\\uipath.system.activities\\20.10.1\\lib\\net461\\CustomInputForm.exe",
+        "C:\\Users\\Andrei\\.nuget\\packages\\uipath.system.activities\\20.10.1\\lib\\net461\\UiPath.OrchestratorClient.dll",
+        "C:\\Users\\Andrei\\.nuget\\packages\\uipath.system.activities\\20.10.1\\lib\\net461\\UiPath.System.Activities.Design.dll",
+        "C:\\Users\\Andrei\\.nuget\\packages\\uipath.system.activities\\20.10.1\\lib\\net461\\UiPath.System.Activities.dll"
+      ],
+      "Path": "C:\\Users\\Andrei\\.nuget\\packages\\uipath.system.activities\\20.10.1"
+    },
+    {
+      "Package": {
+        "Id": "UiPath.Telemetry.Client",
+        "Version": "1.2.20"
+      },
+      "Assemblies": [
+        "C:\\Users\\Andrei\\.nuget\\packages\\uipath.telemetry.client\\1.2.20\\lib\\net461\\TelemetryClient.dll"
+      ],
+      "Path": "C:\\Users\\Andrei\\.nuget\\packages\\uipath.telemetry.client\\1.2.20"
+    },
+    {
+      "Package": {
+        "Id": "WindowsAzure.Storage",
+        "Version": "8.1.4"
+      },
+      "Assemblies": [
+        "C:\\Users\\Andrei\\.nuget\\packages\\windowsazure.storage\\8.1.4\\lib\\net45\\Microsoft.WindowsAzure.Storage.dll"
+      ],
+      "Path": "C:\\Users\\Andrei\\.nuget\\packages\\windowsazure.storage\\8.1.4"
+    }
+  ]
 }
