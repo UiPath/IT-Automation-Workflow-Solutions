@@ -1,0 +1,424 @@
+<Activity mc:Ignorable="sap sap2010" x:Class="Main" mva:VisualBasic.Settings="{x:Null}" sap:VirtualizedContainerService.HintSize="1180,4912" sap2010:WorkflowViewState.IdRef="ActivityBuilder_1" xmlns="http://schemas.microsoft.com/netfx/2009/xaml/activities" xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" xmlns:mva="clr-namespace:Microsoft.VisualBasic.Activities;assembly=System.Activities" xmlns:s="clr-namespace:System;assembly=mscorlib" xmlns:sap="http://schemas.microsoft.com/netfx/2009/xaml/activities/presentation" xmlns:sap2010="http://schemas.microsoft.com/netfx/2010/xaml/activities/presentation" xmlns:scg="clr-namespace:System.Collections.Generic;assembly=mscorlib" xmlns:sd="clr-namespace:System.Data;assembly=System.Data" xmlns:ss="clr-namespace:System.Security;assembly=mscorlib" xmlns:uaa="clr-namespace:UiPath.AmazonWorkSpaces.Activities;assembly=UiPath.AmazonWorkSpaces.Activities" xmlns:uac="clr-namespace:UiPath.AmazonWorkSpaces.Core;assembly=UiPath.AmazonWorkSpaces" xmlns:uam="clr-namespace:UiPath.AmazonWorkSpaces.Models;assembly=UiPath.AmazonWorkSpaces" xmlns:ui="http://schemas.uipath.com/workflow/activities" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+  <TextExpression.NamespacesForImplementation>
+    <scg:List x:TypeArguments="x:String" Capacity="50">
+      <x:String>System.Activities</x:String>
+      <x:String>System.Activities.Statements</x:String>
+      <x:String>System.Activities.Expressions</x:String>
+      <x:String>System.Activities.Validation</x:String>
+      <x:String>System.Activities.XamlIntegration</x:String>
+      <x:String>Microsoft.VisualBasic</x:String>
+      <x:String>Microsoft.VisualBasic.Activities</x:String>
+      <x:String>System</x:String>
+      <x:String>System.Collections</x:String>
+      <x:String>System.Collections.Generic</x:String>
+      <x:String>System.Data</x:String>
+      <x:String>System.Diagnostics</x:String>
+      <x:String>System.Drawing</x:String>
+      <x:String>System.IO</x:String>
+      <x:String>System.Linq</x:String>
+      <x:String>System.Net.Mail</x:String>
+      <x:String>System.Xml</x:String>
+      <x:String>System.Xml.Linq</x:String>
+      <x:String>UiPath.Core</x:String>
+      <x:String>UiPath.Core.Activities</x:String>
+      <x:String>System.Windows.Markup</x:String>
+      <x:String>System.Security</x:String>
+      <x:String>UiPath.AmazonWorkSpaces.Core</x:String>
+      <x:String>UiPath.Shared.Core</x:String>
+      <x:String>System.Collections.ObjectModel</x:String>
+      <x:String>UiPath.AmazonWorkSpaces.Activities</x:String>
+      <x:String>System.Activities.DynamicUpdate</x:String>
+      <x:String>UiPath.Shared.Activities</x:String>
+      <x:String>System.Net</x:String>
+      <x:String>UiPath.AmazonWorkSpaces.Models</x:String>
+      <x:String>System.ComponentModel</x:String>
+      <x:String>System.Runtime.Serialization</x:String>
+      <x:String>System.Xml.Serialization</x:String>
+      <x:String>System.Threading.Tasks</x:String>
+      <x:String>System.Threading</x:String>
+      <x:String>System.Reflection</x:String>
+      <x:String>System.Runtime.InteropServices</x:String>
+      <x:String>Newtonsoft.Json</x:String>
+      <x:String>UiPath.Mail.Outlook.Activities</x:String>
+      <x:String>Microsoft.Exchange.WebServices.Data</x:String>
+      <x:String>UiPath.Mail</x:String>
+      <x:String>UiPath.Mail.Exchange.Activities</x:String>
+      <x:String>UiPath.Mail.LotusNotes.Activities</x:String>
+      <x:String>UiPath.Mail.Activities.Business</x:String>
+      <x:String>UiPath.MicrosoftOffice365.Models</x:String>
+      <x:String>UiPath.MicrosoftOffice365.Activities.Mail</x:String>
+      <x:String>UiPath.MicrosoftOffice365.Activities</x:String>
+      <x:String>UiPath.Mail.Activities</x:String>
+      <x:String>System.Globalization</x:String>
+      <x:String>Microsoft.VisualBasic.CompilerServices</x:String>
+    </scg:List>
+  </TextExpression.NamespacesForImplementation>
+  <TextExpression.ReferencesForImplementation>
+    <scg:List x:TypeArguments="AssemblyReference" Capacity="36">
+      <AssemblyReference>System.Activities</AssemblyReference>
+      <AssemblyReference>Microsoft.VisualBasic</AssemblyReference>
+      <AssemblyReference>mscorlib</AssemblyReference>
+      <AssemblyReference>System.Data</AssemblyReference>
+      <AssemblyReference>System</AssemblyReference>
+      <AssemblyReference>System.Drawing</AssemblyReference>
+      <AssemblyReference>System.Core</AssemblyReference>
+      <AssemblyReference>System.Xml</AssemblyReference>
+      <AssemblyReference>System.Xml.Linq</AssemblyReference>
+      <AssemblyReference>PresentationFramework</AssemblyReference>
+      <AssemblyReference>WindowsBase</AssemblyReference>
+      <AssemblyReference>PresentationCore</AssemblyReference>
+      <AssemblyReference>System.Xaml</AssemblyReference>
+      <AssemblyReference>UiPath.System.Activities</AssemblyReference>
+      <AssemblyReference>UiPath.UiAutomation.Activities</AssemblyReference>
+      <AssemblyReference>System.Data.DataSetExtensions</AssemblyReference>
+      <AssemblyReference>UiPath.AmazonWorkSpaces</AssemblyReference>
+      <AssemblyReference>UiPath.AmazonWorkSpaces.Activities</AssemblyReference>
+      <AssemblyReference>UiPath.Mail.Activities</AssemblyReference>
+      <AssemblyReference>UiPath.Excel.Activities</AssemblyReference>
+      <AssemblyReference>UiPath.OCR.Activities</AssemblyReference>
+      <AssemblyReference>System.Runtime.Serialization</AssemblyReference>
+      <AssemblyReference>System.Threading.Tasks.Extensions</AssemblyReference>
+      <AssemblyReference>UiPath.UIAutomationCore</AssemblyReference>
+      <AssemblyReference>UiPath.Mail</AssemblyReference>
+      <AssemblyReference>UiPath.OCR.Activities.Design</AssemblyReference>
+      <AssemblyReference>UiPath.Excel</AssemblyReference>
+      <AssemblyReference>Microsoft.Bcl.AsyncInterfaces</AssemblyReference>
+      <AssemblyReference>System.Memory</AssemblyReference>
+      <AssemblyReference>System.ValueTuple</AssemblyReference>
+      <AssemblyReference>System.ServiceModel</AssemblyReference>
+      <AssemblyReference>Newtonsoft.Json</AssemblyReference>
+      <AssemblyReference>Microsoft.Exchange.WebServices</AssemblyReference>
+      <AssemblyReference>UiPath.MicrosoftOffice365</AssemblyReference>
+      <AssemblyReference>UiPath.MicrosoftOffice365.Activities</AssemblyReference>
+      <AssemblyReference>UiPath.Mail.Activities.Design</AssemblyReference>
+    </scg:List>
+  </TextExpression.ReferencesForImplementation>
+  <Sequence sap2010:Annotation.AnnotationText="Use UiPath.AmazonWorkSpaces.Activities activities to manage Amazon WorkSpaces:&#xA;- Identify and reboot unhealthy Workspaces.&#xA;- Stop WorkSpaces that are in Disconnected state (cost optimization).&#xA;- Identify unused WorkSpaces and based on the inactivity period, take one of these actions: &#xA;   1) Send a warning email to the user.&#xA;   2) Permanently remove the WorkSpace (cost optimization). " DisplayName="Amazon WorkSpaces Management" sap:VirtualizedContainerService.HintSize="1190.4,4847.2" sap2010:WorkflowViewState.IdRef="Sequence_3">
+    <Sequence.Variables>
+      <Variable x:TypeArguments="x:Int32" Name="index" />
+      <Variable x:TypeArguments="x:String" Name="DirectoryID">
+        <Variable.Default>
+          <Literal x:TypeArguments="x:String">{enter_a_directory_id}</Literal>
+        </Variable.Default>
+      </Variable>
+      <Variable x:TypeArguments="x:String" Default="[System.Environment.GetEnvironmentVariable(&quot;AWS_WorkSpaces_KeyId&quot;)]" Name="AWSKeyId" />
+      <Variable x:TypeArguments="ss:SecureString" Default="[New system.Net.NetworkCredential(&quot;&quot;,Environment.GetEnvironmentVariable(&quot;AWS_WorkSpaces_SecretKey&quot;)).SecurePassword]" Name="AWSSecretKey" />
+      <Variable x:TypeArguments="x:String" Default="[System.Environment.GetEnvironmentVariable(&quot;AWS_WorkSpaces_Region&quot;)]" Name="AWSRegion" />
+      <Variable x:TypeArguments="x:Int32" Default="37" Name="InactivityPeriodBeforeRemoving" />
+      <Variable x:TypeArguments="x:Int32" Default="30" Name="MinutesSinceDisconnected" />
+      <Variable x:TypeArguments="x:Int32" Default="30" Name="InactivityPeriodBeforeWarning" />
+      <Variable x:TypeArguments="x:String" Name="warningRecipient" />
+      <Variable x:TypeArguments="s:DateTime" Name="creationDate" />
+      <Variable x:TypeArguments="x:String" Name="warningMailBody" />
+      <Variable x:TypeArguments="x:String" Name="warningMailSubject" />
+      <Variable x:TypeArguments="x:String" Default="MM/dd/yyyy" Name="DateTimeFormat" />
+      <Variable x:TypeArguments="sd:DataRow" Name="adminLastActionDateTag" />
+      <Variable x:TypeArguments="sd:DataTable" Name="newTags" />
+    </Sequence.Variables>
+    <sap:WorkflowViewStateService.ViewState>
+      <scg:Dictionary x:TypeArguments="x:String, x:Object">
+        <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+        <x:Boolean x:Key="IsAnnotationDocked">True</x:Boolean>
+      </scg:Dictionary>
+    </sap:WorkflowViewStateService.ViewState>
+    <uaa:AWRKSScope IAMRole="{x:Null}" AccessKeyId="[AWSKeyId]" DisplayName="Amazon Workspaces Scope" sap:VirtualizedContainerService.HintSize="1148.8,4646.4" sap2010:WorkflowViewState.IdRef="AWRKSScope_1" Region="[AWSRegion]" SecretAccessKey="[AWSSecretKey]">
+      <uaa:AWRKSScope.Body>
+        <ActivityAction x:TypeArguments="uac:AWRKSCmd">
+          <ActivityAction.Argument>
+            <DelegateInArgument x:TypeArguments="uac:AWRKSCmd" Name="AmazonWorkSpacesScopePropertyTag" />
+          </ActivityAction.Argument>
+          <Sequence DisplayName="Do" sap:VirtualizedContainerService.HintSize="1115.2,4560" sap2010:WorkflowViewState.IdRef="Sequence_2">
+            <sap:WorkflowViewStateService.ViewState>
+              <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                <x:Boolean x:Key="IsPinned">False</x:Boolean>
+              </scg:Dictionary>
+            </sap:WorkflowViewStateService.ViewState>
+            <uaa:AWRKSForEachWorkSpace Result="{x:Null}" Username="{x:Null}" DisplayName="For Each Workspace" FilterBy="DirectoryId" FilterValue="[directoryID]" sap:VirtualizedContainerService.HintSize="1073.6,4467.2" sap2010:WorkflowViewState.IdRef="AWRKSForEachWorkSpace_1" Index="[index]">
+              <uaa:AWRKSForEachWorkSpace.Body>
+                <ActivityAction x:TypeArguments="uam:AWRKSWorkspace">
+                  <ActivityAction.Argument>
+                    <DelegateInArgument x:TypeArguments="uam:AWRKSWorkspace" Name="WorkSpace" />
+                  </ActivityAction.Argument>
+                  <Sequence DisplayName="Body" sap:VirtualizedContainerService.HintSize="1028.8,4332.8" sap2010:WorkflowViewState.IdRef="Sequence_1">
+                    <sap:WorkflowViewStateService.ViewState>
+                      <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                        <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                        <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                      </scg:Dictionary>
+                    </sap:WorkflowViewStateService.ViewState>
+                    <WriteLine DisplayName="Write Line" sap:VirtualizedContainerService.HintSize="987.2,62.4" sap2010:WorkflowViewState.IdRef="WriteLine_1" Text="[&quot;--&gt; &quot; + index.ToString + &quot;: WorkSpace ID=&quot; + WorkSpace.WorkSpaceId + &quot;,  Username=&quot; + WorkSpace.UserName + &quot;, State=&quot; + WorkSpace.State.ToString + &quot;, ConnectionState=&quot; + WorkSpace.ConnectionState.ToString + &quot;  (last checked at &quot; + WorkSpace.ConnectionStateCheckTimestamp.ToString + &quot;), UserLastActive=&quot; + WorkSpace.LastKnownUserConnectionTimestamp.ToString]" />
+                    <WriteLine DisplayName="Write Line" sap:VirtualizedContainerService.HintSize="987.2,62.4" sap2010:WorkflowViewState.IdRef="WriteLine_8" Text="[Newtonsoft.Json.JsonConvert.SerializeObject(WorkSpace)]" />
+                    <If sap2010:Annotation.AnnotationText="Common causes for unhealthy state:&#xA;- An application on the WorkSpace is blocking network connection between the Amazon WorkSpaces service and the WorkSpace.&#xA;- High CPU utilization on the WorkSpace.&#xA;- The computer name of the WorkSpace changed." Condition="[WorkSpace.State = AWRKSState.UNHEALTHY]" DisplayName="Reboot Unhealthy Workspace" sap:VirtualizedContainerService.HintSize="987.2,459.2" sap2010:WorkflowViewState.IdRef="If_1">
+                      <sap:WorkflowViewStateService.ViewState>
+                        <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                          <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                          <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                          <x:Boolean x:Key="IsAnnotationDocked">True</x:Boolean>
+                        </scg:Dictionary>
+                      </sap:WorkflowViewStateService.ViewState>
+                      <If.Then>
+                        <Sequence sap:VirtualizedContainerService.HintSize="271.2,217.6" sap2010:WorkflowViewState.IdRef="Sequence_4">
+                          <sap:WorkflowViewStateService.ViewState>
+                            <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                              <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                            </scg:Dictionary>
+                          </sap:WorkflowViewStateService.ViewState>
+                          <WriteLine DisplayName="Write Line" sap:VirtualizedContainerService.HintSize="229.6,62.4" sap2010:WorkflowViewState.IdRef="WriteLine_3" Text="[&quot;*** Rebooting WorkSpace ID=&quot; + WorkSpace.WorkSpaceId + &quot;,  Username=&quot; + WorkSpace.UserName + &quot;, State=&quot; + WorkSpace.State.ToString]" />
+                          <uaa:AWRKSRebootWorkSpace Timeout="{x:Null}" DisplayName="Reboot Workspace" sap:VirtualizedContainerService.HintSize="229.6,22.4" sap2010:WorkflowViewState.IdRef="AWRKSRebootWorkSpace_1" WaitForCompletion="False" Workspace="[WorkSpace]" />
+                        </Sequence>
+                      </If.Then>
+                    </If>
+                    <If sap2010:Annotation.AnnotationText="Stop WorkSpace if:&#xA;- has running mode 'AutoStop'&#xA;- user is disconnected since more than 'MinutesSinceDisconnected' minutes." Condition="[WorkSpace.RunningMode = AWRKSRunningMode.AutoStop and WorkSpace.State = AWRKSState.AVAILABLE and WorkSpace.ConnectionState = AWRKSConnectionState.DISCONNECTED and (WorkSpace.LastKnownUserConnectionTimestamp &lt; DateTime.Now.AddMinutes(-MinutesSinceDisconnected) AND WorkSpace.LastKnownUserConnectionTimestamp &lt;&gt; new DateTime())]" DisplayName="Stop Workspaces" sap:VirtualizedContainerService.HintSize="987.2,427.2" sap2010:WorkflowViewState.IdRef="If_2">
+                      <sap:WorkflowViewStateService.ViewState>
+                        <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                          <x:Boolean x:Key="IsAnnotationDocked">True</x:Boolean>
+                          <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                          <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                        </scg:Dictionary>
+                      </sap:WorkflowViewStateService.ViewState>
+                      <If.Then>
+                        <Sequence sap:VirtualizedContainerService.HintSize="271.2,217.6" sap2010:WorkflowViewState.IdRef="Sequence_5">
+                          <sap:WorkflowViewStateService.ViewState>
+                            <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                              <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                              <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                            </scg:Dictionary>
+                          </sap:WorkflowViewStateService.ViewState>
+                          <WriteLine DisplayName="Write Line" sap:VirtualizedContainerService.HintSize="229.6,62.4" sap2010:WorkflowViewState.IdRef="WriteLine_4" Text="[&quot;*** Stoping WorkSpace ID=&quot; + WorkSpace.WorkSpaceId + &quot;,  Username=&quot; + WorkSpace.UserName + &quot;, State=&quot; + WorkSpace.State.ToString + &quot;, UserLastActive=&quot; + WorkSpace.LastKnownUserConnectionTimestamp.ToString]" />
+                          <uaa:AWRKSStopWorkSpace Timeout="{x:Null}" DisplayName="Stop Workspace" sap:VirtualizedContainerService.HintSize="229.6,22.4" sap2010:WorkflowViewState.IdRef="AWRKSStopWorkSpace_1" WaitForCompletion="False" Workspace="[WorkSpace]" />
+                        </Sequence>
+                      </If.Then>
+                    </If>
+                    <Sequence sap2010:Annotation.AnnotationText="Take action in case of an unused WorkSpace:&#xA;1. If not used in the past 'InactivityPeriodBeforeWarning' days: send warning email.&#xA;2. If not used in the past 'InactivityPeriodBeforeRemoving' days: remove the WorkSpace.&#xA;3. If never used &amp; the value of the tag CreationDate is older than Today-'InactivityPeriodBeforeRemoving': remove the WorkSpace." DisplayName="Cost Optimization - Unused WorkSpace: remove / send warning email" sap:VirtualizedContainerService.HintSize="987.2,3068.8" sap2010:WorkflowViewState.IdRef="Sequence_8">
+                      <sap:WorkflowViewStateService.ViewState>
+                        <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                          <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                          <x:Boolean x:Key="IsAnnotationDocked">True</x:Boolean>
+                          <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                        </scg:Dictionary>
+                      </sap:WorkflowViewStateService.ViewState>
+                      <If sap2010:Annotation.AnnotationText="" Condition="[WorkSpace.LastKnownUserConnectionTimestamp.Date &lt;= Today.Date.AddDays(-InactivityPeriodBeforeWarning) and WorkSpace.LastKnownUserConnectionTimestamp &lt;&gt;  new DateTime()]" DisplayName="1. Send Warning Email" sap:VirtualizedContainerService.HintSize="945.6,1104" sap2010:WorkflowViewState.IdRef="If_3">
+                        <sap:WorkflowViewStateService.ViewState>
+                          <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                            <x:Boolean x:Key="IsAnnotationDocked">True</x:Boolean>
+                            <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                            <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                          </scg:Dictionary>
+                        </sap:WorkflowViewStateService.ViewState>
+                        <If.Then>
+                          <Sequence sap:VirtualizedContainerService.HintSize="375.2,923.2" sap2010:WorkflowViewState.IdRef="Sequence_6">
+                            <sap:WorkflowViewStateService.ViewState>
+                              <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                              </scg:Dictionary>
+                            </sap:WorkflowViewStateService.ViewState>
+                            <WriteLine DisplayName="Write Line" sap:VirtualizedContainerService.HintSize="333.6,62.4" sap2010:WorkflowViewState.IdRef="WriteLine_5" Text="[&quot;*** Warning: Unused WorkSpace! Details: ID=&quot; + WorkSpace.WorkSpaceId + &quot;,  Username=&quot; + WorkSpace.UserName + &quot;, State=&quot; + WorkSpace.State.ToString + &quot; was last used on &quot; + WorkSpace.LastKnownUserConnectionTimestamp.ToString]" />
+                            <ui:MultipleAssign DisplayName="Multiple Assign" sap:VirtualizedContainerService.HintSize="333.6,52.8" sap2010:WorkflowViewState.IdRef="MultipleAssign_1">
+                              <ui:MultipleAssign.AssignOperations>
+                                <scg:List x:TypeArguments="ui:AssignOperation" Capacity="4">
+                                  <ui:AssignOperation sap2010:WorkflowViewState.IdRef="AssignOperation_1">
+                                    <ui:AssignOperation.To>
+                                      <OutArgument x:TypeArguments="x:String">[warningMailSubject]</OutArgument>
+                                    </ui:AssignOperation.To>
+                                    <ui:AssignOperation.Value>
+                                      <InArgument x:TypeArguments="x:String">["Your Amazon WorkSpace with ID '" + WorkSpace.WorkSpaceId +"' will be permanently removed soon!"]</InArgument>
+                                    </ui:AssignOperation.Value>
+                                  </ui:AssignOperation>
+                                  <ui:AssignOperation sap2010:WorkflowViewState.IdRef="AssignOperation_2">
+                                    <ui:AssignOperation.To>
+                                      <OutArgument x:TypeArguments="x:String">[warningMailBody]</OutArgument>
+                                    </ui:AssignOperation.To>
+                                    <ui:AssignOperation.Value>
+                                      <InArgument x:TypeArguments="x:String" xml:space="preserve">["Dear " + WorkSpace.UserFirstName + " " + WorkSpace.UserLastName+ "," + vbCrLf + vbCrLf + "You haven't accessed your WorkSpace in the last " + InactivityPeriodBeforeWarning.ToString + " days, therefore it will be PERMANENTLY REMOVED in " + (InactivityPeriodBeforeRemoving - InactivityPeriodBeforeWarning).ToString + " days without further notification!" + vbCrLf + vbCrLf +  "WorkSpace details: ID='" + WorkSpace.WorkSpaceId + "', Computer Name='" + WorkSpace.ComputerName +", IP Address='" + WorkSpace.IpAddress + "'."+ vbCrLf + vbCrLf +"Thanks, " + vbCrLf + "ABC Cloud Team"]</InArgument>
+                                    </ui:AssignOperation.Value>
+                                  </ui:AssignOperation>
+                                  <ui:AssignOperation sap2010:WorkflowViewState.IdRef="AssignOperation_3">
+                                    <ui:AssignOperation.To>
+                                      <OutArgument x:TypeArguments="x:String">[warningRecipient]</OutArgument>
+                                    </ui:AssignOperation.To>
+                                    <ui:AssignOperation.Value>
+                                      <InArgument x:TypeArguments="x:String">[WorkSpace.UserEmailAddress]</InArgument>
+                                    </ui:AssignOperation.Value>
+                                  </ui:AssignOperation>
+                                </scg:List>
+                              </ui:MultipleAssign.AssignOperations>
+                              <sap:WorkflowViewStateService.ViewState>
+                                <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                  <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+                                  <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                                </scg:Dictionary>
+                              </sap:WorkflowViewStateService.ViewState>
+                            </ui:MultipleAssign>
+                            <ui:SendOutlookMail Account="{x:Null}" Bcc="{x:Null}" Cc="{x:Null}" MailMessage="{x:Null}" TimeoutMS="{x:Null}" Body="[warningMailBody]" DisplayName="Send Outlook Mail Message" sap:VirtualizedContainerService.HintSize="333.6,146.4" sap2010:WorkflowViewState.IdRef="SendOutlookMail_1" IsBodyHtml="False" IsDraft="False" Subject="[warningMailSubject]" To="[warningRecipient]">
+                              <ui:SendOutlookMail.Files>
+                                <scg:List x:TypeArguments="InArgument(x:String)" Capacity="0" />
+                              </ui:SendOutlookMail.Files>
+                              <sap:WorkflowViewStateService.ViewState>
+                                <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                  <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                                  <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                                </scg:Dictionary>
+                              </sap:WorkflowViewStateService.ViewState>
+                            </ui:SendOutlookMail>
+                            <ui:BuildDataTable sap2010:Annotation.AnnotationText="" DataTable="[newTags]" DisplayName="Build Data Table" sap:VirtualizedContainerService.HintSize="333.6,91.2" sap2010:WorkflowViewState.IdRef="BuildDataTable_2" TableInfo="&lt;NewDataSet&gt;&#xA;  &lt;xs:schema id=&quot;NewDataSet&quot; xmlns=&quot;&quot; xmlns:xs=&quot;http://www.w3.org/2001/XMLSchema&quot; xmlns:msdata=&quot;urn:schemas-microsoft-com:xml-msdata&quot;&gt;&#xA;    &lt;xs:element name=&quot;NewDataSet&quot; msdata:IsDataSet=&quot;true&quot; msdata:MainDataTable=&quot;TableName&quot; msdata:UseCurrentLocale=&quot;true&quot;&gt;&#xA;      &lt;xs:complexType&gt;&#xA;        &lt;xs:choice minOccurs=&quot;0&quot; maxOccurs=&quot;unbounded&quot;&gt;&#xA;          &lt;xs:element name=&quot;TableName&quot;&gt;&#xA;            &lt;xs:complexType&gt;&#xA;              &lt;xs:sequence&gt;&#xA;                &lt;xs:element name=&quot;TagKey&quot; msdata:Caption=&quot;&quot; minOccurs=&quot;0&quot;&gt;&#xA;                  &lt;xs:simpleType&gt;&#xA;                    &lt;xs:restriction base=&quot;xs:string&quot;&gt;&#xA;                      &lt;xs:maxLength value=&quot;100&quot; /&gt;&#xA;                    &lt;/xs:restriction&gt;&#xA;                  &lt;/xs:simpleType&gt;&#xA;                &lt;/xs:element&gt;&#xA;                &lt;xs:element name=&quot;TagValue&quot; msdata:Caption=&quot;&quot; type=&quot;xs:string&quot; minOccurs=&quot;0&quot; /&gt;&#xA;              &lt;/xs:sequence&gt;&#xA;            &lt;/xs:complexType&gt;&#xA;          &lt;/xs:element&gt;&#xA;        &lt;/xs:choice&gt;&#xA;      &lt;/xs:complexType&gt;&#xA;    &lt;/xs:element&gt;&#xA;  &lt;/xs:schema&gt;&#xA;  &lt;TableName&gt;&#xA;    &lt;TagKey&gt;AdminAction&lt;/TagKey&gt;&#xA;    &lt;TagValue&gt;Unused WorkSpace: warning email sent.&lt;/TagValue&gt;&#xA;  &lt;/TableName&gt;&#xA;&lt;/NewDataSet&gt;">
+                              <sap:WorkflowViewStateService.ViewState>
+                                <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                  <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                                  <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                                  <x:Boolean x:Key="IsAnnotationDocked">True</x:Boolean>
+                                </scg:Dictionary>
+                              </sap:WorkflowViewStateService.ViewState>
+                            </ui:BuildDataTable>
+                            <ui:MultipleAssign sap2010:Annotation.AnnotationText="" DisplayName="Multiple Assign" sap:VirtualizedContainerService.HintSize="333.6,192.8" sap2010:WorkflowViewState.IdRef="MultipleAssign_2">
+                              <ui:MultipleAssign.AssignOperations>
+                                <scg:List x:TypeArguments="ui:AssignOperation" Capacity="4">
+                                  <ui:AssignOperation sap2010:WorkflowViewState.IdRef="AssignOperation_4">
+                                    <ui:AssignOperation.To>
+                                      <OutArgument x:TypeArguments="sd:DataRow">[adminLastActionDateTag]</OutArgument>
+                                    </ui:AssignOperation.To>
+                                    <ui:AssignOperation.Value>
+                                      <InArgument x:TypeArguments="sd:DataRow">[newTags.NewRow()]</InArgument>
+                                    </ui:AssignOperation.Value>
+                                  </ui:AssignOperation>
+                                  <ui:AssignOperation sap2010:WorkflowViewState.IdRef="AssignOperation_5">
+                                    <ui:AssignOperation.To>
+                                      <OutArgument x:TypeArguments="x:Object">[adminLastActionDateTag("TagKey")]</OutArgument>
+                                    </ui:AssignOperation.To>
+                                    <ui:AssignOperation.Value>
+                                      <InArgument x:TypeArguments="x:Object">["LastAdminActionDate"]</InArgument>
+                                    </ui:AssignOperation.Value>
+                                  </ui:AssignOperation>
+                                  <ui:AssignOperation sap2010:WorkflowViewState.IdRef="AssignOperation_6">
+                                    <ui:AssignOperation.To>
+                                      <OutArgument x:TypeArguments="x:Object">[adminLastActionDateTag("TagValue")]</OutArgument>
+                                    </ui:AssignOperation.To>
+                                    <ui:AssignOperation.Value>
+                                      <InArgument x:TypeArguments="x:Object">[DateTime.Today.ToString(DateTimeFormat)]</InArgument>
+                                    </ui:AssignOperation.Value>
+                                  </ui:AssignOperation>
+                                </scg:List>
+                              </ui:MultipleAssign.AssignOperations>
+                              <sap:WorkflowViewStateService.ViewState>
+                                <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                  <x:Boolean x:Key="IsAnnotationDocked">True</x:Boolean>
+                                  <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                                  <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                                </scg:Dictionary>
+                              </sap:WorkflowViewStateService.ViewState>
+                            </ui:MultipleAssign>
+                            <ui:AddDataRow ArrayRow="{x:Null}" DataRow="[adminLastActionDateTag]" DataTable="[newTags]" DisplayName="Add Data Row" sap:VirtualizedContainerService.HintSize="333.6,22.4" sap2010:WorkflowViewState.IdRef="AddDataRow_1" />
+                            <uaa:AWRKSUpdateWorkSpace ComputeType="{x:Null}" IntendedState="{x:Null}" RunningMode="{x:Null}" RunningModeAutoStopTimeout="{x:Null}" Timeout="{x:Null}" VolumeNewSize="{x:Null}" VolumeToResize="{x:Null}" WaitForCompletion="{x:Null}" DeleteAllExistingTags="False" DisplayName="Update Workspace (tags)" sap:VirtualizedContainerService.HintSize="333.6,22.4" sap2010:WorkflowViewState.IdRef="AWRKSUpdateWorkSpace_1" Tags="[newTags]" UpdateAction="ModifyTags" Workspace="[WorkSpace]" />
+                          </Sequence>
+                        </If.Then>
+                      </If>
+                      <If sap2010:Annotation.AnnotationText="" Condition="[WorkSpace.LastKnownUserConnectionTimestamp.Date &lt;= Today.Date.AddDays(-InactivityPeriodBeforeRemoving) and WorkSpace.LastKnownUserConnectionTimestamp &lt;&gt;  new DateTime()]" DisplayName="2. Remove WorkSpace (not used recently)" sap:VirtualizedContainerService.HintSize="945.6,398.4" sap2010:WorkflowViewState.IdRef="If_4">
+                        <sap:WorkflowViewStateService.ViewState>
+                          <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                            <x:Boolean x:Key="IsAnnotationDocked">True</x:Boolean>
+                            <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                            <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                          </scg:Dictionary>
+                        </sap:WorkflowViewStateService.ViewState>
+                        <If.Then>
+                          <Sequence sap:VirtualizedContainerService.HintSize="271.2,217.6" sap2010:WorkflowViewState.IdRef="Sequence_7">
+                            <sap:WorkflowViewStateService.ViewState>
+                              <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                              </scg:Dictionary>
+                            </sap:WorkflowViewStateService.ViewState>
+                            <WriteLine DisplayName="Write Line" sap:VirtualizedContainerService.HintSize="229.6,62.4" sap2010:WorkflowViewState.IdRef="WriteLine_7" Text="[&quot;*** Remove Unused WorkSpace! Details: ID=&quot; + WorkSpace.WorkSpaceId + &quot;,  Username=&quot; + WorkSpace.UserName + &quot;, State=&quot; + WorkSpace.State.ToString + &quot; was last used on &quot; + WorkSpace.LastKnownUserConnectionTimestamp.ToString]" />
+                            <uaa:AWRKSRemoveWorkSpace Timeout="{x:Null}" DisplayName="Remove Workspace" sap:VirtualizedContainerService.HintSize="229.6,22.4" sap2010:WorkflowViewState.IdRef="AWRKSRemoveWorkSpace_1" WaitForCompletion="False" Workspace="[WorkSpace]" />
+                          </Sequence>
+                        </If.Then>
+                      </If>
+                      <If sap2010:Annotation.AnnotationText="" Condition="[WorkSpace.LastKnownUserConnectionTimestamp =  new DateTime()]" DisplayName="2. Remove WorkSpace (never used since its creation)" sap:VirtualizedContainerService.HintSize="945.6,1317.6" sap2010:WorkflowViewState.IdRef="If_6">
+                        <sap:WorkflowViewStateService.ViewState>
+                          <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                            <x:Boolean x:Key="IsAnnotationDocked">True</x:Boolean>
+                            <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                            <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                          </scg:Dictionary>
+                        </sap:WorkflowViewStateService.ViewState>
+                        <If.Then>
+                          <Sequence sap:VirtualizedContainerService.HintSize="801.6,1136.8" sap2010:WorkflowViewState.IdRef="Sequence_14">
+                            <sap:WorkflowViewStateService.ViewState>
+                              <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                              </scg:Dictionary>
+                            </sap:WorkflowViewStateService.ViewState>
+                            <ui:ForEachRow CurrentIndex="{x:Null}" DataTable="[WorkSpace.Tags]" DisplayName="For Each Row" sap:VirtualizedContainerService.HintSize="760,1044" sap2010:WorkflowViewState.IdRef="ForEachRow_1">
+                              <ui:ForEachRow.Body>
+                                <ActivityAction x:TypeArguments="sd:DataRow">
+                                  <ActivityAction.Argument>
+                                    <DelegateInArgument x:TypeArguments="sd:DataRow" Name="row" />
+                                  </ActivityAction.Argument>
+                                  <Sequence DisplayName="Body" sap:VirtualizedContainerService.HintSize="710.4,895.2" sap2010:WorkflowViewState.IdRef="Sequence_13">
+                                    <sap:WorkflowViewStateService.ViewState>
+                                      <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                        <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                                      </scg:Dictionary>
+                                    </sap:WorkflowViewStateService.ViewState>
+                                    <If Condition="[row(0).ToString = &quot;CreationDate&quot;]" sap:VirtualizedContainerService.HintSize="668.8,802.4" sap2010:WorkflowViewState.IdRef="If_5">
+                                      <If.Then>
+                                        <Sequence sap:VirtualizedContainerService.HintSize="524.8,652.8" sap2010:WorkflowViewState.IdRef="Sequence_17">
+                                          <sap:WorkflowViewStateService.ViewState>
+                                            <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                              <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                                            </scg:Dictionary>
+                                          </sap:WorkflowViewStateService.ViewState>
+                                          <Assign sap:VirtualizedContainerService.HintSize="483.2,60" sap2010:WorkflowViewState.IdRef="Assign_1">
+                                            <Assign.To>
+                                              <OutArgument x:TypeArguments="s:DateTime">[creationDate]</OutArgument>
+                                            </Assign.To>
+                                            <Assign.Value>
+                                              <InArgument x:TypeArguments="s:DateTime">[Datetime.ParseExact(row(1).ToString, DateTimeFormat, System.Globalization.CultureInfo.InvariantCulture)]</InArgument>
+                                            </Assign.Value>
+                                          </Assign>
+                                          <If Condition="[creationDate &lt;= Today.Date.AddDays(-InactivityPeriodBeforeRemoving)]" sap:VirtualizedContainerService.HintSize="483.2,460" sap2010:WorkflowViewState.IdRef="If_7">
+                                            <If.Then>
+                                              <Sequence sap:VirtualizedContainerService.HintSize="312.8,310.4" sap2010:WorkflowViewState.IdRef="Sequence_19">
+                                                <sap:WorkflowViewStateService.ViewState>
+                                                  <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                                    <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                                                  </scg:Dictionary>
+                                                </sap:WorkflowViewStateService.ViewState>
+                                                <Sequence sap:VirtualizedContainerService.HintSize="271.2,217.6" sap2010:WorkflowViewState.IdRef="Sequence_18">
+                                                  <sap:WorkflowViewStateService.ViewState>
+                                                    <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                                      <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                                                    </scg:Dictionary>
+                                                  </sap:WorkflowViewStateService.ViewState>
+                                                  <WriteLine DisplayName="Write Line" sap:VirtualizedContainerService.HintSize="229.6,62.4" sap2010:WorkflowViewState.IdRef="WriteLine_9" Text="[&quot;*** Remove WorkSpace (never been used since its creation on &quot;+ creationDate.ToString(DateTimeFormat) + &quot;)! Details: ID=&quot; + WorkSpace.WorkSpaceId + &quot;,  Username=&quot; + WorkSpace.UserName + &quot;, State=&quot; + WorkSpace.State.ToString]" />
+                                                  <uaa:AWRKSRemoveWorkSpace Timeout="{x:Null}" DisplayName="Remove Workspace" sap:VirtualizedContainerService.HintSize="229.6,22.4" sap2010:WorkflowViewState.IdRef="AWRKSRemoveWorkSpace_2" WaitForCompletion="False" Workspace="[WorkSpace]" />
+                                                </Sequence>
+                                              </Sequence>
+                                            </If.Then>
+                                          </If>
+                                        </Sequence>
+                                      </If.Then>
+                                    </If>
+                                  </Sequence>
+                                </ActivityAction>
+                              </ui:ForEachRow.Body>
+                            </ui:ForEachRow>
+                          </Sequence>
+                        </If.Then>
+                      </If>
+                    </Sequence>
+                  </Sequence>
+                </ActivityAction>
+              </uaa:AWRKSForEachWorkSpace.Body>
+              <sap:WorkflowViewStateService.ViewState>
+                <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                  <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                  <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                </scg:Dictionary>
+              </sap:WorkflowViewStateService.ViewState>
+            </uaa:AWRKSForEachWorkSpace>
+          </Sequence>
+        </ActivityAction>
+      </uaa:AWRKSScope.Body>
+    </uaa:AWRKSScope>
+  </Sequence>
+</Activity>
