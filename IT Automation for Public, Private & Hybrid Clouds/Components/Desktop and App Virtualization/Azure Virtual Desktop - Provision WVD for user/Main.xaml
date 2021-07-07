@@ -1,0 +1,161 @@
+<Activity mc:Ignorable="sap sap2010" x:Class="Main" mva:VisualBasic.Settings="{x:Null}" sap:VirtualizedContainerService.HintSize="750.4,1137.6" sap2010:WorkflowViewState.IdRef="ActivityBuilder_1" xmlns="http://schemas.microsoft.com/netfx/2009/xaml/activities" xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" xmlns:mva="clr-namespace:Microsoft.VisualBasic.Activities;assembly=System.Activities" xmlns:s="clr-namespace:System;assembly=mscorlib" xmlns:sap="http://schemas.microsoft.com/netfx/2009/xaml/activities/presentation" xmlns:sap2010="http://schemas.microsoft.com/netfx/2010/xaml/activities/presentation" xmlns:scg="clr-namespace:System.Collections.Generic;assembly=mscorlib" xmlns:sd="clr-namespace:System.Data;assembly=System.Data" xmlns:uaa="clr-namespace:UiPath.AzureWVD.Activities;assembly=UiPath.AzureWVD.Activities" xmlns:uac="clr-namespace:UiPath.AzureWVD.Core;assembly=UiPath.AzureWVD" xmlns:uam="clr-namespace:UiPath.AzureWVD.Models;assembly=UiPath.AzureWVD" xmlns:ui="http://schemas.uipath.com/workflow/activities" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+  <TextExpression.NamespacesForImplementation>
+    <scg:List x:TypeArguments="x:String" Capacity="76">
+      <x:String>System.Activities</x:String>
+      <x:String>System.Activities.Statements</x:String>
+      <x:String>System.Activities.Expressions</x:String>
+      <x:String>System.Activities.Validation</x:String>
+      <x:String>System.Activities.XamlIntegration</x:String>
+      <x:String>Microsoft.VisualBasic</x:String>
+      <x:String>Microsoft.VisualBasic.Activities</x:String>
+      <x:String>System</x:String>
+      <x:String>System.Collections</x:String>
+      <x:String>System.Collections.Generic</x:String>
+      <x:String>System.Data</x:String>
+      <x:String>System.Diagnostics</x:String>
+      <x:String>System.Drawing</x:String>
+      <x:String>System.IO</x:String>
+      <x:String>System.Linq</x:String>
+      <x:String>System.Net.Mail</x:String>
+      <x:String>System.Xml</x:String>
+      <x:String>System.Xml.Linq</x:String>
+      <x:String>UiPath.Core</x:String>
+      <x:String>UiPath.Core.Activities</x:String>
+      <x:String>System.Windows.Markup</x:String>
+      <x:String>System.Collections.ObjectModel</x:String>
+      <x:String>System.Activities.DynamicUpdate</x:String>
+      <x:String>System.Security</x:String>
+      <x:String>UiPath.AzureWVD.Core</x:String>
+      <x:String>UiPath.Shared.Core</x:String>
+      <x:String>UiPath.AzureWVD.Activities</x:String>
+      <x:String>UiPath.Shared.Activities</x:String>
+      <x:String>UiPath.AzureWVD.Models</x:String>
+      <x:String>System.Threading.Tasks</x:String>
+      <x:String>System.Threading</x:String>
+      <x:String>System.Reflection</x:String>
+      <x:String>System.Runtime.InteropServices</x:String>
+      <x:String>Newtonsoft.Json</x:String>
+      <x:String>System.Net</x:String>
+      <x:String>System.ComponentModel</x:String>
+      <x:String>System.Runtime.Serialization</x:String>
+      <x:String>System.Xml.Serialization</x:String>
+      <x:String>UiPath.Mail</x:String>
+      <x:String>UiPath.Mail.Outlook.Activities</x:String>
+      <x:String>UiPath.Mail.Activities</x:String>
+    </scg:List>
+  </TextExpression.NamespacesForImplementation>
+  <TextExpression.ReferencesForImplementation>
+    <scg:List x:TypeArguments="AssemblyReference" Capacity="33">
+      <AssemblyReference>System.Activities</AssemblyReference>
+      <AssemblyReference>Microsoft.VisualBasic</AssemblyReference>
+      <AssemblyReference>mscorlib</AssemblyReference>
+      <AssemblyReference>System.Data</AssemblyReference>
+      <AssemblyReference>System</AssemblyReference>
+      <AssemblyReference>System.Drawing</AssemblyReference>
+      <AssemblyReference>System.Core</AssemblyReference>
+      <AssemblyReference>System.Xml</AssemblyReference>
+      <AssemblyReference>System.Xml.Linq</AssemblyReference>
+      <AssemblyReference>PresentationFramework</AssemblyReference>
+      <AssemblyReference>WindowsBase</AssemblyReference>
+      <AssemblyReference>PresentationCore</AssemblyReference>
+      <AssemblyReference>System.Xaml</AssemblyReference>
+      <AssemblyReference>UiPath.System.Activities</AssemblyReference>
+      <AssemblyReference>UiPath.UiAutomation.Activities</AssemblyReference>
+      <AssemblyReference>System.Data.DataSetExtensions</AssemblyReference>
+      <AssemblyReference>UiPath.AzureWVD</AssemblyReference>
+      <AssemblyReference>UiPath.AzureWVD.Activities</AssemblyReference>
+      <AssemblyReference>UiPath.Excel.Activities</AssemblyReference>
+      <AssemblyReference>UiPath.Mail.Activities</AssemblyReference>
+      <AssemblyReference>UiPath.OCR.Activities</AssemblyReference>
+      <AssemblyReference>UiPath.UIAutomationCore</AssemblyReference>
+      <AssemblyReference>Microsoft.Bcl.AsyncInterfaces</AssemblyReference>
+      <AssemblyReference>System.Threading.Tasks.Extensions</AssemblyReference>
+      <AssemblyReference>UiPath.Mail</AssemblyReference>
+      <AssemblyReference>UiPath.Excel</AssemblyReference>
+      <AssemblyReference>UiPath.OCR.Activities.Design</AssemblyReference>
+      <AssemblyReference>System.Memory</AssemblyReference>
+      <AssemblyReference>Newtonsoft.Json</AssemblyReference>
+      <AssemblyReference>System.ServiceModel</AssemblyReference>
+      <AssemblyReference>System.ValueTuple</AssemblyReference>
+      <AssemblyReference>System.ComponentModel.Composition</AssemblyReference>
+      <AssemblyReference>System.Runtime.WindowsRuntime</AssemblyReference>
+    </scg:List>
+  </TextExpression.ReferencesForImplementation>
+  <Sequence sap2010:Annotation.AnnotationText="This workflow prepares a virtual desktop for a user. It consists of the following actions:&#xA;- creates a new 'personal' host pool.&#xA;- assigns the user account to the default desktop application group of the host pool.&#xA;- creates a new session host by adding an existing VM to the host pool.&#xA;- assigns the user to the session host.&#xA;- sends an email to the user with details about how to access their session host." DisplayName="Azure WVD sample" sap:VirtualizedContainerService.HintSize="475.2,1072.8" sap2010:WorkflowViewState.IdRef="Sequence_1">
+    <Sequence.Variables>
+      <Variable x:TypeArguments="x:String" Default="[Environment.GetEnvironmentVariable(&quot;AzureActivitiesClientId&quot;)]" Name="ClientId" />
+      <Variable x:TypeArguments="x:String" Default="[Environment.GetEnvironmentVariable(&quot;AzureActivitiesClientSecret&quot;)]" Name="ClientSecret" />
+      <Variable x:TypeArguments="x:String" Default="[Environment.GetEnvironmentVariable(&quot;AzureActivitiesTenantId&quot;)]" Name="TenantId" />
+      <Variable x:TypeArguments="x:String" Default="[Environment.GetEnvironmentVariable(&quot;AzureActivitiesSubscriptionId&quot;)]" Name="SubscriptionId" />
+      <Variable x:TypeArguments="x:String" Name="ResourceGroupName">
+        <Variable.Default>
+          <Literal x:TypeArguments="x:String">{your-resource-group-name}</Literal>
+        </Variable.Default>
+      </Variable>
+      <Variable x:TypeArguments="x:String" Default="westeurope" Name="Region" />
+      <Variable x:TypeArguments="s:String[]" Name="userIDs">
+        <Variable.Default>
+          <mva:VisualBasicValue x:TypeArguments="s:String[]" ExpressionText="{}{&quot;user_object_id&quot;}" />
+        </Variable.Default>
+      </Variable>
+      <Variable x:TypeArguments="x:String" Name="VMName">
+        <Variable.Default>
+          <Literal x:TypeArguments="x:String">{your-VM-name}</Literal>
+        </Variable.Default>
+      </Variable>
+    </Sequence.Variables>
+    <sap:WorkflowViewStateService.ViewState>
+      <scg:Dictionary x:TypeArguments="x:String, x:Object">
+        <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+        <x:Boolean x:Key="IsAnnotationDocked">True</x:Boolean>
+      </scg:Dictionary>
+    </sap:WorkflowViewStateService.ViewState>
+    <uaa:AzureWVDScope ClientID="[ClientId]" ClientSecret="[New System.Net.NetworkCredential(&quot;&quot;, ClientSecret).SecurePassword]" DisplayName="Windows Virtual Desktop Scope" Environment="Global" sap:VirtualizedContainerService.HintSize="433.6,840" sap2010:WorkflowViewState.IdRef="AzureWVDScope_1" SubscriptionID="[SubscriptionId]" TenantID="[TenantId]">
+      <uaa:AzureWVDScope.Body>
+        <ActivityAction x:TypeArguments="uac:AzureWVDCmd">
+          <ActivityAction.Argument>
+            <DelegateInArgument x:TypeArguments="uac:AzureWVDCmd" Name="AzureWVDScopePropertyTag" />
+          </ActivityAction.Argument>
+          <Sequence DisplayName="Do" sap:VirtualizedContainerService.HintSize="375.2,753.6" sap2010:WorkflowViewState.IdRef="Sequence_2">
+            <Sequence.Variables>
+              <Variable x:TypeArguments="uam:WVDHostPool" Name="hostPoolInfo" />
+              <Variable x:TypeArguments="sd:DataTable" Name="hpTags" />
+              <Variable x:TypeArguments="x:String" Name="Workspace">
+                <Variable.Default>
+                  <Literal x:TypeArguments="x:String">{your-workspace-name}</Literal>
+                </Variable.Default>
+              </Variable>
+              <Variable x:TypeArguments="x:String" Default="[Environment.GetEnvironmentVariable(&quot;AzureWVD_Domain&quot;)]" Name="ADDomain" />
+              <Variable x:TypeArguments="x:String" Default="[Environment.GetEnvironmentVariable(&quot;AzureWVD_Username&quot;)]" Name="ADUserUPN" />
+              <Variable x:TypeArguments="x:String" Default="[Environment.GetEnvironmentVariable(&quot;AzureWVD_Userpwd&quot;)]" Name="ADUserPwd" />
+              <Variable x:TypeArguments="uam:WVDSessionHost" Name="sessionHostInfo" />
+              <Variable x:TypeArguments="uam:WVDApplicationGroup" Name="appGroupInfo" />
+              <Variable x:TypeArguments="x:String" Name="userUPN">
+                <Variable.Default>
+                  <Literal x:TypeArguments="x:String">{user_UPN_like_john.smith@abc.com</Literal>
+                </Variable.Default>
+              </Variable>
+            </Sequence.Variables>
+            <sap:WorkflowViewStateService.ViewState>
+              <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+              </scg:Dictionary>
+            </sap:WorkflowViewStateService.ViewState>
+            <ui:BuildDataTable DataTable="[hpTags]" DisplayName="Build Data Table" sap:VirtualizedContainerService.HintSize="333.6,60" sap2010:WorkflowViewState.IdRef="BuildDataTable_1" TableInfo="&lt;NewDataSet&gt;&#xA;  &lt;xs:schema id=&quot;NewDataSet&quot; xmlns=&quot;&quot; xmlns:xs=&quot;http://www.w3.org/2001/XMLSchema&quot; xmlns:msdata=&quot;urn:schemas-microsoft-com:xml-msdata&quot;&gt;&#xA;    &lt;xs:element name=&quot;NewDataSet&quot; msdata:IsDataSet=&quot;true&quot; msdata:MainDataTable=&quot;TableName&quot; msdata:UseCurrentLocale=&quot;true&quot;&gt;&#xA;      &lt;xs:complexType&gt;&#xA;        &lt;xs:choice minOccurs=&quot;0&quot; maxOccurs=&quot;unbounded&quot;&gt;&#xA;          &lt;xs:element name=&quot;TableName&quot;&gt;&#xA;            &lt;xs:complexType&gt;&#xA;              &lt;xs:sequence&gt;&#xA;                &lt;xs:element name=&quot;Coloana1&quot; msdata:Caption=&quot;&quot; minOccurs=&quot;0&quot;&gt;&#xA;                  &lt;xs:simpleType&gt;&#xA;                    &lt;xs:restriction base=&quot;xs:string&quot;&gt;&#xA;                      &lt;xs:maxLength value=&quot;100&quot; /&gt;&#xA;                    &lt;/xs:restriction&gt;&#xA;                  &lt;/xs:simpleType&gt;&#xA;                &lt;/xs:element&gt;&#xA;                &lt;xs:element name=&quot;Coloana2&quot; msdata:Caption=&quot;&quot; type=&quot;xs:string&quot; minOccurs=&quot;0&quot; /&gt;&#xA;              &lt;/xs:sequence&gt;&#xA;            &lt;/xs:complexType&gt;&#xA;          &lt;/xs:element&gt;&#xA;        &lt;/xs:choice&gt;&#xA;      &lt;/xs:complexType&gt;&#xA;    &lt;/xs:element&gt;&#xA;  &lt;/xs:schema&gt;&#xA;  &lt;TableName&gt;&#xA;    &lt;Coloana1&gt;who&lt;/Coloana1&gt;&#xA;    &lt;Coloana2&gt;Ovidiu Ponoran&lt;/Coloana2&gt;&#xA;  &lt;/TableName&gt;&#xA;  &lt;TableName&gt;&#xA;    &lt;Coloana1&gt;why&lt;/Coloana1&gt;&#xA;    &lt;Coloana2&gt;Azure WVD demo&lt;/Coloana2&gt;&#xA;  &lt;/TableName&gt;&#xA;  &lt;TableName&gt;&#xA;    &lt;Coloana1&gt;when&lt;/Coloana1&gt;&#xA;    &lt;Coloana2&gt;28/04/2021&lt;/Coloana2&gt;&#xA;  &lt;/TableName&gt;&#xA;  &lt;TableName&gt;&#xA;    &lt;Coloana1&gt;from&lt;/Coloana1&gt;&#xA;    &lt;Coloana2&gt;Cluj-Napoca&lt;/Coloana2&gt;&#xA;  &lt;/TableName&gt;&#xA;&lt;/NewDataSet&gt;" />
+            <uaa:AzureWVDCreateHostPool PooledDesktopMaxSessionLimit="{x:Null}" Description="Host Pool for demoing Azure WVD activities" DisplayName="Create Host Pool" FriendlyName="Host Pool For Demo" sap:VirtualizedContainerService.HintSize="333.6,22.4" HostPool="[hostPoolInfo]" sap2010:WorkflowViewState.IdRef="AzureWVDCreateHostPool_1" Name="Host-Pool-Demo" PersonalDesktopAssignmentType="Direct" PooledDesktopLoadBalancing="BreadthFirst" Region="[Region]" ResourceGroupName="[ResourceGroupName]" Tags="[hpTags]" Type="Personal" ValidationEnvironment="False" Workspace="[Workspace]" />
+            <uaa:AzureWVDGetApplicationGroup ApplicationGroup="[appGroupInfo]" ApplicationGroupName="[hostPoolInfo.DefaultDesktopApplicationGroupName]" DisplayName="Get Application Group" sap:VirtualizedContainerService.HintSize="333.6,22.4" sap2010:WorkflowViewState.IdRef="AzureWVDGetApplicationGroup_2" ResourceGroupName="[hostPoolInfo.ResourceGroupName]" />
+            <uaa:AzureWVDAssignUsersGroupsToApplicationGroup ApplicationGroup="[appGroupInfo]" DisplayName="Assign Users and Groups to Application Group" sap:VirtualizedContainerService.HintSize="333.6,22.4" sap2010:WorkflowViewState.IdRef="AzureWVDAssignUsersGroupsToApplicationGroup_2" UsersAndGroupsIds="[userIDs]" />
+            <uaa:AzureWVDAddVMToHostPool DomainOrganizationalUnit="{x:Null}" DomainToJoin="{x:Null}" DisplayName="Add Virtual Machine to Host Pool" DomainUserPassword="[New System.Net.NetworkCredential(&quot;&quot;, ADUserPwd).SecurePassword]" DomainUsername="[ADUserUPN]" sap:VirtualizedContainerService.HintSize="333.6,22.4" HostPool="[hostPoolInfo]" sap2010:WorkflowViewState.IdRef="AzureWVDAddVMToHostPool_1" Name="[VMName]" ResourceGroupName="[ResourceGroupName]" SessionHost="[sessionHostInfo]" Timeout="1200" WaitForCompletion="True" />
+            <WriteLine DisplayName="Write Line" sap:VirtualizedContainerService.HintSize="333.6,62.4" sap2010:WorkflowViewState.IdRef="WriteLine_3" Text="[Newtonsoft.Json.JsonConvert.SerializeObject(sessionHostInfo)]" />
+            <uaa:AzureWVDUpdateSessionHost AllowNewSession="{x:Null}" AssignedUser="[userUPN]" DisplayName="Update Session Host" sap:VirtualizedContainerService.HintSize="333.6,22.4" sap2010:WorkflowViewState.IdRef="AzureWVDUpdateSessionHost_1" SessionHost="[sessionHostInfo]" />
+            <ui:SendOutlookMail Account="{x:Null}" Bcc="{x:Null}" Cc="{x:Null}" MailMessage="{x:Null}" ReplyTo="{x:Null}" TimeoutMS="{x:Null}" Body="[&quot;Hello dear colleague, &quot; + vbCrLf + vbCrLf + &quot;A new personal virtual desktop is available for you to use.&quot; + vbCrLf + vbCrLf + &quot;To connect to it, please sign in to https://rdweb.wvd.microsoft.com/arm/webclient/index.html and locate your virtual desktop in the workspace '&quot; + appGroupInfo.WorkspaceName + &quot;'.&quot; + vbCrLf + vbCrLf + &quot;Work joyfully, &quot; + vbCrLf + &quot;IT Team&quot;]" DisplayName="Send Outlook Mail Message" sap:VirtualizedContainerService.HintSize="333.6,146.4" sap2010:WorkflowViewState.IdRef="SendOutlookMail_1" Importance="Normal" IsBodyHtml="False" IsDraft="False" Sensitivity="Normal" Subject="A new personal virtual desktop is available for you to use" To="[userUPN]">
+              <ui:SendOutlookMail.Files>
+                <scg:List x:TypeArguments="InArgument(x:String)" Capacity="0" />
+              </ui:SendOutlookMail.Files>
+            </ui:SendOutlookMail>
+          </Sequence>
+        </ActivityAction>
+      </uaa:AzureWVDScope.Body>
+    </uaa:AzureWVDScope>
+  </Sequence>
+</Activity>
