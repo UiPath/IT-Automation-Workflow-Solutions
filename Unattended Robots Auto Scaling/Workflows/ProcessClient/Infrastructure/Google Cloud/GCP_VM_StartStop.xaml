@@ -1,4 +1,4 @@
-<Activity mc:Ignorable="sap sap2010" x:Class="Main" xmlns="http://schemas.microsoft.com/netfx/2009/xaml/activities" xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" xmlns:mva="clr-namespace:Microsoft.VisualBasic.Activities;assembly=System.Activities" xmlns:s="clr-namespace:System;assembly=mscorlib" xmlns:sap="http://schemas.microsoft.com/netfx/2009/xaml/activities/presentation" xmlns:sap2010="http://schemas.microsoft.com/netfx/2010/xaml/activities/presentation" xmlns:scg="clr-namespace:System.Collections.Generic;assembly=mscorlib" xmlns:ss="clr-namespace:System.Security;assembly=mscorlib" xmlns:uaa="clr-namespace:UiPath.Azure.Activities;assembly=UiPath.Azure.Activities" xmlns:uac="clr-namespace:UiPath.Azure.Core;assembly=UiPath.Azure" xmlns:uam="clr-namespace:UiPath.Azure.Models;assembly=UiPath.Azure" xmlns:ui="http://schemas.uipath.com/workflow/activities" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+<Activity mc:Ignorable="sap sap2010" x:Class="Main" xmlns="http://schemas.microsoft.com/netfx/2009/xaml/activities" xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" xmlns:mva="clr-namespace:Microsoft.VisualBasic.Activities;assembly=System.Activities" xmlns:s="clr-namespace:System;assembly=mscorlib" xmlns:sap="http://schemas.microsoft.com/netfx/2009/xaml/activities/presentation" xmlns:sap2010="http://schemas.microsoft.com/netfx/2010/xaml/activities/presentation" xmlns:scg="clr-namespace:System.Collections.Generic;assembly=mscorlib" xmlns:ss="clr-namespace:System.Security;assembly=mscorlib" xmlns:uga="clr-namespace:UiPath.GoogleCloud.Activities;assembly=UiPath.GoogleCloud.Activities" xmlns:ugc="clr-namespace:UiPath.GoogleCloud.Core;assembly=UiPath.GoogleCloud" xmlns:ugm="clr-namespace:UiPath.GoogleCloud.Models;assembly=UiPath.GoogleCloud" xmlns:ui="http://schemas.uipath.com/workflow/activities" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
   <x:Members>
     <x:Property Name="Action_StartStopDeallocateDelete" Type="InArgument(x:String)" />
     <x:Property Name="VM_Name" Type="InArgument(x:String)" />
@@ -17,10 +17,10 @@
   <mva:VisualBasic.Settings>
     <x:Null />
   </mva:VisualBasic.Settings>
-  <sap:VirtualizedContainerService.HintSize>1336.8,2439.2</sap:VirtualizedContainerService.HintSize>
+  <sap:VirtualizedContainerService.HintSize>1139.2,1493.6</sap:VirtualizedContainerService.HintSize>
   <sap2010:WorkflowViewState.IdRef>ActivityBuilder_1</sap2010:WorkflowViewState.IdRef>
   <TextExpression.NamespacesForImplementation>
-    <scg:List x:TypeArguments="x:String" Capacity="25">
+    <scg:List x:TypeArguments="x:String" Capacity="27">
       <x:String>System.Activities</x:String>
       <x:String>System.Activities.Statements</x:String>
       <x:String>System.Activities.Expressions</x:String>
@@ -46,10 +46,12 @@
       <x:String>System.Net</x:String>
       <x:String>System.Activities.DynamicUpdate</x:String>
       <x:String>UiPath.Azure.Activities</x:String>
+      <x:String>UiPath.GoogleCloud.Activities</x:String>
+      <x:String>UiPath.GoogleCloud.Models</x:String>
     </scg:List>
   </TextExpression.NamespacesForImplementation>
   <TextExpression.ReferencesForImplementation>
-    <scg:List x:TypeArguments="AssemblyReference" Capacity="48">
+    <scg:List x:TypeArguments="AssemblyReference" Capacity="52">
       <AssemblyReference>System.Activities</AssemblyReference>
       <AssemblyReference>Microsoft.VisualBasic</AssemblyReference>
       <AssemblyReference>mscorlib</AssemblyReference>
@@ -74,26 +76,31 @@
       <AssemblyReference>System.ComponentModel.Composition</AssemblyReference>
       <AssemblyReference>UiPath.System.Activities.Design</AssemblyReference>
       <AssemblyReference>UiPath.Azure.Activities</AssemblyReference>
+      <AssemblyReference>UiPath.GoogleCloud.Activities</AssemblyReference>
+      <AssemblyReference>UiPath.GoogleCloud</AssemblyReference>
       <AssemblyReference>System.Memory</AssemblyReference>
       <AssemblyReference>Microsoft.Bcl.AsyncInterfaces</AssemblyReference>
     </scg:List>
   </TextExpression.ReferencesForImplementation>
-  <Sequence DisplayName="Main Sequence" sap:VirtualizedContainerService.HintSize="1032.8,2334.4" sap2010:WorkflowViewState.IdRef="Sequence_3">
+  <Sequence DisplayName="Main Sequence" sap:VirtualizedContainerService.HintSize="1032.8,1388.8" sap2010:WorkflowViewState.IdRef="Sequence_3">
     <Sequence.Variables>
       <Variable x:TypeArguments="x:String" Name="Azure_TenantId" />
       <Variable x:TypeArguments="x:String" Name="Azure_ClientId" />
       <Variable x:TypeArguments="x:String" Name="Azure_ClientSecret" />
-      <Variable x:TypeArguments="uam:VirtualMachine" Name="VM_Object" />
       <Variable x:TypeArguments="x:String" Name="Azure_SubscriptionID" />
       <Variable x:TypeArguments="x:String" Name="ResourceGroup_Name" />
       <Variable x:TypeArguments="x:Int32" Name="pendingJobsNow" />
+      <Variable x:TypeArguments="x:String" Name="GCP_Project" />
+      <Variable x:TypeArguments="x:String" Name="GCP_Zone" />
+      <Variable x:TypeArguments="x:String" Name="GCP_ServiceAccountKey" />
+      <Variable x:TypeArguments="ugm:GCPInstance" Name="VM_Object" />
     </Sequence.Variables>
     <sap:WorkflowViewStateService.ViewState>
       <scg:Dictionary x:TypeArguments="x:String, x:Object">
         <x:Boolean x:Key="IsExpanded">True</x:Boolean>
       </scg:Dictionary>
     </sap:WorkflowViewStateService.ViewState>
-    <Sequence DisplayName="Get Azure Credentials from Assets Sequence" sap:VirtualizedContainerService.HintSize="991.2,68.8" sap2010:WorkflowViewState.IdRef="Sequence_1">
+    <Sequence DisplayName="Get GCP Credentials from Assets Sequence" sap:VirtualizedContainerService.HintSize="991.2,331.2" sap2010:WorkflowViewState.IdRef="Sequence_1">
       <Sequence.Variables>
         <Variable x:TypeArguments="ss:SecureString" Name="azure_clientsecret_secure" />
         <Variable x:TypeArguments="ss:SecureString" Name="azure_clientid_secure" />
@@ -101,145 +108,78 @@
       </Sequence.Variables>
       <sap:WorkflowViewStateService.ViewState>
         <scg:Dictionary x:TypeArguments="x:String, x:Object">
-          <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+          <x:Boolean x:Key="IsExpanded">True</x:Boolean>
           <x:Boolean x:Key="IsPinned">False</x:Boolean>
         </scg:Dictionary>
       </sap:WorkflowViewStateService.ViewState>
-      <ui:GetRobotCredential TimeoutMS="{x:Null}" Username="{x:Null}" AssetName="AzureAuth_ClientID" DisplayName="Azure ClientID - Get Credential" sap:VirtualizedContainerService.HintSize="337.6,22.4" sap2010:WorkflowViewState.IdRef="GetRobotCredential_1" Password="[azure_clientid_secure]" />
-      <ui:GetRobotCredential TimeoutMS="{x:Null}" Username="{x:Null}" AssetName="AzureAuth_ClientSecret" DisplayName="Azure ClientSecret - Get Credential" sap:VirtualizedContainerService.HintSize="337.6,22.4" sap2010:WorkflowViewState.IdRef="GetRobotCredential_2" Password="[azure_clientsecret_secure]" />
-      <ui:GetRobotCredential TimeoutMS="{x:Null}" Username="{x:Null}" AssetName="AzureAuth_TenantID" DisplayName="Azure TenantID - Get Credential" sap:VirtualizedContainerService.HintSize="337.6,22.4" sap2010:WorkflowViewState.IdRef="GetRobotCredential_3" Password="[azure_tenantid_secure]" />
-      <ui:GetRobotAsset TimeoutMS="{x:Null}" AssetName="AzureAuth_SubscriptionID" DisplayName="Azure_SubscriptionID - Get Asset" sap:VirtualizedContainerService.HintSize="337.6,22.4" sap2010:WorkflowViewState.IdRef="GetRobotAsset_1">
+      <ui:GetRobotAsset TimeoutMS="{x:Null}" AssetName="GCP_Project" DisplayName="Get Asset" sap:VirtualizedContainerService.HintSize="200,52.8" sap2010:WorkflowViewState.IdRef="GetRobotAsset_3">
         <ui:GetRobotAsset.Value>
-          <OutArgument x:TypeArguments="x:String">[Azure_SubscriptionID]</OutArgument>
+          <OutArgument x:TypeArguments="x:String">[GCP_Project]</OutArgument>
         </ui:GetRobotAsset.Value>
-      </ui:GetRobotAsset>
-      <ui:GetRobotAsset TimeoutMS="{x:Null}" AssetName="Azure_VMs_RG" DisplayName="Azure_VMs_RG - Get Asset" sap:VirtualizedContainerService.HintSize="337.6,22.4" sap2010:WorkflowViewState.IdRef="GetRobotAsset_2">
-        <ui:GetRobotAsset.Value>
-          <OutArgument x:TypeArguments="x:String">[ResourceGroup_Name]</OutArgument>
-        </ui:GetRobotAsset.Value>
-      </ui:GetRobotAsset>
-      <ui:MultipleAssign DisplayName="Multiple Assign" sap:VirtualizedContainerService.HintSize="337.6,161.6" sap2010:WorkflowViewState.IdRef="MultipleAssign_1">
-        <ui:MultipleAssign.AssignOperations>
-          <scg:List x:TypeArguments="ui:AssignOperation" Capacity="4">
-            <ui:AssignOperation sap2010:WorkflowViewState.IdRef="AssignOperation_1">
-              <ui:AssignOperation.To>
-                <OutArgument x:TypeArguments="x:String">[Azure_TenantID]</OutArgument>
-              </ui:AssignOperation.To>
-              <ui:AssignOperation.Value>
-                <InArgument x:TypeArguments="x:String">[new System.Net.NetworkCredential(string.Empty, azure_tenantid_secure).Password]</InArgument>
-              </ui:AssignOperation.Value>
-            </ui:AssignOperation>
-            <ui:AssignOperation sap2010:WorkflowViewState.IdRef="AssignOperation_2">
-              <ui:AssignOperation.To>
-                <OutArgument x:TypeArguments="x:String">[Azure_ClientID]</OutArgument>
-              </ui:AssignOperation.To>
-              <ui:AssignOperation.Value>
-                <InArgument x:TypeArguments="x:String">[new System.Net.NetworkCredential(string.Empty, azure_clientid_secure).Password]</InArgument>
-              </ui:AssignOperation.Value>
-            </ui:AssignOperation>
-            <ui:AssignOperation sap2010:WorkflowViewState.IdRef="AssignOperation_3">
-              <ui:AssignOperation.To>
-                <OutArgument x:TypeArguments="x:String">[Azure_ClientSecret]</OutArgument>
-              </ui:AssignOperation.To>
-              <ui:AssignOperation.Value>
-                <InArgument x:TypeArguments="x:String">[new System.Net.NetworkCredential(string.Empty, azure_clientsecret_secure).Password]</InArgument>
-              </ui:AssignOperation.Value>
-            </ui:AssignOperation>
-          </scg:List>
-        </ui:MultipleAssign.AssignOperations>
         <sap:WorkflowViewStateService.ViewState>
           <scg:Dictionary x:TypeArguments="x:String, x:Object">
-            <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+            <x:Boolean x:Key="IsExpanded">False</x:Boolean>
             <x:Boolean x:Key="IsPinned">False</x:Boolean>
           </scg:Dictionary>
         </sap:WorkflowViewStateService.ViewState>
-      </ui:MultipleAssign>
+      </ui:GetRobotAsset>
+      <ui:GetRobotAsset TimeoutMS="{x:Null}" AssetName="GCP_Zone" DisplayName="Get Asset" sap:VirtualizedContainerService.HintSize="200,52.8" sap2010:WorkflowViewState.IdRef="GetRobotAsset_4">
+        <ui:GetRobotAsset.Value>
+          <OutArgument x:TypeArguments="x:String">[GCP_Zone]</OutArgument>
+        </ui:GetRobotAsset.Value>
+        <sap:WorkflowViewStateService.ViewState>
+          <scg:Dictionary x:TypeArguments="x:String, x:Object">
+            <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+            <x:Boolean x:Key="IsPinned">False</x:Boolean>
+          </scg:Dictionary>
+        </sap:WorkflowViewStateService.ViewState>
+      </ui:GetRobotAsset>
+      <ui:GetRobotAsset TimeoutMS="{x:Null}" AssetName="GCP_ServiceAccountKey" DisplayName="Get Asset" sap:VirtualizedContainerService.HintSize="200,52.8" sap2010:WorkflowViewState.IdRef="GetRobotAsset_5">
+        <ui:GetRobotAsset.Value>
+          <OutArgument x:TypeArguments="x:String">[GCP_ServiceAccountKey]</OutArgument>
+        </ui:GetRobotAsset.Value>
+        <sap:WorkflowViewStateService.ViewState>
+          <scg:Dictionary x:TypeArguments="x:String, x:Object">
+            <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+            <x:Boolean x:Key="IsPinned">False</x:Boolean>
+          </scg:Dictionary>
+        </sap:WorkflowViewStateService.ViewState>
+      </ui:GetRobotAsset>
     </Sequence>
-    <uaa:AzureScope ClientId="[Azure_ClientId]" ClientSecret="[new System.Net.NetworkCredential(&quot;&quot;,Azure_ClientSecret).SecurePassword]" DisplayName="Azure Scope" EnvironmentType="Global" sap:VirtualizedContainerService.HintSize="991.2,2132.8" sap2010:WorkflowViewState.IdRef="AzureScope_2" SubscriptionId="[Azure_SubscriptionID]" TenantId="[Azure_TenantId]">
-      <uaa:AzureScope.Body>
-        <ActivityAction x:TypeArguments="uac:AzureCmd">
+    <uga:GCPScope ServiceAccountKeyFromFile="{x:Null}" DisplayName="Google Cloud Scope" sap:VirtualizedContainerService.HintSize="991.2,924.8" sap2010:WorkflowViewState.IdRef="GCPScope_1" ScopeType="ServiceAccountKey" ServiceAccountKey="[New System.Net.NetworkCredential(&quot;&quot;,GCP_ServiceAccountKey).SecurePassword]">
+      <uga:GCPScope.Body>
+        <ActivityAction x:TypeArguments="ugc:GCPCmd">
           <ActivityAction.Argument>
-            <DelegateInArgument x:TypeArguments="uac:AzureCmd" Name="AzureScopePropertyTag" />
+            <DelegateInArgument x:TypeArguments="ugc:GCPCmd" Name="GoogleCloudScopePropertyTag" />
           </ActivityAction.Argument>
-          <Sequence DisplayName="Azure Scope Do - Sequence" sap:VirtualizedContainerService.HintSize="957.6,2046.4" sap2010:WorkflowViewState.IdRef="Sequence_19">
+          <Sequence DisplayName="GCP Scope Do - Sequence" sap:VirtualizedContainerService.HintSize="957.6,838.4" sap2010:WorkflowViewState.IdRef="Sequence_19">
             <sap:WorkflowViewStateService.ViewState>
               <scg:Dictionary x:TypeArguments="x:String, x:Object">
                 <x:Boolean x:Key="IsExpanded">True</x:Boolean>
               </scg:Dictionary>
             </sap:WorkflowViewStateService.ViewState>
-            <Sequence DisplayName="Get VM Sequence" sap:VirtualizedContainerService.HintSize="916,1353.6" sap2010:WorkflowViewState.IdRef="Sequence_5">
+            <Sequence DisplayName="Get VM Sequence" sap:VirtualizedContainerService.HintSize="916,145.6" sap2010:WorkflowViewState.IdRef="Sequence_5">
               <sap:WorkflowViewStateService.ViewState>
                 <scg:Dictionary x:TypeArguments="x:String, x:Object">
                   <x:Boolean x:Key="IsExpanded">True</x:Boolean>
                   <x:Boolean x:Key="IsPinned">False</x:Boolean>
                 </scg:Dictionary>
               </sap:WorkflowViewStateService.ViewState>
-              <TryCatch DisplayName="GetVM - Try Catch" sap:VirtualizedContainerService.HintSize="818.4,1260.8" sap2010:WorkflowViewState.IdRef="TryCatch_2">
+              <TryCatch DisplayName="GetVM - Try Catch" sap:VirtualizedContainerService.HintSize="200,52.8" sap2010:WorkflowViewState.IdRef="TryCatch_2">
                 <sap:WorkflowViewStateService.ViewState>
                   <scg:Dictionary x:TypeArguments="x:String, x:Object">
-                    <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                    <x:Boolean x:Key="IsExpanded">False</x:Boolean>
                     <x:Boolean x:Key="IsPinned">False</x:Boolean>
                   </scg:Dictionary>
                 </sap:WorkflowViewStateService.ViewState>
                 <TryCatch.Try>
-                  <Sequence sap:VirtualizedContainerService.HintSize="781.6,1029.6" sap2010:WorkflowViewState.IdRef="Sequence_13">
+                  <uga:GCPGetInstance DisplayName="Get Instance" sap:VirtualizedContainerService.HintSize="200,22.4" sap2010:WorkflowViewState.IdRef="GCPGetInstance_1" Instance="[VM_Object]" InstanceName="[VM_Name]" ProjectId="[GCP_Project]" Zone="[GCP_Zone]" />
+                </TryCatch.Try>
+                <TryCatch.Catches>
+                  <Catch x:TypeArguments="s:Exception" sap:VirtualizedContainerService.HintSize="400,130.4" sap2010:WorkflowViewState.IdRef="Catch`1_2">
                     <sap:WorkflowViewStateService.ViewState>
                       <scg:Dictionary x:TypeArguments="x:String, x:Object">
                         <x:Boolean x:Key="IsExpanded">True</x:Boolean>
-                      </scg:Dictionary>
-                    </sap:WorkflowViewStateService.ViewState>
-                    <ui:ForEach x:TypeArguments="x:String" CurrentIndex="{x:Null}" DisplayName="For Each" sap:VirtualizedContainerService.HintSize="740,936.8" sap2010:WorkflowViewState.IdRef="ForEach`1_1" Values="[Split(ResourceGroup_Name,&quot;,&quot;)]">
-                      <ui:ForEach.Body>
-                        <ActivityAction x:TypeArguments="x:String">
-                          <ActivityAction.Argument>
-                            <DelegateInArgument x:TypeArguments="x:String" Name="rg" />
-                          </ActivityAction.Argument>
-                          <Sequence DisplayName="Body" sap:VirtualizedContainerService.HintSize="704.8,802.4" sap2010:WorkflowViewState.IdRef="Sequence_12">
-                            <Sequence.Variables>
-                              <Variable x:TypeArguments="uam:VirtualMachine[]" Name="RgVMs" />
-                            </Sequence.Variables>
-                            <sap:WorkflowViewStateService.ViewState>
-                              <scg:Dictionary x:TypeArguments="x:String, x:Object">
-                                <x:Boolean x:Key="IsExpanded">True</x:Boolean>
-                              </scg:Dictionary>
-                            </sap:WorkflowViewStateService.ViewState>
-                            <uaa:AzureGetVirtualMachineList Timeout="{x:Null}" DisplayName="Get VM List" sap:VirtualizedContainerService.HintSize="663.2,22.4" sap2010:WorkflowViewState.IdRef="AzureGetVirtualMachineList_1" IncludeNetworkingDetails="False" PowerState="All" ResourceGroupName="[rg]" VirtualMachineList="[RgVMs]" />
-                            <If Condition="[Not (RgVMs Is Nothing)]" sap:VirtualizedContainerService.HintSize="663.2,647.2" sap2010:WorkflowViewState.IdRef="If_6">
-                              <If.Then>
-                                <If Condition="[RgVMs.Any(Function(v) v.Name.ToUpper.Equals(VM_Name.ToUpper))]" sap:VirtualizedContainerService.HintSize="519.2,497.6" sap2010:WorkflowViewState.IdRef="If_5">
-                                  <If.Then>
-                                    <Sequence sap:VirtualizedContainerService.HintSize="375.2,348" sap2010:WorkflowViewState.IdRef="Sequence_14">
-                                      <sap:WorkflowViewStateService.ViewState>
-                                        <scg:Dictionary x:TypeArguments="x:String, x:Object">
-                                          <x:Boolean x:Key="IsExpanded">True</x:Boolean>
-                                        </scg:Dictionary>
-                                      </sap:WorkflowViewStateService.ViewState>
-                                      <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="333.6,92.8" sap2010:WorkflowViewState.IdRef="LogMessage_8" Level="Info" Message="[&quot;Found &quot; + VM_Name + &quot; in RG &quot; + rg]" />
-                                      <Assign DisplayName="Assign VM" sap:VirtualizedContainerService.HintSize="333.6,60" sap2010:WorkflowViewState.IdRef="Assign_2">
-                                        <Assign.To>
-                                          <OutArgument x:TypeArguments="uam:VirtualMachine">[VM_Object]</OutArgument>
-                                        </Assign.To>
-                                        <Assign.Value>
-                                          <InArgument x:TypeArguments="uam:VirtualMachine">[RgVMs.First(Function (v) v.Name.ToUpper.Equals(VM_Name.ToUpper))]</InArgument>
-                                        </Assign.Value>
-                                      </Assign>
-                                      <ui:Break sap:VirtualizedContainerService.HintSize="333.6,22.4" sap2010:WorkflowViewState.IdRef="Break_1" />
-                                    </Sequence>
-                                  </If.Then>
-                                </If>
-                              </If.Then>
-                            </If>
-                          </Sequence>
-                        </ActivityAction>
-                      </ui:ForEach.Body>
-                    </ui:ForEach>
-                  </Sequence>
-                </TryCatch.Try>
-                <TryCatch.Catches>
-                  <Catch x:TypeArguments="s:Exception" sap:VirtualizedContainerService.HintSize="784.8,22.4" sap2010:WorkflowViewState.IdRef="Catch`1_2">
-                    <sap:WorkflowViewStateService.ViewState>
-                      <scg:Dictionary x:TypeArguments="x:String, x:Object">
-                        <x:Boolean x:Key="IsExpanded">False</x:Boolean>
                         <x:Boolean x:Key="IsPinned">False</x:Boolean>
                       </scg:Dictionary>
                     </sap:WorkflowViewStateService.ViewState>
@@ -249,10 +189,10 @@
                       </ActivityAction.Argument>
                       <Assign sap:VirtualizedContainerService.HintSize="262.4,60" sap2010:WorkflowViewState.IdRef="Assign_1">
                         <Assign.To>
-                          <OutArgument x:TypeArguments="uam:VirtualMachine">[VM_Object]</OutArgument>
+                          <OutArgument x:TypeArguments="ugm:GCPInstance">[VM_Object]</OutArgument>
                         </Assign.To>
                         <Assign.Value>
-                          <InArgument x:TypeArguments="uam:VirtualMachine">[Nothing]</InArgument>
+                          <InArgument x:TypeArguments="ugm:GCPInstance">[Nothing]</InArgument>
                         </Assign.Value>
                       </Assign>
                     </ActivityAction>
@@ -322,7 +262,7 @@
                         <x:Boolean x:Key="IsPinned">False</x:Boolean>
                       </scg:Dictionary>
                     </sap:WorkflowViewStateService.ViewState>
-                    <If x:Key="deallocate" Condition="[VM_Object.PowerState.ToString IsNot VmPowerState.Deallocated.ToString and VM_Object.PowerState.ToString IsNot VmPowerState.Deallocating.ToString and VM_Object.PowerState.ToString IsNot VmPowerState.Stopped.ToString and VM_Object.PowerState.ToString IsNot VmPowerState.Stopping.ToString]" DisplayName="If not already deallocated or stopped " sap:VirtualizedContainerService.HintSize="1549.6,917.6" sap2010:WorkflowViewState.IdRef="If_3">
+                    <If x:Key="stop" Condition="[VM_Object.Status.ToString IsNot InstanceStatus.Stopping.ToString and VM_Object.Status.ToString IsNot InstanceStatus.Terminated.ToString and VM_Object.Status.ToString IsNot InstanceStatus.Suspended.ToString and VM_Object.Status.ToString IsNot InstanceStatus.Suspending.ToString]" DisplayName="If not already deallocated or stopped " sap:VirtualizedContainerService.HintSize="1549.6,943.2" sap2010:WorkflowViewState.IdRef="If_3">
                       <sap:WorkflowViewStateService.ViewState>
                         <scg:Dictionary x:TypeArguments="x:String, x:Object">
                           <x:Boolean x:Key="IsExpanded">True</x:Boolean>
@@ -330,7 +270,7 @@
                         </scg:Dictionary>
                       </sap:WorkflowViewStateService.ViewState>
                       <If.Then>
-                        <If Condition="[pendingJobsNow = 0]" DisplayName="If any PendingJobsNow" sap:VirtualizedContainerService.HintSize="1172,768" sap2010:WorkflowViewState.IdRef="If_8">
+                        <If Condition="[pendingJobsNow = 0]" DisplayName="If any PendingJobsNow" sap:VirtualizedContainerService.HintSize="1172,793.6" sap2010:WorkflowViewState.IdRef="If_8">
                           <sap:WorkflowViewStateService.ViewState>
                             <scg:Dictionary x:TypeArguments="x:String, x:Object">
                               <x:Boolean x:Key="IsExpanded">True</x:Boolean>
@@ -338,7 +278,7 @@
                             </scg:Dictionary>
                           </sap:WorkflowViewStateService.ViewState>
                           <If.Then>
-                            <Sequence sap:VirtualizedContainerService.HintSize="794.4,618.4" sap2010:WorkflowViewState.IdRef="Sequence_17">
+                            <Sequence sap:VirtualizedContainerService.HintSize="794.4,644" sap2010:WorkflowViewState.IdRef="Sequence_17">
                               <Sequence.Variables>
                                 <Variable x:TypeArguments="x:Int32" Name="machineBusyRobotsCount" />
                               </Sequence.Variables>
@@ -347,7 +287,7 @@
                                   <x:Boolean x:Key="IsExpanded">True</x:Boolean>
                                 </scg:Dictionary>
                               </sap:WorkflowViewStateService.ViewState>
-                              <ui:InvokeWorkflowFile ContinueOnError="{x:Null}" DisplayName="Invoke OrchestratorTenant_MachineBusyRobots workflow" sap:VirtualizedContainerService.HintSize="752.8,88" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_3" UnSafe="False" WorkflowFileName="OrchestratorTenant_MachineBusyRobots.xaml">
+                              <ui:InvokeWorkflowFile ContinueOnError="{x:Null}" DisplayName="Invoke OrchestratorTenant_MachineBusyRobots workflow" sap:VirtualizedContainerService.HintSize="752.8,113.6" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_3" UnSafe="False" WorkflowFileName="OrchestratorTenant_MachineBusyRobots.xaml">
                                 <ui:InvokeWorkflowFile.Arguments>
                                   <InArgument x:TypeArguments="x:String" x:Key="Token">[Token]</InArgument>
                                   <InArgument x:TypeArguments="x:String" x:Key="TenantLogicalName">[TenantLogicalName]</InArgument>
@@ -368,7 +308,7 @@
                                         <x:Boolean x:Key="IsExpanded">True</x:Boolean>
                                       </scg:Dictionary>
                                     </sap:WorkflowViewStateService.ViewState>
-                                    <uaa:AzureStopVirtualMachine DisplayName="Stop VM" sap:VirtualizedContainerService.HintSize="333.6,22.4" sap2010:WorkflowViewState.IdRef="AzureStopVirtualMachine_2" ReservePublicIpAddress="True" Timeout="[600]" VirtualMachine="[VM_Object]" WaitForCompletion="False" />
+                                    <uga:GCPStopInstance DisplayName="Stop Instance" sap:VirtualizedContainerService.HintSize="333.6,22.4" sap2010:WorkflowViewState.IdRef="GCPStopInstance_1" Instance="[VM_Object]" Timeout="[600]" WaitForCompletion="False" />
                                     <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="333.6,92.8" sap2010:WorkflowViewState.IdRef="LogMessage_5" Level="Info" Message="[&quot;VM  &quot;+VM_Object.Name + &quot;  deallocated.&quot;]" />
                                   </Sequence>
                                 </If.Then>
@@ -387,7 +327,7 @@
                         <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="333.6,92.8" sap2010:WorkflowViewState.IdRef="LogMessage_6" Level="Info" Message="[&quot;VM  &quot;+VM_Object.Name + &quot;  is already deallocated / deallocationg / stopped / stopping.&quot;]" />
                       </If.Else>
                     </If>
-                    <If x:Key="start" Condition="[VM_Object.PowerState.ToString IsNot VmPowerState.Running.ToString and VM_Object.PowerState.ToString IsNot VmPowerState.Starting.ToString]" DisplayName="If not already started" sap:VirtualizedContainerService.HintSize="1130.4,547.2" sap2010:WorkflowViewState.IdRef="If_1">
+                    <If x:Key="start" Condition="[VM_Object.Status.ToString IsNot InstanceStatus.Running.ToString]" DisplayName="If not already started" sap:VirtualizedContainerService.HintSize="1130.4,547.2" sap2010:WorkflowViewState.IdRef="If_1">
                       <sap:WorkflowViewStateService.ViewState>
                         <scg:Dictionary x:TypeArguments="x:String, x:Object">
                           <x:Boolean x:Key="IsExpanded">True</x:Boolean>
@@ -409,7 +349,7 @@
                                   <x:Boolean x:Key="IsExpanded">True</x:Boolean>
                                 </scg:Dictionary>
                               </sap:WorkflowViewStateService.ViewState>
-                              <uaa:AzureStartVirtualMachine DisplayName="Start VM" sap:VirtualizedContainerService.HintSize="333.6,22.4" sap2010:WorkflowViewState.IdRef="AzureStartVirtualMachine_1" Timeout="[600]" VirtualMachine="[VM_Object]" WaitForCompletion="False" />
+                              <uga:GCPStartInstance DisplayName="Start Instance" sap:VirtualizedContainerService.HintSize="333.6,22.4" sap2010:WorkflowViewState.IdRef="GCPStartInstance_1" Instance="[VM_Object]" Timeout="[600]" WaitForCompletion="False" />
                               <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="333.6,92.8" sap2010:WorkflowViewState.IdRef="LogMessage_3" Level="Info" Message="[&quot;VM  &quot;+VM_Object.Name + &quot;  started.&quot;]" />
                             </Sequence>
                           </If.Then>
@@ -431,13 +371,7 @@
             </If>
           </Sequence>
         </ActivityAction>
-      </uaa:AzureScope.Body>
-      <sap:WorkflowViewStateService.ViewState>
-        <scg:Dictionary x:TypeArguments="x:String, x:Object">
-          <x:Boolean x:Key="IsExpanded">True</x:Boolean>
-          <x:Boolean x:Key="IsPinned">False</x:Boolean>
-        </scg:Dictionary>
-      </sap:WorkflowViewStateService.ViewState>
-    </uaa:AzureScope>
+      </uga:GCPScope.Body>
+    </uga:GCPScope>
   </Sequence>
 </Activity>

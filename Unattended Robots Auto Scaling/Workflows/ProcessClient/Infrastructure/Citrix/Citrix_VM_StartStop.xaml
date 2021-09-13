@@ -12,11 +12,12 @@
     <x:Property Name="clientEnvironmentReleases" Type="InArgument(scg:List(x:String))" />
     <x:Property sap2010:Annotation.AnnotationText="can have duplicates for high density robots" Name="specificRobotsMachines" Type="OutArgument(scg:List(x:String))" />
     <x:Property sap2010:Annotation.AnnotationText="can have duplicates for high density robots" Name="unattendedRobotsMachines" Type="InArgument(scg:List(x:String))" />
+    <x:Property Name="FolderIsModern" Type="InArgument(x:Boolean)" />
   </x:Members>
   <mva:VisualBasic.Settings>
     <x:Null />
   </mva:VisualBasic.Settings>
-  <sap:VirtualizedContainerService.HintSize>2152,2408</sap:VirtualizedContainerService.HintSize>
+  <sap:VirtualizedContainerService.HintSize>2152,1369.6</sap:VirtualizedContainerService.HintSize>
   <sap2010:WorkflowViewState.IdRef>Citrix_VM_StartStop_1</sap2010:WorkflowViewState.IdRef>
   <TextExpression.NamespacesForImplementation>
     <scg:List x:TypeArguments="x:String" Capacity="46">
@@ -76,9 +77,11 @@
       <AssemblyReference>UiPath.System.Activities.Design</AssemblyReference>
       <AssemblyReference>UiPath.Citrix.Activities</AssemblyReference>
       <AssemblyReference>UiPath.Azure.Activities</AssemblyReference>
+      <AssemblyReference>System.Memory</AssemblyReference>
+      <AssemblyReference>Microsoft.Bcl.AsyncInterfaces</AssemblyReference>
     </scg:List>
   </TextExpression.ReferencesForImplementation>
-  <Sequence DisplayName="Citrix_VM_StartStop" sap:VirtualizedContainerService.HintSize="2162.4,2203.2" sap2010:WorkflowViewState.IdRef="Sequence_1">
+  <Sequence DisplayName="Citrix_VM_StartStop" sap:VirtualizedContainerService.HintSize="2162.4,1264.8" sap2010:WorkflowViewState.IdRef="Sequence_1">
     <Sequence.Variables>
       <Variable x:TypeArguments="x:String" Name="citrix_hostname" />
       <Variable x:TypeArguments="x:Int32" Name="citrix_port" />
@@ -116,13 +119,13 @@
       </ui:GetRobotAsset>
       <ui:GetRobotCredential TimeoutMS="{x:Null}" AssetName="CitrixAuth_Credentials" DisplayName="Citrix UserPwd - Get Credential" sap:VirtualizedContainerService.HintSize="200,22.4" sap2010:WorkflowViewState.IdRef="GetRobotCredential_1" Password="[citrix_password]" Username="[citrix_username]" />
     </Sequence>
-    <uca:CitrixScope CitrixHypervisorServer="[citrix_hostname]" DisplayName="Citrix Scope" sap:VirtualizedContainerService.HintSize="2120.8,2001.6" sap2010:WorkflowViewState.IdRef="CitrixScope_1" Password="[citrix_password]" Port="[citrix_port]" Username="[citrix_username]">
+    <uca:CitrixScope CitrixHypervisorServer="[citrix_hostname]" DisplayName="Citrix Scope" sap:VirtualizedContainerService.HintSize="2120.8,1063.2" sap2010:WorkflowViewState.IdRef="CitrixScope_1" Password="[citrix_password]" Port="[citrix_port]" Username="[citrix_username]">
       <uca:CitrixScope.Body>
         <ActivityAction x:TypeArguments="p:CitrixService">
           <ActivityAction.Argument>
             <DelegateInArgument x:TypeArguments="p:CitrixService" Name="CitrixScopePropertyTag" />
           </ActivityAction.Argument>
-          <Sequence DisplayName="Do" sap:VirtualizedContainerService.HintSize="2087.2,1915.2" sap2010:WorkflowViewState.IdRef="Sequence_3">
+          <Sequence DisplayName="Do" sap:VirtualizedContainerService.HintSize="2087.2,976.8" sap2010:WorkflowViewState.IdRef="Sequence_3">
             <Sequence.Variables>
               <Variable x:TypeArguments="ucc:VirtualMachine[]" Name="VMs" />
             </Sequence.Variables>
@@ -222,9 +225,9 @@
                 </Catch>
               </TryCatch.Catches>
             </TryCatch>
-            <If Condition="[VM_Object IsNot Nothing]" DisplayName="If VM found" sap:VirtualizedContainerService.HintSize="2045.6,1729.6" sap2010:WorkflowViewState.IdRef="If_4">
+            <If Condition="[VM_Object IsNot Nothing]" DisplayName="If VM found" sap:VirtualizedContainerService.HintSize="2045.6,791.2" sap2010:WorkflowViewState.IdRef="If_4">
               <If.Then>
-                <Sequence sap:VirtualizedContainerService.HintSize="1668,1580" sap2010:WorkflowViewState.IdRef="Sequence_11">
+                <Sequence sap:VirtualizedContainerService.HintSize="1668,641.6" sap2010:WorkflowViewState.IdRef="Sequence_11">
                   <Sequence.Variables>
                     <Variable x:TypeArguments="x:Int32" Name="pendingJobsNow" />
                   </Sequence.Variables>
@@ -233,7 +236,7 @@
                       <x:Boolean x:Key="IsExpanded">True</x:Boolean>
                     </scg:Dictionary>
                   </sap:WorkflowViewStateService.ViewState>
-                  <ui:InvokeWorkflowFile ContinueOnError="{x:Null}" DisplayName="Invoke OrchestratorTenant_GetPendingJobs workflow" sap:VirtualizedContainerService.HintSize="1626.4,88" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_1" UnSafe="False" WorkflowFileName="OrchestratorTenant_GetPendingJobs.xaml">
+                  <ui:InvokeWorkflowFile ContinueOnError="{x:Null}" DisplayName="Invoke OrchestratorTenant_GetPendingJobs workflow" sap:VirtualizedContainerService.HintSize="1626.4,113.6" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_1" UnSafe="False" WorkflowFileName="OrchestratorTenant_GetPendingJobs.xaml">
                     <ui:InvokeWorkflowFile.Arguments>
                       <InArgument x:TypeArguments="x:String" x:Key="Token">
                         <mva:VisualBasicValue x:TypeArguments="x:String" ExpressionText="Token" />
@@ -266,11 +269,14 @@
                       <InArgument x:TypeArguments="scg:List(x:String)" x:Key="unattendedRobotsMachines">
                         <mva:VisualBasicValue x:TypeArguments="scg:List(x:String)" ExpressionText="unattendedRobotsMachines" />
                       </InArgument>
+                      <InArgument x:TypeArguments="x:Boolean" x:Key="FolderIsModern">
+                        <mva:VisualBasicValue x:TypeArguments="x:Boolean" ExpressionText="FolderIsModern" />
+                      </InArgument>
                     </ui:InvokeWorkflowFile.Arguments>
                   </ui:InvokeWorkflowFile>
-                  <TryCatch DisplayName="Try Catch" sap:VirtualizedContainerService.HintSize="1626.4,1359.2" sap2010:WorkflowViewState.IdRef="TryCatch_1">
+                  <TryCatch DisplayName="Try Catch" sap:VirtualizedContainerService.HintSize="1626.4,395.2" sap2010:WorkflowViewState.IdRef="TryCatch_1">
                     <TryCatch.Try>
-                      <Switch x:TypeArguments="x:String" DisplayName="VM Action - Switch" Expression="[Action_StartStop]" sap:VirtualizedContainerService.HintSize="1589.6,1128" sap2010:WorkflowViewState.IdRef="Switch`1_1">
+                      <Switch x:TypeArguments="x:String" DisplayName="VM Action - Switch" Expression="[Action_StartStop]" sap:VirtualizedContainerService.HintSize="496.8,164" sap2010:WorkflowViewState.IdRef="Switch`1_1">
                         <sap:WorkflowViewStateService.ViewState>
                           <scg:Dictionary x:TypeArguments="x:String, x:Object">
                             <x:Boolean x:Key="IsExpanded">True</x:Boolean>

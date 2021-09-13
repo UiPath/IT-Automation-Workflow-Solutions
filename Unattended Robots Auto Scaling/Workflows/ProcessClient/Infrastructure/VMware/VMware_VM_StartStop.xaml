@@ -12,11 +12,12 @@
     <x:Property Name="clientEnvironmentReleases" Type="InArgument(scg:List(x:String))" />
     <x:Property sap2010:Annotation.AnnotationText="can have duplicates for high density robots" Name="specificRobotsMachines" Type="OutArgument(scg:List(x:String))" />
     <x:Property sap2010:Annotation.AnnotationText="can have duplicates for high density robots" Name="unattendedRobotsMachines" Type="InArgument(scg:List(x:String))" />
+    <x:Property Name="FolderIsModern" Type="InArgument(x:Boolean)" />
   </x:Members>
   <mva:VisualBasic.Settings>
     <x:Null />
   </mva:VisualBasic.Settings>
-  <sap:VirtualizedContainerService.HintSize>2060,3032</sap:VirtualizedContainerService.HintSize>
+  <sap:VirtualizedContainerService.HintSize>2060,1993.6</sap:VirtualizedContainerService.HintSize>
   <sap2010:WorkflowViewState.IdRef>VMware_VM_StartStop_1</sap2010:WorkflowViewState.IdRef>
   <TextExpression.NamespacesForImplementation>
     <scg:List x:TypeArguments="x:String" Capacity="50">
@@ -76,9 +77,11 @@
       <AssemblyReference>UiPath.Mail</AssemblyReference>
       <AssemblyReference>UiPath.VMware.Activities</AssemblyReference>
       <AssemblyReference>UiPath.Azure.Activities</AssemblyReference>
+      <AssemblyReference>System.Memory</AssemblyReference>
+      <AssemblyReference>Microsoft.Bcl.AsyncInterfaces</AssemblyReference>
     </scg:List>
   </TextExpression.ReferencesForImplementation>
-  <Sequence DisplayName="VMware_VM_StartStop Sequence" sap:VirtualizedContainerService.HintSize="2070.4,2827.2" sap2010:WorkflowViewState.IdRef="Sequence_3">
+  <Sequence DisplayName="VMware_VM_StartStop Sequence" sap:VirtualizedContainerService.HintSize="2070.4,1888.8" sap2010:WorkflowViewState.IdRef="Sequence_3">
     <Sequence.Variables>
       <Variable x:TypeArguments="x:String" Name="VMwareServer_Url" />
       <Variable x:TypeArguments="ss:SecureString" Name="VMwareServer_Password" />
@@ -110,13 +113,13 @@
       </ui:GetRobotAsset>
     </Sequence>
     <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="2028.8,92.8" sap2010:WorkflowViewState.IdRef="LogMessage_1" Level="Info" Message="[&quot;Connecting to VMware server &quot; + VMwareServer_Url]" />
-    <p:VMwareScope DisplayName="VM Management - VMware Scope" sap:VirtualizedContainerService.HintSize="2028.8,2492.8" sap2010:WorkflowViewState.IdRef="VMwareScope_1" Password="[VMwareServer_Password]" ServerAddress="[VMwareServer_Url]" Username="[VMwareServer_Username]">
+    <p:VMwareScope DisplayName="VM Management - VMware Scope" sap:VirtualizedContainerService.HintSize="2028.8,1554.4" sap2010:WorkflowViewState.IdRef="VMwareScope_1" Password="[VMwareServer_Password]" ServerAddress="[VMwareServer_Url]" Username="[VMwareServer_Username]">
       <p:VMwareScope.Body>
         <ActivityAction x:TypeArguments="p:VMwareService">
           <ActivityAction.Argument>
             <DelegateInArgument x:TypeArguments="p:VMwareService" Name="VMwareScopeConnectionName" />
           </ActivityAction.Argument>
-          <Sequence DisplayName="Do" sap:VirtualizedContainerService.HintSize="1995.2,2406.4" sap2010:WorkflowViewState.IdRef="Sequence_2">
+          <Sequence DisplayName="Do" sap:VirtualizedContainerService.HintSize="1995.2,1468" sap2010:WorkflowViewState.IdRef="Sequence_2">
             <Sequence.Variables>
               <Variable x:TypeArguments="p:VirtualMachineInfo" Name="VM_Object" />
             </Sequence.Variables>
@@ -160,9 +163,9 @@
                 </Catch>
               </TryCatch.Catches>
             </TryCatch>
-            <If Condition="[VM_Object IsNot Nothing]" DisplayName="If VM retrieved" sap:VirtualizedContainerService.HintSize="1953.6,2088" sap2010:WorkflowViewState.IdRef="If_1">
+            <If Condition="[VM_Object IsNot Nothing]" DisplayName="If VM retrieved" sap:VirtualizedContainerService.HintSize="1953.6,1149.6" sap2010:WorkflowViewState.IdRef="If_1">
               <If.Then>
-                <Sequence sap:VirtualizedContainerService.HintSize="1709.6,1938.4" sap2010:WorkflowViewState.IdRef="Sequence_4">
+                <Sequence sap:VirtualizedContainerService.HintSize="1709.6,1000" sap2010:WorkflowViewState.IdRef="Sequence_4">
                   <sap:WorkflowViewStateService.ViewState>
                     <scg:Dictionary x:TypeArguments="x:String, x:Object">
                       <x:Boolean x:Key="IsExpanded">True</x:Boolean>
@@ -170,9 +173,9 @@
                     </scg:Dictionary>
                   </sap:WorkflowViewStateService.ViewState>
                   <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="1668,92.8" sap2010:WorkflowViewState.IdRef="LogMessage_3" Level="Info" Message="[&quot;Successfully retrieved VM &quot; + VM_Name + &quot; .. proceeding with &lt; &quot; + Action_StartStopDelete + &quot; &gt;&quot;]" />
-                  <TryCatch DisplayName="Try Catch" sap:VirtualizedContainerService.HintSize="1668,1712.8" sap2010:WorkflowViewState.IdRef="TryCatch_2">
+                  <TryCatch DisplayName="Try Catch" sap:VirtualizedContainerService.HintSize="1668,774.4" sap2010:WorkflowViewState.IdRef="TryCatch_2">
                     <TryCatch.Try>
-                      <Sequence sap:VirtualizedContainerService.HintSize="1631.2,1481.6" sap2010:WorkflowViewState.IdRef="Sequence_5">
+                      <Sequence sap:VirtualizedContainerService.HintSize="538.4,543.2" sap2010:WorkflowViewState.IdRef="Sequence_5">
                         <Sequence.Variables>
                           <Variable x:TypeArguments="x:Int32" Name="pendingJobsNow" />
                         </Sequence.Variables>
@@ -181,7 +184,7 @@
                             <x:Boolean x:Key="IsExpanded">True</x:Boolean>
                           </scg:Dictionary>
                         </sap:WorkflowViewStateService.ViewState>
-                        <ui:InvokeWorkflowFile ContinueOnError="{x:Null}" DisplayName="Invoke OrchestratorTenant_GetPendingJobs workflow" sap:VirtualizedContainerService.HintSize="1589.6,88" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_1" UnSafe="False" WorkflowFileName="OrchestratorTenant_GetPendingJobs.xaml">
+                        <ui:InvokeWorkflowFile ContinueOnError="{x:Null}" DisplayName="Invoke OrchestratorTenant_GetPendingJobs workflow" sap:VirtualizedContainerService.HintSize="496.8,113.6" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_1" UnSafe="False" WorkflowFileName="OrchestratorTenant_GetPendingJobs.xaml">
                           <ui:InvokeWorkflowFile.Arguments>
                             <InArgument x:TypeArguments="x:String" x:Key="Token">
                               <mva:VisualBasicValue x:TypeArguments="x:String" ExpressionText="Token" />
@@ -214,9 +217,12 @@
                             <InArgument x:TypeArguments="scg:List(x:String)" x:Key="unattendedRobotsMachines">
                               <mva:VisualBasicValue x:TypeArguments="scg:List(x:String)" ExpressionText="unattendedRobotsMachines" />
                             </InArgument>
+                            <InArgument x:TypeArguments="x:Boolean" x:Key="FolderIsModern">
+                              <mva:VisualBasicValue x:TypeArguments="x:Boolean" ExpressionText="FolderIsModern" />
+                            </InArgument>
                           </ui:InvokeWorkflowFile.Arguments>
                         </ui:InvokeWorkflowFile>
-                        <Switch x:TypeArguments="x:String" DisplayName="Switch" Expression="[Action_StartStopDelete]" sap:VirtualizedContainerService.HintSize="1589.6,1128" sap2010:WorkflowViewState.IdRef="Switch`1_1">
+                        <Switch x:TypeArguments="x:String" DisplayName="Switch" Expression="[Action_StartStopDelete]" sap:VirtualizedContainerService.HintSize="496.8,164" sap2010:WorkflowViewState.IdRef="Switch`1_1">
                           <sap:WorkflowViewStateService.ViewState>
                             <scg:Dictionary x:TypeArguments="x:String, x:Object">
                               <x:Boolean x:Key="IsExpanded">True</x:Boolean>
@@ -324,7 +330,7 @@
                             </If.Else>
                           </If>
                         </Switch>
-                        <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="1589.6,92.8" sap2010:WorkflowViewState.IdRef="LogMessage_4" Level="Info" Message="[&quot;VM &lt;&quot; + VM_Name + &quot;&gt; &quot; + Action_StartStopDelete + &quot; succesful.&quot;]" />
+                        <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="496.8,92.8" sap2010:WorkflowViewState.IdRef="LogMessage_4" Level="Info" Message="[&quot;VM &lt;&quot; + VM_Name + &quot;&gt; &quot; + Action_StartStopDelete + &quot; succesful.&quot;]" />
                       </Sequence>
                     </TryCatch.Try>
                     <TryCatch.Catches>

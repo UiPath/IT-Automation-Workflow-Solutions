@@ -19,11 +19,12 @@
     <x:Property Name="clientEnvironment" Type="InArgument(x:String)" />
     <x:Property sap2010:Annotation.AnnotationText="NonProduction, Attended, Unattended, Studio, Development, StudioX, Headless, StudioPro, TestAutomation" Name="RobotsType" Type="InArgument(x:String)" />
     <x:Property Name="clientEnvironmentReleases" Type="OutArgument(scg:List(x:String))" />
+    <x:Property Name="FolderIsModern" Type="InArgument(x:Boolean)" />
   </x:Members>
   <mva:VisualBasic.Settings>
     <x:Null />
   </mva:VisualBasic.Settings>
-  <sap:VirtualizedContainerService.HintSize>1555.2,2838.4</sap:VirtualizedContainerService.HintSize>
+  <sap:VirtualizedContainerService.HintSize>1095.2,2688.8</sap:VirtualizedContainerService.HintSize>
   <sap2010:WorkflowViewState.IdRef>OrchestratorTenant_GetLicensedRobotsInfo_1</sap2010:WorkflowViewState.IdRef>
   <TextExpression.NamespacesForImplementation>
     <scg:List x:TypeArguments="x:String" Capacity="46">
@@ -51,10 +52,14 @@
       <x:String>Newtonsoft.Json.Linq</x:String>
       <x:String>Newtonsoft.Json</x:String>
       <x:String>System.Activities.DynamicUpdate</x:String>
+      <x:String>UiPath.Web</x:String>
+      <x:String>System.Runtime.Serialization</x:String>
+      <x:String>UiPath.Web.Activities</x:String>
+      <x:String>System.Collections.ObjectModel</x:String>
     </scg:List>
   </TextExpression.NamespacesForImplementation>
   <TextExpression.ReferencesForImplementation>
-    <scg:List x:TypeArguments="AssemblyReference" Capacity="22">
+    <scg:List x:TypeArguments="AssemblyReference" Capacity="44">
       <AssemblyReference>System.Activities</AssemblyReference>
       <AssemblyReference>Microsoft.VisualBasic</AssemblyReference>
       <AssemblyReference>mscorlib</AssemblyReference>
@@ -77,9 +82,15 @@
       <AssemblyReference>System.ComponentModel.Composition</AssemblyReference>
       <AssemblyReference>UiPath.Mail</AssemblyReference>
       <AssemblyReference>UiPath.Excel</AssemblyReference>
+      <AssemblyReference>System.Memory</AssemblyReference>
+      <AssemblyReference>Microsoft.Bcl.AsyncInterfaces</AssemblyReference>
+      <AssemblyReference>UiPath.Web</AssemblyReference>
+      <AssemblyReference>System.Runtime.Serialization</AssemblyReference>
+      <AssemblyReference>System.Runtime.Serialization.Primitives</AssemblyReference>
+      <AssemblyReference>UiPath.Web.Activities</AssemblyReference>
     </scg:List>
   </TextExpression.ReferencesForImplementation>
-  <Sequence DisplayName="OrchestratorTenant_GetLicensedRobotsInfo" sap:VirtualizedContainerService.HintSize="1565.6,2673.6" sap2010:WorkflowViewState.IdRef="Sequence_1">
+  <Sequence DisplayName="OrchestratorTenant_GetLicensedRobotsInfo" sap:VirtualizedContainerService.HintSize="705.6,2584" sap2010:WorkflowViewState.IdRef="Sequence_1">
     <Sequence.Variables>
       <Variable x:TypeArguments="x:String" Name="Response" />
       <Variable x:TypeArguments="x:Int32" Name="RestponseStatus" />
@@ -96,7 +107,7 @@
         <x:Boolean x:Key="IsExpanded">True</x:Boolean>
       </scg:Dictionary>
     </sap:WorkflowViewStateService.ViewState>
-    <If Condition="[clientOrchestratorIsOnprem]" DisplayName="If orchestrator is onprem" sap:VirtualizedContainerService.HintSize="1524,209.6" sap2010:WorkflowViewState.IdRef="If_1">
+    <If Condition="[clientOrchestratorIsOnprem]" DisplayName="If orchestrator is onprem" sap:VirtualizedContainerService.HintSize="664,209.6" sap2010:WorkflowViewState.IdRef="If_1">
       <If.Then>
         <Assign sap:VirtualizedContainerService.HintSize="262.4,60" sap2010:WorkflowViewState.IdRef="Assign_1">
           <Assign.To>
@@ -118,7 +129,7 @@
         </Assign>
       </If.Else>
     </If>
-    <ui:HttpClient Body="{x:Null}" ConsumerKey="{x:Null}" ConsumerSecret="{x:Null}" ContinueOnError="{x:Null}" OAuth1Token="{x:Null}" OAuth1TokenSecret="{x:Null}" OAuth2Token="{x:Null}" Password="{x:Null}" ResourcePath="{x:Null}" ResponseHeaders="{x:Null}" Username="{x:Null}" AcceptFormat="ANY" BodyFormat="application/json" ClientCertificate="[Nothing]" ClientCertificatePassword="[Nothing]" DisplayName="Robots - HTTP Request" EndPoint="[apiUrl + &quot;/odata/Settings/UiPath.Server.Configuration.OData.GetLicense&quot;]" sap:VirtualizedContainerService.HintSize="1524,22.4" sap2010:WorkflowViewState.IdRef="HttpClient_1" Method="GET" Result="[Response]" StatusCode="[RestponseStatus]" TimeoutMS="60000">
+    <ui:HttpClient Body="{x:Null}" ConsumerKey="{x:Null}" ConsumerSecret="{x:Null}" ContinueOnError="{x:Null}" OAuth1Token="{x:Null}" OAuth1TokenSecret="{x:Null}" OAuth2Token="{x:Null}" Password="{x:Null}" ResourcePath="{x:Null}" ResponseHeaders="{x:Null}" Username="{x:Null}" AcceptFormat="ANY" BodyFormat="application/json" ClientCertificate="[Nothing]" ClientCertificatePassword="[Nothing]" DisplayName="Robots - HTTP Request" EndPoint="[apiUrl + &quot;/odata/Settings/UiPath.Server.Configuration.OData.GetLicense&quot;]" sap:VirtualizedContainerService.HintSize="664,22.4" sap2010:WorkflowViewState.IdRef="HttpClient_1" Method="GET" Result="[Response]" StatusCode="[RestponseStatus]" TimeoutMS="60000">
       <ui:HttpClient.Attachments>
         <scg:Dictionary x:TypeArguments="x:String, InArgument(x:String)" />
       </ui:HttpClient.Attachments>
@@ -136,7 +147,7 @@
         <scg:Dictionary x:TypeArguments="x:String, InArgument(x:String)" />
       </ui:HttpClient.UrlSegments>
     </ui:HttpClient>
-    <ui:MultipleAssign DisplayName="Multiple Assign" sap:VirtualizedContainerService.HintSize="1524,255.2" sap2010:WorkflowViewState.IdRef="MultipleAssign_1">
+    <ui:MultipleAssign DisplayName="Multiple Assign" sap:VirtualizedContainerService.HintSize="664,255.2" sap2010:WorkflowViewState.IdRef="MultipleAssign_1">
       <ui:MultipleAssign.AssignOperations>
         <scg:List x:TypeArguments="ui:AssignOperation" Capacity="8">
           <ui:AssignOperation sap2010:WorkflowViewState.IdRef="AssignOperation_1">
@@ -190,41 +201,87 @@
         </scg:List>
       </ui:MultipleAssign.AssignOperations>
     </ui:MultipleAssign>
-    <ui:HttpClient Body="{x:Null}" ConsumerKey="{x:Null}" ConsumerSecret="{x:Null}" ContinueOnError="{x:Null}" OAuth1Token="{x:Null}" OAuth1TokenSecret="{x:Null}" OAuth2Token="{x:Null}" Password="{x:Null}" ResourcePath="{x:Null}" Username="{x:Null}" AcceptFormat="ANY" BodyFormat="application/json" ClientCertificate="[Nothing]" ClientCertificatePassword="[Nothing]" DisplayName="ProvisionedRobotsUnattended - HTTP Request" EndPoint="[apiUrl + &quot;/odata/Robots?$filter=&quot;+robotsFilterString]" sap:VirtualizedContainerService.HintSize="1524,22.4" sap2010:WorkflowViewState.IdRef="HttpClient_3" Method="GET" ResponseHeaders="[ResponseHeaders]" Result="[Response]" StatusCode="[RestponseStatus]" TimeoutMS="60000">
-      <ui:HttpClient.Attachments>
-        <scg:Dictionary x:TypeArguments="x:String, InArgument(x:String)" />
-      </ui:HttpClient.Attachments>
-      <ui:HttpClient.Cookies>
-        <scg:Dictionary x:TypeArguments="x:String, InArgument(x:String)" />
-      </ui:HttpClient.Cookies>
-      <ui:HttpClient.Headers>
-        <InArgument x:TypeArguments="x:String" x:Key="X-UIPATH-TenantName">[TenantLogicalName]</InArgument>
-        <InArgument x:TypeArguments="x:String" x:Key="Authorization">["Bearer " + Token]</InArgument>
-        <InArgument x:TypeArguments="x:String" x:Key="X-UIPATH-OrganizationUnitId">[FolderId]</InArgument>
-      </ui:HttpClient.Headers>
-      <ui:HttpClient.Parameters>
-        <scg:Dictionary x:TypeArguments="x:String, InArgument(x:String)" />
-      </ui:HttpClient.Parameters>
-      <ui:HttpClient.UrlSegments>
-        <scg:Dictionary x:TypeArguments="x:String, InArgument(x:String)" />
-      </ui:HttpClient.UrlSegments>
-    </ui:HttpClient>
-    <ui:GetRobotAsset TimeoutMS="{x:Null}" AssetName="RobotMachinesNameFilter" DisplayName="RobotMachinesNameFilter - Get Asset" sap:VirtualizedContainerService.HintSize="1524,22.4" sap2010:WorkflowViewState.IdRef="GetRobotAsset_1">
+    <If Condition="[Not FolderIsModern]" DisplayName="If FolderIsModern" sap:VirtualizedContainerService.HintSize="664,424" sap2010:WorkflowViewState.IdRef="If_9">
+      <If.Then>
+        <ui:HttpClient Body="{x:Null}" ConsumerKey="{x:Null}" ConsumerSecret="{x:Null}" ContinueOnError="{x:Null}" OAuth1Token="{x:Null}" OAuth1TokenSecret="{x:Null}" OAuth2Token="{x:Null}" Password="{x:Null}" ResourcePath="{x:Null}" Username="{x:Null}" AcceptFormat="ANY" BodyFormat="application/json" ClientCertificate="[Nothing]" ClientCertificatePassword="[Nothing]" DisplayName="ProvisionedRobotsUnattended - HTTP Request" EndPoint="[apiUrl + &quot;/odata/Robots?$filter=&quot;+robotsFilterString]" sap:VirtualizedContainerService.HintSize="200,22.4" sap2010:WorkflowViewState.IdRef="HttpClient_5" Method="GET" ResponseHeaders="[ResponseHeaders]" Result="[Response]" StatusCode="[RestponseStatus]" TimeoutMS="60000">
+          <ui:HttpClient.Attachments>
+            <scg:Dictionary x:TypeArguments="x:String, InArgument(x:String)" />
+          </ui:HttpClient.Attachments>
+          <ui:HttpClient.Cookies>
+            <scg:Dictionary x:TypeArguments="x:String, InArgument(x:String)" />
+          </ui:HttpClient.Cookies>
+          <ui:HttpClient.Headers>
+            <InArgument x:TypeArguments="x:String" x:Key="X-UIPATH-TenantName">[TenantLogicalName]</InArgument>
+            <InArgument x:TypeArguments="x:String" x:Key="Authorization">["Bearer " + Token]</InArgument>
+            <InArgument x:TypeArguments="x:String" x:Key="X-UIPATH-OrganizationUnitId">[FolderId]</InArgument>
+          </ui:HttpClient.Headers>
+          <ui:HttpClient.Parameters>
+            <scg:Dictionary x:TypeArguments="x:String, InArgument(x:String)" />
+          </ui:HttpClient.Parameters>
+          <ui:HttpClient.UrlSegments>
+            <scg:Dictionary x:TypeArguments="x:String, InArgument(x:String)" />
+          </ui:HttpClient.UrlSegments>
+        </ui:HttpClient>
+      </If.Then>
+      <If.Else>
+        <Sequence sap:VirtualizedContainerService.HintSize="375.2,254.4" sap2010:WorkflowViewState.IdRef="Sequence_4">
+          <sap:WorkflowViewStateService.ViewState>
+            <scg:Dictionary x:TypeArguments="x:String, x:Object">
+              <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+            </scg:Dictionary>
+          </sap:WorkflowViewStateService.ViewState>
+          <ui:MultipleAssign DisplayName="Multiple Assign" sap:VirtualizedContainerService.HintSize="333.6,99.2" sap2010:WorkflowViewState.IdRef="MultipleAssign_14">
+            <ui:MultipleAssign.AssignOperations>
+              <scg:List x:TypeArguments="ui:AssignOperation" Capacity="4">
+                <ui:AssignOperation sap2010:WorkflowViewState.IdRef="AssignOperation_36">
+                  <ui:AssignOperation.To>
+                    <OutArgument x:TypeArguments="x:String">[robotsFilterString]</OutArgument>
+                  </ui:AssignOperation.To>
+                  <ui:AssignOperation.Value>
+                    <InArgument x:TypeArguments="x:String">["runtimeType="+RobotsType]</InArgument>
+                  </ui:AssignOperation.Value>
+                </ui:AssignOperation>
+              </scg:List>
+            </ui:MultipleAssign.AssignOperations>
+          </ui:MultipleAssign>
+          <ui:HttpClient Body="{x:Null}" ConsumerKey="{x:Null}" ConsumerSecret="{x:Null}" ContinueOnError="{x:Null}" OAuth1Token="{x:Null}" OAuth1TokenSecret="{x:Null}" OAuth2Token="{x:Null}" Password="{x:Null}" ResourcePath="{x:Null}" Username="{x:Null}" AcceptFormat="ANY" BodyFormat="application/json" ClientCertificate="[Nothing]" ClientCertificatePassword="[Nothing]" DisplayName="ProvisionedRobotsUnattended - HTTP Request" EndPoint="[apiUrl + &quot;/odata/Sessions/UiPath.Server.Configuration.OData.GetMachineSessionRuntimesByFolderId(folderId=&quot;+folderId+&quot;)?&quot;+robotsFilterString]" sap:VirtualizedContainerService.HintSize="333.6,22.4" sap2010:WorkflowViewState.IdRef="HttpClient_3" Method="GET" ResponseHeaders="[ResponseHeaders]" Result="[Response]" StatusCode="[RestponseStatus]" TimeoutMS="60000">
+            <ui:HttpClient.Attachments>
+              <scg:Dictionary x:TypeArguments="x:String, InArgument(x:String)" />
+            </ui:HttpClient.Attachments>
+            <ui:HttpClient.Cookies>
+              <scg:Dictionary x:TypeArguments="x:String, InArgument(x:String)" />
+            </ui:HttpClient.Cookies>
+            <ui:HttpClient.Headers>
+              <InArgument x:TypeArguments="x:String" x:Key="X-UIPATH-TenantName">[TenantLogicalName]</InArgument>
+              <InArgument x:TypeArguments="x:String" x:Key="Authorization">["Bearer " + Token]</InArgument>
+              <InArgument x:TypeArguments="x:String" x:Key="X-UIPATH-OrganizationUnitId">[FolderId]</InArgument>
+            </ui:HttpClient.Headers>
+            <ui:HttpClient.Parameters>
+              <scg:Dictionary x:TypeArguments="x:String, InArgument(x:String)" />
+            </ui:HttpClient.Parameters>
+            <ui:HttpClient.UrlSegments>
+              <scg:Dictionary x:TypeArguments="x:String, InArgument(x:String)" />
+            </ui:HttpClient.UrlSegments>
+          </ui:HttpClient>
+        </Sequence>
+      </If.Else>
+    </If>
+    <ui:GetRobotAsset TimeoutMS="{x:Null}" AssetName="RobotMachinesNameFilter" DisplayName="RobotMachinesNameFilter - Get Asset" sap:VirtualizedContainerService.HintSize="664,139.2" sap2010:WorkflowViewState.IdRef="GetRobotAsset_1">
       <ui:GetRobotAsset.Value>
         <OutArgument x:TypeArguments="x:String">[assetRobotMachinesNameFilter]</OutArgument>
       </ui:GetRobotAsset.Value>
     </ui:GetRobotAsset>
-    <If Condition="[assetRobotMachinesNameFilter.Equals(&quot;-&quot;)]" DisplayName="If machine name filter available" sap:VirtualizedContainerService.HintSize="1524,655.2" sap2010:WorkflowViewState.IdRef="If_7">
+    <If Condition="[assetRobotMachinesNameFilter.Equals(&quot;-&quot;)]" DisplayName="If machine name filter available" sap:VirtualizedContainerService.HintSize="664,428" sap2010:WorkflowViewState.IdRef="If_7">
       <If.Then>
-        <If Condition="[clientEnvironmentLevelCounters]" DisplayName="If EnvironmentLevelCounters" sap:VirtualizedContainerService.HintSize="719.2,280" sap2010:WorkflowViewState.IdRef="If_5">
+        <If Condition="[clientEnvironmentLevelCounters]" DisplayName="If EnvironmentLevelCounters" sap:VirtualizedContainerService.HintSize="200,52.8" sap2010:WorkflowViewState.IdRef="If_5">
           <sap:WorkflowViewStateService.ViewState>
             <scg:Dictionary x:TypeArguments="x:String, x:Object">
-              <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+              <x:Boolean x:Key="IsExpanded">False</x:Boolean>
               <x:Boolean x:Key="IsPinned">False</x:Boolean>
             </scg:Dictionary>
           </sap:WorkflowViewStateService.ViewState>
           <If.Then>
-            <ui:MultipleAssign DisplayName="Multiple Assign" sap:VirtualizedContainerService.HintSize="337.6,130.4" sap2010:WorkflowViewState.IdRef="MultipleAssign_7">
+            <ui:MultipleAssign DisplayName="Multiple Assign" sap:VirtualizedContainerService.HintSize="333.6,130.4" sap2010:WorkflowViewState.IdRef="MultipleAssign_7">
               <ui:MultipleAssign.AssignOperations>
                 <scg:List x:TypeArguments="ui:AssignOperation" Capacity="4">
                   <ui:AssignOperation sap2010:WorkflowViewState.IdRef="AssignOperation_17">
@@ -248,48 +305,83 @@
             </ui:MultipleAssign>
           </If.Then>
           <If.Else>
-            <ui:MultipleAssign DisplayName="Multiple Assign" sap:VirtualizedContainerService.HintSize="337.6,130.4" sap2010:WorkflowViewState.IdRef="MultipleAssign_8">
-              <ui:MultipleAssign.AssignOperations>
-                <scg:List x:TypeArguments="ui:AssignOperation" Capacity="4">
-                  <ui:AssignOperation sap2010:WorkflowViewState.IdRef="AssignOperation_19">
-                    <ui:AssignOperation.To>
-                      <OutArgument x:TypeArguments="scg:List(x:String)">[unattendedRobotsMachines]</OutArgument>
-                    </ui:AssignOperation.To>
-                    <ui:AssignOperation.Value>
-                      <InArgument x:TypeArguments="scg:List(x:String)">[(JObject.Parse(Response))("value").Select(Function(r) r("MachineName").ToString).ToList()]</InArgument>
-                    </ui:AssignOperation.Value>
-                  </ui:AssignOperation>
-                  <ui:AssignOperation sap2010:WorkflowViewState.IdRef="AssignOperation_20">
-                    <ui:AssignOperation.To>
-                      <OutArgument x:TypeArguments="x:Int32">[RobotsProvisioned]</OutArgument>
-                    </ui:AssignOperation.To>
-                    <ui:AssignOperation.Value>
-                      <InArgument x:TypeArguments="x:Int32">[unattendedRobotsMachines.Count]</InArgument>
-                    </ui:AssignOperation.Value>
-                  </ui:AssignOperation>
-                </scg:List>
-              </ui:MultipleAssign.AssignOperations>
-            </ui:MultipleAssign>
+            <Sequence sap:VirtualizedContainerService.HintSize="752.8,372.8" sap2010:WorkflowViewState.IdRef="Sequence_5">
+              <sap:WorkflowViewStateService.ViewState>
+                <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                  <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                </scg:Dictionary>
+              </sap:WorkflowViewStateService.ViewState>
+              <If Condition="[FolderIsModern]" sap:VirtualizedContainerService.HintSize="711.2,280" sap2010:WorkflowViewState.IdRef="If_10">
+                <If.Then>
+                  <ui:MultipleAssign DisplayName="Multiple Assign" sap:VirtualizedContainerService.HintSize="333.6,130.4" sap2010:WorkflowViewState.IdRef="MultipleAssign_15">
+                    <ui:MultipleAssign.AssignOperations>
+                      <scg:List x:TypeArguments="ui:AssignOperation" Capacity="4">
+                        <ui:AssignOperation sap2010:WorkflowViewState.IdRef="AssignOperation_37">
+                          <ui:AssignOperation.To>
+                            <OutArgument x:TypeArguments="scg:List(x:String)">[unattendedRobotsMachines]</OutArgument>
+                          </ui:AssignOperation.To>
+                          <ui:AssignOperation.Value>
+                            <InArgument x:TypeArguments="scg:List(x:String)">[(JObject.Parse(Response))("value").Select(Function(r) r("HostMachineName").ToString).ToList()]</InArgument>
+                          </ui:AssignOperation.Value>
+                        </ui:AssignOperation>
+                        <ui:AssignOperation sap2010:WorkflowViewState.IdRef="AssignOperation_38">
+                          <ui:AssignOperation.To>
+                            <OutArgument x:TypeArguments="x:Int32">[RobotsProvisioned]</OutArgument>
+                          </ui:AssignOperation.To>
+                          <ui:AssignOperation.Value>
+                            <InArgument x:TypeArguments="x:Int32">[unattendedRobotsMachines.Count]</InArgument>
+                          </ui:AssignOperation.Value>
+                        </ui:AssignOperation>
+                      </scg:List>
+                    </ui:MultipleAssign.AssignOperations>
+                  </ui:MultipleAssign>
+                </If.Then>
+                <If.Else>
+                  <ui:MultipleAssign DisplayName="Multiple Assign" sap:VirtualizedContainerService.HintSize="333.6,130.4" sap2010:WorkflowViewState.IdRef="MultipleAssign_8">
+                    <ui:MultipleAssign.AssignOperations>
+                      <scg:List x:TypeArguments="ui:AssignOperation" Capacity="4">
+                        <ui:AssignOperation sap2010:WorkflowViewState.IdRef="AssignOperation_19">
+                          <ui:AssignOperation.To>
+                            <OutArgument x:TypeArguments="scg:List(x:String)">[unattendedRobotsMachines]</OutArgument>
+                          </ui:AssignOperation.To>
+                          <ui:AssignOperation.Value>
+                            <InArgument x:TypeArguments="scg:List(x:String)">[(JObject.Parse(Response))("value").Select(Function(r) r("MachineName").ToString).ToList()]</InArgument>
+                          </ui:AssignOperation.Value>
+                        </ui:AssignOperation>
+                        <ui:AssignOperation sap2010:WorkflowViewState.IdRef="AssignOperation_20">
+                          <ui:AssignOperation.To>
+                            <OutArgument x:TypeArguments="x:Int32">[RobotsProvisioned]</OutArgument>
+                          </ui:AssignOperation.To>
+                          <ui:AssignOperation.Value>
+                            <InArgument x:TypeArguments="x:Int32">[unattendedRobotsMachines.Count]</InArgument>
+                          </ui:AssignOperation.Value>
+                        </ui:AssignOperation>
+                      </scg:List>
+                    </ui:MultipleAssign.AssignOperations>
+                  </ui:MultipleAssign>
+                </If.Else>
+              </If>
+            </Sequence>
           </If.Else>
         </If>
       </If.Then>
       <If.Else>
-        <Sequence sap:VirtualizedContainerService.HintSize="760.8,505.6" sap2010:WorkflowViewState.IdRef="Sequence_3">
+        <Sequence sap:VirtualizedContainerService.HintSize="375.2,278.4" sap2010:WorkflowViewState.IdRef="Sequence_3">
           <sap:WorkflowViewStateService.ViewState>
             <scg:Dictionary x:TypeArguments="x:String, x:Object">
               <x:Boolean x:Key="IsExpanded">True</x:Boolean>
             </scg:Dictionary>
           </sap:WorkflowViewStateService.ViewState>
-          <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="719.2,92.8" sap2010:WorkflowViewState.IdRef="LogMessage_1" Level="Info" Message="[&quot;Filtering robot machines by text: &quot; + assetRobotMachinesNameFilter]" />
-          <If Condition="[clientEnvironmentLevelCounters]" DisplayName="If EnvironmentLevelCounters" sap:VirtualizedContainerService.HintSize="719.2,280" sap2010:WorkflowViewState.IdRef="If_6">
+          <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="333.6,92.8" sap2010:WorkflowViewState.IdRef="LogMessage_1" Level="Info" Message="[&quot;Filtering robot machines by text: &quot; + assetRobotMachinesNameFilter]" />
+          <If Condition="[clientEnvironmentLevelCounters]" DisplayName="If EnvironmentLevelCounters" sap:VirtualizedContainerService.HintSize="333.6,52.8" sap2010:WorkflowViewState.IdRef="If_6">
             <sap:WorkflowViewStateService.ViewState>
               <scg:Dictionary x:TypeArguments="x:String, x:Object">
-                <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                <x:Boolean x:Key="IsExpanded">False</x:Boolean>
                 <x:Boolean x:Key="IsPinned">False</x:Boolean>
               </scg:Dictionary>
             </sap:WorkflowViewStateService.ViewState>
             <If.Then>
-              <ui:MultipleAssign DisplayName="Multiple Assign" sap:VirtualizedContainerService.HintSize="337.6,130.4" sap2010:WorkflowViewState.IdRef="MultipleAssign_9">
+              <ui:MultipleAssign DisplayName="Multiple Assign" sap:VirtualizedContainerService.HintSize="333.6,130.4" sap2010:WorkflowViewState.IdRef="MultipleAssign_9">
                 <ui:MultipleAssign.AssignOperations>
                   <scg:List x:TypeArguments="ui:AssignOperation" Capacity="4">
                     <ui:AssignOperation sap2010:WorkflowViewState.IdRef="AssignOperation_21">
@@ -313,132 +405,76 @@
               </ui:MultipleAssign>
             </If.Then>
             <If.Else>
-              <ui:MultipleAssign DisplayName="Multiple Assign" sap:VirtualizedContainerService.HintSize="337.6,130.4" sap2010:WorkflowViewState.IdRef="MultipleAssign_10">
-                <ui:MultipleAssign.AssignOperations>
-                  <scg:List x:TypeArguments="ui:AssignOperation" Capacity="4">
-                    <ui:AssignOperation sap2010:WorkflowViewState.IdRef="AssignOperation_23">
-                      <ui:AssignOperation.To>
-                        <OutArgument x:TypeArguments="scg:List(x:String)">[unattendedRobotsMachines]</OutArgument>
-                      </ui:AssignOperation.To>
-                      <ui:AssignOperation.Value>
-                        <InArgument x:TypeArguments="scg:List(x:String)">[(JObject.Parse(Response))("value").Where(Function(r) r("MachineName").ToString.Contains(assetRobotMachinesNameFilter)).Select(Function(r) r("MachineName").ToString).ToList()]</InArgument>
-                      </ui:AssignOperation.Value>
-                    </ui:AssignOperation>
-                    <ui:AssignOperation sap2010:WorkflowViewState.IdRef="AssignOperation_24">
-                      <ui:AssignOperation.To>
-                        <OutArgument x:TypeArguments="x:Int32">[RobotsProvisioned]</OutArgument>
-                      </ui:AssignOperation.To>
-                      <ui:AssignOperation.Value>
-                        <InArgument x:TypeArguments="x:Int32">[unattendedRobotsMachines.Count]</InArgument>
-                      </ui:AssignOperation.Value>
-                    </ui:AssignOperation>
-                  </scg:List>
-                </ui:MultipleAssign.AssignOperations>
-              </ui:MultipleAssign>
+              <Sequence sap:VirtualizedContainerService.HintSize="752.8,372.8" sap2010:WorkflowViewState.IdRef="Sequence_6">
+                <sap:WorkflowViewStateService.ViewState>
+                  <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                    <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                  </scg:Dictionary>
+                </sap:WorkflowViewStateService.ViewState>
+                <If Condition="[FolderIsModern]" sap:VirtualizedContainerService.HintSize="711.2,280" sap2010:WorkflowViewState.IdRef="If_11">
+                  <If.Then>
+                    <ui:MultipleAssign DisplayName="Multiple Assign" sap:VirtualizedContainerService.HintSize="333.6,130.4" sap2010:WorkflowViewState.IdRef="MultipleAssign_16">
+                      <ui:MultipleAssign.AssignOperations>
+                        <scg:List x:TypeArguments="ui:AssignOperation" Capacity="4">
+                          <ui:AssignOperation sap2010:WorkflowViewState.IdRef="AssignOperation_39">
+                            <ui:AssignOperation.To>
+                              <OutArgument x:TypeArguments="scg:List(x:String)">[unattendedRobotsMachines]</OutArgument>
+                            </ui:AssignOperation.To>
+                            <ui:AssignOperation.Value>
+                              <InArgument x:TypeArguments="scg:List(x:String)">[(JObject.Parse(Response))("value").Where(Function(r) r("HostMachineName").ToString.Contains(assetRobotMachinesNameFilter)).Select(Function(r) r("HostMachineName").ToString).ToList()]</InArgument>
+                            </ui:AssignOperation.Value>
+                          </ui:AssignOperation>
+                          <ui:AssignOperation sap2010:WorkflowViewState.IdRef="AssignOperation_40">
+                            <ui:AssignOperation.To>
+                              <OutArgument x:TypeArguments="x:Int32">[RobotsProvisioned]</OutArgument>
+                            </ui:AssignOperation.To>
+                            <ui:AssignOperation.Value>
+                              <InArgument x:TypeArguments="x:Int32">[unattendedRobotsMachines.Count]</InArgument>
+                            </ui:AssignOperation.Value>
+                          </ui:AssignOperation>
+                        </scg:List>
+                      </ui:MultipleAssign.AssignOperations>
+                    </ui:MultipleAssign>
+                  </If.Then>
+                  <If.Else>
+                    <ui:MultipleAssign DisplayName="Multiple Assign" sap:VirtualizedContainerService.HintSize="333.6,130.4" sap2010:WorkflowViewState.IdRef="MultipleAssign_10">
+                      <ui:MultipleAssign.AssignOperations>
+                        <scg:List x:TypeArguments="ui:AssignOperation" Capacity="4">
+                          <ui:AssignOperation sap2010:WorkflowViewState.IdRef="AssignOperation_23">
+                            <ui:AssignOperation.To>
+                              <OutArgument x:TypeArguments="scg:List(x:String)">[unattendedRobotsMachines]</OutArgument>
+                            </ui:AssignOperation.To>
+                            <ui:AssignOperation.Value>
+                              <InArgument x:TypeArguments="scg:List(x:String)">[(JObject.Parse(Response))("value").Where(Function(r) r("MachineName").ToString.Contains(assetRobotMachinesNameFilter)).Select(Function(r) r("MachineName").ToString).ToList()]</InArgument>
+                            </ui:AssignOperation.Value>
+                          </ui:AssignOperation>
+                          <ui:AssignOperation sap2010:WorkflowViewState.IdRef="AssignOperation_24">
+                            <ui:AssignOperation.To>
+                              <OutArgument x:TypeArguments="x:Int32">[RobotsProvisioned]</OutArgument>
+                            </ui:AssignOperation.To>
+                            <ui:AssignOperation.Value>
+                              <InArgument x:TypeArguments="x:Int32">[unattendedRobotsMachines.Count]</InArgument>
+                            </ui:AssignOperation.Value>
+                          </ui:AssignOperation>
+                        </scg:List>
+                      </ui:MultipleAssign.AssignOperations>
+                    </ui:MultipleAssign>
+                  </If.Else>
+                </If>
+              </Sequence>
             </If.Else>
           </If>
         </Sequence>
       </If.Else>
     </If>
-    <Delay sap2010:Annotation.AnnotationText="5s delay to minimize occurence of edge case when a pending job is not immediatly assigned to an available robot by the orchestrator" Duration="00:00:05" sap:VirtualizedContainerService.HintSize="1524,130.4" sap2010:WorkflowViewState.IdRef="Delay_1">
+    <Delay sap2010:Annotation.AnnotationText="5s delay to minimize occurence of edge case when a pending job is not immediatly assigned to an available robot by the orchestrator" Duration="00:00:05" sap:VirtualizedContainerService.HintSize="664,130.4" sap2010:WorkflowViewState.IdRef="Delay_1">
       <sap:WorkflowViewStateService.ViewState>
         <scg:Dictionary x:TypeArguments="x:String, x:Object">
           <x:Boolean x:Key="IsAnnotationDocked">True</x:Boolean>
         </scg:Dictionary>
       </sap:WorkflowViewStateService.ViewState>
     </Delay>
-    <ui:HttpClient Body="{x:Null}" ConsumerKey="{x:Null}" ConsumerSecret="{x:Null}" ContinueOnError="{x:Null}" OAuth1Token="{x:Null}" OAuth1TokenSecret="{x:Null}" OAuth2Token="{x:Null}" Password="{x:Null}" ResourcePath="{x:Null}" ResponseHeaders="{x:Null}" Username="{x:Null}" AcceptFormat="ANY" BodyFormat="application/json" ClientCertificate="[Nothing]" ClientCertificatePassword="[Nothing]" DisplayName="PendingJobs - HTTP Request" EndPoint="[apiUrl + &quot;/odata/Jobs?$filter=State eq 'Pending'&quot;]" sap:VirtualizedContainerService.HintSize="1524,22.4" sap2010:WorkflowViewState.IdRef="HttpClient_4" Method="GET" Result="[Response]" StatusCode="[RestponseStatus]" TimeoutMS="60000">
-      <ui:HttpClient.Attachments>
-        <scg:Dictionary x:TypeArguments="x:String, InArgument(x:String)" />
-      </ui:HttpClient.Attachments>
-      <ui:HttpClient.Cookies>
-        <scg:Dictionary x:TypeArguments="x:String, InArgument(x:String)" />
-      </ui:HttpClient.Cookies>
-      <ui:HttpClient.Headers>
-        <InArgument x:TypeArguments="x:String" x:Key="X-UIPATH-TenantName">[TenantLogicalName]</InArgument>
-        <InArgument x:TypeArguments="x:String" x:Key="Authorization">["Bearer " + Token]</InArgument>
-        <InArgument x:TypeArguments="x:String" x:Key="X-UIPATH-OrganizationUnitId">[FolderId]</InArgument>
-      </ui:HttpClient.Headers>
-      <ui:HttpClient.Parameters>
-        <scg:Dictionary x:TypeArguments="x:String, InArgument(x:String)" />
-      </ui:HttpClient.Parameters>
-      <ui:HttpClient.UrlSegments>
-        <scg:Dictionary x:TypeArguments="x:String, InArgument(x:String)" />
-      </ui:HttpClient.UrlSegments>
-    </ui:HttpClient>
-    <ui:MultipleAssign DisplayName="Multiple Assign" sap:VirtualizedContainerService.HintSize="1524,99.2" sap2010:WorkflowViewState.IdRef="MultipleAssign_11">
-      <ui:MultipleAssign.AssignOperations>
-        <scg:List x:TypeArguments="ui:AssignOperation" Capacity="4">
-          <ui:AssignOperation sap2010:WorkflowViewState.IdRef="AssignOperation_25">
-            <ui:AssignOperation.To>
-              <OutArgument x:TypeArguments="scg:List(x:String)">[specificRobotMachinesAll]</OutArgument>
-            </ui:AssignOperation.To>
-            <ui:AssignOperation.Value>
-              <InArgument x:TypeArguments="scg:List(x:String)">[JObject.Parse(Response)("value").Select(Function(h) h("HostMachineName").ToString).ToList()]</InArgument>
-            </ui:AssignOperation.Value>
-          </ui:AssignOperation>
-        </scg:List>
-      </ui:MultipleAssign.AssignOperations>
-    </ui:MultipleAssign>
-    <If Condition="[unattendedRobotsMachines IsNot Nothing]" sap:VirtualizedContainerService.HintSize="1524,311.2" sap2010:WorkflowViewState.IdRef="If_8">
-      <If.Then>
-        <ui:MultipleAssign DisplayName="Multiple Assign" sap:VirtualizedContainerService.HintSize="337.6,161.6" sap2010:WorkflowViewState.IdRef="MultipleAssign_12">
-          <ui:MultipleAssign.AssignOperations>
-            <scg:List x:TypeArguments="ui:AssignOperation" Capacity="4">
-              <ui:AssignOperation sap2010:WorkflowViewState.IdRef="AssignOperation_29">
-                <ui:AssignOperation.To>
-                  <OutArgument x:TypeArguments="scg:List(x:String)">[unattendedRobotsMachinesLowerCase]</OutArgument>
-                </ui:AssignOperation.To>
-                <ui:AssignOperation.Value>
-                  <InArgument x:TypeArguments="scg:List(x:String)">[unattendedRobotsMachines.Select(Function (r) r.ToLower).ToList]</InArgument>
-                </ui:AssignOperation.Value>
-              </ui:AssignOperation>
-              <ui:AssignOperation sap2010:WorkflowViewState.IdRef="AssignOperation_30">
-                <ui:AssignOperation.To>
-                  <OutArgument x:TypeArguments="scg:List(x:String)">[specificRobotsMachines]</OutArgument>
-                </ui:AssignOperation.To>
-                <ui:AssignOperation.Value>
-                  <InArgument x:TypeArguments="scg:List(x:String)">[specificRobotMachinesAll.Where(Function (r) unattendedRobotsMachinesLowerCase.Contains(r.ToLower)).ToList]</InArgument>
-                </ui:AssignOperation.Value>
-              </ui:AssignOperation>
-              <ui:AssignOperation sap2010:WorkflowViewState.IdRef="AssignOperation_34">
-                <ui:AssignOperation.To>
-                  <OutArgument x:TypeArguments="scg:List(x:String)">[specificRobotsMachines]</OutArgument>
-                </ui:AssignOperation.To>
-                <ui:AssignOperation.Value>
-                  <InArgument x:TypeArguments="scg:List(x:String)">[unattendedRobotsMachines.Where(Function (r) specificRobotsMachines.Contains(r.ToUpper)).ToList]</InArgument>
-                </ui:AssignOperation.Value>
-              </ui:AssignOperation>
-            </scg:List>
-          </ui:MultipleAssign.AssignOperations>
-        </ui:MultipleAssign>
-      </If.Then>
-      <If.Else>
-        <ui:MultipleAssign DisplayName="Multiple Assign" sap:VirtualizedContainerService.HintSize="337.6,130.4" sap2010:WorkflowViewState.IdRef="MultipleAssign_13">
-          <ui:MultipleAssign.AssignOperations>
-            <scg:List x:TypeArguments="ui:AssignOperation" Capacity="4">
-              <ui:AssignOperation sap2010:WorkflowViewState.IdRef="AssignOperation_32">
-                <ui:AssignOperation.To>
-                  <OutArgument x:TypeArguments="scg:List(x:String)">[unattendedRobotsMachinesLowerCase]</OutArgument>
-                </ui:AssignOperation.To>
-                <ui:AssignOperation.Value>
-                  <InArgument x:TypeArguments="scg:List(x:String)">[New List (Of String) From {}]</InArgument>
-                </ui:AssignOperation.Value>
-              </ui:AssignOperation>
-              <ui:AssignOperation sap2010:WorkflowViewState.IdRef="AssignOperation_33">
-                <ui:AssignOperation.To>
-                  <OutArgument x:TypeArguments="scg:List(x:String)">[specificRobotsMachines]</OutArgument>
-                </ui:AssignOperation.To>
-                <ui:AssignOperation.Value>
-                  <InArgument x:TypeArguments="scg:List(x:String)">[New List (Of String) From {}]</InArgument>
-                </ui:AssignOperation.Value>
-              </ui:AssignOperation>
-            </scg:List>
-          </ui:MultipleAssign.AssignOperations>
-        </ui:MultipleAssign>
-      </If.Else>
-    </If>
-    <If Condition="[clientEnvironmentLevelCounters]" DisplayName="If EnvironmentLevelCounters" sap:VirtualizedContainerService.HintSize="1524,430.4" sap2010:WorkflowViewState.IdRef="If_3">
+    <If Condition="[clientEnvironmentLevelCounters]" DisplayName="If EnvironmentLevelCounters" sap:VirtualizedContainerService.HintSize="664,448.8" sap2010:WorkflowViewState.IdRef="If_3">
       <sap:WorkflowViewStateService.ViewState>
         <scg:Dictionary x:TypeArguments="x:String, x:Object">
           <x:Boolean x:Key="IsExpanded">True</x:Boolean>
@@ -446,13 +482,13 @@
         </scg:Dictionary>
       </sap:WorkflowViewStateService.ViewState>
       <If.Then>
-        <Sequence sap:VirtualizedContainerService.HintSize="403.2,280.8" sap2010:WorkflowViewState.IdRef="Sequence_2">
+        <Sequence sap:VirtualizedContainerService.HintSize="420,299.2" sap2010:WorkflowViewState.IdRef="Sequence_2">
           <sap:WorkflowViewStateService.ViewState>
             <scg:Dictionary x:TypeArguments="x:String, x:Object">
               <x:Boolean x:Key="IsExpanded">True</x:Boolean>
             </scg:Dictionary>
           </sap:WorkflowViewStateService.ViewState>
-          <ui:InvokeWorkflowFile ContinueOnError="{x:Null}" DisplayName="Invoke OrchestratorTenant_GetReleasesForEnvironment workflow" sap:VirtualizedContainerService.HintSize="361.6,88" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_1" UnSafe="False" WorkflowFileName="OrchestratorTenant_GetReleasesForEnvironment.xaml">
+          <ui:InvokeWorkflowFile ContinueOnError="{x:Null}" DisplayName="Invoke OrchestratorTenant_GetReleasesForEnvironment workflow" sap:VirtualizedContainerService.HintSize="378.4,113.6" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_1" UnSafe="False" WorkflowFileName="OrchestratorTenant_GetReleasesForEnvironment.xaml">
             <ui:InvokeWorkflowFile.Arguments>
               <InArgument x:TypeArguments="x:String" x:Key="Token">[Token]</InArgument>
               <InArgument x:TypeArguments="x:String" x:Key="TenantLogicalName">[TenantLogicalName]</InArgument>
@@ -465,26 +501,100 @@
               <OutArgument x:TypeArguments="scg:List(x:String)" x:Key="EnvironmentReleasesIDs" />
             </ui:InvokeWorkflowFile.Arguments>
           </ui:InvokeWorkflowFile>
-          <Assign sap:VirtualizedContainerService.HintSize="361.6,60" sap2010:WorkflowViewState.IdRef="Assign_5">
-            <Assign.To>
-              <OutArgument x:TypeArguments="x:Int32">[JobsPending]</OutArgument>
-            </Assign.To>
-            <Assign.Value>
-              <InArgument x:TypeArguments="x:Int32">[(JObject.Parse(Response))("value").Where(Function (j) clientEnvironmentReleases.Contains(j("ReleaseName").ToString)).Count()]</InArgument>
-            </Assign.Value>
-          </Assign>
+          <ui:CommentOut DisplayName="Comment Out" sap:VirtualizedContainerService.HintSize="378.4,52.8" sap2010:WorkflowViewState.IdRef="CommentOut_1">
+            <ui:CommentOut.Body>
+              <Sequence DisplayName="Ignored Activities" sap:VirtualizedContainerService.HintSize="304,152.8" sap2010:WorkflowViewState.IdRef="Sequence_9">
+                <sap:WorkflowViewStateService.ViewState>
+                  <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                    <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                  </scg:Dictionary>
+                </sap:WorkflowViewStateService.ViewState>
+                <Assign sap:VirtualizedContainerService.HintSize="262.4,60" sap2010:WorkflowViewState.IdRef="Assign_5">
+                  <Assign.To>
+                    <OutArgument x:TypeArguments="x:Int32">[JobsPending]</OutArgument>
+                  </Assign.To>
+                  <Assign.Value>
+                    <InArgument x:TypeArguments="x:Int32">[(JObject.Parse(Response))("value").Where(Function (j) clientEnvironmentReleases.Contains(j("ReleaseName").ToString)).Count()]</InArgument>
+                  </Assign.Value>
+                </Assign>
+              </Sequence>
+            </ui:CommentOut.Body>
+            <sap:WorkflowViewStateService.ViewState>
+              <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+                <x:Boolean x:Key="IsPinned">False</x:Boolean>
+              </scg:Dictionary>
+            </sap:WorkflowViewStateService.ViewState>
+          </ui:CommentOut>
         </Sequence>
       </If.Then>
       <If.Else>
-        <Assign sap:VirtualizedContainerService.HintSize="262.4,60" sap2010:WorkflowViewState.IdRef="Assign_4">
-          <Assign.To>
-            <OutArgument x:TypeArguments="x:Int32">[JobsPending]</OutArgument>
-          </Assign.To>
-          <Assign.Value>
-            <InArgument x:TypeArguments="x:Int32">[Int32.Parse((JObject.Parse(Response))("@odata.count").ToString)]</InArgument>
-          </Assign.Value>
-        </Assign>
+        <ui:CommentOut DisplayName="Comment Out" sap:VirtualizedContainerService.HintSize="200,52.8" sap2010:WorkflowViewState.IdRef="CommentOut_2">
+          <ui:CommentOut.Body>
+            <Sequence DisplayName="Ignored Activities" sap:VirtualizedContainerService.HintSize="304,152.8" sap2010:WorkflowViewState.IdRef="Sequence_10">
+              <sap:WorkflowViewStateService.ViewState>
+                <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                  <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                </scg:Dictionary>
+              </sap:WorkflowViewStateService.ViewState>
+              <Assign sap:VirtualizedContainerService.HintSize="262.4,60" sap2010:WorkflowViewState.IdRef="Assign_4">
+                <Assign.To>
+                  <OutArgument x:TypeArguments="x:Int32">[JobsPending]</OutArgument>
+                </Assign.To>
+                <Assign.Value>
+                  <InArgument x:TypeArguments="x:Int32">[Int32.Parse((JObject.Parse(Response))("@odata.count").ToString)]</InArgument>
+                </Assign.Value>
+              </Assign>
+            </Sequence>
+          </ui:CommentOut.Body>
+          <sap:WorkflowViewStateService.ViewState>
+            <scg:Dictionary x:TypeArguments="x:String, x:Object">
+              <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+              <x:Boolean x:Key="IsPinned">False</x:Boolean>
+            </scg:Dictionary>
+          </sap:WorkflowViewStateService.ViewState>
+        </ui:CommentOut>
       </If.Else>
     </If>
+    <ui:InvokeWorkflowFile ContinueOnError="{x:Null}" DisplayName="Invoke OrchestratorTenant_GetPendingJobs workflow" sap:VirtualizedContainerService.HintSize="664,113.6" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_2" UnSafe="False" WorkflowFileName="OrchestratorTenant_GetPendingJobs.xaml">
+      <ui:InvokeWorkflowFile.Arguments>
+        <InArgument x:TypeArguments="x:String" x:Key="Token">
+          <mva:VisualBasicValue x:TypeArguments="x:String" ExpressionText="Token" />
+        </InArgument>
+        <InArgument x:TypeArguments="x:String" x:Key="TenantLogicalName">
+          <mva:VisualBasicValue x:TypeArguments="x:String" ExpressionText="TenantLogicalName" />
+        </InArgument>
+        <InArgument x:TypeArguments="x:String" x:Key="TenantService">
+          <mva:VisualBasicValue x:TypeArguments="x:String" ExpressionText="TenantService" />
+        </InArgument>
+        <InArgument x:TypeArguments="x:String" x:Key="Url">
+          <mva:VisualBasicValue x:TypeArguments="x:String" ExpressionText="Url" />
+        </InArgument>
+        <InArgument x:TypeArguments="x:Boolean" x:Key="clientOrchestratorIsOnprem">
+          <mva:VisualBasicValue x:TypeArguments="x:Boolean" ExpressionText="clientOrchestratorIsOnprem" />
+        </InArgument>
+        <OutArgument x:TypeArguments="x:Int32" x:Key="PendingJobsCount">
+          <mva:VisualBasicReference x:TypeArguments="x:Int32" ExpressionText="JobsPending" />
+        </OutArgument>
+        <InArgument x:TypeArguments="x:String" x:Key="FolderId">
+          <mva:VisualBasicValue x:TypeArguments="x:String" ExpressionText="FolderId" />
+        </InArgument>
+        <InArgument x:TypeArguments="x:Boolean" x:Key="clientEnvironmentLevelCounters">
+          <mva:VisualBasicValue x:TypeArguments="x:Boolean" ExpressionText="clientEnvironmentLevelCounters" />
+        </InArgument>
+        <InArgument x:TypeArguments="scg:List(x:String)" x:Key="clientEnvironmentReleases">
+          <mva:VisualBasicValue x:TypeArguments="scg:List(x:String)" ExpressionText="clientEnvironmentReleases" />
+        </InArgument>
+        <OutArgument x:TypeArguments="scg:List(x:String)" x:Key="specificRobotsMachines">
+          <mva:VisualBasicReference x:TypeArguments="scg:List(x:String)" ExpressionText="specificRobotsMachines" />
+        </OutArgument>
+        <InArgument x:TypeArguments="scg:List(x:String)" x:Key="unattendedRobotsMachines">
+          <mva:VisualBasicValue x:TypeArguments="scg:List(x:String)" ExpressionText="unattendedRobotsMachines" />
+        </InArgument>
+        <InArgument x:TypeArguments="x:Boolean" x:Key="FolderIsModern">
+          <mva:VisualBasicValue x:TypeArguments="x:Boolean" ExpressionText="FolderIsModern" />
+        </InArgument>
+      </ui:InvokeWorkflowFile.Arguments>
+    </ui:InvokeWorkflowFile>
   </Sequence>
 </Activity>

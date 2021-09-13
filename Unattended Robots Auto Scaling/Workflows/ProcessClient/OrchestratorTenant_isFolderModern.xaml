@@ -1,12 +1,12 @@
 <Activity mc:Ignorable="sap sap2010" x:Class="OrchestratorTenant_GetFolderId" xmlns="http://schemas.microsoft.com/netfx/2009/xaml/activities" xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" xmlns:mva="clr-namespace:Microsoft.VisualBasic.Activities;assembly=System.Activities" xmlns:sap="http://schemas.microsoft.com/netfx/2009/xaml/activities/presentation" xmlns:sap2010="http://schemas.microsoft.com/netfx/2010/xaml/activities/presentation" xmlns:scg="clr-namespace:System.Collections.Generic;assembly=mscorlib" xmlns:ui="http://schemas.uipath.com/workflow/activities" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
   <x:Members>
-    <x:Property Name="FolderName" Type="InArgument(x:String)" />
-    <x:Property Name="FolderId" Type="OutArgument(x:String)" />
+    <x:Property Name="FolderId" Type="InArgument(x:String)" />
     <x:Property Name="Token" Type="InArgument(x:String)" />
     <x:Property Name="TenantLogicalName" Type="InArgument(x:String)" />
     <x:Property Name="TenantService" Type="InArgument(x:String)" />
     <x:Property Name="Url" Type="InArgument(x:String)" />
     <x:Property Name="clientOrchestratorIsOnprem" Type="InArgument(x:Boolean)" />
+    <x:Property Name="FolderIsModern" Type="OutArgument(x:Boolean)" />
   </x:Members>
   <mva:VisualBasic.Settings>
     <x:Null />
@@ -123,12 +123,12 @@
     <ui:MultipleAssign DisplayName="Multiple Assign" sap:VirtualizedContainerService.HintSize="568.8,99.2" sap2010:WorkflowViewState.IdRef="MultipleAssign_1">
       <ui:MultipleAssign.AssignOperations>
         <scg:List x:TypeArguments="ui:AssignOperation" Capacity="4">
-          <ui:AssignOperation sap2010:WorkflowViewState.IdRef="AssignOperation_1">
+          <ui:AssignOperation sap2010:WorkflowViewState.IdRef="AssignOperation_2">
             <ui:AssignOperation.To>
-              <OutArgument x:TypeArguments="x:String">[FolderId]</OutArgument>
+              <OutArgument x:TypeArguments="x:Boolean">[FolderIsModern]</OutArgument>
             </ui:AssignOperation.To>
             <ui:AssignOperation.Value>
-              <InArgument x:TypeArguments="x:String">[(JObject.Parse(Response))("value").FirstOrDefault(Function(x) JObject.Parse(x.ToString())("DisplayName").ToString() = FolderName)("Id").ToString()]</InArgument>
+              <InArgument x:TypeArguments="x:Boolean">[(JObject.Parse(Response))("value").FirstOrDefault(Function(x) JObject.Parse(x.ToString())("Id").ToString() = FolderId)("ProvisionType").ToString.Equals("Automatic")]</InArgument>
             </ui:AssignOperation.Value>
           </ui:AssignOperation>
         </scg:List>
