@@ -3,20 +3,20 @@
   "description": "Process Client via Pooling or Events(queue items added via client tenants webhooks requests).",
   "main": "Main.xaml",
   "dependencies": {
-    "UiPath.AmazonWebServices.Activities": "[1.2.4]",
-    "UiPath.Azure.Activities": "[1.1.5]",
-    "UiPath.Citrix.Activities": "[1.0.6]",
+    "UiPath.AmazonWebServices.Activities": "[2.0.1]",
+    "UiPath.Azure.Activities": "[1.1.8]",
+    "UiPath.Citrix.Activities": "[1.0.7578.26008]",
     "UiPath.Database.Activities": "[1.4.0]",
-    "UiPath.GoogleCloud.Activities": "[1.0.0]",
-    "UiPath.System.Activities": "[20.10.3]",
-    "UiPath.VMware.Activities": "[1.1.4]",
-    "UiPath.WebAPI.Activities": "[1.6.0]"
+    "UiPath.GoogleCloud.Activities": "[2.0.0]",
+    "UiPath.System.Activities": "[20.4.0]",
+    "UiPath.VMware.Activities": "[1.1.7551.26388]",
+    "UiPath.WebAPI.Activities": "[1.7.0]"
   },
   "webServices": [],
   "entitiesStores": [],
   "schemaVersion": "4.0",
   "studioVersion": "19.10.1.0",
-  "projectVersion": "2.0.0",
+  "projectVersion": "2.1.6",
   "runtimeOptions": {
     "autoDispose": false,
     "isPausable": true,
@@ -47,7 +47,7 @@
   "entryPoints": [
     {
       "filePath": "Main.xaml",
-      "uniqueId": "bef8de4d-03a9-4216-93df-c021af7bf88d",
+      "uniqueId": "6be31a4f-d8b7-4874-ba6f-022796365641",
       "input": [],
       "output": []
     }

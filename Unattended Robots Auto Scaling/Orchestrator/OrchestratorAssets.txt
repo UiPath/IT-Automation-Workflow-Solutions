@@ -15,6 +15,7 @@ AzureAuth_ClientSecret (Credential)
 AzureAuth_SubscriptionID (Text)
 AzureAuth_TenantID (Credential)
 
+AmazonAWS_IAM_Role (Text)
 AmazonAWS_AccessKeyID (Credential)
 AmazonAWS_Region (Text)
 AmazonAWS_SecretAccessKey (Credential)
