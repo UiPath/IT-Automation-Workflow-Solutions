@@ -1,14 +1,4 @@
-<Activity mc:Ignorable="sap sap2010" x:Class="Main" this:Main.in_JiraAPIToken="XjyxWYjoRDaCHxtsvZVE7047" this:Main.in_JiraServerURL="https://uipath.atlassian.net" this:Main.in_JiraUserName="serban.ionut@uipath.com" xmlns="http://schemas.microsoft.com/netfx/2009/xaml/activities" xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" xmlns:mva="clr-namespace:Microsoft.VisualBasic.Activities;assembly=System.Activities" xmlns:njl="clr-namespace:Newtonsoft.Json.Linq;assembly=Newtonsoft.Json" xmlns:p="http://schemas.uipath.com/workflow/activities/azureactivedirectory" xmlns:r="clr-namespace:RestSharp;assembly=RestSharp" xmlns:s="clr-namespace:System;assembly=mscorlib" xmlns:sap="http://schemas.microsoft.com/netfx/2009/xaml/activities/presentation" xmlns:sap2010="http://schemas.microsoft.com/netfx/2010/xaml/activities/presentation" xmlns:scg="clr-namespace:System.Collections.Generic;assembly=mscorlib" xmlns:ss="clr-namespace:System.Security;assembly=mscorlib" xmlns:this="clr-namespace:" xmlns:ui="http://schemas.uipath.com/workflow/activities" xmlns:uja="clr-namespace:UiPath.JiraSoftware.Activities;assembly=UiPath.JiraSoftware.Activities" xmlns:ujac="clr-namespace:UiPath.JiraSoftware.Activities.Comments;assembly=UiPath.JiraSoftware.Activities" xmlns:ujai="clr-namespace:UiPath.JiraSoftware.Activities.Issues;assembly=UiPath.JiraSoftware.Activities" xmlns:ujat="clr-namespace:UiPath.JiraSoftware.Activities.Transitions;assembly=UiPath.JiraSoftware.Activities" xmlns:ujm="clr-namespace:UiPath.JiraSoftware.Models;assembly=UiPath.JiraSoftware" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
-  <x:Members>
-    <x:Property Name="in_JiraAPIToken" Type="InArgument(x:String)" />
-    <x:Property Name="in_JiraServerURL" Type="InArgument(x:String)" />
-    <x:Property Name="in_JiraUserName" Type="InArgument(x:String)" />
-  </x:Members>
-  <mva:VisualBasic.Settings>
-    <x:Null />
-  </mva:VisualBasic.Settings>
-  <sap:VirtualizedContainerService.HintSize>1180,3815</sap:VirtualizedContainerService.HintSize>
-  <sap2010:WorkflowViewState.IdRef>Main_1</sap2010:WorkflowViewState.IdRef>
+<Activity mc:Ignorable="sap sap2010" x:Class="Main" mva:VisualBasic.Settings="{x:Null}" sap:VirtualizedContainerService.HintSize="1248.8,3791.2" sap2010:WorkflowViewState.IdRef="Main_1" xmlns="http://schemas.microsoft.com/netfx/2009/xaml/activities" xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" xmlns:mva="clr-namespace:Microsoft.VisualBasic.Activities;assembly=System.Activities" xmlns:njl="clr-namespace:Newtonsoft.Json.Linq;assembly=Newtonsoft.Json" xmlns:p="http://schemas.uipath.com/workflow/activities/azureactivedirectory" xmlns:r="clr-namespace:RestSharp;assembly=RestSharp" xmlns:s="clr-namespace:System;assembly=mscorlib" xmlns:sap="http://schemas.microsoft.com/netfx/2009/xaml/activities/presentation" xmlns:sap2010="http://schemas.microsoft.com/netfx/2010/xaml/activities/presentation" xmlns:scg="clr-namespace:System.Collections.Generic;assembly=mscorlib" xmlns:ss="clr-namespace:System.Security;assembly=mscorlib" xmlns:ui="http://schemas.uipath.com/workflow/activities" xmlns:uja="clr-namespace:UiPath.JiraSoftware.Activities;assembly=UiPath.JiraSoftware.Activities" xmlns:ujac="clr-namespace:UiPath.JiraSoftware.Activities.Comments;assembly=UiPath.JiraSoftware.Activities" xmlns:ujai="clr-namespace:UiPath.JiraSoftware.Activities.Issues;assembly=UiPath.JiraSoftware.Activities" xmlns:ujat="clr-namespace:UiPath.JiraSoftware.Activities.Transitions;assembly=UiPath.JiraSoftware.Activities" xmlns:ujm="clr-namespace:UiPath.JiraSoftware.Models;assembly=UiPath.JiraSoftware" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
   <TextExpression.NamespacesForImplementation>
     <scg:List x:TypeArguments="x:String" Capacity="30">
       <x:String>System.Activities</x:String>
@@ -69,7 +59,7 @@
       <AssemblyReference>Newtonsoft.Json</AssemblyReference>
     </scg:List>
   </TextExpression.ReferencesForImplementation>
-  <Sequence DisplayName="ITSM AD UserOperations PasswordReset Sequence " sap:VirtualizedContainerService.HintSize="1160,3715" sap2010:WorkflowViewState.IdRef="Sequence_3">
+  <Sequence DisplayName="ITSM AD UserOperations PasswordReset Sequence " sap:VirtualizedContainerService.HintSize="1156,3726.4" sap2010:WorkflowViewState.IdRef="Sequence_3">
     <Sequence.Variables>
       <Variable x:TypeArguments="x:Boolean" Name="getAssetsFromOrchestrator" />
       <Variable x:TypeArguments="x:String" Name="azureADTenantId" />
@@ -80,19 +70,34 @@
       <Variable x:TypeArguments="x:String" Name="azureADUserUpn" />
       <Variable x:TypeArguments="x:Boolean" Default="True" Name="forcePasswordChange" />
       <Variable x:TypeArguments="x:String" Name="azureADNewPassword" />
+      <Variable x:TypeArguments="x:String" Name="in_JiraUserName">
+        <Variable.Default>
+          <Literal x:TypeArguments="x:String" Value="" />
+        </Variable.Default>
+      </Variable>
+      <Variable x:TypeArguments="x:String" Name="in_JiraAPIToken">
+        <Variable.Default>
+          <Literal x:TypeArguments="x:String" Value="" />
+        </Variable.Default>
+      </Variable>
+      <Variable x:TypeArguments="x:String" Name="in_JiraServerURL">
+        <Variable.Default>
+          <Literal x:TypeArguments="x:String" Value="" />
+        </Variable.Default>
+      </Variable>
     </Sequence.Variables>
     <sap:WorkflowViewStateService.ViewState>
       <scg:Dictionary x:TypeArguments="x:String, x:Object">
         <x:Boolean x:Key="IsExpanded">True</x:Boolean>
       </scg:Dictionary>
     </sap:WorkflowViewStateService.ViewState>
-    <uja:JiraSoftwareApplicationScope RestClient="{x:Null}" DisplayName="Jira Software Application Scope" sap:VirtualizedContainerService.HintSize="1118,3623" sap2010:WorkflowViewState.IdRef="JiraSoftwareApplicationScope_1" JiraToken="[in_JiraAPIToken]" JiraURL="[in_JiraServerURL]" JiraUsername="[in_JiraUserName]">
+    <uja:JiraSoftwareApplicationScope RestClient="{x:Null}" DisplayName="Jira Software Application Scope" sap:VirtualizedContainerService.HintSize="1114.4,3633.6" sap2010:WorkflowViewState.IdRef="JiraSoftwareApplicationScope_1" JiraToken="[in_JiraAPIToken]" JiraURL="[in_JiraServerURL]" JiraUsername="[in_JiraUserName]">
       <uja:JiraSoftwareApplicationScope.Body>
         <ActivityAction x:TypeArguments="r:RestClient">
           <ActivityAction.Argument>
             <DelegateInArgument x:TypeArguments="r:RestClient" Name="RestClient" />
           </ActivityAction.Argument>
-          <Sequence DisplayName="Do" sap:VirtualizedContainerService.HintSize="1084,3537" sap2010:WorkflowViewState.IdRef="Sequence_13">
+          <Sequence DisplayName="Do" sap:VirtualizedContainerService.HintSize="1080.8,3547.2" sap2010:WorkflowViewState.IdRef="Sequence_13">
             <Sequence.Variables>
               <Variable x:TypeArguments="ujm:Issue[]" Name="jiraIssues" />
             </Sequence.Variables>
@@ -101,20 +106,20 @@
                 <x:Boolean x:Key="IsExpanded">True</x:Boolean>
               </scg:Dictionary>
             </sap:WorkflowViewStateService.ViewState>
-            <ujai:SearchIssuesUsingJQL MaxResults="{x:Null}" StartAt="{x:Null}" TotalNumberOfIssues="{x:Null}" DisplayName="Search issues using JQL" sap:VirtualizedContainerService.HintSize="1042,22" sap2010:WorkflowViewState.IdRef="SearchIssuesUsingJQL_1" JQL="[&quot;project = &quot;&quot;IT Automation&quot;&quot; AND assignee = currentuser()&quot;]" Result="[jiraIssues]" />
-            <ui:ForEach x:TypeArguments="ujm:Issue" CurrentIndex="{x:Null}" DisplayName="For Each Issue" sap:VirtualizedContainerService.HintSize="1042,3383" sap2010:WorkflowViewState.IdRef="ForEach`1_1" Values="[jiraIssues]">
+            <ujai:SearchIssuesUsingJQL MaxResults="{x:Null}" StartAt="{x:Null}" TotalNumberOfIssues="{x:Null}" DisplayName="Search issues using JQL" sap:VirtualizedContainerService.HintSize="1039.2,22.4" sap2010:WorkflowViewState.IdRef="SearchIssuesUsingJQL_1" JQL="[&quot;project = &quot;&quot;IT Automation&quot;&quot; AND assignee = currentuser()&quot;]" Result="[jiraIssues]" />
+            <ui:ForEach x:TypeArguments="ujm:Issue" CurrentIndex="{x:Null}" DisplayName="For Each Issue" sap:VirtualizedContainerService.HintSize="1039.2,3392" sap2010:WorkflowViewState.IdRef="ForEach`1_1" Values="[jiraIssues]">
               <ui:ForEach.Body>
                 <ActivityAction x:TypeArguments="ujm:Issue">
                   <ActivityAction.Argument>
                     <DelegateInArgument x:TypeArguments="ujm:Issue" Name="issue" />
                   </ActivityAction.Argument>
-                  <Sequence sap:VirtualizedContainerService.HintSize="1006,3250" sap2010:WorkflowViewState.IdRef="Sequence_17">
+                  <Sequence sap:VirtualizedContainerService.HintSize="1004,3257.6" sap2010:WorkflowViewState.IdRef="Sequence_17">
                     <sap:WorkflowViewStateService.ViewState>
                       <scg:Dictionary x:TypeArguments="x:String, x:Object">
                         <x:Boolean x:Key="IsExpanded">True</x:Boolean>
                       </scg:Dictionary>
                     </sap:WorkflowViewStateService.ViewState>
-                    <If Condition="[issue.Fields.Summary.Contains(&quot;UserPasswordReset&quot;) And issue.Fields.Status.Name.Equals(&quot;To Do&quot;)]" sap:VirtualizedContainerService.HintSize="964,3158" sap2010:WorkflowViewState.IdRef="If_4">
+                    <If Condition="[issue.Fields.Summary.Contains(&quot;UserPasswordReset&quot;) And issue.Fields.Status.Name.Equals(&quot;To Do&quot;)]" sap:VirtualizedContainerService.HintSize="962.4,3164.8" sap2010:WorkflowViewState.IdRef="If_4">
                       <sap:WorkflowViewStateService.ViewState>
                         <scg:Dictionary x:TypeArguments="x:String, x:Object">
                           <x:Boolean x:Key="IsExpanded">True</x:Boolean>
@@ -122,7 +127,7 @@
                         </scg:Dictionary>
                       </sap:WorkflowViewStateService.ViewState>
                       <If.Then>
-                        <Sequence sap:VirtualizedContainerService.HintSize="819,3011" sap2010:WorkflowViewState.IdRef="Sequence_15">
+                        <Sequence sap:VirtualizedContainerService.HintSize="818.4,3015.2" sap2010:WorkflowViewState.IdRef="Sequence_15">
                           <Sequence.Variables>
                             <Variable x:TypeArguments="scg:Dictionary(x:String, x:Object)" Name="issueAllFieldsDictionary" />
                             <Variable x:TypeArguments="ujm:Transition[]" Name="issueTrasitions" />
@@ -133,7 +138,7 @@
                               <x:Boolean x:Key="IsPinned">False</x:Boolean>
                             </scg:Dictionary>
                           </sap:WorkflowViewStateService.ViewState>
-                          <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="777,91" sap2010:WorkflowViewState.IdRef="LogMessage_12" Level="Info" Message="[issue.Fields.Summary + &quot; &quot; + issue.Fields.Status.Name]" />
+                          <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="776.8,92.8" sap2010:WorkflowViewState.IdRef="LogMessage_12" Level="Info" Message="[issue.Fields.Summary + &quot; &quot; + issue.Fields.Status.Name]" />
                           <ujai:GetIssue Result="{x:Null}" AllFieldsDictionary="[issueAllFieldsDictionary]" DisplayName="Get Issue" EntityId="[issue.Id]" sap:VirtualizedContainerService.HintSize="777,59" sap2010:WorkflowViewState.IdRef="GetIssue_1" />
                           <ui:ForEach x:TypeArguments="scg:KeyValuePair(x:String, x:Object)" CurrentIndex="{x:Null}" DisplayName="For Each" sap:VirtualizedContainerService.HintSize="777,276" sap2010:WorkflowViewState.IdRef="ForEach`1_6" Values="[issueAllFieldsDictionary]">
                             <ui:ForEach.Body>

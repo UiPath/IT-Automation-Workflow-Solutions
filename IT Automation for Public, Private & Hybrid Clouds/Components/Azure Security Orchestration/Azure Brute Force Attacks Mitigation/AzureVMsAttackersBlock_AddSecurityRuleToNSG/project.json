@@ -3,7 +3,7 @@
   "description": "Adds a new security rule to the network security groups associated with the attacked VM network interfaces in order to block the attacker's IP",
   "main": "ProcessAlerts.xaml",
   "dependencies": {
-    "UiPath.Azure.Activities": "1.1.5",
+    "UiPath.Azure.Activities": "1.1.8",
     "UiPath.System.Activities": "[20.10.1]"
   },
   "webServices": [],
@@ -38,5 +38,15 @@
     "modernBehavior": false
   },
   "expressionLanguage": "VisualBasic",
-  "isTemplate": false
+  "entryPoints": [
+    {
+      "filePath": "ProcessAlerts.xaml",
+      "uniqueId": "3aec3662-9cc1-4094-bd7e-8a322c3202aa",
+      "input": [],
+      "output": []
+    }
+  ],
+  "isTemplate": false,
+  "templateProjectData": {},
+  "publishData": {}
 }

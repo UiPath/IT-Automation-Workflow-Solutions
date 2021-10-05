@@ -1,4 +1,4 @@
-<Activity mc:Ignorable="sap sap2010" x:Class="Main" mva:VisualBasic.Settings="{x:Null}" sap:VirtualizedContainerService.HintSize="1477,4873" sap2010:WorkflowViewState.IdRef="Main_1" xmlns="http://schemas.microsoft.com/netfx/2009/xaml/activities" xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" xmlns:mva="clr-namespace:Microsoft.VisualBasic.Activities;assembly=System.Activities" xmlns:njl="clr-namespace:Newtonsoft.Json.Linq;assembly=Newtonsoft.Json" xmlns:p="http://schemas.uipath.com/workflow/activities/azureactivedirectory" xmlns:r="clr-namespace:RestSharp;assembly=RestSharp" xmlns:s="clr-namespace:System;assembly=mscorlib" xmlns:sap="http://schemas.microsoft.com/netfx/2009/xaml/activities/presentation" xmlns:sap2010="http://schemas.microsoft.com/netfx/2010/xaml/activities/presentation" xmlns:scg="clr-namespace:System.Collections.Generic;assembly=mscorlib" xmlns:ss="clr-namespace:System.Security;assembly=mscorlib" xmlns:uacu="clr-namespace:UiPath.AzureActiveDirectory.Contracts.Users;assembly=UiPath.AzureActiveDirectory" xmlns:ui="http://schemas.uipath.com/workflow/activities" xmlns:uja="clr-namespace:UiPath.JiraSoftware.Activities;assembly=UiPath.JiraSoftware.Activities" xmlns:ujac="clr-namespace:UiPath.JiraSoftware.Activities.Comments;assembly=UiPath.JiraSoftware.Activities" xmlns:ujai="clr-namespace:UiPath.JiraSoftware.Activities.Issues;assembly=UiPath.JiraSoftware.Activities" xmlns:ujat="clr-namespace:UiPath.JiraSoftware.Activities.Transitions;assembly=UiPath.JiraSoftware.Activities" xmlns:ujm="clr-namespace:UiPath.JiraSoftware.Models;assembly=UiPath.JiraSoftware" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+<Activity mc:Ignorable="sap sap2010" x:Class="Main" mva:VisualBasic.Settings="{x:Null}" sap:VirtualizedContainerService.HintSize="1248.8,3532.8" sap2010:WorkflowViewState.IdRef="Main_1" xmlns="http://schemas.microsoft.com/netfx/2009/xaml/activities" xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" xmlns:mva="clr-namespace:Microsoft.VisualBasic.Activities;assembly=System.Activities" xmlns:njl="clr-namespace:Newtonsoft.Json.Linq;assembly=Newtonsoft.Json" xmlns:p="http://schemas.uipath.com/workflow/activities/azureactivedirectory" xmlns:r="clr-namespace:RestSharp;assembly=RestSharp" xmlns:s="clr-namespace:System;assembly=mscorlib" xmlns:sap="http://schemas.microsoft.com/netfx/2009/xaml/activities/presentation" xmlns:sap2010="http://schemas.microsoft.com/netfx/2010/xaml/activities/presentation" xmlns:scg="clr-namespace:System.Collections.Generic;assembly=mscorlib" xmlns:ss="clr-namespace:System.Security;assembly=mscorlib" xmlns:uacu="clr-namespace:UiPath.AzureActiveDirectory.Contracts.Users;assembly=UiPath.AzureActiveDirectory" xmlns:ui="http://schemas.uipath.com/workflow/activities" xmlns:uja="clr-namespace:UiPath.JiraSoftware.Activities;assembly=UiPath.JiraSoftware.Activities" xmlns:ujac="clr-namespace:UiPath.JiraSoftware.Activities.Comments;assembly=UiPath.JiraSoftware.Activities" xmlns:ujai="clr-namespace:UiPath.JiraSoftware.Activities.Issues;assembly=UiPath.JiraSoftware.Activities" xmlns:ujat="clr-namespace:UiPath.JiraSoftware.Activities.Transitions;assembly=UiPath.JiraSoftware.Activities" xmlns:ujm="clr-namespace:UiPath.JiraSoftware.Models;assembly=UiPath.JiraSoftware" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
   <TextExpression.NamespacesForImplementation>
     <scg:List x:TypeArguments="x:String" Capacity="29">
       <x:String>System.Activities</x:String>
@@ -33,7 +33,7 @@
     </scg:List>
   </TextExpression.NamespacesForImplementation>
   <TextExpression.ReferencesForImplementation>
-    <scg:List x:TypeArguments="AssemblyReference" Capacity="22">
+    <scg:List x:TypeArguments="AssemblyReference" Capacity="44">
       <AssemblyReference>System.Activities</AssemblyReference>
       <AssemblyReference>Microsoft.VisualBasic</AssemblyReference>
       <AssemblyReference>mscorlib</AssemblyReference>
@@ -56,9 +56,12 @@
       <AssemblyReference>UiPath.AzureActiveDirectory</AssemblyReference>
       <AssemblyReference>UiPath.JiraSoftware</AssemblyReference>
       <AssemblyReference>Newtonsoft.Json</AssemblyReference>
+      <AssemblyReference>UiPath.System.Activities.Design</AssemblyReference>
+      <AssemblyReference>Microsoft.Bcl.AsyncInterfaces</AssemblyReference>
+      <AssemblyReference>System.Memory</AssemblyReference>
     </scg:List>
   </TextExpression.ReferencesForImplementation>
-  <Sequence DisplayName="ITSM AD UserOperations UnlockEnableDisableDelete Sequence " sap:VirtualizedContainerService.HintSize="1457,4773" sap2010:WorkflowViewState.IdRef="Sequence_3">
+  <Sequence DisplayName="ITSM AD UserOperations UnlockEnableDisableDelete Sequence " sap:VirtualizedContainerService.HintSize="975.2,3468" sap2010:WorkflowViewState.IdRef="Sequence_3">
     <Sequence.Variables>
       <Variable x:TypeArguments="x:Boolean" Name="getAssetsFromOrchestrator" />
       <Variable x:TypeArguments="ss:SecureString" Name="azureADClientSecret" />
@@ -67,19 +70,34 @@
       <Variable x:TypeArguments="x:Boolean" Name="userExist" />
       <Variable x:TypeArguments="x:String" Name="userActionUnlockEnableDisableDelete" />
       <Variable x:TypeArguments="x:String" Name="azureADUserUpn" />
+      <Variable x:TypeArguments="x:String" Name="in_JiraUserName">
+        <Variable.Default>
+          <Literal x:TypeArguments="x:String" Value="" />
+        </Variable.Default>
+      </Variable>
+      <Variable x:TypeArguments="x:String" Name="in_JiraAPIToken">
+        <Variable.Default>
+          <Literal x:TypeArguments="x:String" Value="" />
+        </Variable.Default>
+      </Variable>
+      <Variable x:TypeArguments="x:String" Name="in_JiraServerURL">
+        <Variable.Default>
+          <Literal x:TypeArguments="x:String" Value="" />
+        </Variable.Default>
+      </Variable>
     </Sequence.Variables>
     <sap:WorkflowViewStateService.ViewState>
       <scg:Dictionary x:TypeArguments="x:String, x:Object">
         <x:Boolean x:Key="IsExpanded">True</x:Boolean>
       </scg:Dictionary>
     </sap:WorkflowViewStateService.ViewState>
-    <uja:JiraSoftwareApplicationScope RestClient="{x:Null}" DisplayName="Jira Software Application Scope" sap:VirtualizedContainerService.HintSize="1415,4681" sap2010:WorkflowViewState.IdRef="JiraSoftwareApplicationScope_1" JiraToken="[in_JiraAPIToken]" JiraURL="[in_JiraServerURL]" JiraUsername="[in_JiraUserName]">
+    <uja:JiraSoftwareApplicationScope RestClient="{x:Null}" DisplayName="Jira Software Application Scope" sap:VirtualizedContainerService.HintSize="933.6,3375.2" sap2010:WorkflowViewState.IdRef="JiraSoftwareApplicationScope_1" JiraToken="[in_JiraAPIToken]" JiraURL="[in_JiraServerURL]" JiraUsername="[in_JiraUserName]">
       <uja:JiraSoftwareApplicationScope.Body>
         <ActivityAction x:TypeArguments="r:RestClient">
           <ActivityAction.Argument>
             <DelegateInArgument x:TypeArguments="r:RestClient" Name="RestClient" />
           </ActivityAction.Argument>
-          <Sequence DisplayName="Do" sap:VirtualizedContainerService.HintSize="1381,4595" sap2010:WorkflowViewState.IdRef="Sequence_17">
+          <Sequence DisplayName="Do" sap:VirtualizedContainerService.HintSize="900,3288.8" sap2010:WorkflowViewState.IdRef="Sequence_17">
             <Sequence.Variables>
               <Variable x:TypeArguments="ujm:Issue[]" Name="jiraIssues" />
             </Sequence.Variables>
@@ -88,20 +106,20 @@
                 <x:Boolean x:Key="IsExpanded">True</x:Boolean>
               </scg:Dictionary>
             </sap:WorkflowViewStateService.ViewState>
-            <ujai:SearchIssuesUsingJQL MaxResults="{x:Null}" StartAt="{x:Null}" TotalNumberOfIssues="{x:Null}" DisplayName="Search issues using JQL" sap:VirtualizedContainerService.HintSize="1339,22" sap2010:WorkflowViewState.IdRef="SearchIssuesUsingJQL_1" JQL="[&quot;project = &quot;&quot;IT Automation&quot;&quot; AND assignee = currentuser()&quot;]" Result="[jiraIssues]" />
-            <ui:ForEach x:TypeArguments="ujm:Issue" CurrentIndex="{x:Null}" DisplayName="For Each" sap:VirtualizedContainerService.HintSize="1339,4441" sap2010:WorkflowViewState.IdRef="ForEach`1_3" Values="[jiraIssues]">
+            <ujai:SearchIssuesUsingJQL MaxResults="{x:Null}" StartAt="{x:Null}" TotalNumberOfIssues="{x:Null}" DisplayName="Search issues using JQL" sap:VirtualizedContainerService.HintSize="858.4,22.4" sap2010:WorkflowViewState.IdRef="SearchIssuesUsingJQL_1" JQL="[&quot;project = &quot;&quot;IT Automation&quot;&quot; AND assignee = currentuser()&quot;]" Result="[jiraIssues]" />
+            <ui:ForEach x:TypeArguments="ujm:Issue" CurrentIndex="{x:Null}" DisplayName="For Each" sap:VirtualizedContainerService.HintSize="858.4,3133.6" sap2010:WorkflowViewState.IdRef="ForEach`1_3" Values="[jiraIssues]">
               <ui:ForEach.Body>
                 <ActivityAction x:TypeArguments="ujm:Issue">
                   <ActivityAction.Argument>
                     <DelegateInArgument x:TypeArguments="ujm:Issue" Name="issue" />
                   </ActivityAction.Argument>
-                  <Sequence sap:VirtualizedContainerService.HintSize="1303,4308" sap2010:WorkflowViewState.IdRef="Sequence_16">
+                  <Sequence sap:VirtualizedContainerService.HintSize="823.2,2999.2" sap2010:WorkflowViewState.IdRef="Sequence_16">
                     <sap:WorkflowViewStateService.ViewState>
                       <scg:Dictionary x:TypeArguments="x:String, x:Object">
                         <x:Boolean x:Key="IsExpanded">True</x:Boolean>
                       </scg:Dictionary>
                     </sap:WorkflowViewStateService.ViewState>
-                    <If Condition="[issue.Fields.Summary.Contains(&quot;UserOperation&quot;) And issue.Fields.Status.Name.Equals(&quot;To Do&quot;)]" sap:VirtualizedContainerService.HintSize="1261,4216" sap2010:WorkflowViewState.IdRef="If_5">
+                    <If Condition="[issue.Fields.Summary.Contains(&quot;UserOperation&quot;) And issue.Fields.Status.Name.Equals(&quot;To Do&quot;)]" sap:VirtualizedContainerService.HintSize="781.6,2906.4" sap2010:WorkflowViewState.IdRef="If_5">
                       <sap:WorkflowViewStateService.ViewState>
                         <scg:Dictionary x:TypeArguments="x:String, x:Object">
                           <x:Boolean x:Key="IsExpanded">True</x:Boolean>
@@ -109,7 +127,7 @@
                         </scg:Dictionary>
                       </sap:WorkflowViewStateService.ViewState>
                       <If.Then>
-                        <Sequence sap:VirtualizedContainerService.HintSize="1116,4069" sap2010:WorkflowViewState.IdRef="Sequence_15">
+                        <Sequence sap:VirtualizedContainerService.HintSize="637.6,2756.8" sap2010:WorkflowViewState.IdRef="Sequence_15">
                           <Sequence.Variables>
                             <Variable x:TypeArguments="scg:Dictionary(x:String, x:Object)" Name="issueAllFieldsDictionary" />
                             <Variable x:TypeArguments="ujm:Transition[]" Name="issueTrasitions" />
@@ -120,21 +138,21 @@
                               <x:Boolean x:Key="IsPinned">False</x:Boolean>
                             </scg:Dictionary>
                           </sap:WorkflowViewStateService.ViewState>
-                          <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="1074,91" sap2010:WorkflowViewState.IdRef="LogMessage_9" Level="Info" Message="[issue.Fields.Summary + &quot; &quot; + issue.Fields.Status.Name]" />
-                          <ujai:GetIssue Result="{x:Null}" AllFieldsDictionary="[issueAllFieldsDictionary]" DisplayName="Get Issue" EntityId="[issue.Id]" sap:VirtualizedContainerService.HintSize="1074,59" sap2010:WorkflowViewState.IdRef="GetIssue_1" />
-                          <ui:ForEach x:TypeArguments="scg:KeyValuePair(x:String, x:Object)" CurrentIndex="{x:Null}" DisplayName="For Each" sap:VirtualizedContainerService.HintSize="1074,923" sap2010:WorkflowViewState.IdRef="ForEach`1_1" Values="[issueAllFieldsDictionary]">
+                          <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="596,92.8" sap2010:WorkflowViewState.IdRef="LogMessage_9" Level="Info" Message="[issue.Fields.Summary + &quot; &quot; + issue.Fields.Status.Name]" />
+                          <ujai:GetIssue Result="{x:Null}" AllFieldsDictionary="[issueAllFieldsDictionary]" DisplayName="Get Issue" EntityId="[issue.Id]" sap:VirtualizedContainerService.HintSize="596,60" sap2010:WorkflowViewState.IdRef="GetIssue_1" />
+                          <ui:ForEach x:TypeArguments="scg:KeyValuePair(x:String, x:Object)" CurrentIndex="{x:Null}" DisplayName="For Each" sap:VirtualizedContainerService.HintSize="596,932.8" sap2010:WorkflowViewState.IdRef="ForEach`1_1" Values="[issueAllFieldsDictionary]">
                             <ui:ForEach.Body>
                               <ActivityAction x:TypeArguments="scg:KeyValuePair(x:String, x:Object)">
                                 <ActivityAction.Argument>
                                   <DelegateInArgument x:TypeArguments="scg:KeyValuePair(x:String, x:Object)" Name="item" />
                                 </ActivityAction.Argument>
-                                <Sequence DisplayName="Body" sap:VirtualizedContainerService.HintSize="567,790" sap2010:WorkflowViewState.IdRef="Sequence_12">
+                                <Sequence DisplayName="Body" sap:VirtualizedContainerService.HintSize="560.8,798.4" sap2010:WorkflowViewState.IdRef="Sequence_12">
                                   <sap:WorkflowViewStateService.ViewState>
                                     <scg:Dictionary x:TypeArguments="x:String, x:Object">
                                       <x:Boolean x:Key="IsExpanded">True</x:Boolean>
                                     </scg:Dictionary>
                                   </sap:WorkflowViewStateService.ViewState>
-                                  <If Condition="[item.Key.Equals(&quot;description&quot;)]" sap:VirtualizedContainerService.HintSize="525,698" sap2010:WorkflowViewState.IdRef="If_3">
+                                  <If Condition="[item.Key.Equals(&quot;description&quot;)]" sap:VirtualizedContainerService.HintSize="519.2,705.6" sap2010:WorkflowViewState.IdRef="If_3">
                                     <sap:WorkflowViewStateService.ViewState>
                                       <scg:Dictionary x:TypeArguments="x:String, x:Object">
                                         <x:Boolean x:Key="IsExpanded">True</x:Boolean>
@@ -142,7 +160,7 @@
                                       </scg:Dictionary>
                                     </sap:WorkflowViewStateService.ViewState>
                                     <If.Then>
-                                      <Sequence sap:VirtualizedContainerService.HintSize="380,551" sap2010:WorkflowViewState.IdRef="Sequence_11">
+                                      <Sequence sap:VirtualizedContainerService.HintSize="375.2,556" sap2010:WorkflowViewState.IdRef="Sequence_11">
                                         <Sequence.Variables>
                                           <Variable x:TypeArguments="njl:JObject" Name="issueDescriptionJSON" />
                                           <Variable x:TypeArguments="s:String[]" Name="issueDescriptionInfos" />
@@ -153,8 +171,8 @@
                                             <x:Boolean x:Key="IsPinned">False</x:Boolean>
                                           </scg:Dictionary>
                                         </sap:WorkflowViewStateService.ViewState>
-                                        <ui:DeserializeJson x:TypeArguments="njl:JObject" DisplayName="Deserialize JSON" sap:VirtualizedContainerService.HintSize="338,59" sap2010:WorkflowViewState.IdRef="DeserializeJson`1_1" JsonObject="[issueDescriptionJSON]" JsonString="[item.Value.ToString]" />
-                                        <Assign sap:VirtualizedContainerService.HintSize="338,60" sap2010:WorkflowViewState.IdRef="Assign_6">
+                                        <ui:DeserializeJson x:TypeArguments="njl:JObject" DisplayName="Deserialize JSON" sap:VirtualizedContainerService.HintSize="333.6,60" sap2010:WorkflowViewState.IdRef="DeserializeJson`1_1" JsonObject="[issueDescriptionJSON]" JsonString="[item.Value.ToString]" />
+                                        <Assign sap:VirtualizedContainerService.HintSize="333.6,60" sap2010:WorkflowViewState.IdRef="Assign_6">
                                           <Assign.To>
                                             <OutArgument x:TypeArguments="s:String[]">[issueDescriptionInfos]</OutArgument>
                                           </Assign.To>
@@ -162,7 +180,7 @@
                                             <InArgument x:TypeArguments="s:String[]">[issueDescriptionJSON.SelectToken("content")(0).SelectToken("content")(0).SelectToken("text").ToString.Split(" "C)]</InArgument>
                                           </Assign.Value>
                                         </Assign>
-                                        <ui:MultipleAssign DisplayName="Multiple Assign" sap:VirtualizedContainerService.HintSize="338,129" sap2010:WorkflowViewState.IdRef="MultipleAssign_2">
+                                        <ui:MultipleAssign DisplayName="Multiple Assign" sap:VirtualizedContainerService.HintSize="333.6,130.4" sap2010:WorkflowViewState.IdRef="MultipleAssign_2">
                                           <ui:MultipleAssign.AssignOperations>
                                             <scg:List x:TypeArguments="ui:AssignOperation" Capacity="4">
                                               <ui:AssignOperation sap2010:WorkflowViewState.IdRef="AssignOperation_4">
@@ -184,7 +202,7 @@
                                             </scg:List>
                                           </ui:MultipleAssign.AssignOperations>
                                         </ui:MultipleAssign>
-                                        <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="338,91" sap2010:WorkflowViewState.IdRef="LogMessage_10" Message="[&quot;UserId: &quot; +azureADUserUpn + vbNewLine + &quot;Action: &quot; + userActionUnlockEnableDisableDelete]" />
+                                        <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="333.6,92.8" sap2010:WorkflowViewState.IdRef="LogMessage_10" Message="[&quot;UserId: &quot; +azureADUserUpn + vbNewLine + &quot;Action: &quot; + userActionUnlockEnableDisableDelete]" />
                                       </Sequence>
                                     </If.Then>
                                   </If>
@@ -198,7 +216,7 @@
                               </scg:Dictionary>
                             </sap:WorkflowViewStateService.ViewState>
                           </ui:ForEach>
-                          <Assign sap2010:Annotation.AnnotationText="When the variable getAssetsFromOrchestrator has the value true, we will take the credentials for the active directory from the orchestrator assets, when it is false you have to enter them manually (else branch of the next if). &#xA;Please change the value of the variable according to your needs." sap:VirtualizedContainerService.HintSize="1074,207" sap2010:WorkflowViewState.IdRef="Assign_1">
+                          <Assign sap2010:Annotation.AnnotationText="When the variable getAssetsFromOrchestrator has the value true, we will take the credentials for the active directory from the orchestrator assets, when it is false you have to enter them manually (else branch of the next if). &#xA;Please change the value of the variable according to your needs." sap:VirtualizedContainerService.HintSize="596,216" sap2010:WorkflowViewState.IdRef="Assign_1">
                             <Assign.To>
                               <OutArgument x:TypeArguments="x:Boolean">[getAssetsFromOrchestrator]</OutArgument>
                             </Assign.To>
@@ -211,7 +229,7 @@
                               </scg:Dictionary>
                             </sap:WorkflowViewStateService.ViewState>
                           </Assign>
-                          <If Condition="[getAssetsFromOrchestrator]" DisplayName="If you want to get your information from orchestrator assets" sap:VirtualizedContainerService.HintSize="1074,51" sap2010:WorkflowViewState.IdRef="If_1">
+                          <If Condition="[getAssetsFromOrchestrator]" DisplayName="If you want to get your information from orchestrator assets" sap:VirtualizedContainerService.HintSize="596,52.8" sap2010:WorkflowViewState.IdRef="If_1">
                             <sap:WorkflowViewStateService.ViewState>
                               <scg:Dictionary x:TypeArguments="x:String, x:Object">
                                 <x:Boolean x:Key="IsExpanded">False</x:Boolean>
@@ -326,7 +344,7 @@
                               </Sequence>
                             </If.Else>
                           </If>
-                          <ui:LogMessage DisplayName="Log ClientID &amp; TenantID" sap:VirtualizedContainerService.HintSize="1074,91" sap2010:WorkflowViewState.IdRef="LogMessage_4" Level="Info" Message="[&quot;Azure Client ID: &quot; + azureADClientId +vbNewLine + &quot;Azure Tenant ID:&quot; + azureADTenantId]">
+                          <ui:LogMessage DisplayName="Log ClientID &amp; TenantID" sap:VirtualizedContainerService.HintSize="596,92.8" sap2010:WorkflowViewState.IdRef="LogMessage_4" Level="Info" Message="[&quot;Azure Client ID: &quot; + azureADClientId +vbNewLine + &quot;Azure Tenant ID:&quot; + azureADTenantId]">
                             <sap:WorkflowViewStateService.ViewState>
                               <scg:Dictionary x:TypeArguments="x:String, x:Object">
                                 <x:Boolean x:Key="IsExpanded">True</x:Boolean>
@@ -334,7 +352,7 @@
                               </scg:Dictionary>
                             </sap:WorkflowViewStateService.ViewState>
                           </ui:LogMessage>
-                          <TryCatch DisplayName="Try update user" sap:VirtualizedContainerService.HintSize="1074,1534" sap2010:WorkflowViewState.IdRef="TryCatch_2">
+                          <TryCatch DisplayName="Try update user" sap:VirtualizedContainerService.HintSize="596,187.2" sap2010:WorkflowViewState.IdRef="TryCatch_2">
                             <sap:WorkflowViewStateService.ViewState>
                               <scg:Dictionary x:TypeArguments="x:String, x:Object">
                                 <x:Boolean x:Key="IsExpanded">True</x:Boolean>
@@ -342,13 +360,13 @@
                               </scg:Dictionary>
                             </sap:WorkflowViewStateService.ViewState>
                             <TryCatch.Try>
-                              <p:AzureADApplicationScope ClientId="[azureADClientId]" ClientSecret="[azureADClientSecret]" DisplayName="Azure AD Application Scope" sap:VirtualizedContainerService.HintSize="1036,1307" sap2010:WorkflowViewState.IdRef="AzureADApplicationScope_2" TenantId="[azureADTenantId]">
+                              <p:AzureADApplicationScope ClientId="[azureADClientId]" ClientSecret="[azureADClientSecret]" DisplayName="Azure AD Application Scope" sap:VirtualizedContainerService.HintSize="1032.8,1325.6" sap2010:WorkflowViewState.IdRef="AzureADApplicationScope_2" TenantId="[azureADTenantId]">
                                 <p:AzureADApplicationScope.Body>
                                   <ActivityAction x:TypeArguments="p:AzureADConnector">
                                     <ActivityAction.Argument>
                                       <DelegateInArgument x:TypeArguments="p:AzureADConnector" Name="AzureScopePropertyTag" />
                                     </ActivityAction.Argument>
-                                    <Sequence DisplayName="Do" sap:VirtualizedContainerService.HintSize="1002,1221" sap2010:WorkflowViewState.IdRef="Sequence_2">
+                                    <Sequence DisplayName="Do" sap:VirtualizedContainerService.HintSize="999.2,1239.2" sap2010:WorkflowViewState.IdRef="Sequence_2">
                                       <Sequence.Variables>
                                         <Variable x:TypeArguments="uacu:UserInfo" Name="userInfos" />
                                       </Sequence.Variables>
@@ -357,21 +375,21 @@
                                           <x:Boolean x:Key="IsExpanded">True</x:Boolean>
                                         </scg:Dictionary>
                                       </sap:WorkflowViewStateService.ViewState>
-                                      <ui:Comment sap:VirtualizedContainerService.HintSize="960,93" sap2010:WorkflowViewState.IdRef="Comment_1" Text="To update user we use the value received as argument. If the workflow does not receive this argument, override the default values." />
-                                      <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="960,91" sap2010:WorkflowViewState.IdRef="LogMessage_6" Level="Info" Message="[&quot;Checking if user exists..&quot;]" />
-                                      <p:AzureADUserExists DisplayName="User Exists" Exists="[userExist]" sap:VirtualizedContainerService.HintSize="960,22" sap2010:WorkflowViewState.IdRef="AzureADUserExists_1" UserIdOrUpn="[azureADUserUpn]" />
-                                      <If Condition="[userExist]" sap:VirtualizedContainerService.HintSize="960,803" sap2010:WorkflowViewState.IdRef="If_2">
+                                      <ui:Comment sap:VirtualizedContainerService.HintSize="957.6,94.4" sap2010:WorkflowViewState.IdRef="Comment_1" Text="To update user we use the value received as argument. If the workflow does not receive this argument, override the default values." />
+                                      <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="957.6,92.8" sap2010:WorkflowViewState.IdRef="LogMessage_6" Level="Info" Message="[&quot;Checking if user exists..&quot;]" />
+                                      <p:AzureADUserExists DisplayName="User Exists" Exists="[userExist]" sap:VirtualizedContainerService.HintSize="957.6,22.4" sap2010:WorkflowViewState.IdRef="AzureADUserExists_1" UserIdOrUpn="[azureADUserUpn]" />
+                                      <If Condition="[userExist]" sap:VirtualizedContainerService.HintSize="957.6,816.8" sap2010:WorkflowViewState.IdRef="If_2">
                                         <If.Then>
-                                          <Sequence sap:VirtualizedContainerService.HintSize="539,656" sap2010:WorkflowViewState.IdRef="Sequence_9">
+                                          <Sequence sap:VirtualizedContainerService.HintSize="538.4,667.2" sap2010:WorkflowViewState.IdRef="Sequence_9">
                                             <sap:WorkflowViewStateService.ViewState>
                                               <scg:Dictionary x:TypeArguments="x:String, x:Object">
                                                 <x:Boolean x:Key="IsExpanded">True</x:Boolean>
                                               </scg:Dictionary>
                                             </sap:WorkflowViewStateService.ViewState>
-                                            <p:AzureADGetUser DisplayName="Get User" sap:VirtualizedContainerService.HintSize="497,22" sap2010:WorkflowViewState.IdRef="AzureADGetUser_1" User="[userInfos]" UserIdOrUpn="[azureADUserUpn]" />
-                                            <Switch x:TypeArguments="x:String" DisplayName="Switch" Expression="[userActionUnlockEnableDisableDelete]" sap:VirtualizedContainerService.HintSize="497,309" sap2010:WorkflowViewState.IdRef="Switch`1_1">
-                                              <p:AzureADDeleteUser x:Key="delete" sap:VirtualizedContainerService.HintSize="200,22" sap2010:WorkflowViewState.IdRef="AzureADDeleteUser_1" UserIdOrUpn="[azureADUserUpn]" />
-                                              <Assign x:Key="disable" sap:VirtualizedContainerService.HintSize="262,60" sap2010:WorkflowViewState.IdRef="Assign_3">
+                                            <p:AzureADGetUser DisplayName="Get User" sap:VirtualizedContainerService.HintSize="496.8,22.4" sap2010:WorkflowViewState.IdRef="AzureADGetUser_1" User="[userInfos]" UserIdOrUpn="[azureADUserUpn]" />
+                                            <Switch x:TypeArguments="x:String" DisplayName="Switch" Expression="[userActionUnlockEnableDisableDelete]" sap:VirtualizedContainerService.HintSize="496.8,316.8" sap2010:WorkflowViewState.IdRef="Switch`1_1">
+                                              <p:AzureADDeleteUser x:Key="delete" sap:VirtualizedContainerService.HintSize="200,22.4" sap2010:WorkflowViewState.IdRef="AzureADDeleteUser_1" UserIdOrUpn="[azureADUserUpn]" />
+                                              <Assign x:Key="disable" sap:VirtualizedContainerService.HintSize="262.4,60" sap2010:WorkflowViewState.IdRef="Assign_3">
                                                 <Assign.To>
                                                   <OutArgument x:TypeArguments="s:Nullable(x:Boolean)">[userInfos.AccountEnabled]</OutArgument>
                                                 </Assign.To>
@@ -379,7 +397,7 @@
                                                   <InArgument x:TypeArguments="s:Nullable(x:Boolean)">[False]</InArgument>
                                                 </Assign.Value>
                                               </Assign>
-                                              <Assign x:Key="enable" sap:VirtualizedContainerService.HintSize="262,60" sap2010:WorkflowViewState.IdRef="Assign_4">
+                                              <Assign x:Key="enable" sap:VirtualizedContainerService.HintSize="262.4,60" sap2010:WorkflowViewState.IdRef="Assign_4">
                                                 <Assign.To>
                                                   <OutArgument x:TypeArguments="s:Nullable(x:Boolean)">[userInfos.AccountEnabled]</OutArgument>
                                                 </Assign.To>
@@ -387,7 +405,7 @@
                                                   <InArgument x:TypeArguments="s:Nullable(x:Boolean)">[True]</InArgument>
                                                 </Assign.Value>
                                               </Assign>
-                                              <Assign x:Key="unlock" sap:VirtualizedContainerService.HintSize="262,60" sap2010:WorkflowViewState.IdRef="Assign_5">
+                                              <Assign x:Key="unlock" sap:VirtualizedContainerService.HintSize="262.4,60" sap2010:WorkflowViewState.IdRef="Assign_5">
                                                 <Assign.To>
                                                   <OutArgument x:TypeArguments="s:Nullable(x:Boolean)">[userInfos.AccountEnabled]</OutArgument>
                                                 </Assign.To>
@@ -396,19 +414,19 @@
                                                 </Assign.Value>
                                               </Assign>
                                             </Switch>
-                                            <p:AzureADUpdateUser DisplayName="Update User" sap:VirtualizedContainerService.HintSize="497,22" sap2010:WorkflowViewState.IdRef="AzureADUpdateUser_1" User="[userInfos]" />
-                                            <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="497,91" sap2010:WorkflowViewState.IdRef="LogMessage_8" Level="Info" Message="[&quot;Operation successful (&quot; + userActionUnlockEnableDisableDelete + &quot;) for user &quot; + azureADUserUpn]" />
+                                            <p:AzureADUpdateUser DisplayName="Update User" sap:VirtualizedContainerService.HintSize="496.8,22.4" sap2010:WorkflowViewState.IdRef="AzureADUpdateUser_1" User="[userInfos]" />
+                                            <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="496.8,92.8" sap2010:WorkflowViewState.IdRef="LogMessage_8" Level="Info" Message="[&quot;Operation successful (&quot; + userActionUnlockEnableDisableDelete + &quot;) for user &quot; + azureADUserUpn]" />
                                           </Sequence>
                                         </If.Then>
                                         <If.Else>
-                                          <Sequence sap:VirtualizedContainerService.HintSize="376,245" sap2010:WorkflowViewState.IdRef="Sequence_8">
+                                          <Sequence sap:VirtualizedContainerService.HintSize="375.2,248" sap2010:WorkflowViewState.IdRef="Sequence_8">
                                             <sap:WorkflowViewStateService.ViewState>
                                               <scg:Dictionary x:TypeArguments="x:String, x:Object">
                                                 <x:Boolean x:Key="IsExpanded">True</x:Boolean>
                                               </scg:Dictionary>
                                             </sap:WorkflowViewStateService.ViewState>
-                                            <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="334,91" sap2010:WorkflowViewState.IdRef="LogMessage_7" Level="Info" Message="[&quot;User &quot; + azureADUserUpn + &quot; does not exist.&quot;]" />
-                                            <TerminateWorkflow DisplayName="Terminate Workflow" sap:VirtualizedContainerService.HintSize="334,22" sap2010:WorkflowViewState.IdRef="TerminateWorkflow_1" Reason="[&quot;User &quot; + azureADUserUpn + &quot; does not exist.&quot;]" />
+                                            <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="333.6,92.8" sap2010:WorkflowViewState.IdRef="LogMessage_7" Level="Info" Message="[&quot;User &quot; + azureADUserUpn + &quot; does not exist.&quot;]" />
+                                            <TerminateWorkflow DisplayName="Terminate Workflow" sap:VirtualizedContainerService.HintSize="333.6,22.4" sap2010:WorkflowViewState.IdRef="TerminateWorkflow_1" Reason="[&quot;User &quot; + azureADUserUpn + &quot; does not exist.&quot;]" />
                                           </Sequence>
                                         </If.Else>
                                       </If>
@@ -424,7 +442,7 @@
                               </p:AzureADApplicationScope>
                             </TryCatch.Try>
                             <TryCatch.Catches>
-                              <Catch x:TypeArguments="s:Exception" sap:VirtualizedContainerService.HintSize="1040,21" sap2010:WorkflowViewState.IdRef="Catch`1_2">
+                              <Catch x:TypeArguments="s:Exception" sap:VirtualizedContainerService.HintSize="400,22.4" sap2010:WorkflowViewState.IdRef="Catch`1_2">
                                 <sap:WorkflowViewStateService.ViewState>
                                   <scg:Dictionary x:TypeArguments="x:String, x:Object">
                                     <x:Boolean x:Key="IsExpanded">False</x:Boolean>
@@ -435,25 +453,25 @@
                                   <ActivityAction.Argument>
                                     <DelegateInArgument x:TypeArguments="s:Exception" Name="exception" />
                                   </ActivityAction.Argument>
-                                  <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="334,91" sap2010:WorkflowViewState.IdRef="LogMessage_5" Level="Error" Message="[&quot;An exception occurred when trying to change status for user &quot; + azureAD_UserUpn + vbNewLine  + &quot;Exception: &quot; + exception.ToString]" />
+                                  <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="333.6,92.8" sap2010:WorkflowViewState.IdRef="LogMessage_5" Level="Error" Message="[&quot;An exception occurred when trying to change status for user.&quot; + vbNewLine  + &quot;Exception: &quot; + exception.ToString]" />
                                 </ActivityAction>
                               </Catch>
                             </TryCatch.Catches>
                           </TryCatch>
-                          <ujat:GetTransitions DisplayName="Get Transitions" sap:VirtualizedContainerService.HintSize="1074,22" sap2010:WorkflowViewState.IdRef="GetTransitions_1" IssueId="[issue.Id]" Result="[issueTrasitions]" />
-                          <ui:ForEach x:TypeArguments="ujm:Transition" CurrentIndex="{x:Null}" DisplayName="For Each" sap:VirtualizedContainerService.HintSize="1074,679" sap2010:WorkflowViewState.IdRef="ForEach`1_2" Values="[issueTrasitions]">
+                          <ujat:GetTransitions DisplayName="Get Transitions" sap:VirtualizedContainerService.HintSize="596,22.4" sap2010:WorkflowViewState.IdRef="GetTransitions_1" IssueId="[issue.Id]" Result="[issueTrasitions]" />
+                          <ui:ForEach x:TypeArguments="ujm:Transition" CurrentIndex="{x:Null}" DisplayName="For Each" sap:VirtualizedContainerService.HintSize="596,687.2" sap2010:WorkflowViewState.IdRef="ForEach`1_2" Values="[issueTrasitions]">
                             <ui:ForEach.Body>
                               <ActivityAction x:TypeArguments="ujm:Transition">
                                 <ActivityAction.Argument>
                                   <DelegateInArgument x:TypeArguments="ujm:Transition" Name="transition" />
                                 </ActivityAction.Argument>
-                                <Sequence DisplayName="Body" sap:VirtualizedContainerService.HintSize="563,546" sap2010:WorkflowViewState.IdRef="Sequence_14">
+                                <Sequence DisplayName="Body" sap:VirtualizedContainerService.HintSize="560.8,552.8" sap2010:WorkflowViewState.IdRef="Sequence_14">
                                   <sap:WorkflowViewStateService.ViewState>
                                     <scg:Dictionary x:TypeArguments="x:String, x:Object">
                                       <x:Boolean x:Key="IsExpanded">True</x:Boolean>
                                     </scg:Dictionary>
                                   </sap:WorkflowViewStateService.ViewState>
-                                  <If Condition="[transition.Name.Equals(&quot;Closed&quot;)]" sap:VirtualizedContainerService.HintSize="521,454" sap2010:WorkflowViewState.IdRef="If_4">
+                                  <If Condition="[transition.Name.Equals(&quot;Closed&quot;)]" sap:VirtualizedContainerService.HintSize="519.2,460" sap2010:WorkflowViewState.IdRef="If_4">
                                     <sap:WorkflowViewStateService.ViewState>
                                       <scg:Dictionary x:TypeArguments="x:String, x:Object">
                                         <x:Boolean x:Key="IsExpanded">True</x:Boolean>
@@ -461,7 +479,7 @@
                                       </scg:Dictionary>
                                     </sap:WorkflowViewStateService.ViewState>
                                     <If.Then>
-                                      <Sequence sap:VirtualizedContainerService.HintSize="376,307" sap2010:WorkflowViewState.IdRef="Sequence_13">
+                                      <Sequence sap:VirtualizedContainerService.HintSize="375.2,310.4" sap2010:WorkflowViewState.IdRef="Sequence_13">
                                         <Sequence.Variables>
                                           <Variable x:TypeArguments="ujm:Comment" Name="addedComment" />
                                         </Sequence.Variables>
@@ -470,13 +488,13 @@
                                             <x:Boolean x:Key="IsExpanded">True</x:Boolean>
                                           </scg:Dictionary>
                                         </sap:WorkflowViewStateService.ViewState>
-                                        <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="334,91" sap2010:WorkflowViewState.IdRef="LogMessage_11" Level="Info" Message="[issue.key + &quot;  &quot; +transition.Id]" />
-                                        <ujac:AddCommentToIssue CommentText="This is a commnet" DisplayName="Add Comment to Issue" sap:VirtualizedContainerService.HintSize="334,22" sap2010:WorkflowViewState.IdRef="AddCommentToIssue_1" IssueId="[issue.Id]" Result="[addedComment]">
+                                        <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="333.6,92.8" sap2010:WorkflowViewState.IdRef="LogMessage_11" Level="Info" Message="[issue.key + &quot;  &quot; +transition.Id]" />
+                                        <ujac:AddCommentToIssue CommentText="This is a commnet" DisplayName="Add Comment to Issue" sap:VirtualizedContainerService.HintSize="333.6,22.4" sap2010:WorkflowViewState.IdRef="AddCommentToIssue_1" IssueId="[issue.Id]" Result="[addedComment]">
                                           <ujac:AddCommentToIssue.Parameters>
                                             <scg:Dictionary x:TypeArguments="x:String, InArgument" />
                                           </ujac:AddCommentToIssue.Parameters>
                                         </ujac:AddCommentToIssue>
-                                        <ujai:ChangeIssueStatus DisplayName="Change Issue Status" sap:VirtualizedContainerService.HintSize="334,22" sap2010:WorkflowViewState.IdRef="ChangeIssueStatus_1" IssueId="[issue.id]" TransitionId="[transition.id]">
+                                        <ujai:ChangeIssueStatus DisplayName="Change Issue Status" sap:VirtualizedContainerService.HintSize="333.6,22.4" sap2010:WorkflowViewState.IdRef="ChangeIssueStatus_1" IssueId="[issue.id]" TransitionId="[transition.id]">
                                           <ujai:ChangeIssueStatus.Parameters>
                                             <scg:Dictionary x:TypeArguments="x:String, InArgument" />
                                           </ujai:ChangeIssueStatus.Parameters>

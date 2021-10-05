@@ -3,12 +3,12 @@
   "description": "A new manager",
   "main": "Main.xaml",
   "dependencies": {
-    "UiPath.AzureActiveDirectory.Activities": "[1.1.6]",
-    "UiPath.Excel.Activities": "[2.9.3]",
-    "UiPath.JiraSoftware.Activities": "[1.0.2.752]",
-    "UiPath.Mail.Activities": "[1.9.3]",
+    "UiPath.AzureActiveDirectory.Activities": "[1.1.9]",
+    "UiPath.Excel.Activities": "[2.10.4]",
+    "UiPath.JiraSoftware.Activities": "[1.0.3.22730]",
+    "UiPath.Mail.Activities": "[1.10.5]",
     "UiPath.System.Activities": "[20.10.1]",
-    "UiPath.WebAPI.Activities": "[1.6.0]"
+    "UiPath.WebAPI.Activities": "[1.7.0]"
   },
   "webServices": [],
   "entitiesStores": [],
@@ -42,5 +42,15 @@
     "modernBehavior": false
   },
   "expressionLanguage": "VisualBasic",
-  "isTemplate": false
+  "entryPoints": [
+    {
+      "filePath": "Main.xaml",
+      "uniqueId": "35f3ba82-132d-455f-9af2-59b16f811cac",
+      "input": [],
+      "output": []
+    }
+  ],
+  "isTemplate": false,
+  "templateProjectData": {},
+  "publishData": {}
 }

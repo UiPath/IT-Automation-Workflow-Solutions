@@ -3,7 +3,7 @@
   "description": "Creates a NSG for each NI with a pubic IP that doesn't already have one associated.",
   "main": "Main.xaml",
   "dependencies": {
-    "UiPath.Azure.Activities": "1.1.5",
+    "UiPath.Azure.Activities": "1.1.8",
     "UiPath.System.Activities": "[20.10.1]"
   },
   "webServices": [],
@@ -38,5 +38,15 @@
     "modernBehavior": false
   },
   "expressionLanguage": "VisualBasic",
-  "isTemplate": false
+  "entryPoints": [
+    {
+      "filePath": "Main.xaml",
+      "uniqueId": "fd6f555e-72bb-4ab9-b851-f400e5c7059e",
+      "input": [],
+      "output": []
+    }
+  ],
+  "isTemplate": false,
+  "templateProjectData": {},
+  "publishData": {}
 }
