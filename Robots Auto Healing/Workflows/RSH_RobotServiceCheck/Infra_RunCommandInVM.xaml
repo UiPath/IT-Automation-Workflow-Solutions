@@ -1,0 +1,396 @@
+<Activity mc:Ignorable="sap sap2010" x:Class="Main" xmlns="http://schemas.microsoft.com/netfx/2009/xaml/activities" xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" xmlns:mva="clr-namespace:Microsoft.VisualBasic.Activities;assembly=System.Activities" xmlns:s="clr-namespace:System;assembly=mscorlib" xmlns:sap="http://schemas.microsoft.com/netfx/2009/xaml/activities/presentation" xmlns:sap2010="http://schemas.microsoft.com/netfx/2010/xaml/activities/presentation" xmlns:scg="clr-namespace:System.Collections.Generic;assembly=mscorlib" xmlns:ss="clr-namespace:System.Security;assembly=mscorlib" xmlns:uaa="clr-namespace:UiPath.AmazonWebServices.Activities;assembly=UiPath.AmazonWebServices.Activities" xmlns:uaa1="clr-namespace:UiPath.Azure.Activities;assembly=UiPath.Azure.Activities" xmlns:uaaei="clr-namespace:UiPath.AmazonWebServices.Activities.Ec2.Instances;assembly=UiPath.AmazonWebServices.Activities" xmlns:uac="clr-namespace:UiPath.AmazonWebServices.Core;assembly=UiPath.AmazonWebServices" xmlns:uac1="clr-namespace:UiPath.Azure.Core;assembly=UiPath.Azure" xmlns:uam="clr-namespace:UiPath.AmazonWebServices.Models;assembly=UiPath.AmazonWebServices" xmlns:uam1="clr-namespace:UiPath.Azure.Models;assembly=UiPath.Azure" xmlns:ui="http://schemas.uipath.com/workflow/activities" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+  <x:Members>
+    <x:Property Name="VM_Name" Type="InArgument(x:String)" />
+    <x:Property Name="PsScript" Type="InArgument(x:String)" />
+    <x:Property Name="PsScriptOutput" Type="OutArgument(x:String)" />
+  </x:Members>
+  <mva:VisualBasic.Settings>
+    <x:Null />
+  </mva:VisualBasic.Settings>
+  <sap:VirtualizedContainerService.HintSize>1203,1938</sap:VirtualizedContainerService.HintSize>
+  <sap2010:WorkflowViewState.IdRef>ActivityBuilder_1</sap2010:WorkflowViewState.IdRef>
+  <TextExpression.NamespacesForImplementation>
+    <scg:List x:TypeArguments="x:String" Capacity="37">
+      <x:String>System.Activities</x:String>
+      <x:String>System.Activities.Statements</x:String>
+      <x:String>System.Activities.Expressions</x:String>
+      <x:String>System.Activities.Validation</x:String>
+      <x:String>System.Activities.XamlIntegration</x:String>
+      <x:String>Microsoft.VisualBasic</x:String>
+      <x:String>Microsoft.VisualBasic.Activities</x:String>
+      <x:String>System</x:String>
+      <x:String>System.Collections</x:String>
+      <x:String>System.Collections.Generic</x:String>
+      <x:String>System.Data</x:String>
+      <x:String>System.Diagnostics</x:String>
+      <x:String>System.Drawing</x:String>
+      <x:String>System.IO</x:String>
+      <x:String>System.Linq</x:String>
+      <x:String>System.Net.Mail</x:String>
+      <x:String>System.Xml</x:String>
+      <x:String>System.Xml.Linq</x:String>
+      <x:String>UiPath.Core</x:String>
+      <x:String>UiPath.Core.Activities</x:String>
+      <x:String>System.Windows.Markup</x:String>
+      <x:String>UiPath.Azure.Models</x:String>
+      <x:String>System.Net</x:String>
+      <x:String>System.Activities.DynamicUpdate</x:String>
+      <x:String>UiPath.Azure.Activities</x:String>
+      <x:String>System.ComponentModel</x:String>
+      <x:String>System.Xml.Serialization</x:String>
+      <x:String>System.Security</x:String>
+      <x:String>UiPath.AmazonWebServices.Models</x:String>
+      <x:String>System.Reflection</x:String>
+      <x:String>System.Runtime.InteropServices</x:String>
+      <x:String>System.Collections.ObjectModel</x:String>
+      <x:String>UiPath.AmazonWebServices.Core</x:String>
+      <x:String>UiPath.Azure.Core</x:String>
+      <x:String>System.Runtime.Serialization</x:String>
+      <x:String>UiPath.AmazonWebServices.Activities</x:String>
+      <x:String>UiPath.AmazonWebServices.Activities.Ec2.Instances</x:String>
+    </scg:List>
+  </TextExpression.NamespacesForImplementation>
+  <TextExpression.ReferencesForImplementation>
+    <scg:List x:TypeArguments="AssemblyReference" Capacity="33">
+      <AssemblyReference>System.Activities</AssemblyReference>
+      <AssemblyReference>Microsoft.VisualBasic</AssemblyReference>
+      <AssemblyReference>mscorlib</AssemblyReference>
+      <AssemblyReference>System.Data</AssemblyReference>
+      <AssemblyReference>System</AssemblyReference>
+      <AssemblyReference>System.Drawing</AssemblyReference>
+      <AssemblyReference>System.Core</AssemblyReference>
+      <AssemblyReference>System.Xml</AssemblyReference>
+      <AssemblyReference>System.Xml.Linq</AssemblyReference>
+      <AssemblyReference>PresentationFramework</AssemblyReference>
+      <AssemblyReference>WindowsBase</AssemblyReference>
+      <AssemblyReference>PresentationCore</AssemblyReference>
+      <AssemblyReference>System.Xaml</AssemblyReference>
+      <AssemblyReference>UiPath.System.Activities</AssemblyReference>
+      <AssemblyReference>UiPath.UiAutomation.Activities</AssemblyReference>
+      <AssemblyReference>UiPath.Azure</AssemblyReference>
+      <AssemblyReference>System.ServiceModel</AssemblyReference>
+      <AssemblyReference>UiPath.Excel</AssemblyReference>
+      <AssemblyReference>UiPath.Mail</AssemblyReference>
+      <AssemblyReference>System.ValueTuple</AssemblyReference>
+      <AssemblyReference>UiPath.AmazonWebServices</AssemblyReference>
+      <AssemblyReference>System.ComponentModel.Composition</AssemblyReference>
+      <AssemblyReference>UiPath.System.Activities.Design</AssemblyReference>
+      <AssemblyReference>UiPath.Azure.Activities</AssemblyReference>
+      <AssemblyReference>System.Memory</AssemblyReference>
+      <AssemblyReference>UiPath.OCR.Activities.Design</AssemblyReference>
+      <AssemblyReference>Microsoft.Bcl.AsyncInterfaces</AssemblyReference>
+      <AssemblyReference>UiPath.UIAutomationCore</AssemblyReference>
+      <AssemblyReference>System.Security.SecureString</AssemblyReference>
+      <AssemblyReference>System.Runtime.InteropServices.RuntimeInformation</AssemblyReference>
+      <AssemblyReference>System.Runtime.Serialization</AssemblyReference>
+      <AssemblyReference>System.Runtime.Serialization.Primitives</AssemblyReference>
+      <AssemblyReference>UiPath.AmazonWebServices.Activities</AssemblyReference>
+    </scg:List>
+  </TextExpression.ReferencesForImplementation>
+  <Sequence DisplayName="Main Sequence" sap:VirtualizedContainerService.HintSize="716,1833" sap2010:WorkflowViewState.IdRef="Sequence_3">
+    <Sequence.Variables>
+      <Variable x:TypeArguments="x:String" Name="InfraType" />
+    </Sequence.Variables>
+    <sap:WorkflowViewStateService.ViewState>
+      <scg:Dictionary x:TypeArguments="x:String, x:Object">
+        <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+      </scg:Dictionary>
+    </sap:WorkflowViewStateService.ViewState>
+    <Sequence DisplayName="Init Sequence" sap:VirtualizedContainerService.HintSize="674,229" sap2010:WorkflowViewState.IdRef="Sequence_20">
+      <sap:WorkflowViewStateService.ViewState>
+        <scg:Dictionary x:TypeArguments="x:String, x:Object">
+          <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+        </scg:Dictionary>
+      </sap:WorkflowViewStateService.ViewState>
+      <ui:GetRobotAsset TimeoutMS="{x:Null}" AssetName="RAH_InfrastructureType" DisplayName="Get Asset" sap:VirtualizedContainerService.HintSize="444,137" sap2010:WorkflowViewState.IdRef="GetRobotAsset_3">
+        <ui:GetRobotAsset.Value>
+          <OutArgument x:TypeArguments="x:String">[InfraType]</OutArgument>
+        </ui:GetRobotAsset.Value>
+      </ui:GetRobotAsset>
+    </Sequence>
+    <Switch x:TypeArguments="x:String" DisplayName="Switch" Expression="[InfraType]" sap:VirtualizedContainerService.HintSize="674,1472" sap2010:WorkflowViewState.IdRef="Switch`1_1">
+      <sap:WorkflowViewStateService.ViewState>
+        <scg:Dictionary x:TypeArguments="x:String, x:Object">
+          <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+          <x:Boolean x:Key="IsPinned">False</x:Boolean>
+        </scg:Dictionary>
+      </sap:WorkflowViewStateService.ViewState>
+      <Sequence x:Key="aws" DisplayName="AWS Sequence" sap:VirtualizedContainerService.HintSize="200,66" sap2010:WorkflowViewState.IdRef="Sequence_26">
+        <Sequence.Variables>
+          <Variable x:TypeArguments="x:String" Name="awsRegion" />
+          <Variable x:TypeArguments="x:String" Name="awsIamRole" />
+          <Variable x:TypeArguments="x:String" Name="awsAccessKeyID" />
+          <Variable x:TypeArguments="ss:SecureString" Name="awsAccessKeySecret" />
+        </Sequence.Variables>
+        <sap:WorkflowViewStateService.ViewState>
+          <scg:Dictionary x:TypeArguments="x:String, x:Object">
+            <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+            <x:Boolean x:Key="IsPinned">False</x:Boolean>
+          </scg:Dictionary>
+        </sap:WorkflowViewStateService.ViewState>
+        <Sequence DisplayName="Init Sequence" sap:VirtualizedContainerService.HintSize="640,808" sap2010:WorkflowViewState.IdRef="Sequence_22">
+          <sap:WorkflowViewStateService.ViewState>
+            <scg:Dictionary x:TypeArguments="x:String, x:Object">
+              <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+              <x:Boolean x:Key="IsPinned">False</x:Boolean>
+            </scg:Dictionary>
+          </sap:WorkflowViewStateService.ViewState>
+          <ui:GetRobotAsset TimeoutMS="{x:Null}" AssetName="AmazonAWS_Region" DisplayName="Get AWS Region" sap:VirtualizedContainerService.HintSize="484,137" sap2010:WorkflowViewState.IdRef="GetRobotAsset_4">
+            <ui:GetRobotAsset.Value>
+              <OutArgument x:TypeArguments="x:String">[awsRegion]</OutArgument>
+            </ui:GetRobotAsset.Value>
+          </ui:GetRobotAsset>
+          <ui:GetRobotAsset TimeoutMS="{x:Null}" AssetName="AmazonAWS_IAM_Role" DisplayName="Get AWS IAM Role Asset" sap:VirtualizedContainerService.HintSize="484,137" sap2010:WorkflowViewState.IdRef="GetRobotAsset_5">
+            <ui:GetRobotAsset.Value>
+              <OutArgument x:TypeArguments="x:String">[awsIamRole]</OutArgument>
+            </ui:GetRobotAsset.Value>
+          </ui:GetRobotAsset>
+          <If Condition="[String.IsNullOrEmpty(awsIamRole) Or &quot;-&quot;.Equals(awsIamRole)]" DisplayName="If connect with AWS IAM Role" sap:VirtualizedContainerService.HintSize="484,362" sap2010:WorkflowViewState.IdRef="If_1">
+            <If.Then>
+              <Sequence sap:VirtualizedContainerService.HintSize="304,214" sap2010:WorkflowViewState.IdRef="Sequence_21">
+                <sap:WorkflowViewStateService.ViewState>
+                  <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                    <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                  </scg:Dictionary>
+                </sap:WorkflowViewStateService.ViewState>
+                <ui:GetRobotCredential TimeoutMS="{x:Null}" AssetName="AmazonAWS_AccessKey" DisplayName="Get AWS AccessKey" sap:VirtualizedContainerService.HintSize="262,22" sap2010:WorkflowViewState.IdRef="GetRobotCredential_4" Password="[awsAccessKeySecret]" Username="[awsAccessKeyID]" />
+                <Assign sap:VirtualizedContainerService.HintSize="262,60" sap2010:WorkflowViewState.IdRef="Assign_3">
+                  <Assign.To>
+                    <OutArgument x:TypeArguments="x:String">[awsIamRole]</OutArgument>
+                  </Assign.To>
+                  <Assign.Value>
+                    <InArgument x:TypeArguments="x:String">
+                      <Literal x:TypeArguments="x:String" Value="" />
+                    </InArgument>
+                  </Assign.Value>
+                </Assign>
+              </Sequence>
+            </If.Then>
+          </If>
+        </Sequence>
+        <uaa:AWSScope AccessKeyId="[awsAccessKeyID]" DisplayName="AWS Scope" sap:VirtualizedContainerService.HintSize="640,921" IAMRole="[awsIamRole]" sap2010:WorkflowViewState.IdRef="AWSScope_1" Region="[awsRegion]" SecretAccessKey="[awsAccessKeySecret]">
+          <uaa:AWSScope.Body>
+            <ActivityAction x:TypeArguments="uac:AWSCmd">
+              <ActivityAction.Argument>
+                <DelegateInArgument x:TypeArguments="uac:AWSCmd" Name="AmazonWebServicesScopePropertyTag" />
+              </ActivityAction.Argument>
+              <Sequence DisplayName="AWS Do Sequence" sap:VirtualizedContainerService.HintSize="606,835" sap2010:WorkflowViewState.IdRef="Sequence_25">
+                <sap:WorkflowViewStateService.ViewState>
+                  <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                    <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                  </scg:Dictionary>
+                </sap:WorkflowViewStateService.ViewState>
+                <TryCatch DisplayName="Try Catch" sap:VirtualizedContainerService.HintSize="564,743" sap2010:WorkflowViewState.IdRef="TryCatch_1">
+                  <sap:WorkflowViewStateService.ViewState>
+                    <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                      <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                      <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                    </scg:Dictionary>
+                  </sap:WorkflowViewStateService.ViewState>
+                  <TryCatch.Try>
+                    <Sequence sap:VirtualizedContainerService.HintSize="526,515" sap2010:WorkflowViewState.IdRef="Sequence_23">
+                      <Sequence.Variables>
+                        <Variable x:TypeArguments="uam:AWSEc2Instance[]" Name="awsVMs" />
+                      </Sequence.Variables>
+                      <sap:WorkflowViewStateService.ViewState>
+                        <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                          <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                        </scg:Dictionary>
+                      </sap:WorkflowViewStateService.ViewState>
+                      <uaaei:AWSGetInstanceList AvailablityZone="{x:Null}" Timeout="{x:Null}" DisplayName="Get Instance List" sap:VirtualizedContainerService.HintSize="484,22" sap2010:WorkflowViewState.IdRef="AWSGetInstanceList_1" InstanceList="[awsVMs]" State="Running" TagKey="Name" TagValue="[VM_Name]" />
+                      <If Condition="[awsVMs.Length &gt; 0]" sap:VirtualizedContainerService.HintSize="484,361" sap2010:WorkflowViewState.IdRef="If_2">
+                        <If.Then>
+                          <Sequence sap:VirtualizedContainerService.HintSize="304,214" sap2010:WorkflowViewState.IdRef="Sequence_35">
+                            <Sequence.Variables>
+                              <Variable x:TypeArguments="uam:AWSPSCommandOutput" Name="AWS_PsScriptOutput" />
+                            </Sequence.Variables>
+                            <sap:WorkflowViewStateService.ViewState>
+                              <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                              </scg:Dictionary>
+                            </sap:WorkflowViewStateService.ViewState>
+                            <uaaei:AWSRunPowerShellCommand Comment="{x:Null}" Timeout="{x:Null}" WorkingDirectory="{x:Null}" CommandOutput="[AWS_PsScriptOutput]" Commands="[PsScript]" DisplayName="Run Power Shell Command" sap:VirtualizedContainerService.HintSize="262,22" sap2010:WorkflowViewState.IdRef="AWSRunPowerShellCommand_1" Instance="[awsVMs(0)]" />
+                            <Assign sap:VirtualizedContainerService.HintSize="262,60" sap2010:WorkflowViewState.IdRef="Assign_2">
+                              <Assign.To>
+                                <OutArgument x:TypeArguments="x:String">[PsScriptOutput]</OutArgument>
+                              </Assign.To>
+                              <Assign.Value>
+                                <InArgument x:TypeArguments="x:String">[AWS_PsScriptOutput.StandardOutputContent.Trim()]</InArgument>
+                              </Assign.Value>
+                            </Assign>
+                          </Sequence>
+                        </If.Then>
+                      </If>
+                    </Sequence>
+                  </TryCatch.Try>
+                  <TryCatch.Catches>
+                    <Catch x:TypeArguments="s:Exception" sap:VirtualizedContainerService.HintSize="528,22.4" sap2010:WorkflowViewState.IdRef="Catch`1_1">
+                      <sap:WorkflowViewStateService.ViewState>
+                        <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                          <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+                          <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                        </scg:Dictionary>
+                      </sap:WorkflowViewStateService.ViewState>
+                      <ActivityAction x:TypeArguments="s:Exception">
+                        <ActivityAction.Argument>
+                          <DelegateInArgument x:TypeArguments="s:Exception" Name="exception" />
+                        </ActivityAction.Argument>
+                      </ActivityAction>
+                    </Catch>
+                  </TryCatch.Catches>
+                </TryCatch>
+              </Sequence>
+            </ActivityAction>
+          </uaa:AWSScope.Body>
+        </uaa:AWSScope>
+      </Sequence>
+      <Sequence x:Key="azure" DisplayName="Azure Sequence" sap:VirtualizedContainerService.HintSize="634,1266" sap2010:WorkflowViewState.IdRef="Sequence_32">
+        <Sequence.Variables>
+          <Variable x:TypeArguments="x:String" Name="Azure_ClientId" />
+          <Variable x:TypeArguments="ss:SecureString" Name="Azure_ClientSecret" />
+          <Variable x:TypeArguments="x:String" Name="Azure_SubscriptionID" />
+          <Variable x:TypeArguments="x:String" Name="Azure_TenantId" />
+          <Variable x:TypeArguments="x:String" Name="Azure_ResourceGroup_Names" />
+        </Sequence.Variables>
+        <sap:WorkflowViewStateService.ViewState>
+          <scg:Dictionary x:TypeArguments="x:String, x:Object">
+            <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+            <x:Boolean x:Key="IsPinned">False</x:Boolean>
+          </scg:Dictionary>
+        </sap:WorkflowViewStateService.ViewState>
+        <Sequence DisplayName="Init Sequence" sap:VirtualizedContainerService.HintSize="592,66" sap2010:WorkflowViewState.IdRef="Sequence_27">
+          <sap:WorkflowViewStateService.ViewState>
+            <scg:Dictionary x:TypeArguments="x:String, x:Object">
+              <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+              <x:Boolean x:Key="IsPinned">False</x:Boolean>
+            </scg:Dictionary>
+          </sap:WorkflowViewStateService.ViewState>
+          <ui:GetRobotCredential TimeoutMS="{x:Null}" AssetName="AzureAuth_AppRegistration" DisplayName="Azure AppRegistration - Get Credential" sap:VirtualizedContainerService.HintSize="444,22" sap2010:WorkflowViewState.IdRef="GetRobotCredential_5" Password="[Azure_ClientSecret]" Username="[Azure_ClientId]" />
+          <ui:GetRobotAsset TimeoutMS="{x:Null}" AssetName="Azure_TenantID" DisplayName="Azure_TenantID - Get Asset" sap:VirtualizedContainerService.HintSize="444,137" sap2010:WorkflowViewState.IdRef="GetRobotAsset_8">
+            <ui:GetRobotAsset.Value>
+              <OutArgument x:TypeArguments="x:String">[Azure_TenantId]</OutArgument>
+            </ui:GetRobotAsset.Value>
+            <sap:WorkflowViewStateService.ViewState>
+              <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                <x:Boolean x:Key="IsPinned">False</x:Boolean>
+              </scg:Dictionary>
+            </sap:WorkflowViewStateService.ViewState>
+          </ui:GetRobotAsset>
+          <ui:GetRobotAsset TimeoutMS="{x:Null}" AssetName="AzureAuth_SubscriptionID" DisplayName="Azure_SubscriptionID - Get Asset" sap:VirtualizedContainerService.HintSize="444,137" sap2010:WorkflowViewState.IdRef="GetRobotAsset_6">
+            <ui:GetRobotAsset.Value>
+              <OutArgument x:TypeArguments="x:String">[Azure_SubscriptionID]</OutArgument>
+            </ui:GetRobotAsset.Value>
+            <sap:WorkflowViewStateService.ViewState>
+              <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                <x:Boolean x:Key="IsPinned">False</x:Boolean>
+              </scg:Dictionary>
+            </sap:WorkflowViewStateService.ViewState>
+          </ui:GetRobotAsset>
+          <ui:GetRobotAsset TimeoutMS="{x:Null}" AssetName="Azure_VMs_RG" DisplayName="Azure_VMs_RG - Get Asset" sap:VirtualizedContainerService.HintSize="444,137" sap2010:WorkflowViewState.IdRef="GetRobotAsset_9">
+            <ui:GetRobotAsset.Value>
+              <OutArgument x:TypeArguments="x:String">[Azure_ResourceGroup_Names]</OutArgument>
+            </ui:GetRobotAsset.Value>
+            <sap:WorkflowViewStateService.ViewState>
+              <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                <x:Boolean x:Key="IsPinned">False</x:Boolean>
+              </scg:Dictionary>
+            </sap:WorkflowViewStateService.ViewState>
+          </ui:GetRobotAsset>
+        </Sequence>
+        <uaa1:AzureScope ClientId="[Azure_ClientId]" ClientSecret="[new System.Net.NetworkCredential(&quot;&quot;,Azure_ClientSecret).SecurePassword]" DisplayName="Azure Scope" EnvironmentType="Global" sap:VirtualizedContainerService.HintSize="592,1068" sap2010:WorkflowViewState.IdRef="AzureScope_3" SubscriptionId="[Azure_SubscriptionID]" TenantId="[Azure_TenantId]">
+          <uaa1:AzureScope.Body>
+            <ActivityAction x:TypeArguments="uac1:AzureCmd">
+              <ActivityAction.Argument>
+                <DelegateInArgument x:TypeArguments="uac1:AzureCmd" Name="AzureScopePropertyTag" />
+              </ActivityAction.Argument>
+              <Sequence DisplayName="Azure Scope Do - Sequence" sap:VirtualizedContainerService.HintSize="558,982" sap2010:WorkflowViewState.IdRef="Sequence_31">
+                <Sequence.Variables>
+                  <Variable x:TypeArguments="uam1:VirtualMachine" Name="VM" />
+                  <Variable x:TypeArguments="s:String[]" Name="RGs" />
+                </Sequence.Variables>
+                <sap:WorkflowViewStateService.ViewState>
+                  <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                    <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                  </scg:Dictionary>
+                </sap:WorkflowViewStateService.ViewState>
+                <Assign sap:VirtualizedContainerService.HintSize="516,60" sap2010:WorkflowViewState.IdRef="Assign_4">
+                  <Assign.To>
+                    <OutArgument x:TypeArguments="s:String[]">[RGs]</OutArgument>
+                  </Assign.To>
+                  <Assign.Value>
+                    <InArgument x:TypeArguments="s:String[]">[Split(Azure_ResourceGroup_Names,",")]</InArgument>
+                  </Assign.Value>
+                </Assign>
+                <ui:ForEach x:TypeArguments="x:String" CurrentIndex="{x:Null}" DisplayName="For Each" sap:VirtualizedContainerService.HintSize="516,790" sap2010:WorkflowViewState.IdRef="ForEach`1_4" Values="[RGs]">
+                  <ui:ForEach.Body>
+                    <ActivityAction x:TypeArguments="x:String">
+                      <ActivityAction.Argument>
+                        <DelegateInArgument x:TypeArguments="x:String" Name="rg" />
+                      </ActivityAction.Argument>
+                      <Sequence DisplayName="Body" sap:VirtualizedContainerService.HintSize="480,657" sap2010:WorkflowViewState.IdRef="Sequence_34">
+                        <sap:WorkflowViewStateService.ViewState>
+                          <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                            <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                          </scg:Dictionary>
+                        </sap:WorkflowViewStateService.ViewState>
+                        <TryCatch DisplayName="Try Catch" sap:VirtualizedContainerService.HintSize="438,565" sap2010:WorkflowViewState.IdRef="TryCatch_3">
+                          <TryCatch.Try>
+                            <Sequence sap:VirtualizedContainerService.HintSize="304,338" sap2010:WorkflowViewState.IdRef="Sequence_33">
+                              <Sequence.Variables>
+                                <Variable x:TypeArguments="uam1:ScriptOutput[]" Name="Azure_PsScriptOutput" />
+                              </Sequence.Variables>
+                              <sap:WorkflowViewStateService.ViewState>
+                                <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                  <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                                </scg:Dictionary>
+                              </sap:WorkflowViewStateService.ViewState>
+                              <uaa1:AzureGetVirtualMachine DisplayName="Get VM" sap:VirtualizedContainerService.HintSize="262,22" sap2010:WorkflowViewState.IdRef="AzureGetVirtualMachine_4" ResourceGroupName="[rg]" VirtualMachine="[VM]" VirtualMachineName="[VM_Name]" />
+                              <uaa1:AzureRunScriptInVirtualMachine ScriptArguments="{x:Null}" Timeout="{x:Null}" DisplayName="Run Script in VM" sap:VirtualizedContainerService.HintSize="262,22" sap2010:WorkflowViewState.IdRef="AzureRunScriptInVirtualMachine_2" Script="[PsScript]" ScriptResults="[Azure_PsScriptOutput]" ScriptType="PowerShell" VirtualMachine="[VM]" />
+                              <Assign sap:VirtualizedContainerService.HintSize="262,60" sap2010:WorkflowViewState.IdRef="Assign_1">
+                                <Assign.To>
+                                  <OutArgument x:TypeArguments="x:String">[PsScriptOutput]</OutArgument>
+                                </Assign.To>
+                                <Assign.Value>
+                                  <InArgument x:TypeArguments="x:String">[Azure_PsScriptOutput(0).Message.Trim()]</InArgument>
+                                </Assign.Value>
+                              </Assign>
+                              <ui:Break sap:VirtualizedContainerService.HintSize="262,22" sap2010:WorkflowViewState.IdRef="Break_1" />
+                            </Sequence>
+                          </TryCatch.Try>
+                          <TryCatch.Catches>
+                            <Catch x:TypeArguments="s:Exception" sap:VirtualizedContainerService.HintSize="404,21" sap2010:WorkflowViewState.IdRef="Catch`1_3">
+                              <sap:WorkflowViewStateService.ViewState>
+                                <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                  <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+                                  <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                                </scg:Dictionary>
+                              </sap:WorkflowViewStateService.ViewState>
+                              <ActivityAction x:TypeArguments="s:Exception">
+                                <ActivityAction.Argument>
+                                  <DelegateInArgument x:TypeArguments="s:Exception" Name="exception" />
+                                </ActivityAction.Argument>
+                              </ActivityAction>
+                            </Catch>
+                          </TryCatch.Catches>
+                        </TryCatch>
+                      </Sequence>
+                    </ActivityAction>
+                  </ui:ForEach.Body>
+                </ui:ForEach>
+              </Sequence>
+            </ActivityAction>
+          </uaa1:AzureScope.Body>
+          <sap:WorkflowViewStateService.ViewState>
+            <scg:Dictionary x:TypeArguments="x:String, x:Object">
+              <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+              <x:Boolean x:Key="IsPinned">False</x:Boolean>
+            </scg:Dictionary>
+          </sap:WorkflowViewStateService.ViewState>
+        </uaa1:AzureScope>
+      </Sequence>
+    </Switch>
+  </Sequence>
+</Activity>
